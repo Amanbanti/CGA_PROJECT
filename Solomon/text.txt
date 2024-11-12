@@ -31,4 +31,3 @@ rect(100,100);
 rect(250, 100);
 // 3) Add a new square to the image
 rect(350,350)
-
