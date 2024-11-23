@@ -1,0 +1,33 @@
+#This is a text from the lessons
+
+#Lesson-1:Programming for a Purpose
+-Did and submit the survey
+-Choose Animation and Game Design Templates
+
+
+#lesson-2:Plotting Shapes
+-under this lesson i learned drawing shapes on a given grid by selecting the shapes and 
+ the color. 
+#lesson-3:Drawing in Game Lab
+-introduction to the game lab
+
+// Change the thickness of the rectangle outline.
+strokeWeight(20);
+rect(50, 50, 100, 200);
+
+ Change the numbers inside the block, then try running the program again.
+//3) Try to place the rectangle near the bottom right of the screen.
+rect(349,349);
+
+Place Squares in Corners
+// 1) Place two rectangles exactly in the corners of the screen
+rect(0,0);
+rect(350,350);
+
+fill(color)
+/ 2) Change the color from blue to yellow.
+fill("yellow");
+rect(100,100);
+rect(250, 100);
+// 3) Add a new square to the image
+rect(350,350)
