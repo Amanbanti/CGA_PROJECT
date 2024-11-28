@@ -1,1 +1,51 @@
-My text File
+# Lessons
+
+## Lesson 1: Programming for a Purpose  
+- Explored the **Activity Guide** to understand user needs.  
+- Recommended templates to clients based on the target audience, purpose, and platform:  
+  - **Educational Games for Children:** Maria - Template E (Interactive and simple for reading practice).  
+  - **Environmental Animation:** Richard - Template D (Clean skies and nature-focused).  
+  - **Text-Based Block:** Layla - Template B (Pre-structured for easy adaptation).  
+  - **Interactive Animation:** Emma - Template C (Replace chickens with sharks for thematic relevance).  
+  - **Comic and Space Game:** Levi - Template A (Engages users interested in sci-fi).  
+- Completed a survey on identifying the purpose of games and animations.  
+
+---
+
+## Lesson 2: Plotting Shapes  
+- Learned how to use grids and axes to draw shapes accurately on the screen.  
+- Followed instructions to replicate a car design using shapes on **Game Lab's grid**.  
+- Experimented with placing shapes using the `rect()` function:
+  - Example: Placed a rectangle in the bottom-right corner using `rect(350,350);`.  
+  - Added two rectangles in the corners:  
+    ```javascript
+    rect(0,0);  
+    rect(350,350);
+    ```  
+  - Changed the color of a rectangle:  
+    ```javascript
+    fill("yellow");  
+    rect(100,100);  
+    rect(250,100);
+    ```  
+
+---
+
+## Lesson 3: Drawing in Game Lab  
+- Predicted outputs of shapes drawn with `rect()` and confirmed their behavior in the program.  
+- Experimented with code by modifying shapes' positions and colors.  
+  - Example: Added a new square:  
+    ```javascript
+    rect(200,200);  
+    rect(300,400);  
+    rect(100,350);
+    ```  
+  - Explored the impact of code order:  
+    - Initially drew a red rectangle followed by a blue rectangle.  
+    - Modified the red rectangle to green and changed the order to display it on top:  
+      ```javascript
+      fill("blue");  
+      rect(175,175);  
+      fill("green");  
+      rect(200,200);
+      ```  
