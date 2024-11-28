@@ -1,0 +1,58 @@
+## Lesson1:problem-solving within the design process, divided into four key stages:
+
+    Define:
+        Identify potential users and their needs through interviews and profiles.
+
+    Prepare:
+        Connect user needs to specific problems, research existing solutions, brainstorm ideas, and assess their feasibility.
+
+    Try:
+        Create sketches of the product and develop low-stakes prototypes for user feedback.
+
+    Reflect:
+        Present findings to stakeholders and review the feedback received from users.
+
+This process encourages iterative development and user-centered design.
+the word search game also interesting and also brainstorming
+designs in animation and game design. Key features include:
+
+    Customizable Sections: Users can add different shapes and colors to organize their design.
+    Zoom Functionality: A magnifying glass tool allows for zooming in and out for detailed work.
+    Image Integration: Users are encouraged to incorporate images into their designs.
+    This template provides a flexible framework for creative design planning.
+Assigned templets to client needs
+
+    Maria: Template A
+       This template is colorful and engaging, perfect for young children to help make reading fun.
+
+    Richard:Template B
+        This template emphasizes environmental themes and incorporates interactive elements related to recycling.
+
+    Layla:Template C
+        This template allows for personalized messages and includes fun graphics that will appeal to grandchildren.
+
+    Emma:Template D
+        This template features dynamic animations suitable for illustrating the shark game concept effectively.
+
+    Levi:Template E
+        This template supports interactive storytelling and lets characters move, which aligns with the comic book format.
+Client Design Selection
+Tatiana: “I run a business that makes greeting cards...”
+Defining Sentence:
+
+    Tatiana needs a way to create interactive digital greeting cards in order to engage users with humor and creativity.
+
+Design Preparation
+
+    Images: Cute cartoon characters, humorous puns, interactive elements (like buttons).
+    Colors: Bright and cheerful colors like yellow, pink, and light blue.
+    Text: Instructions for interaction, punchlines for the puns.
+
+Prototype Creation
+
+    Sketch Ideas: Draw the layout of the card, indicating where images and text will be placed, and mark interactive areas.
+
+Reflection
+
+    Strength: The design effectively uses humor and interactivity to engage users, making it enjoyable.
+    Improvement Area: The user instructions could be clearer to ensure all users understand how to interact with the card.
