@@ -56,3 +56,174 @@ Reflection
 
     Strength: The design effectively uses humor and interactivity to engage users, making it enjoyable.
     Improvement Area: The user instructions could be clearer to ensure all users understand how to interact with the card.
+## Lesson 2:Plotting Shapes 
+    - learned how to draw shapes using the tool & Replicated the Car.
+## Lesson 3 Drawing in Game lab
+    - learned how to color the shapes.
+    - learned how make in the perfect position in right place.
+    by using the code like rect(0,0,0,0); 
+    the first two numbers are indicate position of the shapes x and y 
+    the last two numbers indicate size of the shapes width and height.
+    there is also a command stroke("any color here");
+    and also a command fill("any color here");
+    the fill command is inside coloring shapes.
+    the stroke command is border coloring of a shapes.
+    we should have to use the fill command before the shape command to fill the color proprly.
+    the is also noFill();
+                noStroke(); 
+                strokeWeight(size);
+                ellipse(x,y,w,h);....
+    2-Try to place the rectangle near the bottom right of the screen.
+
+           rect(350, 350);
+
+    1-Place two rectangles exactly in the corners of the screen
+
+           rect(0,0);
+           rect(350, 350); 
+
+    2-Change the color from blue to yellow.and Add a new square to the image
+
+           fill("yellow");
+           rect(200,100);
+           rect(50, 100);
+           rect(50, 200);
+
+    2-Change the red rectangle's color to green.
+    3- Change the order of the code so the green rectangle appears on top.
+
+           fill("blue");
+           rect(200, 200);
+           fill("green");
+           rect(175,175);
+
+    2-Add a new ellipse of a different color.
+
+           fill("yellow");
+           ellipse(100, 200);
+
+    2-Rearrange the code so the wheels are visible.
+
+           fill("dimgray");
+           ellipse(150,325);
+           ellipse(250,325);
+           fill("red");
+           rect(100,250);
+           rect(150,250);
+           rect(200,250);
+           rect(250,250);
+           rect(150,200);
+           rect(200,200);
+
+    2-Change the code so that all the petals are attached to the center of the flower.
+
+           fill("purple");
+           ellipse(200,165);
+           ellipse(160, 195);
+           ellipse(180, 235);
+           ellipse(226, 230);
+           ellipse(240, 186);
+           fill("yellow");
+           ellipse(200,200);
+
+    2-Rearrange the code so the colors are correct.
+
+           fill("black");
+           rect(175,100);
+           rect(175,150);
+           rect(175,200);
+           fill("red");
+           ellipse(200,125);
+           fill("yellow");
+           ellipse(200,175);
+           fill("green");
+           ellipse(200,225);
+
+    Drawing a car with correct color position and shape
+
+           fill("green");
+           rect(100,250);
+           rect(150,250);
+           rect(200,250);
+           rect(250,250);
+           fill("red");
+           ellipse(150,300);
+           ellipse(250,300);
+           fill("blue");
+           rect(150,200);
+           rect(200,200);
+
+    Drawing this triangle made out of circles
+
+           ellipse(180, 180);
+           ellipse(200, 210);
+           ellipse(225, 235);
+           ellipse(255, 275);
+           ellipse(235, 275);
+           ellipse(205, 275);
+           ellipse(175, 275);
+           ellipse(150, 275);
+           ellipse(150, 250);
+           ellipse(150, 220);
+           ellipse(150, 190);
+           ellipse(150, 160);
+
+    2-Change the code so it makes the picture in the instructions
+
+           fill("orange");
+           ellipse(150,150);
+           ellipse(200,150);
+           ellipse(150,200);
+           ellipse(200,200);
+           fill("purple");
+           rect(150, 150);
+
+    2-Use the point() block to finish the code so it matches the picture.
+
+           strokeWeight(35);
+           point(200, 170);
+           strokeWeight(5);
+           fill("red");
+           ellipse(200, 200);
+           point(200, 190);
+           point(210, 200);
+           point(188, 200);
+           point(200, 210);
+
+        
+## Lesson 4
+
+    one command knowledge gained which is background(color)
+           fill("blue");
+           rect(120,100,80,150);
+           fill("red");
+           rect(250,100,80,200);
+
+    1- Add an orange ellipse to the screen that is taller than the green one
+    2-Rearrange the blocks so the orange ellipse is behind the green one
+    
+           fill("orange");
+           ellipse(200, 200, 250, 350);
+           fill("green");
+           ellipse(200,200,200,150);
+    2-Change the background from yellow to orange.
+            fill("purple");
+            rect(50,50, 100,100);
+            background("orange");
+            fill("blue");
+            rect(250,250, 100, 100);
+    1-Make a black background behind the green circle.
+             fill("green");
+             background("black");
+             ellipse(200,200,200,200);
+             
+ // Draw sky
+background("skyblue");
+
+// Draw sun
+fill("yellow");
+ellipse(350,50,50,50);
+
+// Draw grass
+fill("green");
+rect(0,350,400,50);
