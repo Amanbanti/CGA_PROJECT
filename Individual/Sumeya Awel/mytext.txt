@@ -194,6 +194,8 @@ Reflection
 ## Lesson 4
      I have learnt some additional commands like regular polygon the first two parameters indicate the x and y axis the last two parameters indicate the side numbers the polygon and another parameter indicate the size of the polygon
      shape command has the parameter x1,y1.........
+     the other one is the line command which has the parameter x1,y1 and x2,y2 we will input the position interms of the grid in what we want position
+     the arc command also haveing 6 parameters the first parameter x the second parameter y the third one width the fourth one height the fifth one starting angle of arc the last one parameter indicates the stop angleof the arc.  
     one command knowledge gained which is background(color)
            fill("blue");
            rect(120,100,80,150);
@@ -293,3 +295,40 @@ rect(0,350,400,50);
     fill("green");
     shape(200, 200, 0, 400, 0, 0);
 
+//Create two more shapes on the screen using the arc block!
+fill("brown");
+arc(50, 100, 100, 100, 0, 360);
+fill("red");
+arc(200, 100, 100, 100, 0, 300);
+fill("green");
+arc(350, 100, 100, 100, 90, 180);
+fill("purple");
+arc(50, 200, 100, 100, 0, 180);
+fill("yellow");
+arc(200, 200, 100, 100, 30, 210);
+fill("black");
+arc(200, 300, 100, 100, -90, 180);
+fill("orange");
+arc(350, 250, 100, 100, -180, 90);
+fill("blue");
+arc(50, 350, 100, 100, -250, 50);
+
+//2) Finish the code so it matches the picture
+line(0, 0, 50, 400);
+line(0, 50, 100, 400);
+line(0, 100, 150, 400);
+line(0, 150, 200, 400);
+line(0, 200, 250, 400);
+line(0, 250, 300, 400);
+line(0, 300, 350, 400);
+line(0, 350, 400, 400);
+line(350, 0, 400, 400);
+line(300, 0, 400, 350);
+line(250, 0, 400, 300);
+line(200, 0, 400, 250);
+line(150, 0, 400, 200);
+line(100, 0, 400, 150);
+line(50, 0, 400, 100);
+line(0, 0, 400, 50);
+line(0, 400, 0, 0);
+line(0, 0, 400, 0);
