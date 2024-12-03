@@ -32,20 +32,78 @@
 ---
 
 ## Lesson 3: Drawing in Game Lab  
-- Predicted outputs of shapes drawn with `rect()` and confirmed their behavior in the program.  
-- Experimented with code by modifying shapes' positions and colors.  
+* Predicted outputs of shapes drawn with `rect()` and confirmed their behavior in the program.  
+* Experimented with code by modifying shapes' positions and colors.  
   - Example: Added a new square:  
-    ```javascript
+    
     rect(200,200);  
     rect(300,400);  
     rect(100,350);
     ```  
-  - Explored the impact of code order:  
-    - Initially drew a red rectangle followed by a blue rectangle.  
-    - Modified the red rectangle to green and changed the order to display it on top:  
-      ```javascript
+* Explored the impact of code order:  
+* Initially drew a red rectangle followed by a blue rectangle.  
+* Modified the red rectangle to green and changed the order to display it on top:  
+      
       fill("blue");  
       rect(175,175);  
       fill("green");  
       rect(200,200);
       ```  
+* Working with Ellipses
+Learned how to use the ellipse() function to create circles on the canvas.
+Added ellipses with different colors and positions:
+
+    fill("teal");
+    ellipse(100, 100);
+
+    fill("orange");
+    ellipse(200, 200);
+* Debugging - Fix a Car
+Observed that the red body of the car was hiding the wheels.
+Rearranged the blocks so the wheels appeared on top of the car body:
+
+// Rearranged the code to make the wheels visible
+fill("dimgray");
+ellipse(150, 300);
+ellipse(250, 300);
+
+fill("red");
+rect(100, 250);
+rect(150, 250);
+rect(200, 250);
+rect(250, 250);
+rect(150, 200);
+rect(200, 200);
+
+* Debugging - Rearrange Code for Correct Output
+Reviewed the buggy code meant to create a specific design.
+Rearranged and modified the code to match the intended picture:
+
+// Corrected the code to match the instructions
+fill("orange");
+ellipse(150, 150);
+ellipse(200, 150);
+ellipse(150, 200);
+ellipse(200, 200);
+
+fill("purple");
+rect(150, 150);
+
+* Drawing Points - Ladybug
+Used the point() and strokeWeight() functions to draw a ladybug on the screen.
+Completed the code by adding missing blocks to match the picture.
+Added legs to the ladybug as a challenge:
+
+// Drawing the ladybug
+strokeWeight(35);
+point(200, 170);
+
+strokeWeight(5);
+fill("red");
+ellipse(200, 200);
+point(200, 190);
+point(210, 200);
+point(190, 200);
+point(200, 210);
+
+This session focused on debugging and creative use of shapes and points to produce the desired visual designs, reinforcing the importance of code order and precise positioning.

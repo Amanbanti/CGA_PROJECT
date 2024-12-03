@@ -1,0 +1,107 @@
+###Lesson 4: Shapes and Parameters
+   The lesson explores how to use parameters to create customized and dynamic drawings in Game Lab.
+   
+   ##Overview
+   
+Guiding Question: How can parameters be used to provide the computer with more detailed instructions?
+
+This lesson focuses on understanding and applying parameters to customize the characteristics of shapes. Students will learn how to adjust parameters to accurately control the placement and dimensions of shapes on the screen.
+
+##Core Concepts
+
+#Parameter:
+
+Definition: Additional information provided to a function to customize its behavior.
+Example: Adjusting the size, position, or color of a shape using parameters.
+Introduced Code:
+
+background(color): Sets the canvas background color.
+ellipse(x, y, w, h): Draws an oval or circle with defined position and dimensions.
+rect(x, y, w, h): Creates a rectangle with specified position and size.
+##Levels
+ #Predict
+ predict how changing parameters will affect shapes.
+ # Skill Building
+
+   Practice using parameters to control shapes.
+   Explore positioning, layering, and resizing.
+   rect(150, 200, 100, 50); 
+   ellipse(200, 150, 80, 80);
+#Practice
+
+ Combine multiple shapes to create a meaningful image, such as a face, tree, or car.
+#Assessment
+
+ Demonstrate understanding by completing challenges like drawing shapes in specific positions.
+#Challenges
+
+ Create dynamic and randomized designs.
+ ellipse(randomNumber(0, 400), randomNumber(0, 400), 50, 50);
+
+###Lesson 5 : Understanding Variables
+
+##What Are Variables?
+
+Variables allow you to store a single value in the computer's memory, giving it a descriptive name for easy reference. They are essential for managing and reusing values throughout your program or saving numbers for later use.
+
+##Key Concepts
+ 
+ #Creating Variables
+
+Use the var command to create a new variable.
+Example:
+var size;
+This creates a variable with the label size.
+ 
+ #Assigning Values
+
+Use the assignment operator = to assign a value to a variable.
+Example:
+size = 100;
+This assigns the value 100 to size. Any previous value is replaced.
+Read it as "size gets 100."
+ #Using a Value
+
+To use the variable's value, place its label where you want to use it in your code.
+Example:
+ellipse(200, 200, size, size);
+Here, size is used to determine the ellipse's width and height.
+Initializing a Variable
+
+Variables are often given an initial value when created.
+Combine var and = to initialize a variable in one step.
+Example:
+var size = 100;
+This initializes the variable size with the value 100.
+After initialization, use = to update the variable without var.
+
+
+
+###Lesson 6: Random Numbers
+
+  1. Using Random Numbers
+
+The randomNumber() block generates random values within a specified range.
+It requires two parameters: the minimum and maximum values for the generated number.
+Example: randomNumber(1, 6) will produce a random number between 1 and 6, simulating a dice roll.
+This block can be used anywhere a number is needed in your code, such as in calculations or drawing commands.
+
+2. Drawing with Random Numbers
+
+randomNumber() can be used as a parameter in drawing functions to create random visual outputs.
+For example, you can use it to position shapes at random locations, randomize their sizes, or even change colors.
+Each time the program runs, the output may look different depending on the random values generated.
+Example:
+ellipse(randomNumber(0, 400), randomNumber(0, 400), 50, 50);
+This example places an ellipse at a random position on the screen.
+
+3. Multiple Random Numbers
+
+You can use randomNumber() multiple times in your program. Each call generates a new, independent random number.
+Think of each randomNumber() as rolling a new die.
+Example:
+let x = randomNumber(0, 400);
+let y = randomNumber(0, 400);
+ellipse(x, y, 50, 50);
+In this example, both the x and y positions of the ellipse are randomized.
+
