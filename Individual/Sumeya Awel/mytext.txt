@@ -332,3 +332,11 @@ line(50, 0, 400, 100);
 line(0, 0, 400, 50);
 line(0, 400, 0, 0);
 line(0, 0, 400, 0);
+
+
+## Lesson 5 
+
+//changing variables
+var xPosition = 200;
+var whatsTheY = 300;
+ellipse(xPosition, whatsTheY);
