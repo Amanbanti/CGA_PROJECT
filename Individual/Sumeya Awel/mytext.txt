@@ -429,6 +429,7 @@ rect(150, 250, size, size);
 
 //2 Change the program to use the eyeSize variable.
 Having 2 option the first option changing the w and h size to eyeSize to 27 the second option change w and h by use the variable name eyesize
+
 var eyeSize = 27;
 noStroke();
 background("green");
