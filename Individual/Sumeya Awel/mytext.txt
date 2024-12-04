@@ -484,3 +484,145 @@ fill(color4);
 ellipse(200, 200, 100, 100);
 
 
+## Lesson 6
+i have learnt the way of i used randomNumber in backgroundcolor, fill,the x and y position w and h and also with varable it is important for movment of object
+//Random Numbers
+       background("tomato");
+       fill("orange");
+       ellipse(randomNumber(0,400), 200, 50, 50);
+
+//1 Make the ellipse appear at random y coordinates
+       background("tomato");
+       fill("orange");
+       ellipse(randomNumber(0,400),randomNumber(0,400), 50, 50);
+
+
+// Variables and Random Numbers
+     
+var eyeSize = randomNumber(15,35);
+noStroke();
+background("green");
+// Face
+fill("yellow");
+ellipse(200,200,200,200);
+// Eyes
+fill("black");
+ellipse(160,170,eyeSize,eyeSize);
+ellipse(240,170,eyeSize,eyeSize);
+// Mouth
+fill("white");
+rect(160,240,80,20);
+
+
+// Changing variable values
+
+var petalSize;
+background("green");
+petalSize = randomNumber(20,45);
+fill("purple");
+ellipse(75,100,petalSize,petalSize);
+ellipse(125,100,petalSize,petalSize);
+ellipse(100,75,petalSize,petalSize);
+ellipse(100,125,petalSize,petalSize);
+fill("yellow");
+ellipse(100,100, 50, 50);
+petalSize = randomNumber(30,60);
+fill("purple");
+ellipse(275,300,petalSize,petalSize);
+ellipse(325,300,petalSize,petalSize);
+ellipse(300,275,petalSize,petalSize);
+ellipse(300,325,petalSize,petalSize);
+fill("yellow");
+ellipse(300,300, 50, 50);
+
+
+// Modify the Planets
+
+background("black");
+fill("yellow");
+ellipse(0, 200, randomNumber(40,70), randomNumber(50,60));
+fill("salmon");
+ellipse(80, 200, randomNumber(20,50), randomNumber(20,50));
+fill("cyan");
+ellipse(160, 200, randomNumber(50,100), 50);
+fill("lavender");
+ellipse(240, 200, randomNumber(30,50), randomNumber(50,90));
+fill("crimson");
+ellipse(320, 200, randomNumber(50,100), randomNumber(50,100));
+fill("orchid");
+ellipse(400, 200, randomNumber(20,50), randomNumber(30,50));
+
+// Debug: Random Shape Movement
+
+var xPosition = randomNumber(0,170);
+fill("pink");
+rect(xPosition, 100, 250, 50);
+fill("purple");
+rect(xPosition, 150, 250, 50);
+fill("firebrick");
+rect(xPosition, 200, 250, 50);
+
+
+// Modify the Scene
+   changing the sun x position and y position by randomNumber and also the mountains the same is true for this.
+
+background("lightblue");
+fill("yellow");
+ellipse(randomNumber(80,325), randomNumber(25,65));
+fill("brown");
+regularPolygon(randomNumber(50,100), 300, 3, 200);
+regularPolygon(randomNumber(200,300), 300, 3, 200);
+regularPolygon(randomNumber(100,300), 300, 3, 250);
+regularPolygon(randomNumber(10,50), 300, 3, 250);
+regularPolygon(randomNumber(300,390), 300, 3, 250);
+fill("lightgreen");
+rect(0, 300, 400, 100);
+
+// Rainbow Snake
+add other ellipse and x position increment by 40 other remain the same
+
+background("skyBlue");
+fill("red");
+ellipse(100, randomNumber(190,210), 50, 50);
+fill("orange");
+ellipse(140, randomNumber(190,210), 50, 50);
+fill("yellow");
+ellipse(180, randomNumber(190,210), 50, 50);
+fill("green");
+ellipse(220,randomNumber(190,210) , 50, 50);
+fill("blue");
+ellipse(260,randomNumber(190,210), 50, 50);
+fill("purple");
+ellipse(300, randomNumber(190,210), 50, 50);
+
+
+// Random Rainbow!
+   change rgb parameter by randomNumber 0,255 for each of them the same is true for fill which is the arc of ranbow and base
+
+background(randomNumber(0, 255), randomNumber(0, 255), randomNumber(0, 255));
+ fill(randomNumber(0, 255), randomNumber(0, 255), randomNumber(0, 255));
+ellipse(200, 200, 400, 400);
+ fill(randomNumber(0, 255), randomNumber(0, 255), randomNumber(0, 255));
+ellipse(200, 200, 340, 340);
+ fill(randomNumber(0, 255), randomNumber(0, 255), randomNumber(0, 255));
+ellipse(200, 200, 280, 280);
+ fill(randomNumber(0, 255), randomNumber(0, 255), randomNumber(0, 255));
+ellipse(200, 200, 220, 220);
+ fill(randomNumber(0, 255), randomNumber(0, 255), randomNumber(0, 255));
+ellipse(200, 200, 160, 160);
+ fill(randomNumber(0, 255), randomNumber(0, 255), randomNumber(0, 255));
+ellipse(200, 200, 100, 100);
+ fill(randomNumber(0, 255), randomNumber(0, 255), randomNumber(0, 255));
+ellipse(200, 200, 40, 40);
+ fill(randomNumber(0, 255), randomNumber(0, 255), randomNumber(0, 255));
+rect(0, 200, 400, 200);
+
+// Random Arcs
+changing the x and y position by fixed randomNumber 50-350 both of them
+arc(randomNumber(50,350), randomNumber(50,350), 100, 100, 0, 90);
+arc(randomNumber(50,350), randomNumber(50,350), 100, 100, 0, 90);
+arc(randomNumber(50,350), randomNumber(50,350), 100, 100, 0, 90);
+arc(randomNumber(50,350), randomNumber(50,350), 100, 100, 0, 90);
+arc(randomNumber(50,350), randomNumber(50,350), 100, 100, 0, 90);
+
+
