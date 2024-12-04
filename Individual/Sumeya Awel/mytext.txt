@@ -335,8 +335,151 @@ line(0, 0, 400, 0);
 
 
 ## Lesson 5 
+i have learnt more about variables 
 
 //changing variables
-var xPosition = 200;
-var whatsTheY = 300;
-ellipse(xPosition, whatsTheY);
+        var xPosition = 200;
+        var whatsTheY = 300;
+        ellipse(xPosition, whatsTheY);
+
+
+//Debug: Naming Variables
+
+    No Spaces: Variable names cannot have spaces. Use underscores (_) or camelCase instead.
+    Must Start with a Letter: Variable names should start with a letter, not a number.
+    No Special Characters: Avoid using symbols (like @, $, %, etc.) in variable names.
+    Case Sensitivity: Variable names are case-sensitive (e.g., sizeCircle and sizecircle are different).
+
+        var sizeofcircle = 150;
+        var dimension1 = 100;
+        var yLocation = 200;
+        fill("OrangeRed");
+        ellipse(dimension1, yLocation, sizeofcircle);
+
+
+ //1 Update the code so the red petals touch each other
+
+        var petalSize = 73;
+        //Set Up
+        noStroke();
+        background("ForestGreen");
+        // Petals
+        fill("red");
+        ellipse(150,200,petalSize,petalSize);
+        ellipse(200,150,petalSize,petalSize);
+        ellipse(250,200,petalSize,petalSize);
+        ellipse(200,250,petalSize,petalSize);
+        // Flower Center
+        fill("black");
+        ellipse(200,200,50,50);
+    
+// Change the value assigned to circleSize so that the circle fills the entire screen.
+
+        var circleSize = 600;
+        fill("Crimson");
+        ellipse(200, 200, circleSize, circleSize);
+
+ //1 Update the code to match the image
+  Case Sensitivity: Variable names are case-sensitive (e.g., capital X and small x are different).
+        var x = 50;
+        var y = 200;
+        fill("deeppink");
+        ellipse(x,100);
+        ellipse(350,y);
+        rect(x, y);
+
+//Debug: Unused Variables
+
+var earSize = 80;
+var eyeSize = 15;
+var center = 200;
+fill("saddlebrown");
+ellipse(130, 115, earSize, earSize);
+ellipse(270, 115, earSize, earSize);
+ellipse(center, 195, 205, 205);
+ellipse(center, 245, 100, 100);
+fill("black");
+ellipse(center, 225, 20, 20);
+ellipse(165, 175, eyeSize,eyeSize);
+ellipse(235, 175, eyeSize, eyeSize);
+line(center, 235, center, 265);
+noFill();
+arc(200, 215, 100, 100, 35, 145);
+
+
+//2 Update the variable names at the top of the code
+
+variable not declared also Rearranging the colors
+var size = 100;
+var color1 = "green";
+var color2 = "red";
+var color3= "orange";
+fill(color2);
+ellipse(200, 100, size, size);
+noFill();
+rect(150, 50, size, size);
+fill(color3);
+ellipse(200, 200, size, size);
+noFill();
+rect(150, 150, size, size);
+fill(color1);
+ellipse(200, 300, size, size);
+noFill();
+rect(150, 250, size, size);
+
+//2 Change the program to use the eyeSize variable.
+Having 2 option the first option changing the w and h size to eyeSize to 27 the second option change w and h by use the variable name eyesize
+var eyeSize = 27;
+noStroke();
+background("green");
+// Face
+fill("yellow");
+ellipse(200,200,200,200);
+// Eyes
+fill("black");
+ellipse(160,170,eyeSize,eyeSize);
+ellipse(240,170,27,27);
+// Mouth
+fill("white");
+rect(160,240,80,20);
+
+
+// Challenge: Updating Variables
+incriment on x put as it is adding other ellipse and incriment the y also 50
+
+var x = 50;
+var y = 50;
+fill("red");
+ellipse(x, y);
+// Increase x by 50, now x is 100
+x = x + 50;
+ellipse(x, 100);
+// Increase x by 50, now x is 150
+x = x + 50;
+ellipse(x, 150);
+x = x + 50;
+ellipse(x, 200);
+x = x + 50;
+ellipse(x, 250);
+x = x + 50;
+ellipse(x, 300);
+x = x + 50;
+ellipse(x, 350);
+
+// Challenge: String Variables
+change the color name to value by looking W3School-css colors 
+
+var color1 = "#DC143C";
+var color2 = "#FF7F50";
+var color3 = "#FFD700";
+var color4 = "#F0FFFF";
+fill(color1);
+regularPolygon(200, 200, 5, 200);
+fill(color2);
+regularPolygon(200, 200, 6, 150);
+fill(color3);
+regularPolygon(200, 200, 7, 100);
+fill(color4);
+ellipse(200, 200, 100, 100);
+
+
