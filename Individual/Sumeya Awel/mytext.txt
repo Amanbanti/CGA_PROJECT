@@ -313,7 +313,7 @@ arc(350, 250, 100, 100, -180, 90);
 fill("blue");
 arc(50, 350, 100, 100, -250, 50);
 
-//2) Finish the code so it matches the picture
+//2 Finish the code so it matches the picture
 line(0, 0, 50, 400);
 line(0, 50, 100, 400);
 line(0, 100, 150, 400);
@@ -625,4 +625,20 @@ arc(randomNumber(50,350), randomNumber(50,350), 100, 100, 0, 90);
 arc(randomNumber(50,350), randomNumber(50,350), 100, 100, 0, 90);
 arc(randomNumber(50,350), randomNumber(50,350), 100, 100, 0, 90);
 
+
+## Lesson 7 Mini-project -- Robot-Faces
+
+// Review Regular Polygons
+        regularPolygon(50, 85, 3, 50);
+        regularPolygon(150, 75, 4, 50);
+        regularPolygon(240, 70, 5, 50);
+        regularPolygon(340, 67, 6, 50);
+        regularPolygon(50, 175, 7, 50);
+        regularPolygon(150, 175, 8, 50);
+        regularPolygon(250, 175, 9, 50);
+        regularPolygon(350, 175, 10, 50);
+        regularPolygon(50, 275, 11, 50);
+        regularPolygon(152, 275, 12, 50);
+        regularPolygon(252, 275, 13, 50);
+        regularPolygon(350, 275, 14, 50);
 
