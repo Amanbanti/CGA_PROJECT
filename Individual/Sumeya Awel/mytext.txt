@@ -644,17 +644,20 @@ it's about review the some activities exercise
         regularPolygon(350, 275, 14, 50);
 
 // Robot Face planning
+
 a rorbort is duck face which is composed of triangle shape ellipse line stroke weight 
-fill("black");
+
+background("lightgray");
+fill("brown");
 ellipse(196, 200,30,70);
 strokeWeight(5);
-fill("red");
+fill("tomato");
 ellipse(200, 100,150,150);
 fill("brown");
 regularPolygon(255, 110, 3, 40);
 fill("black");
 ellipse(200, 65,30,30);
-fill("pink");
+fill(255, 110, 3, 40);
 ellipse(100, 250,210,100);
 line(65,295,65,355);
 line(115,300,115,355);
