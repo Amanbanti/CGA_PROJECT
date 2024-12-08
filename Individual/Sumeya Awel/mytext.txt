@@ -627,6 +627,7 @@ arc(randomNumber(50,350), randomNumber(50,350), 100, 100, 0, 90);
 
 
 ## Lesson 7 Mini-project -- Robot-Faces
+it's about review the some activities exercise  
 
 // Review Regular Polygons
         regularPolygon(50, 85, 3, 50);
@@ -642,4 +643,24 @@ arc(randomNumber(50,350), randomNumber(50,350), 100, 100, 0, 90);
         regularPolygon(252, 275, 13, 50);
         regularPolygon(350, 275, 14, 50);
 
-// Robot Face
+// Robot Face planning
+
+fill("black");
+ellipse(196, 200,30,70);
+strokeWeight(5);
+fill("red");
+ellipse(200, 100,150,150);
+fill("brown");
+regularPolygon(255, 110, 3, 40);
+fill("black");
+ellipse(200, 65,30,30);
+fill("pink");
+ellipse(100, 250,210,100);
+line(65,295,65,355);
+line(115,300,115,355);
+line(65,355,76,342);
+line(65,355,80,355);
+line(65,355,78,368);
+line(115,355,128,342);
+line(115,355,130,355);
+line(115,355,128,368);
