@@ -313,7 +313,7 @@ arc(350, 250, 100, 100, -180, 90);
 fill("blue");
 arc(50, 350, 100, 100, -250, 50);
 
-//2) Finish the code so it matches the picture
+//2 Finish the code so it matches the picture
 line(0, 0, 50, 400);
 line(0, 50, 100, 400);
 line(0, 100, 150, 400);
@@ -335,8 +335,339 @@ line(0, 0, 400, 0);
 
 
 ## Lesson 5 
+i have learnt more about variables 
 
 //changing variables
-var xPosition = 200;
-var whatsTheY = 300;
-ellipse(xPosition, whatsTheY);
+        var xPosition = 200;
+        var whatsTheY = 300;
+        ellipse(xPosition, whatsTheY);
+
+
+//Debug: Naming Variables
+
+    No Spaces: Variable names cannot have spaces. Use underscores (_) or camelCase instead.
+    Must Start with a Letter: Variable names should start with a letter, not a number.
+    No Special Characters: Avoid using symbols (like @, $, %, etc.) in variable names.
+    Case Sensitivity: Variable names are case-sensitive (e.g., sizeCircle and sizecircle are different).
+
+        var sizeofcircle = 150;
+        var dimension1 = 100;
+        var yLocation = 200;
+        fill("OrangeRed");
+        ellipse(dimension1, yLocation, sizeofcircle);
+
+
+ //1 Update the code so the red petals touch each other
+
+        var petalSize = 73;
+        //Set Up
+        noStroke();
+        background("ForestGreen");
+        // Petals
+        fill("red");
+        ellipse(150,200,petalSize,petalSize);
+        ellipse(200,150,petalSize,petalSize);
+        ellipse(250,200,petalSize,petalSize);
+        ellipse(200,250,petalSize,petalSize);
+        // Flower Center
+        fill("black");
+        ellipse(200,200,50,50);
+    
+// Change the value assigned to circleSize so that the circle fills the entire screen.
+
+        var circleSize = 600;
+        fill("Crimson");
+        ellipse(200, 200, circleSize, circleSize);
+
+ //1 Update the code to match the image
+  Case Sensitivity: Variable names are case-sensitive (e.g., capital X and small x are different).
+        var x = 50;
+        var y = 200;
+        fill("deeppink");
+        ellipse(x,100);
+        ellipse(350,y);
+        rect(x, y);
+
+//Debug: Unused Variables
+
+var earSize = 80;
+var eyeSize = 15;
+var center = 200;
+fill("saddlebrown");
+ellipse(130, 115, earSize, earSize);
+ellipse(270, 115, earSize, earSize);
+ellipse(center, 195, 205, 205);
+ellipse(center, 245, 100, 100);
+fill("black");
+ellipse(center, 225, 20, 20);
+ellipse(165, 175, eyeSize,eyeSize);
+ellipse(235, 175, eyeSize, eyeSize);
+line(center, 235, center, 265);
+noFill();
+arc(200, 215, 100, 100, 35, 145);
+
+
+//2 Update the variable names at the top of the code
+
+variable not declared also Rearranging the colors
+var size = 100;
+var color1 = "green";
+var color2 = "red";
+var color3= "orange";
+fill(color2);
+ellipse(200, 100, size, size);
+noFill();
+rect(150, 50, size, size);
+fill(color3);
+ellipse(200, 200, size, size);
+noFill();
+rect(150, 150, size, size);
+fill(color1);
+ellipse(200, 300, size, size);
+noFill();
+rect(150, 250, size, size);
+
+//2 Change the program to use the eyeSize variable.
+Having 2 option the first option changing the w and h size to eyeSize to 27 the second option change w and h by use the variable name eyesize
+
+var eyeSize = 27;
+noStroke();
+background("green");
+// Face
+fill("yellow");
+ellipse(200,200,200,200);
+// Eyes
+fill("black");
+ellipse(160,170,eyeSize,eyeSize);
+ellipse(240,170,27,27);
+// Mouth
+fill("white");
+rect(160,240,80,20);
+
+
+// Challenge: Updating Variables
+incriment on x put as it is adding other ellipse and incriment the y also 50
+
+var x = 50;
+var y = 50;
+fill("red");
+ellipse(x, y);
+// Increase x by 50, now x is 100
+x = x + 50;
+ellipse(x, 100);
+// Increase x by 50, now x is 150
+x = x + 50;
+ellipse(x, 150);
+x = x + 50;
+ellipse(x, 200);
+x = x + 50;
+ellipse(x, 250);
+x = x + 50;
+ellipse(x, 300);
+x = x + 50;
+ellipse(x, 350);
+
+// Challenge: String Variables
+change the color name to value by looking W3School-css colors 
+
+var color1 = "#DC143C";
+var color2 = "#FF7F50";
+var color3 = "#FFD700";
+var color4 = "#F0FFFF";
+fill(color1);
+regularPolygon(200, 200, 5, 200);
+fill(color2);
+regularPolygon(200, 200, 6, 150);
+fill(color3);
+regularPolygon(200, 200, 7, 100);
+fill(color4);
+ellipse(200, 200, 100, 100);
+
+
+## Lesson 6
+i have learnt the way of i used randomNumber in backgroundcolor, fill,the x and y position w and h and also with varable it is important for movment of object
+//Random Numbers
+       background("tomato");
+       fill("orange");
+       ellipse(randomNumber(0,400), 200, 50, 50);
+
+//1 Make the ellipse appear at random y coordinates
+       background("tomato");
+       fill("orange");
+       ellipse(randomNumber(0,400),randomNumber(0,400), 50, 50);
+
+
+// Variables and Random Numbers
+     
+var eyeSize = randomNumber(15,35);
+noStroke();
+background("green");
+// Face
+fill("yellow");
+ellipse(200,200,200,200);
+// Eyes
+fill("black");
+ellipse(160,170,eyeSize,eyeSize);
+ellipse(240,170,eyeSize,eyeSize);
+// Mouth
+fill("white");
+rect(160,240,80,20);
+
+
+// Changing variable values
+
+var petalSize;
+background("green");
+petalSize = randomNumber(20,45);
+fill("purple");
+ellipse(75,100,petalSize,petalSize);
+ellipse(125,100,petalSize,petalSize);
+ellipse(100,75,petalSize,petalSize);
+ellipse(100,125,petalSize,petalSize);
+fill("yellow");
+ellipse(100,100, 50, 50);
+petalSize = randomNumber(30,60);
+fill("purple");
+ellipse(275,300,petalSize,petalSize);
+ellipse(325,300,petalSize,petalSize);
+ellipse(300,275,petalSize,petalSize);
+ellipse(300,325,petalSize,petalSize);
+fill("yellow");
+ellipse(300,300, 50, 50);
+
+
+// Modify the Planets
+
+background("black");
+fill("yellow");
+ellipse(0, 200, randomNumber(40,70), randomNumber(50,60));
+fill("salmon");
+ellipse(80, 200, randomNumber(20,50), randomNumber(20,50));
+fill("cyan");
+ellipse(160, 200, randomNumber(50,100), 50);
+fill("lavender");
+ellipse(240, 200, randomNumber(30,50), randomNumber(50,90));
+fill("crimson");
+ellipse(320, 200, randomNumber(50,100), randomNumber(50,100));
+fill("orchid");
+ellipse(400, 200, randomNumber(20,50), randomNumber(30,50));
+
+// Debug: Random Shape Movement
+
+var xPosition = randomNumber(0,170);
+fill("pink");
+rect(xPosition, 100, 250, 50);
+fill("purple");
+rect(xPosition, 150, 250, 50);
+fill("firebrick");
+rect(xPosition, 200, 250, 50);
+
+
+// Modify the Scene
+   changing the sun x position and y position by randomNumber and also the mountains the same is true for this.
+
+background("lightblue");
+fill("yellow");
+ellipse(randomNumber(80,325), randomNumber(25,65));
+fill("brown");
+regularPolygon(randomNumber(50,100), 300, 3, 200);
+regularPolygon(randomNumber(200,300), 300, 3, 200);
+regularPolygon(randomNumber(100,300), 300, 3, 250);
+regularPolygon(randomNumber(10,50), 300, 3, 250);
+regularPolygon(randomNumber(300,390), 300, 3, 250);
+fill("lightgreen");
+rect(0, 300, 400, 100);
+
+// Rainbow Snake
+add other ellipse and x position increment by 40 other remain the same
+
+background("skyBlue");
+fill("red");
+ellipse(100, randomNumber(190,210), 50, 50);
+fill("orange");
+ellipse(140, randomNumber(190,210), 50, 50);
+fill("yellow");
+ellipse(180, randomNumber(190,210), 50, 50);
+fill("green");
+ellipse(220,randomNumber(190,210) , 50, 50);
+fill("blue");
+ellipse(260,randomNumber(190,210), 50, 50);
+fill("purple");
+ellipse(300, randomNumber(190,210), 50, 50);
+
+
+// Random Rainbow!
+   change rgb parameter by randomNumber 0,255 for each of them the same is true for fill which is the arc of ranbow and base
+
+background(randomNumber(0, 255), randomNumber(0, 255), randomNumber(0, 255));
+ fill(randomNumber(0, 255), randomNumber(0, 255), randomNumber(0, 255));
+ellipse(200, 200, 400, 400);
+ fill(randomNumber(0, 255), randomNumber(0, 255), randomNumber(0, 255));
+ellipse(200, 200, 340, 340);
+ fill(randomNumber(0, 255), randomNumber(0, 255), randomNumber(0, 255));
+ellipse(200, 200, 280, 280);
+ fill(randomNumber(0, 255), randomNumber(0, 255), randomNumber(0, 255));
+ellipse(200, 200, 220, 220);
+ fill(randomNumber(0, 255), randomNumber(0, 255), randomNumber(0, 255));
+ellipse(200, 200, 160, 160);
+ fill(randomNumber(0, 255), randomNumber(0, 255), randomNumber(0, 255));
+ellipse(200, 200, 100, 100);
+ fill(randomNumber(0, 255), randomNumber(0, 255), randomNumber(0, 255));
+ellipse(200, 200, 40, 40);
+ fill(randomNumber(0, 255), randomNumber(0, 255), randomNumber(0, 255));
+rect(0, 200, 400, 200);
+
+// Random Arcs
+changing the x and y position by fixed randomNumber 50-350 both of them
+arc(randomNumber(50,350), randomNumber(50,350), 100, 100, 0, 90);
+arc(randomNumber(50,350), randomNumber(50,350), 100, 100, 0, 90);
+arc(randomNumber(50,350), randomNumber(50,350), 100, 100, 0, 90);
+arc(randomNumber(50,350), randomNumber(50,350), 100, 100, 0, 90);
+arc(randomNumber(50,350), randomNumber(50,350), 100, 100, 0, 90);
+
+
+## Lesson 7 Mini-project -- Robot-Faces
+it's about review the some activities exercise  
+
+// Review Regular Polygons
+        regularPolygon(50, 85, 3, 50);
+        regularPolygon(150, 75, 4, 50);
+        regularPolygon(240, 70, 5, 50);
+        regularPolygon(340, 67, 6, 50);
+        regularPolygon(50, 175, 7, 50);
+        regularPolygon(150, 175, 8, 50);
+        regularPolygon(250, 175, 9, 50);
+        regularPolygon(350, 175, 10, 50);
+        regularPolygon(50, 275, 11, 50);
+        regularPolygon(152, 275, 12, 50);
+        regularPolygon(252, 275, 13, 50);
+        regularPolygon(350, 275, 14, 50);
+
+// Robot Face planning
+
+a rorbort is duck face which is composed of triangle shape ellipse line stroke weight 
+
+background("lightgray");
+fill("brown");
+ellipse(196, 200,30,70);
+strokeWeight(5);
+fill("tomato");
+ellipse(200, 100,150,150);
+fill("brown");
+regularPolygon(255, 110, 3, 40);
+fill("black");
+ellipse(200, 65,30,30);
+fill(255, 110, 3, 40);
+ellipse(100, 250,210,100);
+line(65,295,65,355);
+line(115,300,115,355);
+line(65,355,76,342);
+line(65,355,80,355);
+line(65,355,78,368);
+line(115,355,128,342);
+line(115,355,130,355);
+line(115,355,128,368);
+
+
+
+## Lesson 8 Sprites 
