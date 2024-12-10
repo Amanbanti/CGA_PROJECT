@@ -591,3 +591,166 @@ Lesson 3: Drawing in Game Lab
 
 ......................................................................................................
 
+   ## Lesson 6
+
+      I have learned how to use the randomNumber function in various aspects of my code, including setting the background color,
+      controlling the fill color, and determining the X and Y positions, as well as the width and height of shapes like ellipses and rectangles.
+      By introducing randomness, I can create dynamic, unpredictable changes in my drawings, making them more engaging and interactive.
+
+      #Change the numbers inside randomNumber() so the ellipse can appear anywhere horizontally on the screen
+         background("tomato");
+         fill("orange");
+         ellipse(randomNumber(0,400), 200, 50, 50);
+......................................................................................................
+
+      #Make the ellipse appear at random y coordinates
+         background("tomato");
+         fill("orange");
+         ellipse(randomNumber(0,400),randomNumber(0,400), 50, 50);
+......................................................................................................
+
+      #Assign a random size for the eyes
+         var eyeSize = randomNumber(10, 50); // Eyes will have a random size between 10 and 50
+
+         noStroke();
+         background("green");
+
+         // Face
+         fill("yellow");
+         ellipse(200, 200, 200, 200);
+
+         // Eyes
+         fill("black");
+         ellipse(160, 170, eyeSize, eyeSize); // Left eye
+         ellipse(240, 170, eyeSize, eyeSize); // Right eye
+
+         // Mouth
+         fill("white");
+         rect(160, 240, 80, 20);
+......................................................................................................
+
+         var petalSize;
+         background("green");
+
+         #Update the first flower's petals to be a random size
+         petalSize = randomNumber(20, 50); // Random size between 20 and 50 for the first flower's petals
+         // petals
+         fill("purple");
+         ellipse(75, 100, petalSize, petalSize);
+         ellipse(125, 100, petalSize, petalSize);
+         ellipse(100, 75, petalSize, petalSize);
+         ellipse(100, 125, petalSize, petalSize);
+         // center
+         fill("yellow");
+         ellipse(100, 100, 50, 50);
+
+         #Update the second flower's petals to be a random size
+         petalSize = randomNumber(40, 80); // Random size between 40 and 80 for the second flower's petals
+         // petals
+         fill("purple");
+         ellipse(275, 300, petalSize, petalSize);
+         ellipse(325, 300, petalSize, petalSize);
+         ellipse(300, 275, petalSize, petalSize);
+         ellipse(300, 325, petalSize, petalSize);
+         // center
+         fill("yellow");
+         ellipse(300, 300, 50, 50);
+
+......................................................................................................
+
+   background("black");
+
+   #Update each planet to be a random size each time the program is run
+      fill("yellow");
+      ellipse(0, 200, randomNumber(20, 70), randomNumber(20, 70)); 
+      fill("salmon");
+      ellipse(80, 200, randomNumber(20, 70), randomNumber(20, 70));
+      fill("cyan");
+      ellipse(160, 200, randomNumber(20, 70), randomNumber(20, 70));
+      fill("lavender");
+      ellipse(240, 200, randomNumber(20, 70), randomNumber(20, 70)); 
+      fill("crimson");
+      ellipse(320, 200, randomNumber(20, 70), randomNumber(20, 70));
+      fill("orchid");
+      ellipse(400, 200, randomNumber(20, 70), randomNumber(20, 70)); 
+......................................................................................................
+   #Debug: Random Shape Position
+   #Update the code so the rectangles appear stacked at random x positions
+      var xPosition = randomNumber(0,150);
+      fill("pink");
+      rect(xPosition , 100, 250, 50);
+      fill("purple");
+      rect(xPosition, 150, 250, 50) ;
+      fill("firebrick");
+      rect(xPosition, 200, 250, 50);
+......................................................................................................
+   #Modify the Scene
+   #changing the sun x position and y position by randomNumber and also the mountains the same is true for this.
+
+      background("lightblue");
+      fill("yellow");
+      ellipse(randomNumber(80,325), randomNumber(25,65));
+      fill("brown");
+      regularPolygon(randomNumber(100,150), 300, 3, 200);
+      regularPolygon(randomNumber(250,350), 300, 3, 200);
+      regularPolygon(randomNumber(150,350), 300, 3, 250);
+      regularPolygon(randomNumber(10,50), 300, 3, 250);
+      regularPolygon(randomNumber(300,390), 300, 3, 250);
+      fill("lightgreen");
+      rect(0, 300, 400, 100);
+......................................................................................................
+   #Rainbow Snake
+   #Add at least three new different colored circles to your rainbow snake.
+   #Use randomNumber to make the rest of the snake's body move up and down like the first three.
+
+      background("skyBlue");
+
+      // Head and body segments using random Y positions
+      fill("red");
+      ellipse(100, randomNumber(190, 210), 50, 50);
+
+      fill("orange");
+      ellipse(140, randomNumber(190, 210), 50, 50);
+
+      fill("yellow");
+      ellipse(180, randomNumber(190, 210), 50, 50);
+
+      // Adding three new segments with different colors
+      fill("green");
+      ellipse(220, randomNumber(190, 210), 50, 50);
+
+      fill("blue");
+      ellipse(260, randomNumber(190, 210), 50, 50);
+
+      fill("purple");
+      ellipse(300, randomNumber(190, 210), 50, 50);
+......................................................................................................
+      #Favorite Song
+         // Background to represent a night sky
+         background("black");
+
+         // Dynamic lights
+         fill(randomNumber(100, 255), randomNumber(100, 255), randomNumber(100, 255));
+         ellipse(randomNumber(50, 400), randomNumber(50, 200), 30, 30); // First light
+         fill(randomNumber(100, 255), randomNumber(100, 255), randomNumber(100, 255));
+         ellipse(randomNumber(50, 400), randomNumber(50, 200), 30, 30); // Second light
+         fill(randomNumber(100, 255), randomNumber(100, 255), randomNumber(100, 255));
+         ellipse(randomNumber(50, 400), randomNumber(50, 200), 30, 30); // Third light
+
+         // Buildings as part of a cityscape
+         fill("gray");
+         rect(50, 300, 50, 100); // First building
+         rect(150, 250, 50, 150); // Second building
+         rect(250, 280, 50, 120); // Third building
+         rect(350, 270, 50, 130); // Fourth building
+
+         // Dynamic stars in the night sky
+         fill("white");
+         ellipse(randomNumber(10, 390), randomNumber(10, 150), 5, 5);
+         ellipse(randomNumber(10, 390), randomNumber(10, 150), 5, 5);
+         ellipse(randomNumber(10, 390), randomNumber(10, 150), 5, 5);
+
+         // Dynamic light beams
+         stroke(randomNumber(100, 255), randomNumber(100, 255), randomNumber(100, 255));
+         line(200, 150, 180, 300);
+         line(200, 150, 220, 300);
