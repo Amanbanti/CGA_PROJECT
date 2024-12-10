@@ -671,3 +671,32 @@ line(115,355,128,368);
 
 
 ## Lesson 8 Sprites 
+
+all images are created and managed in the animation tab.
+ we can drop the image from our computer file and draw what we want in anmation.
+ 
+ properties
+x
+y
+width
+height
+shapeStroke
+shapeColor
+
+to create a sprite a command 
+var sprite = createSprite (x,y);
+drawsprites ();
+sprite.setAnimation("animation_1");
+
+sprites 
+var rectStroke
+var rectX
+var rectHeight
+var rectWidth
+var rectY
+var rect2Stroke
+var rect2X
+var rect2Height 
+var rect2Width
+var rect2Y
+var rect2Color
