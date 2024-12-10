@@ -423,4 +423,390 @@ Lesson 3: Drawing in Game Lab
          line(0, 400, 0, 0);
          line(0, 0, 400, 0);
 
+......................................................................................................
 
+## Lesson 5 
+
+   #Change the values of the variables to update the position of the ellipse
+        var xPosition = 200;
+        var whatsTheY = 300;
+        ellipse(xPosition, whatsTheY);
+
+......................................................................................................
+
+
+   #Find the rule each variable label violates?
+
+      Rule Violations and Fixes:
+         var size of circle = 150;
+         Rule Violated: No Spaces (Variable names cannot have spaces).
+         Correction: Rename to sizeOfCircle.
+
+         var 1dimension = 100;
+         Rule Violated: Must Start with a Letter (Variable names cannot start with a number).
+         Correction: Rename to dimension1.
+
+         var yLocation );= 200;
+         Rule Violated: No Special Characters (Variable names should not include invalid symbols like ) in this case).
+         Correction: Remove the invalid character and rename to yLocation.
+
+         ellipse(1dimension, YLocation, size of circle, size of circle);
+         Rule Violated: Case Sensitivity (JavaScript variable names are case-sensitive, and YLocation is different from yLocation).
+         Correction: Use the corrected case, yLocation.
+
+
+
+   #Correct the errors by picking new names that follow the rules above.
+         var sizeOfCircle = 150; // Fixed "size of circle"
+         var dimension1 = 100;   // Fixed "1dimension"
+         var yLocation = 200;    // Fixed "yLocation with special character"
+
+         fill("OrangeRed");
+         ellipse(dimension1, yLocation, sizeOfCircle, sizeOfCircle); // Used corrected variable names
+
+......................................................................................................
+
+   #Update the code so the red petals touch each other
+
+        var petalSize = 75;
+        noStroke();
+        background("ForestGreen");
+        fill("red");
+        ellipse(150,200,petalSize,petalSize);
+        ellipse(200,150,petalSize,petalSize);
+        ellipse(250,200,petalSize,petalSize);
+        ellipse(200,250,petalSize,petalSize);
+        fill("black");
+        ellipse(200,200,50,50);
+
+......................................................................................................
+
+    #Change the value assigned to circleSize so that the circle fills the entire screen.
+
+         var circleSize = 1200;
+         fill("Crimson");
+         ellipse(400, 400, circleSize, circleSize);
+
+......................................................................................................
+
+
+   #Update the code to match the image
+      var x = 45;
+      var y = 200;
+      fill("deeppink");
+      ellipse(x,110);
+      ellipse(360,y);
+      rect(x, y);
+
+......................................................................................................
+
+   #Debug: Unused Variables
+   #Update the code to use the variables
+
+      var earSize = 80;
+      var eyeSize = 15;
+      var center = 200;
+      fill("saddlebrown");
+      ellipse(130, 115, earSize, earSize);
+      ellipse(270, 115, earSize, earSize);
+      ellipse(center, 195, 205, 205);
+      ellipse(center, 245, 100, 100);
+      fill("black");
+      ellipse(center, 225, 20, 20);
+      ellipse(165, 175, eyeSize,eyeSize);
+      ellipse(235, 175, eyeSize, eyeSize);
+      line(center, 235, center, 265);
+      noFill();
+      arc(200, 215, 100, 100, 35, 145);
+
+......................................................................................................
+   #Debug: Adding Variables
+   #Update the variable names at the top of the code
+      var size = 100;
+      var c1 = "green";
+      var c2 = "red";
+      var c3= "orange";
+      fill(c2);
+      ellipse(200, 100, size, size);
+      noFill();
+      rect(150, 50, size, size);
+      fill(c3);
+      ellipse(200, 200, size, size);
+      noFill();
+      rect(150, 150, size, size);
+      fill(c1);
+      ellipse(200, 300, size, size);
+      noFill();
+      rect(150, 250, size, size);
+
+......................................................................................................
+
+   #Change the program to use the eyeSize variable.
+      var eyeSize = 40;
+
+      noStroke();
+      background("green");
+
+      // Face
+      fill("yellow");
+      ellipse(200,200,200,200);
+
+      // Eyes
+      fill("black");
+      ellipse(160,170,eyeSize,eyeSize);
+      ellipse(240,170,eyeSize,eyeSize);
+
+      // Mouth
+      fill("white");
+      rect(160,240,80,20);
+
+......................................................................................................
+
+   #Challenge: Draw a Changing Image
+   #Common variables for size and placement
+      var faceSize = 200; 
+      var eyeSize = 20;
+      var y = 150;      
+      var xOffset = 50;   
+      var mouthWidth = 100;
+      var mouthHeight = 20;
+
+      // Draw the face
+      fill("peachpuff");
+      ellipse(200, 200, faceSize, faceSize); // Face
+
+      // Draw the eyes
+      fill("white");
+      ellipse(200 - xOffset, y, eyeSize, eyeSize); // Left eye
+      ellipse(200 + xOffset, y, eyeSize, eyeSize); // Right eye
+
+      fill("black");
+      ellipse(200 - xOffset, y, eyeSize / 2, eyeSize / 2); // Left pupil
+      ellipse(200 + xOffset, y, eyeSize / 2, eyeSize / 2); // Right pupil
+
+      // Draw the mouth
+      fill("red");
+      ellipse(200, y + 50, mouthWidth, mouthHeight); // Mouth
+
+
+......................................................................................................
+
+   ## Lesson 6
+
+      I have learned how to use the randomNumber function in various aspects of my code, including setting the background color,
+      controlling the fill color, and determining the X and Y positions, as well as the width and height of shapes like ellipses and rectangles.
+      By introducing randomness, I can create dynamic, unpredictable changes in my drawings, making them more engaging and interactive.
+
+      #Change the numbers inside randomNumber() so the ellipse can appear anywhere horizontally on the screen
+         background("tomato");
+         fill("orange");
+         ellipse(randomNumber(0,400), 200, 50, 50);
+......................................................................................................
+
+      #Make the ellipse appear at random y coordinates
+         background("tomato");
+         fill("orange");
+         ellipse(randomNumber(0,400),randomNumber(0,400), 50, 50);
+......................................................................................................
+
+      #Assign a random size for the eyes
+         var eyeSize = randomNumber(10, 50); // Eyes will have a random size between 10 and 50
+
+         noStroke();
+         background("green");
+
+         // Face
+         fill("yellow");
+         ellipse(200, 200, 200, 200);
+
+         // Eyes
+         fill("black");
+         ellipse(160, 170, eyeSize, eyeSize); // Left eye
+         ellipse(240, 170, eyeSize, eyeSize); // Right eye
+
+         // Mouth
+         fill("white");
+         rect(160, 240, 80, 20);
+......................................................................................................
+
+         var petalSize;
+         background("green");
+
+         #Update the first flower's petals to be a random size
+         petalSize = randomNumber(20, 50); // Random size between 20 and 50 for the first flower's petals
+         // petals
+         fill("purple");
+         ellipse(75, 100, petalSize, petalSize);
+         ellipse(125, 100, petalSize, petalSize);
+         ellipse(100, 75, petalSize, petalSize);
+         ellipse(100, 125, petalSize, petalSize);
+         // center
+         fill("yellow");
+         ellipse(100, 100, 50, 50);
+
+         #Update the second flower's petals to be a random size
+         petalSize = randomNumber(40, 80); // Random size between 40 and 80 for the second flower's petals
+         // petals
+         fill("purple");
+         ellipse(275, 300, petalSize, petalSize);
+         ellipse(325, 300, petalSize, petalSize);
+         ellipse(300, 275, petalSize, petalSize);
+         ellipse(300, 325, petalSize, petalSize);
+         // center
+         fill("yellow");
+         ellipse(300, 300, 50, 50);
+
+......................................................................................................
+
+   background("black");
+
+   #Update each planet to be a random size each time the program is run
+      fill("yellow");
+      ellipse(0, 200, randomNumber(20, 70), randomNumber(20, 70)); 
+      fill("salmon");
+      ellipse(80, 200, randomNumber(20, 70), randomNumber(20, 70));
+      fill("cyan");
+      ellipse(160, 200, randomNumber(20, 70), randomNumber(20, 70));
+      fill("lavender");
+      ellipse(240, 200, randomNumber(20, 70), randomNumber(20, 70)); 
+      fill("crimson");
+      ellipse(320, 200, randomNumber(20, 70), randomNumber(20, 70));
+      fill("orchid");
+      ellipse(400, 200, randomNumber(20, 70), randomNumber(20, 70)); 
+......................................................................................................
+   #Debug: Random Shape Position
+   #Update the code so the rectangles appear stacked at random x positions
+      var xPosition = randomNumber(0,150);
+      fill("pink");
+      rect(xPosition , 100, 250, 50);
+      fill("purple");
+      rect(xPosition, 150, 250, 50) ;
+      fill("firebrick");
+      rect(xPosition, 200, 250, 50);
+......................................................................................................
+   #Modify the Scene
+   #changing the sun x position and y position by randomNumber and also the mountains the same is true for this.
+
+      background("lightblue");
+      fill("yellow");
+      ellipse(randomNumber(80,325), randomNumber(25,65));
+      fill("brown");
+      regularPolygon(randomNumber(100,150), 300, 3, 200);
+      regularPolygon(randomNumber(250,350), 300, 3, 200);
+      regularPolygon(randomNumber(150,350), 300, 3, 250);
+      regularPolygon(randomNumber(10,50), 300, 3, 250);
+      regularPolygon(randomNumber(300,390), 300, 3, 250);
+      fill("lightgreen");
+      rect(0, 300, 400, 100);
+......................................................................................................
+   #Rainbow Snake
+   #Add at least three new different colored circles to your rainbow snake.
+   #Use randomNumber to make the rest of the snake's body move up and down like the first three.
+
+      background("skyBlue");
+
+      // Head and body segments using random Y positions
+      fill("red");
+      ellipse(100, randomNumber(190, 210), 50, 50);
+
+      fill("orange");
+      ellipse(140, randomNumber(190, 210), 50, 50);
+
+      fill("yellow");
+      ellipse(180, randomNumber(190, 210), 50, 50);
+
+      // Adding three new segments with different colors
+      fill("green");
+      ellipse(220, randomNumber(190, 210), 50, 50);
+
+      fill("blue");
+      ellipse(260, randomNumber(190, 210), 50, 50);
+
+      fill("purple");
+      ellipse(300, randomNumber(190, 210), 50, 50);
+......................................................................................................
+      #Favorite Song
+         // Background to represent a night sky
+         background("black");
+
+         // Dynamic lights
+         fill(randomNumber(100, 255), randomNumber(100, 255), randomNumber(100, 255));
+         ellipse(randomNumber(50, 400), randomNumber(50, 200), 30, 30); // First light
+         fill(randomNumber(100, 255), randomNumber(100, 255), randomNumber(100, 255));
+         ellipse(randomNumber(50, 400), randomNumber(50, 200), 30, 30); // Second light
+         fill(randomNumber(100, 255), randomNumber(100, 255), randomNumber(100, 255));
+         ellipse(randomNumber(50, 400), randomNumber(50, 200), 30, 30); // Third light
+
+         // Buildings as part of a cityscape
+         fill("gray");
+         rect(50, 300, 50, 100); // First building
+         rect(150, 250, 50, 150); // Second building
+         rect(250, 280, 50, 120); // Third building
+         rect(350, 270, 50, 130); // Fourth building
+
+         // Dynamic stars in the night sky
+         fill("white");
+         ellipse(randomNumber(10, 390), randomNumber(10, 150), 5, 5);
+         ellipse(randomNumber(10, 390), randomNumber(10, 150), 5, 5);
+         ellipse(randomNumber(10, 390), randomNumber(10, 150), 5, 5);
+
+         // Dynamic light beams
+         stroke(randomNumber(100, 255), randomNumber(100, 255), randomNumber(100, 255));
+         line(200, 150, 180, 300);
+         line(200, 150, 220, 300);
+......................................................................................................
+
+## Lesson 7 Mini-project -- Robot-Faces
+
+   #Review Shape Blocks
+   #Review Regular Polygons
+        regularPolygon(50, 85, 3, 50);
+        regularPolygon(150, 75, 4, 50);
+        regularPolygon(240, 70, 5, 50);
+        regularPolygon(340, 67, 6, 50);
+        regularPolygon(50, 175, 7, 50);
+        regularPolygon(150, 175, 8, 50);
+        regularPolygon(250, 175, 9, 50);
+        regularPolygon(350, 175, 10, 50);
+        regularPolygon(50, 275, 11, 50);
+        regularPolygon(152, 275, 12, 50);
+        regularPolygon(252, 275, 13, 50);
+        regularPolygon(350, 275, 14, 50);
+......................................................................................................
+
+   #Robot Face
+   #Use at least 4 different shape blocks, at least 4 variables with random numbers
+    to create a robot face with unique and creative features!
+
+         // Variables for robot's features
+         var headSize = randomNumber(150, 200);
+         var eyeSize = randomNumber(20, 40);
+         var mouthWidth = randomNumber(50, 100);
+         var antennaHeight = randomNumber(50, 100);
+
+         // Background
+         background("lightblue");
+
+         // Head
+         fill("silver");
+         rect(150, 150, headSize, headSize);
+
+         // Eyes
+         fill("black");
+         ellipse(180, 200, eyeSize, eyeSize); // Left eye
+         ellipse(270, 200, eyeSize, eyeSize); // Right eye
+
+         // Mouth
+         fill("red");
+         rect(200, 250, mouthWidth, 20);
+
+         // Antenna
+         fill("gold");
+         rect(225, 100, 10, antennaHeight);
+         fill("orange");
+         ellipse(230, 100, 20, 20); // Antenna tip
+
+         // Ears
+         fill("gray");
+         rect(120, 180, 20, 50); // Left ear
+         rect(320, 180, 20, 50); // Right ear
