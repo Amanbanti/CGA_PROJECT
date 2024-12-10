@@ -783,3 +783,129 @@ creature.scale = 0.3;
 creature.tint = "orange";
 drawSprites();
 
+##
+##
+##LESSON 10
+##
+##LEVEL2
+background("lightyellow");
+//1 Change the displayed text in the provided code.
+text("new text", 50, 200);
+//2 Add another sentence in a different part of the screen.
+text("second text", 50, 250);
+
+##
+##LEVEL3
+//1 Run the code to see how it works.
+background("lightblue");
+textSize(20);
+text("small", 170, 100);
+textSize(40);
+text("medium", 130, 200);
+//2 Add code to make the word "large" the biggest.
+textSize(60);
+text("large", 120, 300);
+
+##
+##LEVEL4
+//C //write score
+//1 Add text to the scene so that it matches the scene in the picture
+var field = createSprite(200, 200);
+field.setAnimation("field");
+var ball = createSprite(200, 200);
+ball.setAnimation("ball");
+ball.scale = 0.15;
+stroke("black");
+drawSprites();
+text("1-0", 200, 200);
+textSize(30);
+
+##
+##LEVEL5
+//1 Add two pieces of text to the following scene.  
+//2 Make the two pieces of text different sizes.
+var grass = createSprite(200,200);
+grass.setAnimation("floating_grass");
+var alien = createSprite(180,100);
+alien.setAnimation("alien");
+alien.scale = 1.3;
+var robot = createSprite(300,300);
+robot.setAnimation("robot");
+robot.scale = 0.2;
+drawSprites();
+text("text1", 10, 15);
+text("text2", 10, 50);
+
+##
+##LEVEL6
+//C //fit the text on screen
+//1 Read the code to see how it works.
+textSize(50);
+fill("black");
+//2 In Block Mode, use the arrow button on the `text` block to add the optional parameters.
+//3 Enter values into the optional parameters that will make the text fit on the screen.
+text("Four score and seven years ago...", 30, 200, 400, 400);
+
+
+##
+##
+##LESSON 11
+##
+##LEVEL2
+background("purple");
+// ground
+fill("darkgreen");
+rect(0, 300, 400, 100);
+// moon
+fill("white");
+ellipse(100, 100, 50, 50);
+
+##
+##LEVEL3
+background("purple");
+// ground
+fill("darkgreen");
+rect(0, 300, 400, 100);
+// moon
+fill("white");
+ellipse(100, 100, 50, 50);
+
+var dracula = createSprite(100, 300);
+dracula.scale = 0.3;
+var diablo = createSprite(300, 300);
+diablo.scale = 0.3;
+
+dracula.setAnimation("drakula");
+
+diablo.setAnimation("diablo");
+drawSprites();
+
+
+##
+##LEVEL4
+background("purple");
+// ground
+fill("darkgreen");
+rect(0, 300, 400, 100);
+// moon
+fill("white");
+ellipse(100, 100, 50, 50);
+
+var dracula = createSprite(100, 300);
+dracula.scale = 0.3;
+var diablo = createSprite(300, 300);
+diablo.scale = 0.3;
+
+dracula.setAnimation("drakula");
+
+diablo.setAnimation("diablo");
+drawSprites();
+textSize(30);
+text("diablo", 300, 350);
+text("dracula", 100, 350);
+
+
+##
+##LEVEL5
+I'm fond of the characters I chose
+
