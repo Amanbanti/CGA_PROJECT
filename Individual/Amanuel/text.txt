@@ -754,3 +754,59 @@ Lesson 3: Drawing in Game Lab
          stroke(randomNumber(100, 255), randomNumber(100, 255), randomNumber(100, 255));
          line(200, 150, 180, 300);
          line(200, 150, 220, 300);
+......................................................................................................
+
+## Lesson 7 Mini-project -- Robot-Faces
+
+   #Review Shape Blocks
+   #Review Regular Polygons
+        regularPolygon(50, 85, 3, 50);
+        regularPolygon(150, 75, 4, 50);
+        regularPolygon(240, 70, 5, 50);
+        regularPolygon(340, 67, 6, 50);
+        regularPolygon(50, 175, 7, 50);
+        regularPolygon(150, 175, 8, 50);
+        regularPolygon(250, 175, 9, 50);
+        regularPolygon(350, 175, 10, 50);
+        regularPolygon(50, 275, 11, 50);
+        regularPolygon(152, 275, 12, 50);
+        regularPolygon(252, 275, 13, 50);
+        regularPolygon(350, 275, 14, 50);
+......................................................................................................
+
+   #Robot Face
+   #Use at least 4 different shape blocks, at least 4 variables with random numbers
+    to create a robot face with unique and creative features!
+
+         // Variables for robot's features
+         var headSize = randomNumber(150, 200);
+         var eyeSize = randomNumber(20, 40);
+         var mouthWidth = randomNumber(50, 100);
+         var antennaHeight = randomNumber(50, 100);
+
+         // Background
+         background("lightblue");
+
+         // Head
+         fill("silver");
+         rect(150, 150, headSize, headSize);
+
+         // Eyes
+         fill("black");
+         ellipse(180, 200, eyeSize, eyeSize); // Left eye
+         ellipse(270, 200, eyeSize, eyeSize); // Right eye
+
+         // Mouth
+         fill("red");
+         rect(200, 250, mouthWidth, 20);
+
+         // Antenna
+         fill("gold");
+         rect(225, 100, 10, antennaHeight);
+         fill("orange");
+         ellipse(230, 100, 20, 20); // Antenna tip
+
+         // Ears
+         fill("gray");
+         rect(120, 180, 20, 50); // Left ear
+         rect(320, 180, 20, 50); // Right ear
