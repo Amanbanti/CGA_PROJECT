@@ -1,100 +1,812 @@
-### Lesson 1: Problem-Solving in Design  
+Lesson 1: Problem-Solving in Design
+  The process includes four stages:
 
-The design process includes four main stages:  
+      1.Define: Identify user needs through interviews and profiles.
+      2.Prepare: Connect needs to problems, research solutions, brainstorm, and evaluate feasibility.
+      3.Try: Sketch ideas and create prototypes for user feedback.
+      4.Reflect: Share findings with stakeholders and review user feedback.
+      5.This iterative approach promotes user-centered design.
 
-1.Define:  
-   - Understand user needs through interviews and profiles.  
+Word Search Game & Animation:
+   Key features include customizable sections for shapes and colors, zoom functionality for detailed work, and 
+   image integration to enhance creativity.
 
-2.Prepare:  
-   - Identify problems, research solutions, brainstorm ideas, and assess feasibility.  
+   Assigned Templates:
 
-3.Try:  
-   - Draft product sketches and create simple prototypes for feedback.  
+      -Maria: Colorful design for engaging children in reading.
+      -Richard: Environmental themes with recycling interactivity.
+      -Layla: Personalized messages with appealing graphics for kids.
+      -Emma: Dynamic animations for illustrating shark game concepts.
+      -Levi: Interactive storytelling for comic books.
+      -Client Design for Tatiana:
+      -Tatiana needs interactive digital greeting cards to engage users with humor and creativity.
 
-4.Reflect:  
-   - Share findings with stakeholders and refine designs based on user input.  
+Preparation: Use bright colors, cartoon characters, puns, and interactive buttons.
+Prototyping: Sketch layouts with clear text and marked interactive areas.
+Reflection: Strengths include humor and interactivity, while instructions need to be clearer.
 
-This iterative process prioritizes user-centered design and continuous improvement.  
+Lesson 2: Plotting Shapes
+Learned to draw shapes and replicated a car design.
 
-### Creative Design Tools and Templates  
+Lesson 3: Drawing in Game Lab
+   -Learned to color and position shapes accurately.
+   -Commands like rect(x, y, width, height) define position and size.
+   -fill("color") fills shapes, stroke("color") sets borders, and strokeWeight(size) adjusts border thickness.
+   -Commands like noFill() and noStroke() are used to remove fills and borders.
+   -Example: ellipse(x, y, width, height) creates circular shapes.
 
-The platform enhances brainstorming with elements of animation and game design. Key features include:  
+......................................................................................................
+   #Try to place the rectangle near the bottom right of the screen.
 
-- Customizable Sections : Organize designs using shapes and colors.  
-- Zoom Functionality : Zoom in and out for detailed work.  
-- Image Integration : Add images to enhance designs.  
+         rect(350, 350);
+......................................................................................................
+   #Place two rectangles exactly in the corners of the screen
 
-#### Templates for Clients:  
-- Maria - Template A : Bright and interactive, ideal for engaging children.  
-- Richard - Template B : Focused on environmental themes with recycling activities.  
-- Layla - Template C : Fun graphics and personalized messages for family use.  
-- Emma - Template D : Animations suited for concepts like shark games.  
-- Levi - Template E : Interactive storytelling, perfect for comics.  
+         rect(0,0);
+         rect(350, 350); 
+......................................................................................................
 
----
+   #Change the color from blue to yellow.and Add a new square to the image
 
-#### Client Example: Tatiana’s Greeting Cards  
+           fill("yellow");
+           rect(100,100);
+           rect(250, 100);
+           rect(100, 200);
+......................................................................................................
 
-Needs:  
-Tatiana requires a tool to design engaging, interactive greeting cards that combine humor and creativity.  
+    #Change the red rectangle's color to green.
+    #Change the order of the code so the green rectangle appears on top.
 
-Preparation :  
-- Images : Cartoon characters, puns, and buttons for interaction.  
-- Colors : Cheerful tones like yellow, pink, and light blue.  
-- Text : Clear instructions and humorous punchlines.  
+           fill("blue");
+           rect(200, 200);
+           fill("green");
+           rect(175,175);
+......................................................................................................
+    #Add a new ellipse of a different color.
 
-Prototyping:  
-Sketch the layout with placeholders for images, text, and interactive elements.  
+         fill("teal");
+         ellipse(100, 100);
+         // Add a new ellipse of a different color.
+         fill("orange");
+         ellipse(200, 200);
 
-Reflection:  
-- Strength : The design effectively combines humor and interactivity.  
-- Improvement : Simplify user instructions for better clarity.  
+......................................................................................................
+
+   #Rearrange the code so the wheels are visible.
+
+         fill("red");
+         rect(100,250);
+         rect(150,250);
+         rect(200,250);
+         rect(250,250);
+         rect(150,200);
+         rect(200,200);
+         fill("dimgray");
+         ellipse(150,300);
+         ellipse(250,300);
+
+......................................................................................................
+
+   #Change the code so that all the petals are attached to the center of the flower.
+
+           fill("purple");
+           ellipse(200,165);
+           ellipse(160, 195);
+           ellipse(180, 235);
+           ellipse(226, 230);
+           ellipse(240, 186);
+           fill("yellow");
+           ellipse(200,200);
+
+......................................................................................................
+   #Rearrange the code so the colors are correct.
+
+            fill("black");
+            rect(175,100);
+            rect(175,150);
+            rect(175,200);
+            fill("red");
+            ellipse(200,125);
+            fill("yellow");
+            ellipse(200,175);
+            fill("green");
+            ellipse(200,225);
+
+......................................................................................................
+   #Drawing a car with correct color position and shape
+
+            fill("blue")
+            rect(150,150)
+            rect(200,150)
+            fill("green")
+            rect(100,200)
+            rect(150,200)
+            rect(200,200)
+            rect(250,200)
+            fill("red")
+            ellipse(150,250)
+            ellipse(250,250)
+......................................................................................................
+
+   #Drawing this triangle made out of circles
+
+            fill("purple")
+            ellipse(180, 180);
+            ellipse(200, 210);
+            ellipse(225, 235);
+            ellipse(255, 275);
+            ellipse(235, 275);
+            ellipse(205, 275);
+            ellipse(175, 275);
+            ellipse(150, 275);
+            ellipse(150, 250);
+            ellipse(150, 220);
+            ellipse(150, 190);
+            ellipse(150, 160);
+......................................................................................................
+
+   #Change the code so it makes the picture in the instructions
+
+          fill("orange");
+          ellipse(150,150);
+          ellipse(200,150);
+          ellipse(150,200);
+          ellipse(200,200);
+          fill("purple");
+          rect(147, 147);
+......................................................................................................
+   #Use the point() block to finish the code so it matches the picture.
+
+           strokeWeight(35);
+           point(200, 170);
+           strokeWeight(5);
+           fill("red");
+           ellipse(200, 200);
+           point(200, 190);
+           point(210, 200);
+           point(188, 200);
+           point(200, 210);
+......................................................................................................
+   #Use the strokeWeight() block to finish the code so it matches the picture.
+            fill("ivory");
+            rect(160, 180);
+            strokeWeight(5)
+            point(170, 190);
+            point(185, 205);
+            point(200, 220);
+......................................................................................................
+   #Use the noFill() block to finish the code so it matches the picture.
+            noFill()
+            ellipse(200, 200);
+            ellipse(200, 225);
+            ellipse(178, 212);
+            ellipse(222, 212);
+            ellipse(178, 237);
+            ellipse(222, 237);
+            ellipse(200, 250);
+            ellipse(200, 150);
+            ellipse(200, 175);
+            ellipse(178, 162);
+            ellipse(222, 162);
+            ellipse(178, 187);
+            ellipse(222, 187);
+            ellipse(200, 200);
+
+......................................................................................................
+   #Draw a face that uses at least 4 shapes and at least 2 different colors
+            // Eyes
+            fill("lightblue");
+            ellipse(150,170); 
+            ellipse(240,170);
+
+            // Nose
+            fill("red");
+            ellipse(200,250);
+
+            // Mouth
+            fill("lightgreen");
+            rect(200,350);
+            rect(150,350);
+            rect(100,320);
+            rect(250,320); 
+
+......................................................................................................
+   #Use what you've learned to try to create your favorite food!
+
+            //iceCream
+            fill("saddlebrown");
+            triangle(100, 200, 70, 300, 130, 300);
+            fill("white");
+            ellipse(100, 200, 80, 80);
+            fill("pink");
+            ellipse(100, 150, 70, 70); 
+            fill("red");
+            ellipse(100, 110, 20, 20); 
+
+......................................................................................................
+   #Use what you've learned to try to create a simple drawing that represents your favorite holiday!
+
+            //Christmas Tree
+            // Background
+            background("skyblue");
+
+            // Ground (Snow)
+            fill("white");
+            rect(0, 300, 400, 100); // Ground layer
+
+            // Tree Base
+            fill("brown");
+            rect(170, 260, 20, 50); 
+
+            // Tree Layers
+            fill("green");
+            triangle(180, 150, 130, 260, 230, 260);
+            triangle(180, 180, 120, 260, 240, 260);
+            triangle(180, 210, 110, 260, 250, 260);
+
+            // Ornaments
+            fill("red");
+            ellipse(160, 200, 10, 10);
+            ellipse(200, 200, 10, 10);
+            ellipse(180, 230, 10, 10);
+
+            // Star
+            fill("yellow");
+            ellipse(180, 140, 20, 20); // Star on top
+......................................................................................................
 
 
 
-### Programming Lessons Recap  
-
-#### Lesson 1: Purposeful Programming  
-- Completed a survey and chose Animation and Game Design templates.  
-
-#### Lesson 2: Plotting Shapes  
-- Learned to draw and color shapes on a grid.  
-
-#### Lesson 3: Drawing in Game Lab  
-- Explored shapes and created basic designs.  
-
-##### Highlights:  
-1. Outline Thickness :  
-   strokeWeight(20);
-   rect(50, 50, 100, 200);
 
 
-2. Positioning :  
-   - Place a rectangle at the screen's bottom-right:  
-     rect(349, 349);
+## Lesson 4
+
+    #Change the numbers in the second rect() to make red rectangle longer than the blue one.
+         fill("blue");
+         rect(120,100,80,150);
+         fill("red");
+         rect(250,100,80,200);
+......................................................................................................
+
+    #Add an orange ellipse to the screen that is taller than the green one
+    #Rearrange the blocks so the orange ellipse is behind the green one
     
+         fill("orange");
+         ellipse(200, 200, 250, 350);
+         fill("green");
+         ellipse(200,200,200,150);
+......................................................................................................
+    #Change the background from yellow to orange.
+         fill("purple");
+         rect(50,50, 100,100);
+         background("orange");
+         fill("blue");
+         rect(250,250, 100, 100);
+......................................................................................................
+    # Make a black background behind the green circle.
+         fill("green");
+         background("black");
+         ellipse(200,200,200,200);
+......................................................................................................
+             
+   # Draw sky
 
-3. Corner Placement :  
-   - Draw shapes in corners:  
-     rect(0, 0);
-     rect(350, 350);
- 
+         background("skyblue");
 
-4.Adding Colors:  
-   - Change a shape's color:  
-     fill("yellow");
-     rect(100, 100);
-     
+         // Draw sun
+         fill("yellow");
+         ellipse(350,50,50,50);
 
-5.Code Order:  
-   - Writing order impacts shapes:  
-     fill("green");
-     rect(175, 175);
-     fill("blue");
-     rect(200, 200);
-  
+         // Draw grass
+         fill("green");
+         rect(0,350,400,50);
 
-6. Shape Combination :  
-   - Designed a car and debugged code to achieve proper output.  
+......................................................................................................
+
+   #Debug the code so the picture shows on the right.
+
+         fill("red");
+         ellipse(200, 200, 400, 400);
+         fill("orange");
+         ellipse(200, 200, 340, 340);
+         fill("yellow");
+         ellipse(200, 200, 280, 280);
+         fill("green");
+         ellipse(200, 200, 220, 220);
+         fill("blue");
+         ellipse(200, 200, 160, 160);
+         fill("indigo");
+         ellipse(200, 200, 100, 100);
+         fill("violet");
+         ellipse(200, 200, 40, 40);
+
+......................................................................................................
+
+  #Debug: Missing Shapes.
+
+        fill("black");
+        rect(50,50, 300, 300);
+        fill("white");
+        rect(60, 60, 250, 250);
+        fill("black");
+        rect(76, 72, 200, 200);
+        fill("white");
+        rect(92, 86, 150, 150);
+        fill("black");
+        rect(104, 102, 100, 100);
+        fill("white");
+        rect(118, 114, 50, 50);
+
+......................................................................................................
+
+   #Debug this program to make the cloud wider than it is tall, like in the image.
+      
+         // Draw sky
+         background("skyblue");
+
+         // Draw sun
+         fill("yellow");
+         ellipse(300,50,50,50);
+
+         // Draw grass
+         fill("green");
+         rect(0,300,400,100);
+
+         // Draw cloud
+         fill("white");
+         ellipse(150,100,200,100);
+......................................................................................................
+
+  #Regular polygons 
+
+        regularPolygon(50, 85, 3, 50);
+        regularPolygon(150, 75, 4, 50);
+        regularPolygon(240, 70, 5, 50);
+        regularPolygon(340, 67, 6, 50);
+        regularPolygon(50, 175, 7, 50);
+        regularPolygon(150, 175, 8, 50);
+        regularPolygon(250, 175, 9, 50);
+        regularPolygon(350, 175, 10, 50);
+        regularPolygon(50, 275, 11, 50);
+        regularPolygon(152, 275, 12, 50);
+        regularPolygon(252, 275, 13, 50);
+        regularPolygon(350, 275, 14, 50);
+
+......................................................................................................
+   #compelete the shape 
+
+         fill("red");
+         shape(200, 200, 0, 400, 400, 400);
+         fill("blue");
+         shape(200, 200, 0, 0, 400, 0);
+         fill("yellow");
+         shape(200, 200, 400, 400, 400, 0);
+         fill("green");
+         shape(200, 200, 0, 400, 0, 0);
+......................................................................................................
+   #Create two more shapes on the screen using the arc block!
+
+         fill("brown");
+         arc(50, 100, 100, 100, 0, 360);
+         fill("red");
+         arc(200, 100, 100, 100, 0, 300);
+         fill("green");
+         arc(350, 100, 100, 100, 90, 180);
+         fill("purple");
+         arc(50, 200, 100, 100, 0, 180);
+         fill("yellow");
+         arc(200, 200, 100, 100, 30, 210);
+         fill("black");
+         arc(200, 300, 100, 100, -90, 180);
+         fill("orange");
+         arc(350, 250, 100, 100, -180, 90);
+         fill("blue");
+         arc(50, 350, 100, 100, -250, 50);
+......................................................................................................
+   #Finish the code so it matches the picture
+         line(0, 0, 50, 400);
+         line(0, 50, 100, 400);
+         line(0, 100, 150, 400);
+         line(0, 150, 200, 400);
+         line(0, 200, 250, 400);
+         line(0, 250, 300, 400);
+         line(0, 300, 350, 400);
+         line(0, 350, 400, 400);
+         line(350, 0, 400, 400);
+         line(300, 0, 400, 350);
+         line(250, 0, 400, 300);
+         line(200, 0, 400, 250);
+         line(150, 0, 400, 200);
+         line(100, 0, 400, 150);
+         line(50, 0, 400, 100);
+         line(0, 0, 400, 50);
+         line(0, 400, 0, 0);
+         line(0, 0, 400, 0);
+
+......................................................................................................
+
+## Lesson 5 
+
+   #Change the values of the variables to update the position of the ellipse
+        var xPosition = 200;
+        var whatsTheY = 300;
+        ellipse(xPosition, whatsTheY);
+
+......................................................................................................
 
 
+   #Find the rule each variable label violates?
+
+      Rule Violations and Fixes:
+         var size of circle = 150;
+         Rule Violated: No Spaces (Variable names cannot have spaces).
+         Correction: Rename to sizeOfCircle.
+
+         var 1dimension = 100;
+         Rule Violated: Must Start with a Letter (Variable names cannot start with a number).
+         Correction: Rename to dimension1.
+
+         var yLocation );= 200;
+         Rule Violated: No Special Characters (Variable names should not include invalid symbols like ) in this case).
+         Correction: Remove the invalid character and rename to yLocation.
+
+         ellipse(1dimension, YLocation, size of circle, size of circle);
+         Rule Violated: Case Sensitivity (JavaScript variable names are case-sensitive, and YLocation is different from yLocation).
+         Correction: Use the corrected case, yLocation.
+
+
+
+   #Correct the errors by picking new names that follow the rules above.
+         var sizeOfCircle = 150; // Fixed "size of circle"
+         var dimension1 = 100;   // Fixed "1dimension"
+         var yLocation = 200;    // Fixed "yLocation with special character"
+
+         fill("OrangeRed");
+         ellipse(dimension1, yLocation, sizeOfCircle, sizeOfCircle); // Used corrected variable names
+
+......................................................................................................
+
+   #Update the code so the red petals touch each other
+
+        var petalSize = 75;
+        noStroke();
+        background("ForestGreen");
+        fill("red");
+        ellipse(150,200,petalSize,petalSize);
+        ellipse(200,150,petalSize,petalSize);
+        ellipse(250,200,petalSize,petalSize);
+        ellipse(200,250,petalSize,petalSize);
+        fill("black");
+        ellipse(200,200,50,50);
+
+......................................................................................................
+
+    #Change the value assigned to circleSize so that the circle fills the entire screen.
+
+         var circleSize = 1200;
+         fill("Crimson");
+         ellipse(400, 400, circleSize, circleSize);
+
+......................................................................................................
+
+
+   #Update the code to match the image
+      var x = 45;
+      var y = 200;
+      fill("deeppink");
+      ellipse(x,110);
+      ellipse(360,y);
+      rect(x, y);
+
+......................................................................................................
+
+   #Debug: Unused Variables
+   #Update the code to use the variables
+
+      var earSize = 80;
+      var eyeSize = 15;
+      var center = 200;
+      fill("saddlebrown");
+      ellipse(130, 115, earSize, earSize);
+      ellipse(270, 115, earSize, earSize);
+      ellipse(center, 195, 205, 205);
+      ellipse(center, 245, 100, 100);
+      fill("black");
+      ellipse(center, 225, 20, 20);
+      ellipse(165, 175, eyeSize,eyeSize);
+      ellipse(235, 175, eyeSize, eyeSize);
+      line(center, 235, center, 265);
+      noFill();
+      arc(200, 215, 100, 100, 35, 145);
+
+......................................................................................................
+   #Debug: Adding Variables
+   #Update the variable names at the top of the code
+      var size = 100;
+      var c1 = "green";
+      var c2 = "red";
+      var c3= "orange";
+      fill(c2);
+      ellipse(200, 100, size, size);
+      noFill();
+      rect(150, 50, size, size);
+      fill(c3);
+      ellipse(200, 200, size, size);
+      noFill();
+      rect(150, 150, size, size);
+      fill(c1);
+      ellipse(200, 300, size, size);
+      noFill();
+      rect(150, 250, size, size);
+
+......................................................................................................
+
+   #Change the program to use the eyeSize variable.
+      var eyeSize = 40;
+
+      noStroke();
+      background("green");
+
+      // Face
+      fill("yellow");
+      ellipse(200,200,200,200);
+
+      // Eyes
+      fill("black");
+      ellipse(160,170,eyeSize,eyeSize);
+      ellipse(240,170,eyeSize,eyeSize);
+
+      // Mouth
+      fill("white");
+      rect(160,240,80,20);
+
+......................................................................................................
+
+   #Challenge: Draw a Changing Image
+   #Common variables for size and placement
+      var faceSize = 200; 
+      var eyeSize = 20;
+      var y = 150;      
+      var xOffset = 50;   
+      var mouthWidth = 100;
+      var mouthHeight = 20;
+
+      // Draw the face
+      fill("peachpuff");
+      ellipse(200, 200, faceSize, faceSize); // Face
+
+      // Draw the eyes
+      fill("white");
+      ellipse(200 - xOffset, y, eyeSize, eyeSize); // Left eye
+      ellipse(200 + xOffset, y, eyeSize, eyeSize); // Right eye
+
+      fill("black");
+      ellipse(200 - xOffset, y, eyeSize / 2, eyeSize / 2); // Left pupil
+      ellipse(200 + xOffset, y, eyeSize / 2, eyeSize / 2); // Right pupil
+
+      // Draw the mouth
+      fill("red");
+      ellipse(200, y + 50, mouthWidth, mouthHeight); // Mouth
+
+
+......................................................................................................
+
+   ## Lesson 6
+
+      I have learned how to use the randomNumber function in various aspects of my code, including setting the background color,
+      controlling the fill color, and determining the X and Y positions, as well as the width and height of shapes like ellipses and rectangles.
+      By introducing randomness, I can create dynamic, unpredictable changes in my drawings, making them more engaging and interactive.
+
+      #Change the numbers inside randomNumber() so the ellipse can appear anywhere horizontally on the screen
+         background("tomato");
+         fill("orange");
+         ellipse(randomNumber(0,400), 200, 50, 50);
+......................................................................................................
+
+      #Make the ellipse appear at random y coordinates
+         background("tomato");
+         fill("orange");
+         ellipse(randomNumber(0,400),randomNumber(0,400), 50, 50);
+......................................................................................................
+
+      #Assign a random size for the eyes
+         var eyeSize = randomNumber(10, 50); // Eyes will have a random size between 10 and 50
+
+         noStroke();
+         background("green");
+
+         // Face
+         fill("yellow");
+         ellipse(200, 200, 200, 200);
+
+         // Eyes
+         fill("black");
+         ellipse(160, 170, eyeSize, eyeSize); // Left eye
+         ellipse(240, 170, eyeSize, eyeSize); // Right eye
+
+         // Mouth
+         fill("white");
+         rect(160, 240, 80, 20);
+......................................................................................................
+
+         var petalSize;
+         background("green");
+
+         #Update the first flower's petals to be a random size
+         petalSize = randomNumber(20, 50); // Random size between 20 and 50 for the first flower's petals
+         // petals
+         fill("purple");
+         ellipse(75, 100, petalSize, petalSize);
+         ellipse(125, 100, petalSize, petalSize);
+         ellipse(100, 75, petalSize, petalSize);
+         ellipse(100, 125, petalSize, petalSize);
+         // center
+         fill("yellow");
+         ellipse(100, 100, 50, 50);
+
+         #Update the second flower's petals to be a random size
+         petalSize = randomNumber(40, 80); // Random size between 40 and 80 for the second flower's petals
+         // petals
+         fill("purple");
+         ellipse(275, 300, petalSize, petalSize);
+         ellipse(325, 300, petalSize, petalSize);
+         ellipse(300, 275, petalSize, petalSize);
+         ellipse(300, 325, petalSize, petalSize);
+         // center
+         fill("yellow");
+         ellipse(300, 300, 50, 50);
+
+......................................................................................................
+
+   background("black");
+
+   #Update each planet to be a random size each time the program is run
+      fill("yellow");
+      ellipse(0, 200, randomNumber(20, 70), randomNumber(20, 70)); 
+      fill("salmon");
+      ellipse(80, 200, randomNumber(20, 70), randomNumber(20, 70));
+      fill("cyan");
+      ellipse(160, 200, randomNumber(20, 70), randomNumber(20, 70));
+      fill("lavender");
+      ellipse(240, 200, randomNumber(20, 70), randomNumber(20, 70)); 
+      fill("crimson");
+      ellipse(320, 200, randomNumber(20, 70), randomNumber(20, 70));
+      fill("orchid");
+      ellipse(400, 200, randomNumber(20, 70), randomNumber(20, 70)); 
+......................................................................................................
+   #Debug: Random Shape Position
+   #Update the code so the rectangles appear stacked at random x positions
+      var xPosition = randomNumber(0,150);
+      fill("pink");
+      rect(xPosition , 100, 250, 50);
+      fill("purple");
+      rect(xPosition, 150, 250, 50) ;
+      fill("firebrick");
+      rect(xPosition, 200, 250, 50);
+......................................................................................................
+   #Modify the Scene
+   #changing the sun x position and y position by randomNumber and also the mountains the same is true for this.
+
+      background("lightblue");
+      fill("yellow");
+      ellipse(randomNumber(80,325), randomNumber(25,65));
+      fill("brown");
+      regularPolygon(randomNumber(100,150), 300, 3, 200);
+      regularPolygon(randomNumber(250,350), 300, 3, 200);
+      regularPolygon(randomNumber(150,350), 300, 3, 250);
+      regularPolygon(randomNumber(10,50), 300, 3, 250);
+      regularPolygon(randomNumber(300,390), 300, 3, 250);
+      fill("lightgreen");
+      rect(0, 300, 400, 100);
+......................................................................................................
+   #Rainbow Snake
+   #Add at least three new different colored circles to your rainbow snake.
+   #Use randomNumber to make the rest of the snake's body move up and down like the first three.
+
+      background("skyBlue");
+
+      // Head and body segments using random Y positions
+      fill("red");
+      ellipse(100, randomNumber(190, 210), 50, 50);
+
+      fill("orange");
+      ellipse(140, randomNumber(190, 210), 50, 50);
+
+      fill("yellow");
+      ellipse(180, randomNumber(190, 210), 50, 50);
+
+      // Adding three new segments with different colors
+      fill("green");
+      ellipse(220, randomNumber(190, 210), 50, 50);
+
+      fill("blue");
+      ellipse(260, randomNumber(190, 210), 50, 50);
+
+      fill("purple");
+      ellipse(300, randomNumber(190, 210), 50, 50);
+......................................................................................................
+      #Favorite Song
+         // Background to represent a night sky
+         background("black");
+
+         // Dynamic lights
+         fill(randomNumber(100, 255), randomNumber(100, 255), randomNumber(100, 255));
+         ellipse(randomNumber(50, 400), randomNumber(50, 200), 30, 30); // First light
+         fill(randomNumber(100, 255), randomNumber(100, 255), randomNumber(100, 255));
+         ellipse(randomNumber(50, 400), randomNumber(50, 200), 30, 30); // Second light
+         fill(randomNumber(100, 255), randomNumber(100, 255), randomNumber(100, 255));
+         ellipse(randomNumber(50, 400), randomNumber(50, 200), 30, 30); // Third light
+
+         // Buildings as part of a cityscape
+         fill("gray");
+         rect(50, 300, 50, 100); // First building
+         rect(150, 250, 50, 150); // Second building
+         rect(250, 280, 50, 120); // Third building
+         rect(350, 270, 50, 130); // Fourth building
+
+         // Dynamic stars in the night sky
+         fill("white");
+         ellipse(randomNumber(10, 390), randomNumber(10, 150), 5, 5);
+         ellipse(randomNumber(10, 390), randomNumber(10, 150), 5, 5);
+         ellipse(randomNumber(10, 390), randomNumber(10, 150), 5, 5);
+
+         // Dynamic light beams
+         stroke(randomNumber(100, 255), randomNumber(100, 255), randomNumber(100, 255));
+         line(200, 150, 180, 300);
+         line(200, 150, 220, 300);
+......................................................................................................
+
+## Lesson 7 Mini-project -- Robot-Faces
+
+   #Review Shape Blocks
+   #Review Regular Polygons
+        regularPolygon(50, 85, 3, 50);
+        regularPolygon(150, 75, 4, 50);
+        regularPolygon(240, 70, 5, 50);
+        regularPolygon(340, 67, 6, 50);
+        regularPolygon(50, 175, 7, 50);
+        regularPolygon(150, 175, 8, 50);
+        regularPolygon(250, 175, 9, 50);
+        regularPolygon(350, 175, 10, 50);
+        regularPolygon(50, 275, 11, 50);
+        regularPolygon(152, 275, 12, 50);
+        regularPolygon(252, 275, 13, 50);
+        regularPolygon(350, 275, 14, 50);
+......................................................................................................
+
+   #Robot Face
+   #Use at least 4 different shape blocks, at least 4 variables with random numbers
+    to create a robot face with unique and creative features!
+
+         // Variables for robot's features
+         var headSize = randomNumber(150, 200);
+         var eyeSize = randomNumber(20, 40);
+         var mouthWidth = randomNumber(50, 100);
+         var antennaHeight = randomNumber(50, 100);
+
+         // Background
+         background("lightblue");
+
+         // Head
+         fill("silver");
+         rect(150, 150, headSize, headSize);
+
+         // Eyes
+         fill("black");
+         ellipse(180, 200, eyeSize, eyeSize); // Left eye
+         ellipse(270, 200, eyeSize, eyeSize); // Right eye
+
+         // Mouth
+         fill("red");
+         rect(200, 250, mouthWidth, 20);
+
+         // Antenna
+         fill("gold");
+         rect(225, 100, 10, antennaHeight);
+         fill("orange");
+         ellipse(230, 100, 20, 20); // Antenna tip
+
+         // Ears
+         fill("gray");
+         rect(120, 180, 20, 50); // Left ear
+         rect(320, 180, 20, 50); // Right ear
