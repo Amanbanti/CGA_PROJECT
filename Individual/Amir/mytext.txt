@@ -116,7 +116,6 @@ This exercise asked us to predict how parameters like width and height affect th
 
 fill("blue");
 rect(100, 100, 100, 200);
-
 fill("red");
 rect(250, 100, 100, 150);
 
@@ -125,7 +124,6 @@ Modified the parameters of the second rect() to make the red rectangle longer th
 
 fill("blue");
 rect(100, 100, 100, 150);
-
 fill("red");
 rect(250, 100, 100, 200);
 
@@ -134,7 +132,6 @@ What the exercise did: Added an orange ellipse taller than the green one and arr
 
 fill("orange");
 ellipse(200, 200, 240, 300);
-
 fill("green");
 ellipse(200, 200, 200, 150);
 
@@ -143,9 +140,7 @@ Changed the background to orange and rearranged the code so the purple square wa
 
 fill("purple");
 rect(50, 50, 100, 100);
-
 background("orange");
-
 fill("blue");
 rect(250, 250, 100, 100);
 
@@ -161,11 +156,9 @@ Fixed an error to ensure the grass rectangle extends across the entire bottom of
 
 // Draw sky
 background("skyblue");
-
 // Draw sun
 fill("yellow");
 ellipse(350, 50, 50, 50);
-
 // Draw grass
 fill("green");
 rect(0, 300, 400, 100);
