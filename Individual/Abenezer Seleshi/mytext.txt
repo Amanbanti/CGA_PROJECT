@@ -1,1 +1,405 @@
 Abenezer Seleshi text file content.
+
+##
+##
+##LESSON 3
+##
+##LEVEL1
+rect(100,100);
+
+##
+##LEVEL2
+//2 Change the numbers inside the block, then try running the program again.
+//3 Try to place the rectangle near the bottom right of the screen.
+strokeWeight(20);
+fill("red")
+rect(399,399);
+
+##
+##LEVEL3
+// 1 Place two rectangles exactly in the corners of the screen
+rect(0,0);
+strokeWeight(100);
+rect(400,400);
+
+##
+##LEVEL4
+// 2 Change the color from blue to yellow.
+fill("yellow");
+rect(100,100);
+rect(250, 100);
+// 3 Add a new square to the image
+rect(200, 200);
+
+##
+##LEVEL5
+//2 Change the red rectangle's color to green.
+//3 Change the order of the code so the green rectangle appears on top.
+fill("blue");
+rect(200, 200);
+fill("green");
+rect(175,175);
+
+##
+##LEVEL6
+fill("teal");
+ellipse(100,100);
+//2 Add a new ellipse of a different color.
+fill("yellow");
+ellipse(200, 200);
+
+##
+##LEVEL7
+//
+//
+// A
+fill("red");
+rect(100,250);
+rect(150,250);
+rect(200,250);
+rect(250,250);
+rect(150,200);
+rect(200,200);
+fill("dimgray");
+ellipse(150,300);
+ellipse(250,300);
+
+//
+//
+// B
+fill("purple");
+ellipse(200,165);
+ellipse(160, 195);
+ellipse(180, 235);
+ellipse(225, 230);
+ellipse(235, 190);
+fill("yellow");
+ellipse(200,200);
+
+//
+//
+// C
+fill("black");
+rect(175,100);
+rect(175,150);
+rect(175,200);
+fill("red");
+ellipse(200,125);
+fill("yellow");
+ellipse(200,175);
+fill("green");
+ellipse(200,225);
+
+//
+//
+// D
+fill("blue");
+rect(200, 250);
+rect(250, 250);
+fill("green");
+rect(150, 300);
+rect(200, 300);
+rect(250, 300);
+rect(300, 300);
+fill("red");
+ellipse(200, 350);
+ellipse(300, 350);
+
+
+//
+//
+// E
+fill("rgb(128, 0, 128)");
+ellipse(100, 100);
+ellipse(120, 120);
+ellipse(140, 140);
+ellipse(160, 160);
+ellipse(140, 160);
+ellipse(120, 160);
+ellipse(100, 160);
+ellipse(80, 160);
+ellipse(80, 140);
+ellipse(80, 120);
+ellipse(80, 100);
+ellipse(80, 80);
+
+##
+##LEVEL8
+//2 Change the code so it makes the picture in the instructions
+
+fill("orange");
+ellipse(150,150);
+ellipse(200,150);
+ellipse(150,200);
+ellipse(200,200);
+fill("purple");
+rect(150, 150);
+
+##
+##LEVEL9
+// draw lady bug
+
+strokeWeight(35);
+point(200, 170);
+strokeWeight(5);
+fill("red");
+ellipse(200, 200);
+point(200, 190);
+point(210, 200);
+//2 Use the point() block to finish the code so it matches the picture.
+point(200, 210);
+point(190, 200);
+strokeWeight(5);
+rect(190, 225, 1, 15);
+rect(210, 225, 1, 15);
+
+
+##
+##
+##LESSON 4
+##
+##LEVEL2
+//Change the numbers in the second rect() to make red rectangle longer than the blue one.
+fill("blue");
+rect(100,100,100,200);
+fill("red");
+rect(250,100,100,250);
+
+##
+##LEVEL3
+//1 Add an orange ellipse to the screen that is taller than the green one
+//2 Rearrange the blocks so the orange ellipse is behind the green one
+fill("orange");
+ellipse(200, 200, 250, 400);
+fill("green");
+ellipse(200,200,200,150);
+
+##
+##LEVEL4
+//2 Change the background from yellow to orange.
+background("orange");
+fill("blue");
+rect(250,250, 100, 100);
+fill("purple");
+rect(50,50, 100,100);
+
+
+
+##
+##LEVEL5
+//1 Make a black background behind the green circle.
+background("black");
+fill("green");
+ellipse(200,200,200,200);
+
+
+##
+##LEVEL6
+// Draw sky
+background("skyblue");
+// Draw sun
+fill("yellow");
+ellipse(350,50,50,50);
+// Draw grass
+fill("green");
+rect(0,300,400,100);
+
+
+##
+##LEVEL7
+//reveal picture under the red circle
+fill("red");
+ellipse(200, 200, 400, 400);
+fill("orange");
+ellipse(200, 200, 340, 340);
+fill("yellow");
+ellipse(200, 200, 280, 280);
+fill("green");
+ellipse(200, 200, 220, 220);
+fill("blue");
+ellipse(200, 200, 160, 160);
+fill("indigo");
+ellipse(200, 200, 100, 100);
+fill("violet");
+ellipse(200, 200, 40, 40);
+
+##
+##LEVEL8
+//1 Debug this program to make the cloud wider than it is tall, like in the image.
+// Draw sky
+background("skyblue");
+// Draw sun
+fill("yellow");
+ellipse(300,50,50,50);
+// Draw grass
+fill("green");
+rect(0,300,400,100);
+// Draw cloud
+fill("white");
+ellipse(150,100,200,100);
+
+
+##
+##LEVEL9
+//draw polygons with increasing sides
+regularPolygon(50, 75, 3, 50);
+regularPolygon(50, 175, 7, 50);
+regularPolygon(50, 275, 11, 50);
+//2 Add code to finish the drawing so it matches the picture
+//second coloumn
+regularPolygon(150, 75, 4, 50);
+regularPolygon(150, 175, 5, 50);
+regularPolygon(150, 275, 5, 50);
+//third coloumn
+regularPolygon(250, 75, 5, 50);
+regularPolygon(250, 175, 5, 50);
+regularPolygon(250, 275, 5, 50);
+//fourth coloumn
+regularPolygon(350, 75, 5, 50);
+regularPolygon(350, 175, 5, 50);
+regularPolygon(350, 275, 5, 50);
+
+
+##
+##
+##LESSON 5
+##
+##LEVEL3
+//Change the values of the variables to update the position of the ellipse 
+var xPosition = 200;
+var whatsTheY = 300;
+ellipse(xPosition, whatsTheY);
+
+
+##
+##LEVEL4
+var sizeOfCircle = 150;
+var dimension = 100;
+var yLocation = 200;
+fill("OrangeRed");
+ellipse(dimension, yLocation, sizeOfCircle, sizeOfCircle);
+
+
+##
+##LEVEL5
+//1 Update the code so the red petals touch each other
+var petalSize = 75;
+
+//Set Up
+noStroke();
+background("ForestGreen");
+
+// Petals
+fill("red");
+ellipse(150,200,petalSize,petalSize);
+ellipse(200,150,petalSize,petalSize);
+ellipse(250,200,petalSize,petalSize);
+ellipse(200,250,petalSize,petalSize);
+
+// Flower Center
+fill("black");
+ellipse(200,200,50,50);
+
+
+##
+##LEVEL6
+A
+//make the circle cover the whole square screen
+var circleSize = 800;
+fill("Crimson");
+ellipse(200, 200, circleSize, circleSize);
+
+
+##
+##LEVEL7
+//2) Change the program to use the eyeSize variable.
+var eyeSize = 27;
+
+noStroke();
+background("green");
+
+// Face
+fill("yellow");
+ellipse(200,200,200,200);
+
+// Eyes
+fill("black");
+ellipse(160,170,eyeSize,eyeSize);
+ellipse(240,170,eyeSize,eyeSize);
+
+// Mouth
+fill("white");
+rect(160,240,80,20);
+
+
+##
+##LEVEL8
+B // updating variables
+var x = 50;
+var y = 50;
+
+fill("red");
+ellipse(x, y);
+// Increase x by 50, now x is 100
+x = x + 50;
+y = y + 50;
+ellipse(x, y);
+// Increase x by 50, now x is 150
+x = x + 50;
+y = y + 50;
+ellipse(x, y);
+// Increase x by 50, now x is 150
+x = x + 50;
+y = y + 50;
+ellipse(x, y);
+// Increase x by 50, now x is 150
+x = x + 50;
+y = y + 50;
+ellipse(x, y);
+// Increase x by 50, now x is 150
+x = x + 50;
+y = y + 50;
+ellipse(x, y);
+// Increase x by 50, now x is 150
+x = x + 50;
+y = y + 50;
+ellipse(x, y);
+
+##
+##LEVEL3
+
+
+##
+##LEVEL3
+
+
+##
+##LEVEL3
+
+
+##
+##LEVEL3
+
+
+##
+##LEVEL3
+
+
+##
+##LEVEL3
+
+
+##
+##LEVEL3
+
+
+##
+##LEVEL3
+
+
+##
+##LEVEL3
+
+
+##
+##LEVEL3
