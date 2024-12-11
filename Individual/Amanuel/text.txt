@@ -905,3 +905,27 @@ lesson-8
 
 ......................................................................................................
    #Create your own sprites
+   animation1= createSprite(200,200)
+   animation1.setAnimation("animalhead_cat_1")
+   drawSprites()
+
+......................................................................................................
+
+   #Create kite sprite and set animation
+      var kite = createSprite(300, 50);
+      kite.setAnimation("kite.jpg_1")
+      // Draw background
+      background("skyblue");
+
+      // Draw grass
+      fill("green");
+      noStroke();
+      rect(0, 300, 400, 100);
+
+      // Draw string
+      stroke("black");
+      strokeWeight(5);
+      line(150, 300, 300, 50);
+
+      // Draw sprite
+      drawSprites();
