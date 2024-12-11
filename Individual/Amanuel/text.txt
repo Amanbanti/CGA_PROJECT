@@ -810,3 +810,98 @@ Lesson 3: Drawing in Game Lab
          fill("gray");
          rect(120, 180, 20, 50); // Left ear
          rect(320, 180, 20, 50); // Right ear
+
+......................................................................................................
+lesson-8
+   Overview
+      - How can we use sprites to help us keep track of lots of information in our programs?
+
+   Today you will learn about sprites which will not only give you a way to keep track of various pieces of information in your programs but will also allow you to create more interesting and fun images!
+
+   - Vocabulary
+      
+      Sprite - A character on the screen with properties that describe its location, movement, and look.
+
+   Introduced Code
+
+      - drawSprites()
+
+      - sprite.setAnimation(label)
+
+      - var sprite = createSprite(x, y, w, h)
+......................................................................................................
+   #Create a new sprite variable
+   var sprite1 = createSprite(200, 200, 50, 50); // Create a sprite at (200, 200) with width and height 50
+
+   // Draw the sprites
+   drawSprites();
+
+......................................................................................................
+   #Debug
+
+
+   var rightSprite = createSprite(300, 200);
+   var leftSprite = createSprite(100, 200);
+   drawSprites();
+
+......................................................................................................
+   # Create the fruit sprite
+      var fruit = createSprite(200, 150, 50, 50); // Positioned at (200, 150)
+      fruit.setAnimation("strawberry"); // Animation set to strawberry
+
+      // Create the vegetable sprite
+      var vegetable = createSprite(200, 300, 50, 50); // Positioned below the fruit at (200, 300)
+      vegetable.setAnimation("broccoli"); // Animation set to broccoli
+
+      // Draw the sprites
+      drawSprites();
+
+......................................................................................................
+
+   //Create a sprite variable
+   //Set the animation
+   //Draw the sprite on the screen
+
+      var student = createSprite(200, 200);
+      student.setAnimation("Hawa");
+      drawSprites();
+......................................................................................................
+   #Use the setAnimation command to change the look of your other sprites.
+      var topLeftSprite = createSprite(100, 100);
+      var topRightSprite = createSprite(300, 100);
+      var bottomLeftSprite = createSprite(100, 300);
+      var bottomRightSprite = createSprite(300,300);
+      topLeftSprite.setAnimation("bunny")
+      topRightSprite.setAnimation("planeRed1")
+      bottomLeftSprite.setAnimation("flyBot")
+      bottomRightSprite.setAnimation("alien");
+      drawSprites();
+
+
+......................................................................................................
+   #Debug some sprites
+
+      var drink = createSprite(100, 200);
+      drink.setAnimation("soda");
+      var dessert = createSprite(300, 200);
+      dessert.setAnimation("ice_cream");
+      var message = createSprite(200, 200);
+      message.setAnimation("textGetReady");
+
+      drawSprites();
+......................................................................................................
+   #Debug: Missing Sprites
+      var sprite1 = createSprite(50, 50);
+      var sprite2 = createSprite(50, 150);
+      var sprite3 = createSprite(50, 250);
+      var sprite4 = createSprite(50, 350);
+      var sprite5 = createSprite(300, 200);
+      sprite1.setAnimation("planeRed");
+      sprite2.setAnimation("planeBlue");
+      sprite3.setAnimation("planeGreen");
+      sprite4.setAnimation("planeYellow");
+      sprite5.setAnimation("bunny");
+      drawSprites()
+
+......................................................................................................
+   #Create your own sprites
