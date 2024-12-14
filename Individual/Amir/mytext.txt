@@ -212,3 +212,314 @@ regularPolygon(150, 275, 12, 50);
 regularPolygon(250, 275, 13, 50);
 regularPolygon(350, 275, 14, 50);
 
+## Lesson 5: Variables in Graphics
+
+# Prediction and Variables
+Predicted where the circle would appear on the canvas when using variables for its position.
+
+var xPosition = 300;
+var whatsTheY = 100;
+ellipse(xPosition, whatsTheY);
+
+My Prediction: The circle will be drawn at the bottom left of the chart. Changing the numbers changes its position.
+
+# Updating Variables
+Updated variable values to reposition the ellipse to the bottom center of the canvas.
+
+var xPosition = 200;
+var whatsTheY = 300;
+ellipse(xPosition, whatsTheY);
+
+# Debugging: Naming Variables
+Corrected variable names to follow proper naming conventions (no spaces, no starting with numbers, consistent capitalization).
+
+var size = 150;
+var xPosition = 100;
+var yPosition = 200;
+
+fill("OrangeRed");
+ellipse(xPosition, yPosition, size, size);
+
+# Using Variables Multiple Times
+Adjusted a single variable (petalSize) to ensure that red petals touch each other in a flower design.
+
+var petalSize = 80;
+
+// Set Up
+noStroke();
+background("ForestGreen");
+
+// Petals
+fill("red");
+ellipse(150,200,petalSize,petalSize);
+ellipse(200,150,petalSize,petalSize);
+ellipse(250,200,petalSize,petalSize);
+ellipse(200,250,petalSize,petalSize);
+
+// Flower Center
+fill("black");
+ellipse(200,200,50,50);
+
+# Debugging: Using Variables
+Changed the value of circleSize to make the circle fill the entire canvas.
+
+var circleSize = 600;
+
+fill("Crimson");
+ellipse(200, 200, circleSize, circleSize);
+
+# Using Variables for Consistency
+Modified the program so both eyes of a face used the same variable for their size (eyeSize).
+
+var eyeSize = 25;
+
+noStroke();
+background("green");
+
+// Face
+fill("yellow");
+ellipse(200,200,200,200);
+
+// Eyes
+fill("black");
+ellipse(160,170,eyeSize,eyeSize);
+ellipse(240,170,eyeSize,eyeSize); // Updated to use eyeSize variable
+
+// Mouth
+fill("white");
+rect(160,240,80,20);
+
+# Challenge: String Variables
+Used string variables to assign color values to shapes and polygons, demonstrating the flexibility of variables for non-numeric data.
+
+var color1 = "crimson";
+var color2 = "coral";
+var color3 = "purple";
+var color4 = "azure";
+
+fill(color1);
+regularPolygon(200, 200, 5, 200);
+
+fill(color2);
+regularPolygon(200, 200, 6, 150);
+
+fill(color3);
+regularPolygon(200, 200, 7, 100);
+
+fill(color4);
+ellipse(200, 200, 100, 100);
+This lesson focused on understanding the use of variables in graphical programming, debugging variable-related issues, and experimenting with both numeric and string variables for flexible and reusable designs.
+
+## Lesson 6 Summary: Random Numbers and Variables
+
+# Predicted the Outcome of randomNumber()
+Ran the program to see how randomNumber() changes the position of an orange ellipse on a tomato background.
+
+background("tomato");
+fill("orange");
+ellipse(randomNumber(200, 400), 200, 50, 50);
+
+# Updated the Ellipse's Horizontal and Vertical Positions
+Made the ellipse appear anywhere horizontally and vertically by updating the randomNumber() range.
+
+background("tomato");
+fill("orange");
+ellipse(randomNumber(0, 400), randomNumber(0, 400), 50, 50);
+
+# Assigned Random Values to Variables
+
+Used the randomNumber() function to make eye sizes random in a face drawing.
+
+var eyeSize = randomNumber(1, 55);
+noStroke();
+background("green");
+
+// Face
+fill("yellow");
+ellipse(200, 200, 200, 200);
+
+// Eyes
+fill("black");
+ellipse(160, 170, eyeSize, eyeSize);
+ellipse(240, 170, eyeSize, eyeSize);
+
+// Mouth
+fill("white");
+rect(160, 240, 80, 20);
+
+# Randomized Flower Petal Sizes
+Made each flower's petals appear with random sizes by assigning randomNumber() to a variable.
+
+var petalSize;
+
+// First flower
+petalSize = randomNumber(1, 50);
+fill("purple");
+ellipse(75, 100, petalSize, petalSize);
+ellipse(125, 100, petalSize, petalSize);
+ellipse(100, 75, petalSize, petalSize);
+ellipse(100, 125, petalSize, petalSize);
+
+// Second flower
+petalSize = randomNumber(1, 50);
+ellipse(275, 300, petalSize, petalSize);
+ellipse(325, 300, petalSize, petalSize);
+ellipse(300, 275, petalSize, petalSize);
+ellipse(300, 325, petalSize, petalSize);
+
+# Fixed Random Shape Placement
+Ensured rectangles stacked together by sharing a single random value.
+
+var xPosition = randomNumber(1, 150);
+fill("pink");
+rect(xPosition, 100, 250, 50);
+fill("purple");
+rect(xPosition, 150, 250, 50);
+fill("firebrick");
+rect(xPosition, 200, 250, 50);
+
+#Extended the Rainbow Snake
+Added more colored circles to a snake, using randomNumber() for random vertical "wiggles."
+
+background("skyBlue");
+
+fill("red");
+ellipse(100, randomNumber(190, 210), 50, 50);
+
+fill("orange");
+ellipse(140, randomNumber(190, 210), 50, 50);
+
+fill("yellow");
+ellipse(180, randomNumber(190, 210), 50, 50);
+
+fill("green");
+ellipse(220, randomNumber(190, 210), 50, 50);
+
+fill("blue");
+ellipse(260, randomNumber(190, 210), 50, 50);
+
+fill("purple");
+ellipse(300, randomNumber(190, 210), 50, 50);
+
+# Created a Random Rainbow
+Used rgb(randomNumber()) to create random colors for the background, rainbow arcs, and ground.
+
+// Background
+background(rgb(randomNumber(0, 255), randomNumber(0, 255), randomNumber(0, 255)));
+
+// Rainbow
+fill(rgb(randomNumber(0, 255), randomNumber(0, 255), randomNumber(0, 255)));
+ellipse(200, 200, 400, 400);
+fill(rgb(randomNumber(0, 255), randomNumber(0, 255), randomNumber(0, 255)));
+ellipse(200, 200, 340, 340);
+fill(rgb(randomNumber(0, 255), randomNumber(0, 255), randomNumber(0, 255)));
+ellipse(200, 200, 280, 280);
+fill(rgb(randomNumber(0, 255), randomNumber(0, 255), randomNumber(0, 255)));
+ellipse(200, 200, 220, 220);
+fill(rgb(randomNumber(0, 255), randomNumber(0, 255), randomNumber(0, 255)));
+ellipse(200, 200, 160, 160);
+
+// Ground
+fill(rgb(randomNumber(0, 255), randomNumber(0, 255), randomNumber(0, 255)));
+rect(0, 200, 400, 200);
+
+## Lesson 7: Regular Polygons and Robot Face
+
+1. Reviewing Regular Polygons
+Refreshed my understanding of the regularPolygon() block by reading the documentation. This block creates a regular polygon with a specified number of sides, size, and position.
+I experimented with the block to see how changing the number of sides affects the shape.
+2. Adding Shapes to Match the Picture
+Created a grid of regular polygons, each with a different number of sides and arranged neatly in rows.
+
+Below is the code I used to recreate the image with polygons of 3 to 14 sides:
+
+regularPolygon(50, 75, 3, 50);  // Triangle
+regularPolygon(150, 75, 4, 50); // Square
+regularPolygon(250, 75, 5, 50); // Pentagon
+regularPolygon(350, 75, 6, 50); // Hexagon
+
+regularPolygon(50, 175, 7, 50);  // Heptagon
+regularPolygon(150, 175, 8, 50); // Octagon
+regularPolygon(250, 175, 9, 50); // Nonagon
+regularPolygon(350, 175, 10, 50); // Decagon
+
+regularPolygon(50, 275, 11, 50); // Hendecagon
+regularPolygon(150, 275, 12, 50); // Dodecagon
+regularPolygon(250, 275, 13, 50); // Tridecagon
+regularPolygon(350, 275, 14, 50); // Tetradecagon
+
+# Creating a Robot Face
+I designed a robot face that uses at least four shape blocks and four variables with random numbers to make the design dynamic and change every time the program runs.
+
+Features of the Robot Face:
+Face Base
+
+Used a rectangular base to represent the robot's "skin" with a fixed size and a metallic gray color.
+
+var skin = rgb(192, 192, 192);
+fill(skin);
+rect(50, 100, 300, 250);
+Eyes
+
+Added two large, circular eyes with smaller blue points to represent pupils.
+The eye size is controlled by the variable small.
+
+var small = 50;
+fill(componentColor);
+ellipse(125, 175, small, small);
+ellipse(275, 175, small, small);
+
+strokeWeight(20);
+stroke("blue");
+point(130, 185);
+point(270, 185);
+noStroke();
+
+Nose
+Designed a rectangular nose whose height is randomized using the noseSize variable. This ensures the nose changes each time the program runs.
+
+var noseSize = randomNumber(50, 150);
+fill(componentColor);
+rect(175, 175, small, noseSize);
+
+Mouth
+Created a smiling green arc to represent the robot's mouth.
+
+fill("green");
+arc(200, 300, 100, 100, 0, 180);
+Other Components
+
+Added a smaller rectangle below the face for a neck.
+This block adds depth and makes the robot feel more complete.
+
+rect(175, 350, small, small);
+
+Final Code for the Robot Face:
+
+var skin = rgb(192, 192, 192);
+var componentColor = "orange";
+var small = 50;
+var noseSize = randomNumber(50, 150);
+
+// Face
+fill(skin);
+rect(50, 100, 300, 250);
+rect(175, 350, small, small);
+
+// Eyes
+fill(componentColor);
+ellipse(125, 175, small, small);
+ellipse(275, 175, small, small);
+strokeWeight(20);
+stroke("blue");
+point(130, 185);
+point(270, 185);
+noStroke();
+
+// Nose
+fill(componentColor);
+rect(175, 175, small, noseSize);
+
+// Mouth
+fill("green");
+arc(200, 300, 100, 100, 0, 180);
