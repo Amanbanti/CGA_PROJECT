@@ -212,3 +212,100 @@ regularPolygon(150, 275, 12, 50);
 regularPolygon(250, 275, 13, 50);
 regularPolygon(350, 275, 14, 50);
 
+## Lesson 5: Variables in Graphics
+
+# Prediction and Variables
+Predicted where the circle would appear on the canvas when using variables for its position.
+
+var xPosition = 300;
+var whatsTheY = 100;
+ellipse(xPosition, whatsTheY);
+
+My Prediction: The circle will be drawn at the bottom left of the chart. Changing the numbers changes its position.
+
+# Updating Variables
+Updated variable values to reposition the ellipse to the bottom center of the canvas.
+
+var xPosition = 200;
+var whatsTheY = 300;
+ellipse(xPosition, whatsTheY);
+
+# Debugging: Naming Variables
+Corrected variable names to follow proper naming conventions (no spaces, no starting with numbers, consistent capitalization).
+
+var size = 150;
+var xPosition = 100;
+var yPosition = 200;
+
+fill("OrangeRed");
+ellipse(xPosition, yPosition, size, size);
+
+# Using Variables Multiple Times
+Adjusted a single variable (petalSize) to ensure that red petals touch each other in a flower design.
+
+var petalSize = 80;
+
+// Set Up
+noStroke();
+background("ForestGreen");
+
+// Petals
+fill("red");
+ellipse(150,200,petalSize,petalSize);
+ellipse(200,150,petalSize,petalSize);
+ellipse(250,200,petalSize,petalSize);
+ellipse(200,250,petalSize,petalSize);
+
+// Flower Center
+fill("black");
+ellipse(200,200,50,50);
+
+# Debugging: Using Variables
+Changed the value of circleSize to make the circle fill the entire canvas.
+
+var circleSize = 600;
+
+fill("Crimson");
+ellipse(200, 200, circleSize, circleSize);
+
+# Using Variables for Consistency
+Modified the program so both eyes of a face used the same variable for their size (eyeSize).
+
+var eyeSize = 25;
+
+noStroke();
+background("green");
+
+// Face
+fill("yellow");
+ellipse(200,200,200,200);
+
+// Eyes
+fill("black");
+ellipse(160,170,eyeSize,eyeSize);
+ellipse(240,170,eyeSize,eyeSize); // Updated to use eyeSize variable
+
+// Mouth
+fill("white");
+rect(160,240,80,20);
+
+# Challenge: String Variables
+Used string variables to assign color values to shapes and polygons, demonstrating the flexibility of variables for non-numeric data.
+
+var color1 = "crimson";
+var color2 = "coral";
+var color3 = "purple";
+var color4 = "azure";
+
+fill(color1);
+regularPolygon(200, 200, 5, 200);
+
+fill(color2);
+regularPolygon(200, 200, 6, 150);
+
+fill(color3);
+regularPolygon(200, 200, 7, 100);
+
+fill(color4);
+ellipse(200, 200, 100, 100);
+This lesson focused on understanding the use of variables in graphical programming, debugging variable-related issues, and experimenting with both numeric and string variables for flexible and reusable designs.
