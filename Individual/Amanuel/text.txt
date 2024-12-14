@@ -1008,3 +1008,85 @@ lesson-9
       creature.scale = 0.3;
       creature.tint = 140
       drawSprites();
+
+......................................................................................................
+lesson-9
+
+   #Add another textSize block before the text block that prints the text "large" to the screen.
+      background("lightblue");
+      textSize(40);
+      text("small", 170, 100);
+
+      textSize(60);
+      text("medium", 130, 200);
+
+      textSize(80);
+      text("large", 120, 300);
+
+......................................................................................................
+
+   #Reorder the blocks so that each part of the scene is drawn in the correct order so that the scene looks like the picture
+      var berry = createSprite(200, 180);
+      berry.setAnimation("strawberry");
+      berry.scale = 0.7;
+      berry.rotation = 45;
+
+      background("lightpink");
+
+      stroke("black");
+      line(0, 0, 400, 400);
+      line(100, 0, 400, 300);
+      line(200, 0, 400, 200);
+      line(300, 0, 400, 100);
+      line(0, 100, 300, 400);
+      line(0, 200, 200, 400);
+      line(0, 300, 100, 400);
+
+      noStroke();
+      fill("white");
+      ellipse(185, 140, 40, 40);
+      ellipse(233, 168, 40, 40);
+      fill("black");
+      ellipse(185, 140, 15, 15);
+      ellipse(233, 168, 15, 15);
+
+      drawSprites();
+
+      fill("yellow");
+      textSize(35);
+      text("It's berry nice to see you", 10, 100);
+
+......................................................................................................
+   #Add two pieces of text to the following scene.  
+   #Make the two pieces of text different sizes.
+      var grass = createSprite(200,200);
+      grass.setAnimation("floating_grass");
+      var alien = createSprite(180,100);
+      alien.setAnimation("alien");
+      alien.scale = 1.3;
+      var robot = createSprite(300,300);
+      robot.setAnimation("robot");
+      robot.scale = 0.2;
+      var ball = createSprite(150,186);
+      ball.setAnimation("basketball_1");
+      ball.scale = 0.2
+      var girl = createSprite(108,314);
+      girl.setAnimation("blue_dress_wave_1");
+      girl.scale = 0.5
+      drawSprites();
+......................................................................................................
+   #Add a new block to make the word "sky" a different color.
+      var sky = createSprite(200,200);
+      sky.setAnimation("rainbow");
+      drawSprites();
+      textSize(50);
+      fill("red");
+      text("Rainbows", 30, 50);
+      fill("orange");
+      text("in the" , 70, 100);
+      fill("purple");
+      text("sky...", 110, 150);
+      fill("yellow");
+      text("shines!", 160, 200);
+
+......................................................................................................
