@@ -1090,3 +1090,15 @@ lesson-9
       text("shines!", 160, 200);
 
 ......................................................................................................
+lesson_11
+
+   #Create Your Scene - Background
+      background("yellow");
+      var sprite1 = createSprite(150, 200);
+      sprite1.setAnimation("cny_01_1");
+      sprite1.scale=0.2
+      var sprite2 = createSprite(250, 200);
+      sprite2.setAnimation("cny_02_1");
+      sprite2.scale=0.2
+      drawSprites()
+......................................................................................................
