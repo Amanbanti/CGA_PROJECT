@@ -309,3 +309,116 @@ regularPolygon(200, 200, 7, 100);
 fill(color4);
 ellipse(200, 200, 100, 100);
 This lesson focused on understanding the use of variables in graphical programming, debugging variable-related issues, and experimenting with both numeric and string variables for flexible and reusable designs.
+
+## Lesson 6 Summary: Random Numbers and Variables
+
+# Predicted the Outcome of randomNumber()
+Ran the program to see how randomNumber() changes the position of an orange ellipse on a tomato background.
+
+background("tomato");
+fill("orange");
+ellipse(randomNumber(200, 400), 200, 50, 50);
+
+# Updated the Ellipse's Horizontal and Vertical Positions
+Made the ellipse appear anywhere horizontally and vertically by updating the randomNumber() range.
+
+background("tomato");
+fill("orange");
+ellipse(randomNumber(0, 400), randomNumber(0, 400), 50, 50);
+
+# Assigned Random Values to Variables
+
+Used the randomNumber() function to make eye sizes random in a face drawing.
+
+var eyeSize = randomNumber(1, 55);
+noStroke();
+background("green");
+
+// Face
+fill("yellow");
+ellipse(200, 200, 200, 200);
+
+// Eyes
+fill("black");
+ellipse(160, 170, eyeSize, eyeSize);
+ellipse(240, 170, eyeSize, eyeSize);
+
+// Mouth
+fill("white");
+rect(160, 240, 80, 20);
+
+# Randomized Flower Petal Sizes
+Made each flower's petals appear with random sizes by assigning randomNumber() to a variable.
+
+var petalSize;
+
+// First flower
+petalSize = randomNumber(1, 50);
+fill("purple");
+ellipse(75, 100, petalSize, petalSize);
+ellipse(125, 100, petalSize, petalSize);
+ellipse(100, 75, petalSize, petalSize);
+ellipse(100, 125, petalSize, petalSize);
+
+// Second flower
+petalSize = randomNumber(1, 50);
+ellipse(275, 300, petalSize, petalSize);
+ellipse(325, 300, petalSize, petalSize);
+ellipse(300, 275, petalSize, petalSize);
+ellipse(300, 325, petalSize, petalSize);
+
+# Fixed Random Shape Placement
+Ensured rectangles stacked together by sharing a single random value.
+
+var xPosition = randomNumber(1, 150);
+fill("pink");
+rect(xPosition, 100, 250, 50);
+fill("purple");
+rect(xPosition, 150, 250, 50);
+fill("firebrick");
+rect(xPosition, 200, 250, 50);
+
+#Extended the Rainbow Snake
+Added more colored circles to a snake, using randomNumber() for random vertical "wiggles."
+
+background("skyBlue");
+
+fill("red");
+ellipse(100, randomNumber(190, 210), 50, 50);
+
+fill("orange");
+ellipse(140, randomNumber(190, 210), 50, 50);
+
+fill("yellow");
+ellipse(180, randomNumber(190, 210), 50, 50);
+
+fill("green");
+ellipse(220, randomNumber(190, 210), 50, 50);
+
+fill("blue");
+ellipse(260, randomNumber(190, 210), 50, 50);
+
+fill("purple");
+ellipse(300, randomNumber(190, 210), 50, 50);
+
+# Created a Random Rainbow
+Used rgb(randomNumber()) to create random colors for the background, rainbow arcs, and ground.
+
+// Background
+background(rgb(randomNumber(0, 255), randomNumber(0, 255), randomNumber(0, 255)));
+
+// Rainbow
+fill(rgb(randomNumber(0, 255), randomNumber(0, 255), randomNumber(0, 255)));
+ellipse(200, 200, 400, 400);
+fill(rgb(randomNumber(0, 255), randomNumber(0, 255), randomNumber(0, 255)));
+ellipse(200, 200, 340, 340);
+fill(rgb(randomNumber(0, 255), randomNumber(0, 255), randomNumber(0, 255)));
+ellipse(200, 200, 280, 280);
+fill(rgb(randomNumber(0, 255), randomNumber(0, 255), randomNumber(0, 255)));
+ellipse(200, 200, 220, 220);
+fill(rgb(randomNumber(0, 255), randomNumber(0, 255), randomNumber(0, 255)));
+ellipse(200, 200, 160, 160);
+
+// Ground
+fill(rgb(randomNumber(0, 255), randomNumber(0, 255), randomNumber(0, 255)));
+rect(0, 200, 400, 200);
