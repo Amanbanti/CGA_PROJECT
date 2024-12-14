@@ -422,3 +422,104 @@ ellipse(200, 200, 160, 160);
 // Ground
 fill(rgb(randomNumber(0, 255), randomNumber(0, 255), randomNumber(0, 255)));
 rect(0, 200, 400, 200);
+
+## Lesson 7: Regular Polygons and Robot Face
+
+1. Reviewing Regular Polygons
+Refreshed my understanding of the regularPolygon() block by reading the documentation. This block creates a regular polygon with a specified number of sides, size, and position.
+I experimented with the block to see how changing the number of sides affects the shape.
+2. Adding Shapes to Match the Picture
+Created a grid of regular polygons, each with a different number of sides and arranged neatly in rows.
+
+Below is the code I used to recreate the image with polygons of 3 to 14 sides:
+
+regularPolygon(50, 75, 3, 50);  // Triangle
+regularPolygon(150, 75, 4, 50); // Square
+regularPolygon(250, 75, 5, 50); // Pentagon
+regularPolygon(350, 75, 6, 50); // Hexagon
+
+regularPolygon(50, 175, 7, 50);  // Heptagon
+regularPolygon(150, 175, 8, 50); // Octagon
+regularPolygon(250, 175, 9, 50); // Nonagon
+regularPolygon(350, 175, 10, 50); // Decagon
+
+regularPolygon(50, 275, 11, 50); // Hendecagon
+regularPolygon(150, 275, 12, 50); // Dodecagon
+regularPolygon(250, 275, 13, 50); // Tridecagon
+regularPolygon(350, 275, 14, 50); // Tetradecagon
+
+# Creating a Robot Face
+I designed a robot face that uses at least four shape blocks and four variables with random numbers to make the design dynamic and change every time the program runs.
+
+Features of the Robot Face:
+Face Base
+
+Used a rectangular base to represent the robot's "skin" with a fixed size and a metallic gray color.
+
+var skin = rgb(192, 192, 192);
+fill(skin);
+rect(50, 100, 300, 250);
+Eyes
+
+Added two large, circular eyes with smaller blue points to represent pupils.
+The eye size is controlled by the variable small.
+
+var small = 50;
+fill(componentColor);
+ellipse(125, 175, small, small);
+ellipse(275, 175, small, small);
+
+strokeWeight(20);
+stroke("blue");
+point(130, 185);
+point(270, 185);
+noStroke();
+
+Nose
+Designed a rectangular nose whose height is randomized using the noseSize variable. This ensures the nose changes each time the program runs.
+
+var noseSize = randomNumber(50, 150);
+fill(componentColor);
+rect(175, 175, small, noseSize);
+
+Mouth
+Created a smiling green arc to represent the robot's mouth.
+
+fill("green");
+arc(200, 300, 100, 100, 0, 180);
+Other Components
+
+Added a smaller rectangle below the face for a neck.
+This block adds depth and makes the robot feel more complete.
+
+rect(175, 350, small, small);
+
+Final Code for the Robot Face:
+
+var skin = rgb(192, 192, 192);
+var componentColor = "orange";
+var small = 50;
+var noseSize = randomNumber(50, 150);
+
+// Face
+fill(skin);
+rect(50, 100, 300, 250);
+rect(175, 350, small, small);
+
+// Eyes
+fill(componentColor);
+ellipse(125, 175, small, small);
+ellipse(275, 175, small, small);
+strokeWeight(20);
+stroke("blue");
+point(130, 185);
+point(270, 185);
+noStroke();
+
+// Nose
+fill(componentColor);
+rect(175, 175, small, noseSize);
+
+// Mouth
+fill("green");
+arc(200, 300, 100, 100, 0, 180);
