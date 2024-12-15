@@ -1346,4 +1346,26 @@ text("Arsenal 2-0 M.united", 120, 170);
 
 
 
+## Lesson 12
+
+// draw loop 
+
+noStroke();
+
+function draw(){
+  fill("green");
+  ellipse(randomNumber(0,400), randomNumber(0,360));
+  fill("orange");
+  ellipse(randomNumber(0,400),randomNumber(0,360));
+}
+
+// sprites on draw loop
+
+function draw() {
+  background("white");
+  sprite1.bounce(sprite2);
+  drawSprites();
+}
+
+
 
