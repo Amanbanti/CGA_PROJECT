@@ -1130,3 +1130,104 @@ drawSprites();
 
 
 
+## Lesson 10 
+
+// Text
+
+background("lightyellow");
+textSize(25);
+text("first text", 50, 200);
+textSize(25);
+text("second text", 50, 300);
+
+// Text size
+
+
+background("lightblue");
+textSize(20);
+text("small", 170, 100);
+textSize(40);
+text("medium", 130, 200);
+textSize(60);
+text("large", 120, 300);
+
+
+// Berry greeting 
+
+
+var berry = createSprite(200, 180);
+berry.setAnimation("strawberry");
+berry.scale = 0.7;
+berry.rotation = 45;
+
+background("lightpink");
+
+stroke("black");
+line(0, 0, 400, 400);
+line(100, 0, 400, 300);
+line(200, 0, 400, 200);
+line(300, 0, 400, 100);
+line(0, 100, 300, 400);
+line(0, 200, 200, 400);
+line(0, 300, 100, 400);
+
+drawSprites();
+
+noStroke();
+fill("white");
+ellipse(185, 140, 40, 40);
+ellipse(233, 168, 40, 40);
+fill("black");
+ellipse(185, 140, 15, 15);
+ellipse(233, 168, 15, 15);
+
+
+fill("yellow");
+textSize(35);
+text("It's berry nice to see you", 10, 100);
+
+
+// Flying riddle
+
+
+var backdrop = createSprite(200,200);
+backdrop.setAnimation("city");
+var flybot = createSprite(100,250);
+flybot.setAnimation("fly_bot");
+var wingbot = createSprite(300,150);
+wingbot.setAnimation("wing_bot");
+var speech1 = createSprite(120,80);
+speech1.setAnimation("speechLeft");
+var speech2 = createSprite(280,310);
+speech2.setAnimation("speechDown");
+
+drawSprites();
+textSize(20);
+stroke("black");
+text("What has" , 60, 40);
+text("wheels and flies," , 40, 65);
+text("but is not an" , 50, 90);
+text("aircraft?" , 70, 115);
+//text("A garbage truck!", 220,320);
+
+
+
+// score 
+
+var field = createSprite(200, 200);
+field.setAnimation("field");
+var ball = createSprite(200, 200);
+ball.setAnimation("ball");
+ball.scale = 0.15;
+drawSprites();
+fill("white");
+textSize(13);
+text("Red Score:3", 0, 25);
+textSize(13);
+text("Blue Score:4", 325, 25);
+
+
+
+
+
+
