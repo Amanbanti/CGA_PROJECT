@@ -1226,6 +1226,47 @@ text("Red Score:3", 0, 25);
 textSize(13);
 text("Blue Score:4", 325, 25);
 
+// Add text
+
+
+var grass = createSprite(200,200);
+grass.setAnimation("floating_grass");
+var alien = createSprite(180,100);
+alien.setAnimation("alien");
+alien.scale = 1.3;
+var robot = createSprite(300,300);
+robot.setAnimation("robot");
+robot.scale = 0.2;
+drawSprites();
+textSize(25);
+text("ALIEN", 175, 55);
+textSize(25);
+text("ROBOT", 280, 210);
+
+// text color
+
+var sky = createSprite(200,200);
+sky.setAnimation("rainbow");
+drawSprites();
+textSize(50);
+fill("red");
+text("Rainbows", 30, 50);
+fill("orange");
+text("in the" , 70, 100);
+fill("green");
+text("sky...", 110, 150);
+fill("yellow");
+text("great", 150, 200);
+
+// wrap the text 
+
+fill("white");
+stroke("black");
+textSize(35);
+strokeWeight(5);
+text("Four score and seven years ago...", 30, 200);
+
+
 
 
 
