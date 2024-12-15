@@ -962,8 +962,69 @@ drawSprites();
 
 
 
+## Lesson 9
+
+// Sprite Properties
+
+
+var palette = createSprite();
+palette.setAnimation("paint_palette");
+var brush = createSprite();
+brush.setAnimation("paint_brush");
+palette.x = 100;
+palette.y = 300;
+brush.x= 125;
+brush.y = 240;
+drawSprites();
 
 
 
+// new properties
+
+
+background("skyblue");
+var drums = createSprite(200,290);
+drums.setAnimation("drum_set");
+var note1 = createSprite(132,140);
+note1.setAnimation("eighth_note");
+note1.scale = 0.3;
+note1.rotation = 20;
+var note2 = createSprite(180,116);
+note2.setAnimation("eighth_note");
+note2.scale = 0.5;
+note2.rotation = -30;
+var note3 = createSprite(250,78);
+note3.setAnimation("eighth_note");
+note3.scale = 0.3;
+var note4 = createSprite(300,55);
+note4.setAnimation("eighth_note");
+note4.scale = 0.4;
+drawSprites();
+
+
+
+// scale property
+
+
+background("darkseagreen");
+fill("deepskyblue");
+ellipse(75, 75, 75, 75);
+var fly = createSprite(25, 25);
+fly.setAnimation("fly");
+fly.scale = 0.5;
+
+var fish = createSprite(75, 75);
+fish.setAnimation("fish");
+fish.scale = 0.5;
+
+var cow = createSprite(150, 150);
+cow.setAnimation("cow");
+cow.scale = 0.5;
+
+var elephant = createSprite(300, 300);
+elephant.setAnimation("elephant");
+elephant.scale = 0.75;
+
+drawSprites();
 
 
