@@ -1267,6 +1267,81 @@ strokeWeight(5);
 text("Four score and seven years ago...", 30, 200);
 
 
+## Lesson 11
+
+// create scene sprites
+
+
+var sprite = createSprite(200, 200);
+sprite.setAnimation("soccer_field_1");
+sprite.alpha = 0.5;
+var sprite = createSprite(120, 190);
+sprite.setAnimation("blue_shirt_hand_up2_1");
+sprite.scale = 0.1;
+var sprite = createSprite(200, 50);
+sprite.setAnimation("blue_shirt_hand_up2_1");
+sprite.scale = 0.01;
+var sprite = createSprite(200, 200);
+sprite.setAnimation("soccer_bw_1");
+sprite.scale = 0.1;
+sprite.alpha = 0.5;
+var sprite = createSprite(240, 80);
+sprite.setAnimation("blue_shirt_hand_up2_1");
+sprite.scale = 0.1;
+var sprite = createSprite(130, 100);
+sprite.setAnimation("blue_shirt_hand_up2_1");
+sprite.scale = 0.1;
+var sprite = createSprite(275, 200);
+sprite.setAnimation("blue_shirt_hand_up2_1");
+sprite.scale = 0.1;
+var sprite = createSprite(265, 250);
+sprite.setAnimation("blue_shirt_hand_up2_1");
+sprite.scale = 0.1;
+var sprite = createSprite(200, 280);
+sprite.setAnimation("blue_shirt_hand_up2_1");
+sprite.scale = 0.1;
+drawSprites();
+
+
+
+// create scene text 
+
+
+var sprite = createSprite(200, 200);
+sprite.setAnimation("soccer_field_1");
+sprite.alpha = 0.5;
+var sprite = createSprite(120, 190);
+sprite.setAnimation("blue_shirt_hand_up2_1");
+sprite.scale = 0.1;
+var sprite = createSprite(200, 50);
+sprite.setAnimation("blue_shirt_hand_up2_1");
+sprite.scale = 0.01;
+var sprite = createSprite(200, 200);
+sprite.setAnimation("soccer_bw_1");
+sprite.scale = 0.1;
+sprite.alpha = 0.5;
+var sprite = createSprite(240, 80);
+sprite.setAnimation("blue_shirt_hand_up2_1");
+sprite.scale = 0.1;
+var sprite = createSprite(130, 100);
+sprite.setAnimation("blue_shirt_hand_up2_1");
+sprite.scale = 0.1;
+var sprite = createSprite(275, 200);
+sprite.setAnimation("blue_shirt_hand_up2_1");
+sprite.scale = 0.1;
+var sprite = createSprite(265, 250);
+sprite.setAnimation("blue_shirt_hand_up2_1");
+sprite.scale = 0.1;
+var sprite = createSprite(200, 280);
+sprite.setAnimation("blue_shirt_hand_up2_1");
+sprite.scale = 0.1;
+drawSprites();
+fill("black");
+textSize(40);
+text(" ⏰ Final !", 120, 140);
+textSize(25);
+text("Arsenal 2-0 M.united", 120, 170);
+
 
 
 
