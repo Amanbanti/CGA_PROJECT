@@ -766,3 +766,91 @@ topRightSprite.setAnimation("flyBot");
 bottomLeftSprite.setAnimation("planeRed1");
 drawSprites();
 
+
+
+// debug some sprites
+
+
+var dessert = createSprite(300, 200);
+dessert.setAnimation("ice_cream");
+var drink = createSprite(100, 200);
+drink.setAnimation("soda");
+var message = createSprite(200, 200);
+message.setAnimation("textGetReady");
+drawSprites();
+
+
+
+// debug: missing sprites
+
+var sprite1 = createSprite(50, 50);
+sprite1.setAnimation("planeRed");
+var sprite2 = createSprite(50, 150);
+sprite2.setAnimation("planeBlue");
+var sprite3 = createSprite(50, 250);
+sprite3.setAnimation("planeGreen");
+var sprite4 = createSprite(50, 350);
+sprite4.setAnimation("planeYellow");
+var sprite5 = createSprite(300, 200);
+sprite5.setAnimation("bunny");
+drawSprites();
+
+
+//debug sprites animation error
+
+
+var sprite1 = createSprite(200, 200);
+sprite1.setAnimation("tyrannosaurus");
+var sprite2 = createSprite(300, 350);
+sprite2.setAnimation("ladybug");
+var sprite3 = createSprite(350, 50);
+sprite3.setAnimation("Sun");
+var sprite4 = createSprite(75, 325);
+sprite4.setAnimation("grass1");
+var sprite5 = createSprite(130, 325);
+sprite5.setAnimation("grass2");
+var sprite6 = createSprite(200, 325);
+sprite6.setAnimation("grass4");
+drawSprites();
+
+// debug sprite name
+
+
+var sprite = createSprite(300, 200);
+sprite.setAnimation("cherry");
+var sprite = createSprite(200, 275);
+sprite.setAnimation("cherry");
+var sprite = createSprite(100, 200);
+sprite.setAnimation("cherry");
+drawSprites();
+
+
+
+// debug sprite order
+
+var grass1 = createSprite(225, 275);
+grass1.setAnimation("grass1");
+var grass2 = createSprite(275, 275);
+grass2.setAnimation("grass2");
+var ladybug = createSprite(250, 320);
+ladybug.setAnimation("ladybug");
+var cactus = createSprite(100, 200);
+cactus.setAnimation("cactus");
+var snail = createSprite(100, 270);
+snail.setAnimation("snail");
+drawSprites();
+
+
+
+
+// create a Sence
+
+var water = createSprite(200, 200);
+water.setAnimation("ocean");
+var fish = createSprite(200,100);
+fish.setAnimation("fish");
+var blue_fish = createSprite(100,300);
+blue_fish.setAnimation("fish_blue");
+var green_fish = createSprite(170, 220);
+green_fish.setAnimation("fish_green");
+drawSprites();
