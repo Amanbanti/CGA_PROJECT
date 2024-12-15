@@ -1096,3 +1096,37 @@ drawSprites();
 
 
 
+// Tint 
+
+
+var creature = createSprite(200, 200);
+creature.setAnimation("crowned_creature_1");
+creature.scale = 0.3;
+creature.tint=("green");
+drawSprites();
+
+
+
+// height and width
+
+
+var sprite = createSprite(200, 200);
+sprite.setAnimation("giraffe_tall");
+sprite.height=400;
+sprite.width=105;
+drawSprites();
+
+
+// Alpha
+
+
+var house = createSprite(200, 200);
+house.setAnimation("front_of_house_1");
+var ghost = createSprite(200, 200);
+ghost.setAnimation("ghost_1");
+ghost.scale = 2;
+ghost.alpha=0.5;
+drawSprites();
+
+
+
