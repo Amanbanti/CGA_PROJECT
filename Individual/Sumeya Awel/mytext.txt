@@ -873,3 +873,97 @@ apparatus.setAnimation("fork");
 var apparatus = createSprite(320, 130);
 apparatus.setAnimation("knife");
 drawSprites();
+
+
+
+//  challenges
+
+
+// Add your own images to the scene
+
+var sprite = createSprite(200, 180);
+drawSprites();
+// Create character sprite and set animation and location
+var character = createSprite(225, 300);
+var character2 = createSprite(75, 175);
+
+// Draw background
+background("black");
+
+// Draw planets
+noStroke();
+fill("DarkGrey");
+ellipse(50, 300);
+fill("LightCoral");
+ellipse(150, 100);
+fill("Thistle");
+ellipse(250, 50);
+fill("Aquamarine");
+ellipse(300, 200);
+
+//Draw stars
+fill("white");
+ellipse(randomNumber(10, 390), randomNumber(10, 390), 5, 5);
+ellipse(randomNumber(10, 390), randomNumber(10, 390), 5, 5);
+ellipse(randomNumber(10, 390), randomNumber(10, 390), 5, 5);
+ellipse(randomNumber(10, 390), randomNumber(10, 390), 5, 5);
+ellipse(randomNumber(10, 390), randomNumber(10, 390), 5, 5);
+ellipse(randomNumber(10, 390), randomNumber(10, 390), 5, 5);
+ellipse(randomNumber(10, 390), randomNumber(10, 390), 5, 5);
+ellipse(randomNumber(10, 390), randomNumber(10, 390), 5, 5);
+ellipse(randomNumber(10, 390), randomNumber(10, 390), 5, 5);
+ellipse(randomNumber(10, 390), randomNumber(10, 390), 5, 5);
+// Draw sprite
+drawSprites();
+
+// draw the sprites
+
+
+var kite = createSprite(310, 115);
+kite.setAnimation("kites");
+kite.scale=0.25;
+
+// Draw background
+background("skyblue");
+
+// Draw grass
+fill("green");
+noStroke();
+rect(0, 300, 400, 100);
+
+// Draw string
+stroke("black");
+strokeWeight(5);
+line(150, 300, 270, 100);
+
+// Draw sprite
+drawSprites();
+
+
+
+// drawing your own image 
+
+
+
+var character = createSprite(200, 300);
+var sprite = createSprite(200, 305);
+sprite.setAnimation("animation_1");
+
+// Draw background
+background("skyblue");
+
+// Draw grass
+fill("green");
+noStroke();
+rect(0, 300, 400, 100);
+
+// Draw sprite
+drawSprites();
+
+
+
+
+
+
+
+
