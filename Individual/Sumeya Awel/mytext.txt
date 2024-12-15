@@ -1028,3 +1028,71 @@ elephant.scale = 0.75;
 drawSprites();
 
 
+
+// Rotation property
+
+
+
+//1) Fix the code so that it looks like the picture.
+background("darkseagreen");
+fill("deepskyblue");
+ellipse(75, 75, 75, 75);
+var fly = createSprite(25, 25);
+fly.setAnimation("fly");
+fly.scale = 0.5;
+
+var fish = createSprite(75, 75);
+fish.setAnimation("fish");
+fish.scale = 0.5;
+
+var cow = createSprite(150, 150);
+cow.setAnimation("cow");
+cow.scale = 0.5;
+
+var elephant = createSprite(300, 300);
+elephant.setAnimation("elephant");
+elephant.scale = 0.75;
+
+drawSprites();
+
+
+
+// multiple property
+
+
+
+var space = createSprite(200, 200);
+space.setAnimation("space");
+var comet = createSprite(200, 180);
+comet.setAnimation("comet");
+comet.scale=0.5;
+comet.rotation=90;
+var alien = createSprite(250, 300);
+alien.setAnimation("alien");
+alien.scale=0.85;
+alien.rotation=320;
+var astronaut = createSprite(100, 120);
+astronaut.setAnimation("astronaut");
+astronaut.scale=0.25;
+astronaut.rotation=30;
+drawSprites();
+
+
+// Make it fif
+
+background("burlywood");
+fill("white");
+ellipse(200,200, 350);
+var fries = createSprite(250,140);
+fries.setAnimation("fries");
+fries.scale=0.7;
+var burger = createSprite(110,200);
+burger.setAnimation("burger");
+burger.scale=0.6;
+var dessert = createSprite(240,270);
+dessert.setAnimation("watermelon");
+dessert.scale=0.57;
+drawSprites();
+
+
+
