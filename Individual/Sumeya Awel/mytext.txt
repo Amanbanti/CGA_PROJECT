@@ -854,3 +854,22 @@ blue_fish.setAnimation("fish_blue");
 var green_fish = createSprite(170, 220);
 green_fish.setAnimation("fish_green");
 drawSprites();
+
+
+
+// part 9 assessment 
+
+// create your own sprites 
+
+
+// 1 Go to the animation tab and add at least two animations to your project.
+// 2 In the code tab, create at least two sprites in two different places on the screen.
+// 3  Assign each sprite a different animation.
+// 4  Draw your sprites to the screen.
+var animal = createSprite(200, 200);
+animal.setAnimation("crab");
+var apparatus = createSprite(80, 130);
+apparatus.setAnimation("fork");
+var apparatus = createSprite(320, 130);
+apparatus.setAnimation("knife");
+drawSprites();
