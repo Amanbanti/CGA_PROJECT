@@ -1361,11 +1361,39 @@ function draw(){
 
 // sprites on draw loop
 
+World.frameRate = 5;
+var sprite = createSprite(100,200);
+sprite.setAnimation("greenAlien");
 function draw() {
-  background("white");
-  sprite1.bounce(sprite2);
+  background("orange");
+  sprite.rotation = randomNumber(0, 400),randomNumber(0,400);
+  sprite.x=randomNumber(100,400);
+  sprite.y=randomNumber(50,350);
   drawSprites();
 }
+
+
+// updating properties
+
+
+var pencil = createSprite(100,200);
+pencil.setAnimation("pencil");
+var brush = createSprite(300,200);
+brush.setAnimation("brush");
+function draw(){
+  background("white");
+  pencil.x = randomNumber(100,110);
+ 
+  brush.x=randomNumber(300,310);
+  drawSprites();
+}
+
+
+
+
+
+
+
 
 
 
