@@ -699,3 +699,107 @@ creature.scale = 0.3;
 creature.tint = "green";
 
 drawSprites();
+
+## Lesson 10: Text and Debugging
+
+Predicting the Text Output
+I predicted what the following code would display:
+
+text("hello", 10, 200);  
+text("everyone!", 200, 300);
+Prediction:
+
+This prints "hello" and "everyone!" on the screen.
+"hello" appears in the middle of the left side.
+"everyone!" appears near the bottom center of the screen.
+
+Adding Text to the Screen
+I customized text blocks and added new ones:
+
+background("lightyellow");
+text("Hi I am the changes new texts", 50, 200);
+text("This is the second text", 200, 50);
+
+
+Adjusting Text Size
+I made the word "large" the biggest by using textSize:
+
+background("lightblue");
+textSize(20);
+text("small", 170, 100);
+textSize(40);
+text("medium", 130, 200);
+textSize(60);
+text("large", 120, 300);
+
+Debugging Sprite Order
+I reordered the blocks to fix the scene:
+
+background("lightpink");
+
+stroke("black");
+line(0, 0, 400, 400);
+line(100, 0, 400, 300);
+line(200, 0, 400, 200);
+line(300, 0, 400, 100);
+line(0, 100, 300, 400);
+line(0, 200, 200, 400);
+line(0, 300, 100, 400);
+
+noStroke();
+fill("white");
+ellipse(185, 140, 40, 40);
+ellipse(233, 168, 40, 40);
+fill("black");
+ellipse(185, 140, 15, 15);
+ellipse(233, 168, 15, 15);
+
+fill("yellow");
+textSize(35);
+text("It's berry nice to see you", 10, 100);
+
+var berry = createSprite(200, 180);
+berry.setAnimation("strawberry");
+berry.scale = 0.7;
+berry.rotation = 45;
+
+drawSprites();
+
+Adding Text to a Scene
+I added text with different sizes and colors:
+
+var grass = createSprite(200, 200);
+grass.setAnimation("floating_grass");
+var alien = createSprite(180, 100);
+alien.setAnimation("alien");
+alien.scale = 1.3;
+var robot = createSprite(300, 300);
+robot.setAnimation("robot");
+robot.scale = 0.2;
+drawSprites();
+
+fill("yellow");
+textSize(20);
+text("The alien from star wars", 40, 50);
+fill("blue");
+textSize(35);
+text("Wall-E", 110, 280);
+
+Playing with Text Colors
+I used fill to change text colors:
+
+var sky = createSprite(200, 200);
+sky.setAnimation("rainbow");
+drawSprites();
+
+textSize(50);
+fill("red");
+text("Rainbows", 30, 50);
+fill("orange");
+text("in the", 70, 100);
+fill("purple");
+text("sky...", 110, 150);
+fill("yellow");
+text("looks", 140, 200);
+fill("green");
+text("Amazing", 170, 250);
