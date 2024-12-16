@@ -1451,6 +1451,79 @@ function draw() {
 
 
 
+// Recreate a scene
+
+
+World.frameRate = 5;
+var sprite = createSprite(200, 200);
+sprite.setAnimation("background");
+var sprite1 = createSprite(300, 215);
+sprite1.setAnimation("cow");
+sprite1.scale = 0.4;
+var sprite2 = createSprite(110, 200);
+sprite2.setAnimation("elephant");
+sprite2.scale = 0.5;
+var sprite3 = createSprite(210, 230);
+sprite3.setAnimation("pig");
+sprite3.scale = 0.35;
+function draw() {
+  sprite1.y=randomNumber(215,150);
+  sprite2.y=randomNumber(200,150);
+  sprite3.y=randomNumber(230,190);
+  drawSprites();
+}
+
+
+
+// Animate the Rainbow Snake
+
+World.frameRate = 5;
+background("skyBlue");
+
+fill("red");
+ellipse(100, randomNumber(190,210), 50, 50);
+
+fill("orange");
+ellipse(140, randomNumber(190,210), 50, 50);
+
+fill("yellow");
+ellipse(180, randomNumber(190,210), 50, 50);
+
+fill("green");
+ellipse(220, randomNumber(190,210), 50, 50);
+
+fill("blue");
+ellipse(260, randomNumber(190,210), 50, 50);
+
+fill("purple");
+ellipse(300, randomNumber(190,210), 50, 50);
+var sprite = createSprite(50, 190);
+sprite.setAnimation("head");
+sprite.scale = 0.23;
+sprite.y=randomNumber(190,210);
+drawSprites();
+
+
+// Favorite Food ...puns
+
+background(rgb(200, 255, 255));
+var sprite1 = createSprite(200, 200);
+sprite1.setAnimation("electric_guitar_1");
+sprite1.rotation = 40;
+var sprite2 = createSprite(140, 255);
+sprite2.setAnimation("blueberry_1");
+sprite2.scale = 0.15;
+sprite2.rotation = 180;
+sprite2.y=randomNumber(255,235);
+drawSprites();
+fill("black");
+textSize(25);
+text("What do you call blueberries", 10, 45);
+text("playing the guitar?", 50, 75);
+text("A jam session!", 215, 290);
+
+
+
 
 
 
