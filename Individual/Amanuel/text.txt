@@ -1193,3 +1193,68 @@ lesson_12
       }
 
 ......................................................................................................
+
+lesson_13
+
+   #jet and planeBlue
+
+   var jet = createSprite(350, 350);
+   jet.setAnimation("jet");
+   var plane = createSprite(50, 200);
+   plane.setAnimation("plane");
+
+   function draw() {
+   background("skyblue");
+   
+   jet.y = jet.y - 3;
+   plane.x = plane.x + 3;
+   drawSprites();
+   }
+
+......................................................................................................
+
+   #Diagonal Movement
+
+      var mouse = createSprite(50, 50);
+      mouse.setAnimation("mouse");
+      mouse.scale = 0.5;
+
+      function draw() {
+      background("lightgreen");
+      mouse.y = mouse.y + 2;
+      mouse.x = mouse.x + 2;
+      drawSprites();
+      createEdgeSprites();
+      mouse.bounceOff(edges);
+      }
+
+......................................................................................................
+
+   #Rotation and spinning
+
+      var pan = createSprite(200, 200);
+      pan.setAnimation("pan");
+
+      function draw() {
+      background("palegreen");
+      pan.rotation=pan.rotation + 2;
+      drawSprites();
+      }
+
+......................................................................................................
+   #Fish animation
+
+      var orangeFish = createSprite(400, randomNumber(0, 100));
+      orangeFish.setAnimation("orange_fish");
+      var blueFish = createSprite(250, randomNumber(100, 200));
+      blueFish.setAnimation("blue_fish");
+      var greenFish = createSprite(300, randomNumber(200, 300));
+      greenFish.setAnimation("green_fish");
+
+      function draw() {
+      background("navy");
+      orangeFish.x = orangeFish.x - 2;
+         blueFish.x = orangeFish.x - 150;
+         greenFish.x = orangeFish.x - 10;
+      drawSprites();
+      }
