@@ -1258,3 +1258,39 @@ lesson_13
          greenFish.x = orangeFish.x - 10;
       drawSprites();
       }
+......................................................................................................
+lesson_14
+
+   #Create Your Scene - background
+      // Set up the canvas and background
+      function setup() {
+      createCanvas(400, 400);
+      }
+
+      function draw() {
+      background("skyblue"); 
+
+
+      fill("yellow"); 
+      ellipse(350, 50, 80, 80); 
+
+      
+      fill("green"); 
+      rect(0, 300, 400, 100); 
+
+      fill("gray");
+      triangle(50, 300, 150, 100, 250, 300); // Mountain 1
+      triangle(200, 300, 300, 120, 400, 300); // Mountain 2
+
+
+      fill("white");
+      ellipse(100, 80, 60, 40); // Cloud 1
+      ellipse(130, 80, 60, 40);
+      ellipse(120, 60, 70, 40);
+
+      ellipse(280, 100, 60, 40); // Cloud 2
+      ellipse(310, 100, 60, 40);
+      ellipse(300, 80, 70, 40);
+      }
+
+
