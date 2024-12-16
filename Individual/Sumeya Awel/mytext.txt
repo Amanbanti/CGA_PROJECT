@@ -1534,6 +1534,33 @@ function draw(){
 }
 
 
+// jet and planeBlue
+
+var jet = createSprite(350, 350);
+jet.setAnimation("jet");
+var plane = createSprite(50, 200);
+plane.setAnimation("plane");
+
+function draw() {
+  background("skyblue");
+  
+  jet.y = jet.y - 3;
+  plane.x = plane.x + 3;
+  drawSprites();
+}
+
+
+
+// fly 
+
+var fly = createSprite(350, 200);
+fly.setAnimation("fly");
+
+function draw() {
+  background("skyblue");
+  fly.x=fly.x - 3;
+  drawSprites();
+}
 
 
 
