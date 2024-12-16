@@ -1564,5 +1564,109 @@ function draw() {
 
 
 
+// diagonal movment
+
+ var mouse = createSprite(50, 50);
+mouse.setAnimation("mouse");
+mouse.scale = 0.5;
+
+function draw() {
+  background("lightgreen");
+  mouse.y = mouse.y + 2;
+  mouse.x = mouse.x + 2;
+  drawSprites();
+  createEdgeSprites();
+  mouse.bounceOff(edges);
+}
 
 
+// cars 
+
+
+var red_car = createSprite(-50, 150);
+red_car.setAnimation("red_car");
+red_car.rotation = 90;
+var yellow_car = createSprite(250, -50);
+yellow_car.setAnimation("yellow_car");
+yellow_car.rotation = 180;
+var blue_car = createSprite(450, 250);
+blue_car.setAnimation("blue_car");
+blue_car.rotation = 270;
+var green_car = createSprite(150, 450);
+green_car.setAnimation("green_car");
+
+function draw() {
+  background("white");
+  red_car.x = red_car.x + 4;
+  yellow_car.y = yellow_car.y + 4;
+  blue_car.x = blue_car.x - 4;
+  green_car.y = green_car.y - 4;
+  drawSprites();
+}
+
+
+// rotation and spinning
+
+var pan = createSprite(200, 200);
+pan.setAnimation("pan");
+
+function draw() {
+  background("palegreen");
+  pan.rotation=pan.rotation + 2;
+  drawSprites();
+}
+
+
+// watching the counter pattern
+
+
+var cycle = createSprite(0, 400);
+cycle.setAnimation("motorcycle");
+cycle.rotation = 45;
+
+function draw() {
+  background("lightgrey");
+  cycle.x = cycle.x + 10;
+  cycle.y = cycle.y - 10;
+  drawSprites();
+}
+
+// gear rotation
+
+
+var blueGear = createSprite(100, 220);
+blueGear.setAnimation("blue_gear");
+
+var greenGear = createSprite(183, 298);
+greenGear.setAnimation("green_gear");
+
+var redGear = createSprite(185, 145);
+redGear.setAnimation("red_gear");
+
+function draw() {
+  background("white");
+  redGear.rotation=redGear.rotation + 3;
+  greenGear.rotation=greenGear.rotation + 3;
+  blueGear.rotation=blueGear.rotation - 3;
+  drawSprites();
+}
+
+
+
+//fish animation
+
+
+var orangeFish = createSprite(400, randomNumber(0, 100));
+orangeFish.setAnimation("orange_fish");
+var blueFish = createSprite(250, randomNumber(100, 200));
+blueFish.setAnimation("blue_fish");
+var greenFish = createSprite(300, randomNumber(200, 300));
+greenFish.setAnimation("green_fish");
+
+function draw() {
+  background("navy");
+  orangeFish.x = orangeFish.x - 2;
+   blueFish.x = orangeFish.x - 150;
+    greenFish.x = orangeFish.x - 10;
+  drawSprites();
+}
