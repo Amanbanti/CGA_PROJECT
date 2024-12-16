@@ -1522,7 +1522,16 @@ text("What do you call blueberries", 10, 45);
 text("playing the guitar?", 50, 75);
 text("A jam session!", 215, 290);
 
+## Lesson 13 
 
+
+var counter = 0;
+function draw(){
+  background("white");
+  textSize(counter);
+  text(counter, 0, 400);
+  counter = counter + 1;
+}
 
 
 
