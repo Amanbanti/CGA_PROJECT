@@ -523,3 +523,309 @@ rect(175, 175, small, noseSize);
 // Mouth
 fill("green");
 arc(200, 300, 100, 100, 0, 180);
+
+## Lesson 8: Sprites
+I explored how to use sprites in code.
+
+Predicting Sprites
+
+My prediction was: this code creates an apple on x = 100 y=200 and and a carrot on x=300 y=200
+
+what is drawSprites(); was at the middle pf the code instead of the bottom
+
+var fruit = createSprite(100, 200);
+fruit.setAnimation("apple");
+var vegetable = createSprite(300, 200);
+vegetable.setAnimation("carrot");
+drawSprites();
+
+I learned that placing drawSprites() in the middle of the code only draws sprites created before it.
+
+Creating and Debugging Sprites
+I added a sprite variable and drew it on the canvas:
+
+var sprite1 = createSprite(200, 200);
+drawSprites();
+For debugging, I rearranged the code so all sprites appeared correctly:
+
+var leftSprite = createSprite(100, 200);
+var rightSprite = createSprite(300, 200);
+drawSprites();
+
+Animations
+I assigned animations to sprites:
+
+var fruit = createSprite(200, 100);
+fruit.setAnimation("strawberry");
+var vegetable = createSprite(200, 300);
+vegetable.setAnimation("broccoli");
+drawSprites();
+I also created a student sprite with an animation:
+
+var student = createSprite(200, 200);
+student.setAnimation("Hawa");
+drawSprites();
+
+
+My Own Sprite Scene
+I created a small scene with custom sprites:
+
+var forest = createSprite(200, 200);
+forest.setAnimation("forest");
+var lion = createSprite(298, 329);
+lion.setAnimation("lion");
+lion.scale = 0.3;
+var hunter = createSprite(70, 350);
+hunter.setAnimation("hunter");
+hunter.scale = 0.4;
+drawSprites();
+Uploaded Animation
+
+I uploaded and added a kite sprite:
+
+var kite = createSprite(350, 95);
+kite.setAnimation("kite.png_1");
+kite.scale = 0.2;
+
+background("skyblue");
+fill("green");
+noStroke();
+rect(0, 300, 400, 100);
+
+stroke("black");
+strokeWeight(5);
+line(150, 300, 300, 50);
+
+drawSprites();
+
+Lesson 9: Sprite properties
+
+Predicting Sprites
+I predicted where the bee sprite would appear from the code:
+
+var bee = createSprite(200,200);
+bee.setAnimation("bee");
+bee.x = 350;
+bee.y = 350;
+drawSprites();
+Answer: B, a bee sprite in the bottom-right corner. The bee.x and bee.y properties override the initial position.
+
+Moving Sprites
+I adjusted the paintbrush location to touch the palette:
+
+var palette = createSprite();
+palette.setAnimation("paint_palette");
+var brush = createSprite();
+brush.setAnimation("paint_brush");
+palette.x = 100;
+palette.y = 300;
+
+brush.x = 140;
+brush.y = 235;
+drawSprites();
+
+
+Customizing with Rotation and Scale
+I customized musical notes using the scale and rotation properties:
+
+var note1 = createSprite(50, 50);
+note1.setAnimation("eighth_note");
+note1.scale = 0.3;
+note1.rotation = 20;
+
+var note2 = createSprite(150, 50);
+note2.setAnimation("eighth_note");
+note2.scale = 0.7;
+note2.rotation = -30;
+
+var note3 = createSprite(250, 50);
+note3.setAnimation("eighth_note");
+note3.scale = 1.4;
+note3.rotation = 180;
+
+var note4 = createSprite(350, 50);
+note4.setAnimation("eighth_note");
+note4.scale = 0.45;
+note4.rotation = -90;
+
+drawSprites();
+
+
+Fixing Sprite Sizes
+I resized animal sprites to fit the image:
+
+var fly = createSprite(25, 25);
+fly.setAnimation("fly");
+fly.scale = 0.5;
+
+var fish = createSprite(75, 75);
+fish.setAnimation("fish");
+fish.scale = 0.5;
+
+var cow = createSprite(150, 150);
+cow.setAnimation("cow");
+cow.scale = 0.5;
+
+var elephant = createSprite(300, 300);
+elephant.setAnimation("elephant");
+elephant.scale = 0.7;
+
+drawSprites();
+
+
+Making Food Fit
+I scaled food sprites to fit on a plate:
+
+var fries = createSprite(250, 140);
+fries.setAnimation("fries");
+fries.scale = 0.7;
+
+var burger = createSprite(110, 200);
+burger.setAnimation("burger");
+burger.scale = 0.6;
+
+var dessert = createSprite(240, 270);
+dessert.setAnimation("watermelon");
+dessert.scale = 0.6;
+
+drawSprites();
+
+Tinting a Sprite
+I experimented with the tint property to overlay a color:
+
+var creature = createSprite(200, 200);
+creature.setAnimation("crowned_creature_1");
+creature.scale = 0.3;
+creature.tint = "green";
+
+drawSprites();
+
+## Lesson 10: Text and Debugging
+
+Predicting the Text Output
+I predicted what the following code would display:
+
+text("hello", 10, 200);  
+text("everyone!", 200, 300);
+Prediction:
+
+This prints "hello" and "everyone!" on the screen.
+"hello" appears in the middle of the left side.
+"everyone!" appears near the bottom center of the screen.
+
+Adding Text to the Screen
+I customized text blocks and added new ones:
+
+background("lightyellow");
+text("Hi I am the changes new texts", 50, 200);
+text("This is the second text", 200, 50);
+
+
+Adjusting Text Size
+I made the word "large" the biggest by using textSize:
+
+background("lightblue");
+textSize(20);
+text("small", 170, 100);
+textSize(40);
+text("medium", 130, 200);
+textSize(60);
+text("large", 120, 300);
+
+Debugging Sprite Order
+I reordered the blocks to fix the scene:
+
+background("lightpink");
+
+stroke("black");
+line(0, 0, 400, 400);
+line(100, 0, 400, 300);
+line(200, 0, 400, 200);
+line(300, 0, 400, 100);
+line(0, 100, 300, 400);
+line(0, 200, 200, 400);
+line(0, 300, 100, 400);
+
+noStroke();
+fill("white");
+ellipse(185, 140, 40, 40);
+ellipse(233, 168, 40, 40);
+fill("black");
+ellipse(185, 140, 15, 15);
+ellipse(233, 168, 15, 15);
+
+fill("yellow");
+textSize(35);
+text("It's berry nice to see you", 10, 100);
+
+var berry = createSprite(200, 180);
+berry.setAnimation("strawberry");
+berry.scale = 0.7;
+berry.rotation = 45;
+
+drawSprites();
+
+Adding Text to a Scene
+I added text with different sizes and colors:
+
+var grass = createSprite(200, 200);
+grass.setAnimation("floating_grass");
+var alien = createSprite(180, 100);
+alien.setAnimation("alien");
+alien.scale = 1.3;
+var robot = createSprite(300, 300);
+robot.setAnimation("robot");
+robot.scale = 0.2;
+drawSprites();
+
+fill("yellow");
+textSize(20);
+text("The alien from star wars", 40, 50);
+fill("blue");
+textSize(35);
+text("Wall-E", 110, 280);
+
+Playing with Text Colors
+I used fill to change text colors:
+
+var sky = createSprite(200, 200);
+sky.setAnimation("rainbow");
+drawSprites();
+
+textSize(50);
+fill("red");
+text("Rainbows", 30, 50);
+fill("orange");
+text("in the", 70, 100);
+fill("purple");
+text("sky...", 110, 150);
+fill("yellow");
+text("looks", 140, 200);
+fill("green");
+text("Amazing", 170, 250);
+
+## Lesson 11: Mini-Project - Sprite Scenes
+In this lesson, I created a fun underwater scene featuring a fish and an octopus.
+
+var background_1 = createSprite(200, 200);
+background_1.setAnimation("bg_underwater_02_1");
+
+var fish = createSprite(100, 210);
+fish.scale = 0.4;
+fish.setAnimation("fish_14_1");
+
+var octupus = createSprite(300, 300);
+octupus.setAnimation("creature_13_1");
+octupus.scale = 0.5;
+
+drawSprites();
+
+fill("white");
+ellipse(200, 100, 300, 100);
+
+fill("red");
+textSize(25);
+text("Ocean Creatures", 100, 88);
+
+fill("blue");
+text("Fish and Octupus", 100, 125);
