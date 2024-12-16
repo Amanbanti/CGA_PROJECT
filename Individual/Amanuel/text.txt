@@ -1102,3 +1102,94 @@ lesson_11
       sprite2.scale=0.2
       drawSprites()
 ......................................................................................................
+lesson_12
+   #Add code to this program so that your drawing has orange circles being drawn, too.
+      noStroke();
+
+      function draw(){
+      fill("green");
+      ellipse(randomNumber(0,400), randomNumber(0,400));
+      fill("orange");
+      ellipse(randomNumber(0,350), randomNumber(0,350));
+      }
+
+......................................................................................................
+   #Updating Properties
+      var pencil = createSprite(100, 200);
+      pencil.setAnimation("pencil");
+
+      var brush = createSprite(300, 200);
+      brush.setAnimation("brush");
+
+      var pencilDirection = 1;
+      var brushDirection = -1;
+
+      function draw() {
+      background("white");
+
+      pencil.x = pencil.x + (4 * pencilDirection);
+      if (pencil.x > 120 || pencil.x < 100) {
+         pencilDirection = -pencilDirection; 
+      }
+
+      brush.x = brush.x + (4 * brushDirection); 
+      if (brush.x > 300 || brush.x < 290) {
+         brushDirection = -brushDirection; 
+      }
+
+      drawSprites();
+      }
+......................................................................................................
+   #updating rotation
+
+      World.frameRate = 10;
+      var greenAlien = createSprite(100, 200);
+      greenAlien.setAnimation("greenAlien");
+      var pinkAlien = createSprite(300, 200);
+      pinkAlien.setAnimation("pinkAlien");
+      noStroke();
+      fill("white");
+      function draw() {
+      background("black");
+      //ellipse(randomNumber(0,400),randomNumber(0,400),5,5);
+      greenAlien.rotation = randomNumber(-5,5);
+      //2 Add code to this program to make the other alien shake just like the first.
+      pinkAlien.rotation=randomNumber(-5,5);
+      drawSprites();
+      }
+
+......................................................................................................
+
+   #Updating Properties
+            
+      var salt = createSprite(200,200);
+      salt.setAnimation("salt");
+
+      function draw() {
+      background("skyblue");
+      salt.y=randomNumber(200,190);
+      drawSprites();
+      }
+
+......................................................................................................
+   #Create An Animated Scene
+      World.frameRate = 5;
+      var sprite = createSprite(200, 200);
+      sprite.setAnimation("background");
+      var sprite1 = createSprite(300, 215);
+      sprite1.setAnimation("cow");
+      sprite1.scale = 0.4;
+      var sprite2 = createSprite(110, 200);
+      sprite2.setAnimation("elephant");
+      sprite2.scale = 0.5;
+      var sprite3 = createSprite(210, 230);
+      sprite3.setAnimation("pig");
+      sprite3.scale = 0.35;
+      function draw() {
+      sprite1.y=randomNumber(215,150);
+      sprite2.y=randomNumber(200,150);
+      sprite3.y=randomNumber(230,190);
+      drawSprites();
+      }
+
+......................................................................................................
