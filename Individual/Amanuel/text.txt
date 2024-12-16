@@ -1292,5 +1292,153 @@ lesson_14
       ellipse(310, 100, 60, 40);
       ellipse(300, 80, 70, 40);
       }
+......................................................................................................
+   lesson_15
 
+      #Booleans
+      var finishLine = createSprite(40, 200);
+      finishLine.setAnimation("finish_line");
+
+      var raceCar = createSprite(400, 200);
+      raceCar.setAnimation("race_car");
+
+      function draw() {
+      // Draw Background
+      background("white");
+      
+      // Counter pattern to make car move across the screen
+      raceCar.x = raceCar.x - 2;
+      
+      //Program text
+      fill("black");
+      strokeWeight(5);
+      textSize(25);
+      text("The race car has crossed the finish line:", 100, 20, 300, 60);
+      fill("blue");
+      // Add blocks to display the boolean value
+      text(raceCar.x < finishLine.x, 100, 100);
+      
+      // Draw Animations
+      drawSprites();
+      }
+
+......................................................................................................
+   #Changing Fruit
+      var fruit = createSprite(200, 200);
+      fruit.setAnimation("apple");
+      fruit.scale = 0.1;
+
+      function draw() {
+      // Draw Background
+      background("white");
+      
+      // Update Values
+      fruit.scale = fruit.scale + 0.01;
+      
+      // Add a conditional to the draw loop
+      if (fruit.scale > 2) {
+         fruit.setAnimation("pear"); // Change the fruit to a pear if scale is greater than 2
+      }
+
+      // Draw Animations
+      drawSprites();
+      }
+
+......................................................................................................
+   #Boolean Expressions
+      var sprite1 = createSprite(200, 200); // sprite1.x is now 200
+      sprite1.setAnimation("apple");
+      sprite1.rotation = 30;
+      sprite1.scale = 1;
+
+      var sprite2 = createSprite(150, 150); // sprite2.x and sprite2.y are now both 150
+      sprite2.setAnimation("carrot");
+      sprite2.rotation = 30;
+      sprite2.scale = 1;
+
+      // Do NOT edit the following (I'm serious!!!)
+      drawSprites();
+      textSize(20);
+      fill("blue");
+      text("Comparison 1: " + (sprite2.x == sprite2.y), 0, 15);
+      text("Comparison 2: " + (sprite2.rotation < 40), 0, 40);
+      text("Comparison 3: " + (sprite1.scale == sprite2.scale), 0, 65);
+      text("Comparison 4: " + (sprite1.x > 150), 0, 90);
+      text("Comparison 5: " + (sprite2.y < 200), 0, 115);
+
+......................................................................................................
+   #Boolean Expressions
+      var sprite1 = createSprite(200, 200); 
+      sprite1.setAnimation("apple");
+      sprite1.rotation = 30; 
+      sprite1.scale = 1;
+
+      var sprite2 = createSprite(150, 150); 
+      sprite2.setAnimation("carrot");
+      sprite2.rotation = 30;
+      sprite2.scale = 1;
+
+      // Do NOT edit the following (I'm serious!!!)
+      drawSprites();
+      textSize(20);
+      fill("blue");
+      text("Comparison 1: " + (sprite2.x == sprite2.y), 0, 15);
+      text("Comparison 2: " + (sprite2.rotation < 40), 0, 40);
+      text("Comparison 3: " + (sprite1.scale == sprite2.scale), 0, 65);
+      text("Comparison 4: " + (sprite1.x > 150), 0, 90); 
+      text("Comparison 5: " + (sprite2.y < 200), 0, 115); 
+
+......................................................................................................
+   #Magic Dinosaur
+      var backdrop = createSprite(200, 200);
+      backdrop.setAnimation("sci_fi");
+
+      var dinosaur = createSprite(200, 350);
+      dinosaur.scale = 0.2;
+      dinosaur.setAnimation("tyrannosaurus");
+
+      function draw() {
+      // Move the dinosaur up
+      dinosaur.y = dinosaur.y - 5;
+
+      // Add a conditional to detect when the dinosaur is in the sky
+      if (dinosaur.y < 150) {
+         dinosaur.setAnimation("pterodactyl"); // Change to pterodactyl when it reaches the sky
+      }
+
+      // Draw everything
+      drawSprites();
+}
+......................................................................................................
+
+   #Visible
+
+      var balloon = createSprite(200, 200);
+      balloon.setAnimation("balloon");
+      balloon.scale = 0.1;
+
+      //Create a pop sprite
+      var pop = createSprite(200, 200);
+      pop.setAnimation("pop");
+
+      //Set the pop sprite to be hidden at the beginning
+      pop.visible = false;
+
+      function draw() {
+      // Draw Background
+      background("white");
+
+      // Update Values
+      balloon.scale = balloon.scale + 0.001;
+
+      //Add a conditional that checks the size of the balloon
+      // to see when it touches the edge of the screen
+      if (balloon.scale > 1) { // Check if the balloon's scale is large enough (this can be adjusted)
+         balloon.visible = false;  // Hide the balloon
+         pop.visible = true;  // Show the pop sprite
+      }
+
+      // Draw Animations
+      drawSprites();
+      }
 
