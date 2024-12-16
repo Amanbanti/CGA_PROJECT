@@ -597,3 +597,105 @@ strokeWeight(5);
 line(150, 300, 300, 50);
 
 drawSprites();
+
+Lesson 9: Sprite properties
+
+Predicting Sprites
+I predicted where the bee sprite would appear from the code:
+
+var bee = createSprite(200,200);
+bee.setAnimation("bee");
+bee.x = 350;
+bee.y = 350;
+drawSprites();
+Answer: B, a bee sprite in the bottom-right corner. The bee.x and bee.y properties override the initial position.
+
+Moving Sprites
+I adjusted the paintbrush location to touch the palette:
+
+var palette = createSprite();
+palette.setAnimation("paint_palette");
+var brush = createSprite();
+brush.setAnimation("paint_brush");
+palette.x = 100;
+palette.y = 300;
+
+brush.x = 140;
+brush.y = 235;
+drawSprites();
+
+
+Customizing with Rotation and Scale
+I customized musical notes using the scale and rotation properties:
+
+var note1 = createSprite(50, 50);
+note1.setAnimation("eighth_note");
+note1.scale = 0.3;
+note1.rotation = 20;
+
+var note2 = createSprite(150, 50);
+note2.setAnimation("eighth_note");
+note2.scale = 0.7;
+note2.rotation = -30;
+
+var note3 = createSprite(250, 50);
+note3.setAnimation("eighth_note");
+note3.scale = 1.4;
+note3.rotation = 180;
+
+var note4 = createSprite(350, 50);
+note4.setAnimation("eighth_note");
+note4.scale = 0.45;
+note4.rotation = -90;
+
+drawSprites();
+
+
+Fixing Sprite Sizes
+I resized animal sprites to fit the image:
+
+var fly = createSprite(25, 25);
+fly.setAnimation("fly");
+fly.scale = 0.5;
+
+var fish = createSprite(75, 75);
+fish.setAnimation("fish");
+fish.scale = 0.5;
+
+var cow = createSprite(150, 150);
+cow.setAnimation("cow");
+cow.scale = 0.5;
+
+var elephant = createSprite(300, 300);
+elephant.setAnimation("elephant");
+elephant.scale = 0.7;
+
+drawSprites();
+
+
+Making Food Fit
+I scaled food sprites to fit on a plate:
+
+var fries = createSprite(250, 140);
+fries.setAnimation("fries");
+fries.scale = 0.7;
+
+var burger = createSprite(110, 200);
+burger.setAnimation("burger");
+burger.scale = 0.6;
+
+var dessert = createSprite(240, 270);
+dessert.setAnimation("watermelon");
+dessert.scale = 0.6;
+
+drawSprites();
+
+Tinting a Sprite
+I experimented with the tint property to overlay a color:
+
+var creature = createSprite(200, 200);
+creature.setAnimation("crowned_creature_1");
+creature.scale = 0.3;
+creature.tint = "green";
+
+drawSprites();
