@@ -1389,6 +1389,66 @@ function draw(){
 }
 
 
+// updating rotation
+
+
+World.frameRate = 10;
+var greenAlien = createSprite(100, 200);
+greenAlien.setAnimation("greenAlien");
+var pinkAlien = createSprite(300, 200);
+pinkAlien.setAnimation("pinkAlien");
+noStroke();
+fill("white");
+function draw() {
+  background("black");
+  //ellipse(randomNumber(0,400),randomNumber(0,400),5,5);
+  greenAlien.rotation = randomNumber(-5,5);
+  //2 Add code to this program to make the other alien shake just like the first.
+  pinkAlien.rotation=randomNumber(-5,5);
+  drawSprites();
+}
+
+
+// blurry sprite
+
+var blender = createSprite(200,200);
+blender.setAnimation("blender");
+
+function draw() {
+  background("lightyellow");
+  blender.x = 200 + randomNumber(-5,5);
+  blender.y = 200 + randomNumber(-5,5);
+  drawSprites();
+}
+
+
+
+// Not sprite move
+
+
+var blender = createSprite(200,200);
+blender.setAnimation("blender");
+background("white");
+
+function draw() {
+  blender.x = randomNumber(195,205);
+  blender.y = randomNumber(195,205);
+}
+drawSprites();
+
+
+// assessment 
+
+
+var salt = createSprite(200,200);
+salt.setAnimation("salt");
+
+function draw() {
+  background("skyblue");
+  salt.y=randomNumber(200,190);
+  drawSprites();
+}
+
 
 
 
