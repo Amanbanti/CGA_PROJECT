@@ -1670,3 +1670,140 @@ function draw() {
     greenFish.x = orangeFish.x - 10;
   drawSprites();
 }
+
+
+// more fish
+
+var orangeFish = createSprite(400, randomNumber(0, 100));
+orangeFish.setAnimation("orange_fish");
+var blueFish = createSprite(250, randomNumber(100, 200));
+blueFish.setAnimation("blue_fish");
+var greenFish = createSprite(300, randomNumber(200, 300));
+greenFish.setAnimation("green_fish");
+
+function draw() {
+  background("navy");
+  orangeFish.x = orangeFish.x - 2;
+  orangeFish.rotation = randomNumber(355,360);
+  blueFish.x = orangeFish.x - 150;
+ blueFish.rotation = randomNumber(355,360);
+  greenFish.x = orangeFish.x - 2;
+ greenFish.rotation = randomNumber(355,360);
+  drawSprites();
+}
+
+
+// bubbles
+
+var orangeFish = createSprite(400, 50);
+orangeFish.setAnimation("orange_fish");
+var blueFish = createSprite(250, 200);
+blueFish.setAnimation("blue_fish");
+var greenFish = createSprite(300,300);
+greenFish.setAnimation("green_fish");
+var sprite1 = createSprite(350, 400);
+sprite1.setAnimation("bubble_1");
+sprite1.scale = 0.15;
+var sprite2 = createSprite(60, 400);
+sprite2.setAnimation("bubble_1");
+sprite2.scale = 0.15;
+var sprite3 = createSprite(200, 400);
+sprite3.setAnimation("bubble_1");
+sprite3.scale = 0.15;
+
+function draw() {
+  background("navy");
+  orangeFish.x = orangeFish.x - 2;
+  orangeFish.rotation = randomNumber(355,360);
+  blueFish.x = orangeFish.x - 150;
+ blueFish.rotation = randomNumber(355,360);
+  greenFish.x = orangeFish.x - 2;
+ greenFish.rotation = randomNumber(355,360);
+ sprite1.y=sprite1.y - 2;
+  sprite2.y=sprite2.y - 4;
+   sprite3.y=sprite3.y - 3;
+  drawSprites();
+}
+
+
+// shark
+
+
+var orangeFish = createSprite(400, 50);
+orangeFish.setAnimation("orange_fish");
+var blueFish = createSprite(250, 200);
+blueFish.setAnimation("blue_fish");
+var greenFish = createSprite(300,300);
+greenFish.setAnimation("green_fish");
+var sprite1 = createSprite(350, 400);
+sprite1.setAnimation("bubble_1");
+sprite1.scale = 0.15;
+var sprite2 = createSprite(60, 400);
+sprite2.setAnimation("bubble_1");
+sprite2.scale = 0.15;
+var sprite3 = createSprite(200, 400);
+sprite3.setAnimation("bubble_1");
+sprite3.scale = 0.15;
+var shark = createSprite(0, 350);
+shark.setAnimation("shark_1");
+shark.scale = 0.8;
+
+function draw() {
+  background("navy");
+  orangeFish.x = orangeFish.x - 2;
+  orangeFish.rotation = randomNumber(355,360);
+  blueFish.x = orangeFish.x - 150;
+ blueFish.rotation = randomNumber(355,360);
+  greenFish.x = orangeFish.x - 2;
+ greenFish.rotation = randomNumber(355,360);
+ sprite1.y=sprite1.y - 2;
+  sprite2.y=sprite2.y - 4;
+   sprite3.y=sprite3.y - 3;
+  shark.x = shark.x + 2;
+  drawSprites();
+}
+
+
+
+// star
+
+var orangeFish = createSprite(400, 50);
+orangeFish.setAnimation("orange_fish");
+var blueFish = createSprite(250, 200);
+blueFish.setAnimation("blue_fish");
+var greenFish = createSprite(300,300);
+greenFish.setAnimation("green_fish");
+var sprite1 = createSprite(350, 400);
+sprite1.setAnimation("bubble_1");
+sprite1.scale = 0.15;
+var sprite2 = createSprite(60, 400);
+sprite2.setAnimation("bubble_1");
+sprite2.scale = 0.15;
+var sprite3 = createSprite(200, 400);
+sprite3.setAnimation("bubble_1");
+sprite3.scale = 0.15;
+var shark = createSprite(-100, 350);
+shark.setAnimation("shark_1");
+shark.scale = 0.8;
+var star = createSprite(65, 0);
+star.setAnimation("creature_05_1");
+star.scale = 0.1;
+
+function draw() {
+  background("navy");
+  orangeFish.x = orangeFish.x - 2;
+  orangeFish.rotation = randomNumber(355,360);
+  blueFish.x = orangeFish.x - 150;
+ blueFish.rotation = randomNumber(355,360);
+  greenFish.x = orangeFish.x - 2;
+ greenFish.rotation = randomNumber(355,360);
+ sprite1.y=sprite1.y - 2;
+  sprite2.y=sprite2.y - 4;
+   sprite3.y=sprite3.y - 3;
+  shark.x = shark.x + 2;
+  star.y = star.y + 5;
+  star.rotation=star.rotation + 10;
+  drawSprites();
+}
+
+
