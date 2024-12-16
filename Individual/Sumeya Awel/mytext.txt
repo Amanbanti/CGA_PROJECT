@@ -700,3 +700,869 @@ var rect2Height
 var rect2Width
 var rect2Y
 var rect2Color
+
+// skill building
+
+var sprite1 = createSprite(200, 200);
+drawSprites();
+
+// Debug
+
+var leftSprite = createSprite(100, 200);
+var rightSprite = createSprite(300, 200);
+drawSprites();
+
+
+// investigating sprites
+
+
+var fruit = createSprite(175, 100);
+//1  Update the fruit animation
+fruit.setAnimation("strawberry");
+var vegetable = createSprite(175, 300);
+//2 Update the vegetable animation
+vegetable.setAnimation("broccoli");
+drawSprites();
+
+// sprites
+
+var student = createSprite(120, 200);
+student.setAnimation("Hawa");
+student.scale=0.30;
+var student = createSprite(70, 200);
+student.setAnimation("Mikayla");
+student.scale=0.30;
+var student = createSprite(25, 200);
+student.setAnimation("Maria");
+student.scale=0.30;
+var student = createSprite(170, 200);
+student.setAnimation("Danielle");
+student.scale=0.30;
+var student = createSprite(220, 200);
+student.setAnimation("Isabelle");
+student.scale=0.30;
+var student = createSprite(270, 200);
+student.setAnimation("Ather");
+student.scale=0.30;
+var student = createSprite(320, 200);
+student.setAnimation("Kim");
+student.scale=0.30;
+var student = createSprite(370, 200);
+student.setAnimation("Nico");
+student.scale=0.30;
+drawSprites();
+
+
+// adding animation
+
+
+var topLeftSprite = createSprite(100, 100);
+var topRightSprite = createSprite(300, 100);
+var bottomLeftSprite = createSprite(100, 300);
+var bottomRightSprite = createSprite(300,300);
+bottomRightSprite.setAnimation("alien");
+topLeftSprite.setAnimation("bunny");
+topRightSprite.setAnimation("flyBot");
+bottomLeftSprite.setAnimation("planeRed1");
+drawSprites();
+
+
+
+// debug some sprites
+
+
+var dessert = createSprite(300, 200);
+dessert.setAnimation("ice_cream");
+var drink = createSprite(100, 200);
+drink.setAnimation("soda");
+var message = createSprite(200, 200);
+message.setAnimation("textGetReady");
+drawSprites();
+
+
+
+// debug: missing sprites
+
+var sprite1 = createSprite(50, 50);
+sprite1.setAnimation("planeRed");
+var sprite2 = createSprite(50, 150);
+sprite2.setAnimation("planeBlue");
+var sprite3 = createSprite(50, 250);
+sprite3.setAnimation("planeGreen");
+var sprite4 = createSprite(50, 350);
+sprite4.setAnimation("planeYellow");
+var sprite5 = createSprite(300, 200);
+sprite5.setAnimation("bunny");
+drawSprites();
+
+
+//debug sprites animation error
+
+
+var sprite1 = createSprite(200, 200);
+sprite1.setAnimation("tyrannosaurus");
+var sprite2 = createSprite(300, 350);
+sprite2.setAnimation("ladybug");
+var sprite3 = createSprite(350, 50);
+sprite3.setAnimation("Sun");
+var sprite4 = createSprite(75, 325);
+sprite4.setAnimation("grass1");
+var sprite5 = createSprite(130, 325);
+sprite5.setAnimation("grass2");
+var sprite6 = createSprite(200, 325);
+sprite6.setAnimation("grass4");
+drawSprites();
+
+// debug sprite name
+
+
+var sprite = createSprite(300, 200);
+sprite.setAnimation("cherry");
+var sprite = createSprite(200, 275);
+sprite.setAnimation("cherry");
+var sprite = createSprite(100, 200);
+sprite.setAnimation("cherry");
+drawSprites();
+
+
+
+// debug sprite order
+
+var grass1 = createSprite(225, 275);
+grass1.setAnimation("grass1");
+var grass2 = createSprite(275, 275);
+grass2.setAnimation("grass2");
+var ladybug = createSprite(250, 320);
+ladybug.setAnimation("ladybug");
+var cactus = createSprite(100, 200);
+cactus.setAnimation("cactus");
+var snail = createSprite(100, 270);
+snail.setAnimation("snail");
+drawSprites();
+
+
+
+
+// create a Sence
+
+var water = createSprite(200, 200);
+water.setAnimation("ocean");
+var fish = createSprite(200,100);
+fish.setAnimation("fish");
+var blue_fish = createSprite(100,300);
+blue_fish.setAnimation("fish_blue");
+var green_fish = createSprite(170, 220);
+green_fish.setAnimation("fish_green");
+drawSprites();
+
+
+
+// part 9 assessment 
+
+// create your own sprites 
+
+
+// 1 Go to the animation tab and add at least two animations to your project.
+// 2 In the code tab, create at least two sprites in two different places on the screen.
+// 3  Assign each sprite a different animation.
+// 4  Draw your sprites to the screen.
+var animal = createSprite(200, 200);
+animal.setAnimation("crab");
+var apparatus = createSprite(80, 130);
+apparatus.setAnimation("fork");
+var apparatus = createSprite(320, 130);
+apparatus.setAnimation("knife");
+drawSprites();
+
+
+
+//  challenges
+
+
+// Add your own images to the scene
+
+var sprite = createSprite(200, 180);
+drawSprites();
+// Create character sprite and set animation and location
+var character = createSprite(225, 300);
+var character2 = createSprite(75, 175);
+
+// Draw background
+background("black");
+
+// Draw planets
+noStroke();
+fill("DarkGrey");
+ellipse(50, 300);
+fill("LightCoral");
+ellipse(150, 100);
+fill("Thistle");
+ellipse(250, 50);
+fill("Aquamarine");
+ellipse(300, 200);
+
+//Draw stars
+fill("white");
+ellipse(randomNumber(10, 390), randomNumber(10, 390), 5, 5);
+ellipse(randomNumber(10, 390), randomNumber(10, 390), 5, 5);
+ellipse(randomNumber(10, 390), randomNumber(10, 390), 5, 5);
+ellipse(randomNumber(10, 390), randomNumber(10, 390), 5, 5);
+ellipse(randomNumber(10, 390), randomNumber(10, 390), 5, 5);
+ellipse(randomNumber(10, 390), randomNumber(10, 390), 5, 5);
+ellipse(randomNumber(10, 390), randomNumber(10, 390), 5, 5);
+ellipse(randomNumber(10, 390), randomNumber(10, 390), 5, 5);
+ellipse(randomNumber(10, 390), randomNumber(10, 390), 5, 5);
+ellipse(randomNumber(10, 390), randomNumber(10, 390), 5, 5);
+// Draw sprite
+drawSprites();
+
+// draw the sprites
+
+
+var kite = createSprite(310, 115);
+kite.setAnimation("kites");
+kite.scale=0.25;
+
+// Draw background
+background("skyblue");
+
+// Draw grass
+fill("green");
+noStroke();
+rect(0, 300, 400, 100);
+
+// Draw string
+stroke("black");
+strokeWeight(5);
+line(150, 300, 270, 100);
+
+// Draw sprite
+drawSprites();
+
+
+
+// drawing your own image 
+
+
+
+var character = createSprite(200, 300);
+var sprite = createSprite(200, 305);
+sprite.setAnimation("animation_1");
+
+// Draw background
+background("skyblue");
+
+// Draw grass
+fill("green");
+noStroke();
+rect(0, 300, 400, 100);
+
+// Draw sprite
+drawSprites();
+
+
+
+## Lesson 9
+
+// Sprite Properties
+
+
+var palette = createSprite();
+palette.setAnimation("paint_palette");
+var brush = createSprite();
+brush.setAnimation("paint_brush");
+palette.x = 100;
+palette.y = 300;
+brush.x= 125;
+brush.y = 240;
+drawSprites();
+
+
+
+// new properties
+
+
+background("skyblue");
+var drums = createSprite(200,290);
+drums.setAnimation("drum_set");
+var note1 = createSprite(132,140);
+note1.setAnimation("eighth_note");
+note1.scale = 0.3;
+note1.rotation = 20;
+var note2 = createSprite(180,116);
+note2.setAnimation("eighth_note");
+note2.scale = 0.5;
+note2.rotation = -30;
+var note3 = createSprite(250,78);
+note3.setAnimation("eighth_note");
+note3.scale = 0.3;
+var note4 = createSprite(300,55);
+note4.setAnimation("eighth_note");
+note4.scale = 0.4;
+drawSprites();
+
+
+
+// scale property
+
+
+background("darkseagreen");
+fill("deepskyblue");
+ellipse(75, 75, 75, 75);
+var fly = createSprite(25, 25);
+fly.setAnimation("fly");
+fly.scale = 0.5;
+
+var fish = createSprite(75, 75);
+fish.setAnimation("fish");
+fish.scale = 0.5;
+
+var cow = createSprite(150, 150);
+cow.setAnimation("cow");
+cow.scale = 0.5;
+
+var elephant = createSprite(300, 300);
+elephant.setAnimation("elephant");
+elephant.scale = 0.75;
+
+drawSprites();
+
+
+
+// Rotation property
+
+
+
+//1) Fix the code so that it looks like the picture.
+background("darkseagreen");
+fill("deepskyblue");
+ellipse(75, 75, 75, 75);
+var fly = createSprite(25, 25);
+fly.setAnimation("fly");
+fly.scale = 0.5;
+
+var fish = createSprite(75, 75);
+fish.setAnimation("fish");
+fish.scale = 0.5;
+
+var cow = createSprite(150, 150);
+cow.setAnimation("cow");
+cow.scale = 0.5;
+
+var elephant = createSprite(300, 300);
+elephant.setAnimation("elephant");
+elephant.scale = 0.75;
+
+drawSprites();
+
+
+
+// multiple property
+
+
+
+var space = createSprite(200, 200);
+space.setAnimation("space");
+var comet = createSprite(200, 180);
+comet.setAnimation("comet");
+comet.scale=0.5;
+comet.rotation=90;
+var alien = createSprite(250, 300);
+alien.setAnimation("alien");
+alien.scale=0.85;
+alien.rotation=320;
+var astronaut = createSprite(100, 120);
+astronaut.setAnimation("astronaut");
+astronaut.scale=0.25;
+astronaut.rotation=30;
+drawSprites();
+
+
+// Make it fif
+
+background("burlywood");
+fill("white");
+ellipse(200,200, 350);
+var fries = createSprite(250,140);
+fries.setAnimation("fries");
+fries.scale=0.7;
+var burger = createSprite(110,200);
+burger.setAnimation("burger");
+burger.scale=0.6;
+var dessert = createSprite(240,270);
+dessert.setAnimation("watermelon");
+dessert.scale=0.57;
+drawSprites();
+
+
+
+// Tint 
+
+
+var creature = createSprite(200, 200);
+creature.setAnimation("crowned_creature_1");
+creature.scale = 0.3;
+creature.tint=("green");
+drawSprites();
+
+
+
+// height and width
+
+
+var sprite = createSprite(200, 200);
+sprite.setAnimation("giraffe_tall");
+sprite.height=400;
+sprite.width=105;
+drawSprites();
+
+
+// Alpha
+
+
+var house = createSprite(200, 200);
+house.setAnimation("front_of_house_1");
+var ghost = createSprite(200, 200);
+ghost.setAnimation("ghost_1");
+ghost.scale = 2;
+ghost.alpha=0.5;
+drawSprites();
+
+
+
+## Lesson 10 
+
+// Text
+
+background("lightyellow");
+textSize(25);
+text("first text", 50, 200);
+textSize(25);
+text("second text", 50, 300);
+
+// Text size
+
+
+background("lightblue");
+textSize(20);
+text("small", 170, 100);
+textSize(40);
+text("medium", 130, 200);
+textSize(60);
+text("large", 120, 300);
+
+
+// Berry greeting 
+
+
+var berry = createSprite(200, 180);
+berry.setAnimation("strawberry");
+berry.scale = 0.7;
+berry.rotation = 45;
+
+background("lightpink");
+
+stroke("black");
+line(0, 0, 400, 400);
+line(100, 0, 400, 300);
+line(200, 0, 400, 200);
+line(300, 0, 400, 100);
+line(0, 100, 300, 400);
+line(0, 200, 200, 400);
+line(0, 300, 100, 400);
+
+drawSprites();
+
+noStroke();
+fill("white");
+ellipse(185, 140, 40, 40);
+ellipse(233, 168, 40, 40);
+fill("black");
+ellipse(185, 140, 15, 15);
+ellipse(233, 168, 15, 15);
+
+
+fill("yellow");
+textSize(35);
+text("It's berry nice to see you", 10, 100);
+
+
+// Flying riddle
+
+
+var backdrop = createSprite(200,200);
+backdrop.setAnimation("city");
+var flybot = createSprite(100,250);
+flybot.setAnimation("fly_bot");
+var wingbot = createSprite(300,150);
+wingbot.setAnimation("wing_bot");
+var speech1 = createSprite(120,80);
+speech1.setAnimation("speechLeft");
+var speech2 = createSprite(280,310);
+speech2.setAnimation("speechDown");
+
+drawSprites();
+textSize(20);
+stroke("black");
+text("What has" , 60, 40);
+text("wheels and flies," , 40, 65);
+text("but is not an" , 50, 90);
+text("aircraft?" , 70, 115);
+//text("A garbage truck!", 220,320);
+
+
+
+// score 
+
+var field = createSprite(200, 200);
+field.setAnimation("field");
+var ball = createSprite(200, 200);
+ball.setAnimation("ball");
+ball.scale = 0.15;
+drawSprites();
+fill("white");
+textSize(13);
+text("Red Score:3", 0, 25);
+textSize(13);
+text("Blue Score:4", 325, 25);
+
+// Add text
+
+
+var grass = createSprite(200,200);
+grass.setAnimation("floating_grass");
+var alien = createSprite(180,100);
+alien.setAnimation("alien");
+alien.scale = 1.3;
+var robot = createSprite(300,300);
+robot.setAnimation("robot");
+robot.scale = 0.2;
+drawSprites();
+textSize(25);
+text("ALIEN", 175, 55);
+textSize(25);
+text("ROBOT", 280, 210);
+
+// text color
+
+var sky = createSprite(200,200);
+sky.setAnimation("rainbow");
+drawSprites();
+textSize(50);
+fill("red");
+text("Rainbows", 30, 50);
+fill("orange");
+text("in the" , 70, 100);
+fill("green");
+text("sky...", 110, 150);
+fill("yellow");
+text("great", 150, 200);
+
+// wrap the text 
+
+fill("white");
+stroke("black");
+textSize(35);
+strokeWeight(5);
+text("Four score and seven years ago...", 30, 200);
+
+
+## Lesson 11
+
+// create scene sprites
+
+
+var sprite = createSprite(200, 200);
+sprite.setAnimation("soccer_field_1");
+sprite.alpha = 0.5;
+var sprite = createSprite(120, 190);
+sprite.setAnimation("blue_shirt_hand_up2_1");
+sprite.scale = 0.1;
+var sprite = createSprite(200, 50);
+sprite.setAnimation("blue_shirt_hand_up2_1");
+sprite.scale = 0.01;
+var sprite = createSprite(200, 200);
+sprite.setAnimation("soccer_bw_1");
+sprite.scale = 0.1;
+sprite.alpha = 0.5;
+var sprite = createSprite(240, 80);
+sprite.setAnimation("blue_shirt_hand_up2_1");
+sprite.scale = 0.1;
+var sprite = createSprite(130, 100);
+sprite.setAnimation("blue_shirt_hand_up2_1");
+sprite.scale = 0.1;
+var sprite = createSprite(275, 200);
+sprite.setAnimation("blue_shirt_hand_up2_1");
+sprite.scale = 0.1;
+var sprite = createSprite(265, 250);
+sprite.setAnimation("blue_shirt_hand_up2_1");
+sprite.scale = 0.1;
+var sprite = createSprite(200, 280);
+sprite.setAnimation("blue_shirt_hand_up2_1");
+sprite.scale = 0.1;
+drawSprites();
+
+
+
+// create scene text 
+
+
+var sprite = createSprite(200, 200);
+sprite.setAnimation("soccer_field_1");
+sprite.alpha = 0.5;
+var sprite = createSprite(120, 190);
+sprite.setAnimation("blue_shirt_hand_up2_1");
+sprite.scale = 0.1;
+var sprite = createSprite(200, 50);
+sprite.setAnimation("blue_shirt_hand_up2_1");
+sprite.scale = 0.01;
+var sprite = createSprite(200, 200);
+sprite.setAnimation("soccer_bw_1");
+sprite.scale = 0.1;
+sprite.alpha = 0.5;
+var sprite = createSprite(240, 80);
+sprite.setAnimation("blue_shirt_hand_up2_1");
+sprite.scale = 0.1;
+var sprite = createSprite(130, 100);
+sprite.setAnimation("blue_shirt_hand_up2_1");
+sprite.scale = 0.1;
+var sprite = createSprite(275, 200);
+sprite.setAnimation("blue_shirt_hand_up2_1");
+sprite.scale = 0.1;
+var sprite = createSprite(265, 250);
+sprite.setAnimation("blue_shirt_hand_up2_1");
+sprite.scale = 0.1;
+var sprite = createSprite(200, 280);
+sprite.setAnimation("blue_shirt_hand_up2_1");
+sprite.scale = 0.1;
+drawSprites();
+fill("black");
+textSize(40);
+text(" ⏰ Final !", 120, 140);
+textSize(25);
+text("Arsenal 2-0 M.united", 120, 170);
+
+
+
+
+
+## Lesson 12
+
+// draw loop 
+
+noStroke();
+
+function draw(){
+  fill("green");
+  ellipse(randomNumber(0,400), randomNumber(0,360));
+  fill("orange");
+  ellipse(randomNumber(0,400),randomNumber(0,360));
+}
+
+// sprites on draw loop
+
+World.frameRate = 5;
+var sprite = createSprite(100,200);
+sprite.setAnimation("greenAlien");
+function draw() {
+  background("orange");
+  sprite.rotation = randomNumber(0, 400),randomNumber(0,400);
+  sprite.x=randomNumber(100,400);
+  sprite.y=randomNumber(50,350);
+  drawSprites();
+}
+
+
+// updating properties
+
+
+var pencil = createSprite(100,200);
+pencil.setAnimation("pencil");
+var brush = createSprite(300,200);
+brush.setAnimation("brush");
+function draw(){
+  background("white");
+  pencil.x = randomNumber(100,110);
+ 
+  brush.x=randomNumber(300,310);
+  drawSprites();
+}
+
+
+// updating rotation
+
+
+World.frameRate = 10;
+var greenAlien = createSprite(100, 200);
+greenAlien.setAnimation("greenAlien");
+var pinkAlien = createSprite(300, 200);
+pinkAlien.setAnimation("pinkAlien");
+noStroke();
+fill("white");
+function draw() {
+  background("black");
+  //ellipse(randomNumber(0,400),randomNumber(0,400),5,5);
+  greenAlien.rotation = randomNumber(-5,5);
+  //2 Add code to this program to make the other alien shake just like the first.
+  pinkAlien.rotation=randomNumber(-5,5);
+  drawSprites();
+}
+
+
+// blurry sprite
+
+var blender = createSprite(200,200);
+blender.setAnimation("blender");
+
+function draw() {
+  background("lightyellow");
+  blender.x = 200 + randomNumber(-5,5);
+  blender.y = 200 + randomNumber(-5,5);
+  drawSprites();
+}
+
+
+
+// Not sprite move
+
+
+var blender = createSprite(200,200);
+blender.setAnimation("blender");
+background("white");
+
+function draw() {
+  blender.x = randomNumber(195,205);
+  blender.y = randomNumber(195,205);
+}
+drawSprites();
+
+
+// assessment 
+
+
+var salt = createSprite(200,200);
+salt.setAnimation("salt");
+
+function draw() {
+  background("skyblue");
+  salt.y=randomNumber(200,190);
+  drawSprites();
+}
+
+
+
+// Recreate a scene
+
+
+World.frameRate = 5;
+var sprite = createSprite(200, 200);
+sprite.setAnimation("background");
+var sprite1 = createSprite(300, 215);
+sprite1.setAnimation("cow");
+sprite1.scale = 0.4;
+var sprite2 = createSprite(110, 200);
+sprite2.setAnimation("elephant");
+sprite2.scale = 0.5;
+var sprite3 = createSprite(210, 230);
+sprite3.setAnimation("pig");
+sprite3.scale = 0.35;
+function draw() {
+  sprite1.y=randomNumber(215,150);
+  sprite2.y=randomNumber(200,150);
+  sprite3.y=randomNumber(230,190);
+  drawSprites();
+}
+
+
+
+// Animate the Rainbow Snake
+
+World.frameRate = 5;
+background("skyBlue");
+
+fill("red");
+ellipse(100, randomNumber(190,210), 50, 50);
+
+fill("orange");
+ellipse(140, randomNumber(190,210), 50, 50);
+
+fill("yellow");
+ellipse(180, randomNumber(190,210), 50, 50);
+
+fill("green");
+ellipse(220, randomNumber(190,210), 50, 50);
+
+fill("blue");
+ellipse(260, randomNumber(190,210), 50, 50);
+
+fill("purple");
+ellipse(300, randomNumber(190,210), 50, 50);
+var sprite = createSprite(50, 190);
+sprite.setAnimation("head");
+sprite.scale = 0.23;
+sprite.y=randomNumber(190,210);
+drawSprites();
+
+
+// Favorite Food ...puns
+
+background(rgb(200, 255, 255));
+var sprite1 = createSprite(200, 200);
+sprite1.setAnimation("electric_guitar_1");
+sprite1.rotation = 40;
+var sprite2 = createSprite(140, 255);
+sprite2.setAnimation("blueberry_1");
+sprite2.scale = 0.15;
+sprite2.rotation = 180;
+sprite2.y=randomNumber(255,235);
+drawSprites();
+fill("black");
+textSize(25);
+text("What do you call blueberries", 10, 45);
+text("playing the guitar?", 50, 75);
+text("A jam session!", 215, 290);
+
+## Lesson 13 
+
+
+var counter = 0;
+function draw(){
+  background("white");
+  textSize(counter);
+  text(counter, 0, 400);
+  counter = counter + 1;
+}
+
+
+// jet and planeBlue
+
+var jet = createSprite(350, 350);
+jet.setAnimation("jet");
+var plane = createSprite(50, 200);
+plane.setAnimation("plane");
+
+function draw() {
+  background("skyblue");
+  
+  jet.y = jet.y - 3;
+  plane.x = plane.x + 3;
+  drawSprites();
+}
+
+
+
+// fly 
+
+var fly = createSprite(350, 200);
+fly.setAnimation("fly");
+
+function draw() {
+  background("skyblue");
+  fly.x=fly.x - 3;
+  drawSprites();
+}
+
+
+
+
+
