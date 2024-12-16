@@ -523,3 +523,77 @@ rect(175, 175, small, noseSize);
 // Mouth
 fill("green");
 arc(200, 300, 100, 100, 0, 180);
+
+## Lesson 8: Sprites
+I explored how to use sprites in code.
+
+Predicting Sprites
+
+My prediction was: this code creates an apple on x = 100 y=200 and and a carrot on x=300 y=200
+
+what is drawSprites(); was at the middle pf the code instead of the bottom
+
+var fruit = createSprite(100, 200);
+fruit.setAnimation("apple");
+var vegetable = createSprite(300, 200);
+vegetable.setAnimation("carrot");
+drawSprites();
+
+I learned that placing drawSprites() in the middle of the code only draws sprites created before it.
+
+Creating and Debugging Sprites
+I added a sprite variable and drew it on the canvas:
+
+var sprite1 = createSprite(200, 200);
+drawSprites();
+For debugging, I rearranged the code so all sprites appeared correctly:
+
+var leftSprite = createSprite(100, 200);
+var rightSprite = createSprite(300, 200);
+drawSprites();
+
+Animations
+I assigned animations to sprites:
+
+var fruit = createSprite(200, 100);
+fruit.setAnimation("strawberry");
+var vegetable = createSprite(200, 300);
+vegetable.setAnimation("broccoli");
+drawSprites();
+I also created a student sprite with an animation:
+
+var student = createSprite(200, 200);
+student.setAnimation("Hawa");
+drawSprites();
+
+
+My Own Sprite Scene
+I created a small scene with custom sprites:
+
+var forest = createSprite(200, 200);
+forest.setAnimation("forest");
+var lion = createSprite(298, 329);
+lion.setAnimation("lion");
+lion.scale = 0.3;
+var hunter = createSprite(70, 350);
+hunter.setAnimation("hunter");
+hunter.scale = 0.4;
+drawSprites();
+Uploaded Animation
+
+I uploaded and added a kite sprite:
+
+var kite = createSprite(350, 95);
+kite.setAnimation("kite.png_1");
+kite.scale = 0.2;
+
+background("skyblue");
+fill("green");
+noStroke();
+rect(0, 300, 400, 100);
+
+stroke("black");
+strokeWeight(5);
+line(150, 300, 300, 50);
+
+drawSprites();
