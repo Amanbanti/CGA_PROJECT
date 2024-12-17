@@ -1807,3 +1807,82 @@ function draw() {
 }
 
 
+
+## Lesson 14
+
+
+
+// draw a baackground
+
+background("lightblue");
+fill("green");
+rect(0, 350, 400, 50);
+drawSprites();
+
+
+// adding sprites
+
+
+background("lightblue");
+fill("green");
+rect(0, 350, 400, 50);
+var sprite1 = createSprite(0, 316);
+sprite1.setAnimation("cobra_1");
+sprite1.scale = 0.2;
+var sprite2 = createSprite(260, 320);
+sprite2.setAnimation("kid_24_1");
+sprite2.scale = 0.5;
+var sprite3 = createSprite(234, 318);
+sprite3.setAnimation("sticker_44_1");
+sprite3.scale = 0.15;
+drawSprites();
+
+
+
+// adding text 
+
+background("lightblue");
+fill("green");
+rect(0, 350, 400, 50);
+var sprite1 = createSprite(0, 316);
+sprite1.setAnimation("cobra_1");
+sprite1.scale = 0.2;
+var sprite2 = createSprite(260, 320);
+sprite2.setAnimation("kid_24_1");
+sprite2.scale = 0.5;
+var sprite3 = createSprite(234, 318);
+sprite3.setAnimation("sticker_44_1");
+sprite3.scale = 0.15;
+drawSprites();
+textSize(25);
+text("oww snake mommy", 174, 226);
+
+
+
+// adding movment
+
+
+
+var sprite1 = createSprite(0, 316);
+sprite1.setAnimation("cobra_1");
+sprite1.scale = 0.2;
+var sprite2 = createSprite(260, 320);
+sprite2.setAnimation("kid_24_1");
+sprite2.scale = 0.5;
+var sprite3 = createSprite(234, 318);
+sprite3.setAnimation("sticker_44_1");
+sprite3.scale = 0.15;
+function draw() {
+  background("lightblue");
+  fill("black");
+  textSize(25);
+  text("oww snake mommy", 174, 226);
+  fill("green");
+  rect(0, 350, 400, 50);
+  sprite1.x =sprite1.x + 3;
+  sprite3.y = sprite3.y + 3;
+  drawSprites();
+}
+
+
+
