@@ -754,3 +754,691 @@ Lesson 3: Drawing in Game Lab
          stroke(randomNumber(100, 255), randomNumber(100, 255), randomNumber(100, 255));
          line(200, 150, 180, 300);
          line(200, 150, 220, 300);
+......................................................................................................
+
+## Lesson 7 Mini-project -- Robot-Faces
+
+   #Review Shape Blocks
+   #Review Regular Polygons
+        regularPolygon(50, 85, 3, 50);
+        regularPolygon(150, 75, 4, 50);
+        regularPolygon(240, 70, 5, 50);
+        regularPolygon(340, 67, 6, 50);
+        regularPolygon(50, 175, 7, 50);
+        regularPolygon(150, 175, 8, 50);
+        regularPolygon(250, 175, 9, 50);
+        regularPolygon(350, 175, 10, 50);
+        regularPolygon(50, 275, 11, 50);
+        regularPolygon(152, 275, 12, 50);
+        regularPolygon(252, 275, 13, 50);
+        regularPolygon(350, 275, 14, 50);
+......................................................................................................
+
+   #Robot Face
+   #Use at least 4 different shape blocks, at least 4 variables with random numbers
+    to create a robot face with unique and creative features!
+
+         // Variables for robot's features
+         var headSize = randomNumber(150, 200);
+         var eyeSize = randomNumber(20, 40);
+         var mouthWidth = randomNumber(50, 100);
+         var antennaHeight = randomNumber(50, 100);
+
+         // Background
+         background("lightblue");
+
+         // Head
+         fill("silver");
+         rect(150, 150, headSize, headSize);
+
+         // Eyes
+         fill("black");
+         ellipse(180, 200, eyeSize, eyeSize); // Left eye
+         ellipse(270, 200, eyeSize, eyeSize); // Right eye
+
+         // Mouth
+         fill("red");
+         rect(200, 250, mouthWidth, 20);
+
+         // Antenna
+         fill("gold");
+         rect(225, 100, 10, antennaHeight);
+         fill("orange");
+         ellipse(230, 100, 20, 20); // Antenna tip
+
+         // Ears
+         fill("gray");
+         rect(120, 180, 20, 50); // Left ear
+         rect(320, 180, 20, 50); // Right ear
+
+......................................................................................................
+lesson-8
+   Overview
+      - How can we use sprites to help us keep track of lots of information in our programs?
+
+   Today you will learn about sprites which will not only give you a way to keep track of various pieces of information in your programs but will also allow you to create more interesting and fun images!
+
+   - Vocabulary
+      
+      Sprite - A character on the screen with properties that describe its location, movement, and look.
+
+   Introduced Code
+
+      - drawSprites()
+
+      - sprite.setAnimation(label)
+
+      - var sprite = createSprite(x, y, w, h)
+......................................................................................................
+   #Create a new sprite variable
+   var sprite1 = createSprite(200, 200, 50, 50); // Create a sprite at (200, 200) with width and height 50
+
+   // Draw the sprites
+   drawSprites();
+
+......................................................................................................
+   #Debug
+
+
+   var rightSprite = createSprite(300, 200);
+   var leftSprite = createSprite(100, 200);
+   drawSprites();
+
+......................................................................................................
+   # Create the fruit sprite
+      var fruit = createSprite(200, 150, 50, 50); // Positioned at (200, 150)
+      fruit.setAnimation("strawberry"); // Animation set to strawberry
+
+      // Create the vegetable sprite
+      var vegetable = createSprite(200, 300, 50, 50); // Positioned below the fruit at (200, 300)
+      vegetable.setAnimation("broccoli"); // Animation set to broccoli
+
+      // Draw the sprites
+      drawSprites();
+
+......................................................................................................
+
+   //Create a sprite variable
+   //Set the animation
+   //Draw the sprite on the screen
+
+      var student = createSprite(200, 200);
+      student.setAnimation("Hawa");
+      drawSprites();
+......................................................................................................
+   #Use the setAnimation command to change the look of your other sprites.
+      var topLeftSprite = createSprite(100, 100);
+      var topRightSprite = createSprite(300, 100);
+      var bottomLeftSprite = createSprite(100, 300);
+      var bottomRightSprite = createSprite(300,300);
+      topLeftSprite.setAnimation("bunny")
+      topRightSprite.setAnimation("planeRed1")
+      bottomLeftSprite.setAnimation("flyBot")
+      bottomRightSprite.setAnimation("alien");
+      drawSprites();
+
+
+......................................................................................................
+   #Debug some sprites
+
+      var drink = createSprite(100, 200);
+      drink.setAnimation("soda");
+      var dessert = createSprite(300, 200);
+      dessert.setAnimation("ice_cream");
+      var message = createSprite(200, 200);
+      message.setAnimation("textGetReady");
+
+      drawSprites();
+......................................................................................................
+   #Debug: Missing Sprites
+      var sprite1 = createSprite(50, 50);
+      var sprite2 = createSprite(50, 150);
+      var sprite3 = createSprite(50, 250);
+      var sprite4 = createSprite(50, 350);
+      var sprite5 = createSprite(300, 200);
+      sprite1.setAnimation("planeRed");
+      sprite2.setAnimation("planeBlue");
+      sprite3.setAnimation("planeGreen");
+      sprite4.setAnimation("planeYellow");
+      sprite5.setAnimation("bunny");
+      drawSprites()
+
+......................................................................................................
+   #Create your own sprites
+   animation1= createSprite(200,200)
+   animation1.setAnimation("animalhead_cat_1")
+   drawSprites()
+
+......................................................................................................
+
+   #Create kite sprite and set animation
+      var kite = createSprite(300, 50);
+      kite.setAnimation("kite.jpg_1")
+      // Draw background
+      background("skyblue");
+
+      // Draw grass
+      fill("green");
+      noStroke();
+      rect(0, 300, 400, 100);
+
+      // Draw string
+      stroke("black");
+      strokeWeight(5);
+      line(150, 300, 300, 50);
+
+      // Draw sprite
+      drawSprites();
+
+......................................................................................................
+
+lesson-9
+
+   #Run the program to see where the sprites appear.
+      var palette = createSprite();
+      palette.setAnimation("paint_palette");
+      var brush = createSprite();
+      brush.setAnimation("paint_brush");
+      palette.x = 240;
+      palette.y = 300;
+      brush.x= 270;
+      brush.y = 220;
+      drawSprites();
+
+......................................................................................................
+   #Run the program to see how what is different about the first two notes.
+   #Use the same blocks on the last two notes to make them look different, too.
+      background("skyblue");
+      var drums = createSprite(200,290);
+      drums.setAnimation("drum_set");
+      var note1 = createSprite(50,50);
+      note1.setAnimation("eighth_note");
+      note1.scale = 0.3;
+      var note2 = createSprite(150,50);
+      note2.setAnimation("eighth_note");
+      note2.scale = 0.7;
+      var note3 = createSprite(250,50);
+      note3.setAnimation("eighth_note");
+      var note4 = createSprite(350,50);
+      note4.setAnimation("eighth_note");
+      drawSprites();
+
+......................................................................................................
+   #Fix the code so that it looks like the picture.
+      background("darkseagreen");
+      fill("deepskyblue");
+      ellipse(75, 75, 75, 75);
+      var fly = createSprite(25, 25);
+      fly.setAnimation("fly");
+      fly.scale = 0.5;
+
+      var fish = createSprite(75, 75);
+      fish.setAnimation("fish");
+      fish.scale = 0.5;
+
+      var cow = createSprite(150, 150);
+      cow.setAnimation("cow");
+      cow.scale = 0.45;
+
+      var elephant = createSprite(300, 300);
+      elephant.setAnimation("elephant");
+      elephant.scale = 0.8;
+
+      drawSprites();
+......................................................................................................
+   #Run the program to see how big the food is.
+   #Use sprite properties to scale all of the food sprites down so they fit on the plate.
+      background("burlywood");
+      fill("white");
+      ellipse(200,200, 350);
+      var fries = createSprite(250,140);
+      fries.scale = 0.6
+      fries.setAnimation("fries");
+      var burger = createSprite(110,200);
+      burger.setAnimation("burger");
+      burger.scale = 0.6
+      var dessert = createSprite(260,300);
+      dessert.setAnimation("watermelon");
+      dessert.scale = 0.6
+      drawSprites();
+......................................................................................................
+   #Tint
+      var creature = createSprite(200, 200);
+      creature.setAnimation("crowned_creature_1");
+      creature.scale = 0.3;
+      creature.tint = 140
+      drawSprites();
+
+......................................................................................................
+lesson-9
+
+   #Add another textSize block before the text block that prints the text "large" to the screen.
+      background("lightblue");
+      textSize(40);
+      text("small", 170, 100);
+
+      textSize(60);
+      text("medium", 130, 200);
+
+      textSize(80);
+      text("large", 120, 300);
+
+......................................................................................................
+
+   #Reorder the blocks so that each part of the scene is drawn in the correct order so that the scene looks like the picture
+      var berry = createSprite(200, 180);
+      berry.setAnimation("strawberry");
+      berry.scale = 0.7;
+      berry.rotation = 45;
+
+      background("lightpink");
+
+      stroke("black");
+      line(0, 0, 400, 400);
+      line(100, 0, 400, 300);
+      line(200, 0, 400, 200);
+      line(300, 0, 400, 100);
+      line(0, 100, 300, 400);
+      line(0, 200, 200, 400);
+      line(0, 300, 100, 400);
+
+      noStroke();
+      fill("white");
+      ellipse(185, 140, 40, 40);
+      ellipse(233, 168, 40, 40);
+      fill("black");
+      ellipse(185, 140, 15, 15);
+      ellipse(233, 168, 15, 15);
+
+      drawSprites();
+
+      fill("yellow");
+      textSize(35);
+      text("It's berry nice to see you", 10, 100);
+
+......................................................................................................
+   #Add two pieces of text to the following scene.  
+   #Make the two pieces of text different sizes.
+      var grass = createSprite(200,200);
+      grass.setAnimation("floating_grass");
+      var alien = createSprite(180,100);
+      alien.setAnimation("alien");
+      alien.scale = 1.3;
+      var robot = createSprite(300,300);
+      robot.setAnimation("robot");
+      robot.scale = 0.2;
+      var ball = createSprite(150,186);
+      ball.setAnimation("basketball_1");
+      ball.scale = 0.2
+      var girl = createSprite(108,314);
+      girl.setAnimation("blue_dress_wave_1");
+      girl.scale = 0.5
+      drawSprites();
+......................................................................................................
+   #Add a new block to make the word "sky" a different color.
+      var sky = createSprite(200,200);
+      sky.setAnimation("rainbow");
+      drawSprites();
+      textSize(50);
+      fill("red");
+      text("Rainbows", 30, 50);
+      fill("orange");
+      text("in the" , 70, 100);
+      fill("purple");
+      text("sky...", 110, 150);
+      fill("yellow");
+      text("shines!", 160, 200);
+
+......................................................................................................
+lesson_11
+
+   #Create Your Scene - Background
+      background("yellow");
+      var sprite1 = createSprite(150, 200);
+      sprite1.setAnimation("cny_01_1");
+      sprite1.scale=0.2
+      var sprite2 = createSprite(250, 200);
+      sprite2.setAnimation("cny_02_1");
+      sprite2.scale=0.2
+      drawSprites()
+......................................................................................................
+lesson_12
+   #Add code to this program so that your drawing has orange circles being drawn, too.
+      noStroke();
+
+      function draw(){
+      fill("green");
+      ellipse(randomNumber(0,400), randomNumber(0,400));
+      fill("orange");
+      ellipse(randomNumber(0,350), randomNumber(0,350));
+      }
+
+......................................................................................................
+   #Updating Properties
+      var pencil = createSprite(100, 200);
+      pencil.setAnimation("pencil");
+
+      var brush = createSprite(300, 200);
+      brush.setAnimation("brush");
+
+      var pencilDirection = 1;
+      var brushDirection = -1;
+
+      function draw() {
+      background("white");
+
+      pencil.x = pencil.x + (4 * pencilDirection);
+      if (pencil.x > 120 || pencil.x < 100) {
+         pencilDirection = -pencilDirection; 
+      }
+
+      brush.x = brush.x + (4 * brushDirection); 
+      if (brush.x > 300 || brush.x < 290) {
+         brushDirection = -brushDirection; 
+      }
+
+      drawSprites();
+      }
+......................................................................................................
+   #updating rotation
+
+      World.frameRate = 10;
+      var greenAlien = createSprite(100, 200);
+      greenAlien.setAnimation("greenAlien");
+      var pinkAlien = createSprite(300, 200);
+      pinkAlien.setAnimation("pinkAlien");
+      noStroke();
+      fill("white");
+      function draw() {
+      background("black");
+      //ellipse(randomNumber(0,400),randomNumber(0,400),5,5);
+      greenAlien.rotation = randomNumber(-5,5);
+      //2 Add code to this program to make the other alien shake just like the first.
+      pinkAlien.rotation=randomNumber(-5,5);
+      drawSprites();
+      }
+
+......................................................................................................
+
+   #Updating Properties
+            
+      var salt = createSprite(200,200);
+      salt.setAnimation("salt");
+
+      function draw() {
+      background("skyblue");
+      salt.y=randomNumber(200,190);
+      drawSprites();
+      }
+
+......................................................................................................
+   #Create An Animated Scene
+      World.frameRate = 5;
+      var sprite = createSprite(200, 200);
+      sprite.setAnimation("background");
+      var sprite1 = createSprite(300, 215);
+      sprite1.setAnimation("cow");
+      sprite1.scale = 0.4;
+      var sprite2 = createSprite(110, 200);
+      sprite2.setAnimation("elephant");
+      sprite2.scale = 0.5;
+      var sprite3 = createSprite(210, 230);
+      sprite3.setAnimation("pig");
+      sprite3.scale = 0.35;
+      function draw() {
+      sprite1.y=randomNumber(215,150);
+      sprite2.y=randomNumber(200,150);
+      sprite3.y=randomNumber(230,190);
+      drawSprites();
+      }
+
+......................................................................................................
+
+lesson_13
+
+   #jet and planeBlue
+
+   var jet = createSprite(350, 350);
+   jet.setAnimation("jet");
+   var plane = createSprite(50, 200);
+   plane.setAnimation("plane");
+
+   function draw() {
+   background("skyblue");
+   
+   jet.y = jet.y - 3;
+   plane.x = plane.x + 3;
+   drawSprites();
+   }
+
+......................................................................................................
+
+   #Diagonal Movement
+
+      var mouse = createSprite(50, 50);
+      mouse.setAnimation("mouse");
+      mouse.scale = 0.5;
+
+      function draw() {
+      background("lightgreen");
+      mouse.y = mouse.y + 2;
+      mouse.x = mouse.x + 2;
+      drawSprites();
+      createEdgeSprites();
+      mouse.bounceOff(edges);
+      }
+
+......................................................................................................
+
+   #Rotation and spinning
+
+      var pan = createSprite(200, 200);
+      pan.setAnimation("pan");
+
+      function draw() {
+      background("palegreen");
+      pan.rotation=pan.rotation + 2;
+      drawSprites();
+      }
+
+......................................................................................................
+   #Fish animation
+
+      var orangeFish = createSprite(400, randomNumber(0, 100));
+      orangeFish.setAnimation("orange_fish");
+      var blueFish = createSprite(250, randomNumber(100, 200));
+      blueFish.setAnimation("blue_fish");
+      var greenFish = createSprite(300, randomNumber(200, 300));
+      greenFish.setAnimation("green_fish");
+
+      function draw() {
+      background("navy");
+      orangeFish.x = orangeFish.x - 2;
+         blueFish.x = orangeFish.x - 150;
+         greenFish.x = orangeFish.x - 10;
+      drawSprites();
+      }
+......................................................................................................
+lesson_14
+
+   #Create Your Scene - background
+      // Set up the canvas and background
+      function setup() {
+      createCanvas(400, 400);
+      }
+
+      function draw() {
+      background("skyblue"); 
+
+
+      fill("yellow"); 
+      ellipse(350, 50, 80, 80); 
+
+      
+      fill("green"); 
+      rect(0, 300, 400, 100); 
+
+      fill("gray");
+      triangle(50, 300, 150, 100, 250, 300); // Mountain 1
+      triangle(200, 300, 300, 120, 400, 300); // Mountain 2
+
+
+      fill("white");
+      ellipse(100, 80, 60, 40); // Cloud 1
+      ellipse(130, 80, 60, 40);
+      ellipse(120, 60, 70, 40);
+
+      ellipse(280, 100, 60, 40); // Cloud 2
+      ellipse(310, 100, 60, 40);
+      ellipse(300, 80, 70, 40);
+      }
+......................................................................................................
+   lesson_15
+
+      #Booleans
+      var finishLine = createSprite(40, 200);
+      finishLine.setAnimation("finish_line");
+
+      var raceCar = createSprite(400, 200);
+      raceCar.setAnimation("race_car");
+
+      function draw() {
+      // Draw Background
+      background("white");
+      
+      // Counter pattern to make car move across the screen
+      raceCar.x = raceCar.x - 2;
+      
+      //Program text
+      fill("black");
+      strokeWeight(5);
+      textSize(25);
+      text("The race car has crossed the finish line:", 100, 20, 300, 60);
+      fill("blue");
+      // Add blocks to display the boolean value
+      text(raceCar.x < finishLine.x, 100, 100);
+      
+      // Draw Animations
+      drawSprites();
+      }
+
+......................................................................................................
+   #Changing Fruit
+      var fruit = createSprite(200, 200);
+      fruit.setAnimation("apple");
+      fruit.scale = 0.1;
+
+      function draw() {
+      // Draw Background
+      background("white");
+      
+      // Update Values
+      fruit.scale = fruit.scale + 0.01;
+      
+      // Add a conditional to the draw loop
+      if (fruit.scale > 2) {
+         fruit.setAnimation("pear"); // Change the fruit to a pear if scale is greater than 2
+      }
+
+      // Draw Animations
+      drawSprites();
+      }
+
+......................................................................................................
+   #Boolean Expressions
+      var sprite1 = createSprite(200, 200); // sprite1.x is now 200
+      sprite1.setAnimation("apple");
+      sprite1.rotation = 30;
+      sprite1.scale = 1;
+
+      var sprite2 = createSprite(150, 150); // sprite2.x and sprite2.y are now both 150
+      sprite2.setAnimation("carrot");
+      sprite2.rotation = 30;
+      sprite2.scale = 1;
+
+      // Do NOT edit the following (I'm serious!!!)
+      drawSprites();
+      textSize(20);
+      fill("blue");
+      text("Comparison 1: " + (sprite2.x == sprite2.y), 0, 15);
+      text("Comparison 2: " + (sprite2.rotation < 40), 0, 40);
+      text("Comparison 3: " + (sprite1.scale == sprite2.scale), 0, 65);
+      text("Comparison 4: " + (sprite1.x > 150), 0, 90);
+      text("Comparison 5: " + (sprite2.y < 200), 0, 115);
+
+......................................................................................................
+   #Boolean Expressions
+      var sprite1 = createSprite(200, 200); 
+      sprite1.setAnimation("apple");
+      sprite1.rotation = 30; 
+      sprite1.scale = 1;
+
+      var sprite2 = createSprite(150, 150); 
+      sprite2.setAnimation("carrot");
+      sprite2.rotation = 30;
+      sprite2.scale = 1;
+
+      // Do NOT edit the following (I'm serious!!!)
+      drawSprites();
+      textSize(20);
+      fill("blue");
+      text("Comparison 1: " + (sprite2.x == sprite2.y), 0, 15);
+      text("Comparison 2: " + (sprite2.rotation < 40), 0, 40);
+      text("Comparison 3: " + (sprite1.scale == sprite2.scale), 0, 65);
+      text("Comparison 4: " + (sprite1.x > 150), 0, 90); 
+      text("Comparison 5: " + (sprite2.y < 200), 0, 115); 
+
+......................................................................................................
+   #Magic Dinosaur
+      var backdrop = createSprite(200, 200);
+      backdrop.setAnimation("sci_fi");
+
+      var dinosaur = createSprite(200, 350);
+      dinosaur.scale = 0.2;
+      dinosaur.setAnimation("tyrannosaurus");
+
+      function draw() {
+      // Move the dinosaur up
+      dinosaur.y = dinosaur.y - 5;
+
+      // Add a conditional to detect when the dinosaur is in the sky
+      if (dinosaur.y < 150) {
+         dinosaur.setAnimation("pterodactyl"); // Change to pterodactyl when it reaches the sky
+      }
+
+      // Draw everything
+      drawSprites();
+}
+......................................................................................................
+
+   #Visible
+
+      var balloon = createSprite(200, 200);
+      balloon.setAnimation("balloon");
+      balloon.scale = 0.1;
+
+      //Create a pop sprite
+      var pop = createSprite(200, 200);
+      pop.setAnimation("pop");
+
+      //Set the pop sprite to be hidden at the beginning
+      pop.visible = false;
+
+      function draw() {
+      // Draw Background
+      background("white");
+
+      // Update Values
+      balloon.scale = balloon.scale + 0.001;
+
+      //Add a conditional that checks the size of the balloon
+      // to see when it touches the edge of the screen
+      if (balloon.scale > 1) { // Check if the balloon's scale is large enough (this can be adjusted)
+         balloon.visible = false;  // Hide the balloon
+         pop.visible = true;  // Show the pop sprite
+      }
+
+      // Draw Animations
+      drawSprites();
+      }
+

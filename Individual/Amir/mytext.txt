@@ -107,3 +107,876 @@ point(190, 200);
 point(200, 210);
 
 This session focused on debugging and creative use of shapes and points to produce the desired visual designs, reinforcing the importance of code order and precise positioning.
+
+
+## Lesson 4: Shapes and Parameters
+
+## Guess and Verify Shape Behavior
+This exercise asked us to predict how parameters like width and height affect the appearance of rectangles. After making predictions, we ran the code to see the actual result.
+
+fill("blue");
+rect(100, 100, 100, 200);
+fill("red");
+rect(250, 100, 100, 150);
+
+## Make Red Rectangle Longer
+Modified the parameters of the second rect() to make the red rectangle longer than the blue one.
+
+fill("blue");
+rect(100, 100, 100, 150);
+fill("red");
+rect(250, 100, 100, 200);
+
+## Orange Ellipse Behind Green Ellipse
+What the exercise did: Added an orange ellipse taller than the green one and arranged the code so the orange ellipse appears behind the green ellipse.
+
+fill("orange");
+ellipse(200, 200, 240, 300);
+fill("green");
+ellipse(200, 200, 200, 150);
+
+## Change Background and Display All Shapes
+Changed the background to orange and rearranged the code so the purple square was visible alongside the blue square.
+
+fill("purple");
+rect(50, 50, 100, 100);
+background("orange");
+fill("blue");
+rect(250, 250, 100, 100);
+
+## Black Background for Green Circle
+Added a black background behind a green circle while ensuring proper order of blocks.
+
+background("black");
+fill("green");
+ellipse(200, 200, 200, 200);
+
+## Extend Grass to Cover Bottom
+Fixed an error to ensure the grass rectangle extends across the entire bottom of the screen.
+
+// Draw sky
+background("skyblue");
+// Draw sun
+fill("yellow");
+ellipse(350, 50, 50, 50);
+// Draw grass
+fill("green");
+rect(0, 300, 400, 100);
+
+## Rearrange Rainbow Ellipses
+Rearranged blocks to display rainbow-colored concentric ellipses in the correct order.
+
+fill("red");
+ellipse(200, 200, 400, 400);
+fill("orange");
+ellipse(200, 200, 340, 340);
+fill("yellow");
+ellipse(200, 200, 280, 280);
+fill("green");
+ellipse(200, 200, 220, 220);
+fill("blue");
+ellipse(200, 200, 160, 160);
+fill("indigo");
+ellipse(200, 200, 100, 100);
+fill("violet");
+ellipse(200, 200, 40, 40);
+
+## Adjust Cloud Shape
+Debugged parameters of an ellipse to make the cloud wider than it is tall.
+
+// Draw sky
+background("skyblue");
+// Draw sun
+fill("yellow");
+ellipse(300, 50, 50, 50);
+// Draw grass
+fill("green");
+rect(0, 350, 400, 100);
+// Draw cloud
+fill("white");
+ellipse(150, 100, 200, 100);
+
+## Add Polygons to Complete Image
+Added missing polygons using regularPolygon() to create a pattern with increasing sides in each row.
+
+regularPolygon(50, 75, 3, 50);
+regularPolygon(150, 75, 4, 50);
+regularPolygon(250, 75, 5, 50);
+regularPolygon(350, 75, 6, 50);
+regularPolygon(50, 175, 7, 50);
+regularPolygon(150, 175, 8, 50);
+regularPolygon(250, 175, 9, 50);
+regularPolygon(350, 175, 10, 50);
+regularPolygon(50, 275, 11, 50);
+regularPolygon(150, 275, 12, 50);
+regularPolygon(250, 275, 13, 50);
+regularPolygon(350, 275, 14, 50);
+
+## Lesson 5: Variables in Graphics
+
+# Prediction and Variables
+Predicted where the circle would appear on the canvas when using variables for its position.
+
+var xPosition = 300;
+var whatsTheY = 100;
+ellipse(xPosition, whatsTheY);
+
+My Prediction: The circle will be drawn at the bottom left of the chart. Changing the numbers changes its position.
+
+# Updating Variables
+Updated variable values to reposition the ellipse to the bottom center of the canvas.
+
+var xPosition = 200;
+var whatsTheY = 300;
+ellipse(xPosition, whatsTheY);
+
+# Debugging: Naming Variables
+Corrected variable names to follow proper naming conventions (no spaces, no starting with numbers, consistent capitalization).
+
+var size = 150;
+var xPosition = 100;
+var yPosition = 200;
+
+fill("OrangeRed");
+ellipse(xPosition, yPosition, size, size);
+
+# Using Variables Multiple Times
+Adjusted a single variable (petalSize) to ensure that red petals touch each other in a flower design.
+
+var petalSize = 80;
+
+// Set Up
+noStroke();
+background("ForestGreen");
+
+// Petals
+fill("red");
+ellipse(150,200,petalSize,petalSize);
+ellipse(200,150,petalSize,petalSize);
+ellipse(250,200,petalSize,petalSize);
+ellipse(200,250,petalSize,petalSize);
+
+// Flower Center
+fill("black");
+ellipse(200,200,50,50);
+
+# Debugging: Using Variables
+Changed the value of circleSize to make the circle fill the entire canvas.
+
+var circleSize = 600;
+
+fill("Crimson");
+ellipse(200, 200, circleSize, circleSize);
+
+# Using Variables for Consistency
+Modified the program so both eyes of a face used the same variable for their size (eyeSize).
+
+var eyeSize = 25;
+
+noStroke();
+background("green");
+
+// Face
+fill("yellow");
+ellipse(200,200,200,200);
+
+// Eyes
+fill("black");
+ellipse(160,170,eyeSize,eyeSize);
+ellipse(240,170,eyeSize,eyeSize); // Updated to use eyeSize variable
+
+// Mouth
+fill("white");
+rect(160,240,80,20);
+
+# Challenge: String Variables
+Used string variables to assign color values to shapes and polygons, demonstrating the flexibility of variables for non-numeric data.
+
+var color1 = "crimson";
+var color2 = "coral";
+var color3 = "purple";
+var color4 = "azure";
+
+fill(color1);
+regularPolygon(200, 200, 5, 200);
+
+fill(color2);
+regularPolygon(200, 200, 6, 150);
+
+fill(color3);
+regularPolygon(200, 200, 7, 100);
+
+fill(color4);
+ellipse(200, 200, 100, 100);
+This lesson focused on understanding the use of variables in graphical programming, debugging variable-related issues, and experimenting with both numeric and string variables for flexible and reusable designs.
+
+## Lesson 6 Summary: Random Numbers and Variables
+
+# Predicted the Outcome of randomNumber()
+Ran the program to see how randomNumber() changes the position of an orange ellipse on a tomato background.
+
+background("tomato");
+fill("orange");
+ellipse(randomNumber(200, 400), 200, 50, 50);
+
+# Updated the Ellipse's Horizontal and Vertical Positions
+Made the ellipse appear anywhere horizontally and vertically by updating the randomNumber() range.
+
+background("tomato");
+fill("orange");
+ellipse(randomNumber(0, 400), randomNumber(0, 400), 50, 50);
+
+# Assigned Random Values to Variables
+
+Used the randomNumber() function to make eye sizes random in a face drawing.
+
+var eyeSize = randomNumber(1, 55);
+noStroke();
+background("green");
+
+// Face
+fill("yellow");
+ellipse(200, 200, 200, 200);
+
+// Eyes
+fill("black");
+ellipse(160, 170, eyeSize, eyeSize);
+ellipse(240, 170, eyeSize, eyeSize);
+
+// Mouth
+fill("white");
+rect(160, 240, 80, 20);
+
+# Randomized Flower Petal Sizes
+Made each flower's petals appear with random sizes by assigning randomNumber() to a variable.
+
+var petalSize;
+
+// First flower
+petalSize = randomNumber(1, 50);
+fill("purple");
+ellipse(75, 100, petalSize, petalSize);
+ellipse(125, 100, petalSize, petalSize);
+ellipse(100, 75, petalSize, petalSize);
+ellipse(100, 125, petalSize, petalSize);
+
+// Second flower
+petalSize = randomNumber(1, 50);
+ellipse(275, 300, petalSize, petalSize);
+ellipse(325, 300, petalSize, petalSize);
+ellipse(300, 275, petalSize, petalSize);
+ellipse(300, 325, petalSize, petalSize);
+
+# Fixed Random Shape Placement
+Ensured rectangles stacked together by sharing a single random value.
+
+var xPosition = randomNumber(1, 150);
+fill("pink");
+rect(xPosition, 100, 250, 50);
+fill("purple");
+rect(xPosition, 150, 250, 50);
+fill("firebrick");
+rect(xPosition, 200, 250, 50);
+
+#Extended the Rainbow Snake
+Added more colored circles to a snake, using randomNumber() for random vertical "wiggles."
+
+background("skyBlue");
+
+fill("red");
+ellipse(100, randomNumber(190, 210), 50, 50);
+
+fill("orange");
+ellipse(140, randomNumber(190, 210), 50, 50);
+
+fill("yellow");
+ellipse(180, randomNumber(190, 210), 50, 50);
+
+fill("green");
+ellipse(220, randomNumber(190, 210), 50, 50);
+
+fill("blue");
+ellipse(260, randomNumber(190, 210), 50, 50);
+
+fill("purple");
+ellipse(300, randomNumber(190, 210), 50, 50);
+
+# Created a Random Rainbow
+Used rgb(randomNumber()) to create random colors for the background, rainbow arcs, and ground.
+
+// Background
+background(rgb(randomNumber(0, 255), randomNumber(0, 255), randomNumber(0, 255)));
+
+// Rainbow
+fill(rgb(randomNumber(0, 255), randomNumber(0, 255), randomNumber(0, 255)));
+ellipse(200, 200, 400, 400);
+fill(rgb(randomNumber(0, 255), randomNumber(0, 255), randomNumber(0, 255)));
+ellipse(200, 200, 340, 340);
+fill(rgb(randomNumber(0, 255), randomNumber(0, 255), randomNumber(0, 255)));
+ellipse(200, 200, 280, 280);
+fill(rgb(randomNumber(0, 255), randomNumber(0, 255), randomNumber(0, 255)));
+ellipse(200, 200, 220, 220);
+fill(rgb(randomNumber(0, 255), randomNumber(0, 255), randomNumber(0, 255)));
+ellipse(200, 200, 160, 160);
+
+// Ground
+fill(rgb(randomNumber(0, 255), randomNumber(0, 255), randomNumber(0, 255)));
+rect(0, 200, 400, 200);
+
+## Lesson 7: Regular Polygons and Robot Face
+
+1. Reviewing Regular Polygons
+Refreshed my understanding of the regularPolygon() block by reading the documentation. This block creates a regular polygon with a specified number of sides, size, and position.
+I experimented with the block to see how changing the number of sides affects the shape.
+2. Adding Shapes to Match the Picture
+Created a grid of regular polygons, each with a different number of sides and arranged neatly in rows.
+
+Below is the code I used to recreate the image with polygons of 3 to 14 sides:
+
+regularPolygon(50, 75, 3, 50);  // Triangle
+regularPolygon(150, 75, 4, 50); // Square
+regularPolygon(250, 75, 5, 50); // Pentagon
+regularPolygon(350, 75, 6, 50); // Hexagon
+
+regularPolygon(50, 175, 7, 50);  // Heptagon
+regularPolygon(150, 175, 8, 50); // Octagon
+regularPolygon(250, 175, 9, 50); // Nonagon
+regularPolygon(350, 175, 10, 50); // Decagon
+
+regularPolygon(50, 275, 11, 50); // Hendecagon
+regularPolygon(150, 275, 12, 50); // Dodecagon
+regularPolygon(250, 275, 13, 50); // Tridecagon
+regularPolygon(350, 275, 14, 50); // Tetradecagon
+
+# Creating a Robot Face
+I designed a robot face that uses at least four shape blocks and four variables with random numbers to make the design dynamic and change every time the program runs.
+
+Features of the Robot Face:
+Face Base
+
+Used a rectangular base to represent the robot's "skin" with a fixed size and a metallic gray color.
+
+var skin = rgb(192, 192, 192);
+fill(skin);
+rect(50, 100, 300, 250);
+Eyes
+
+Added two large, circular eyes with smaller blue points to represent pupils.
+The eye size is controlled by the variable small.
+
+var small = 50;
+fill(componentColor);
+ellipse(125, 175, small, small);
+ellipse(275, 175, small, small);
+
+strokeWeight(20);
+stroke("blue");
+point(130, 185);
+point(270, 185);
+noStroke();
+
+Nose
+Designed a rectangular nose whose height is randomized using the noseSize variable. This ensures the nose changes each time the program runs.
+
+var noseSize = randomNumber(50, 150);
+fill(componentColor);
+rect(175, 175, small, noseSize);
+
+Mouth
+Created a smiling green arc to represent the robot's mouth.
+
+fill("green");
+arc(200, 300, 100, 100, 0, 180);
+Other Components
+
+Added a smaller rectangle below the face for a neck.
+This block adds depth and makes the robot feel more complete.
+
+rect(175, 350, small, small);
+
+Final Code for the Robot Face:
+
+var skin = rgb(192, 192, 192);
+var componentColor = "orange";
+var small = 50;
+var noseSize = randomNumber(50, 150);
+
+// Face
+fill(skin);
+rect(50, 100, 300, 250);
+rect(175, 350, small, small);
+
+// Eyes
+fill(componentColor);
+ellipse(125, 175, small, small);
+ellipse(275, 175, small, small);
+strokeWeight(20);
+stroke("blue");
+point(130, 185);
+point(270, 185);
+noStroke();
+
+// Nose
+fill(componentColor);
+rect(175, 175, small, noseSize);
+
+// Mouth
+fill("green");
+arc(200, 300, 100, 100, 0, 180);
+
+## Lesson 8: Sprites
+I explored how to use sprites in code.
+
+Predicting Sprites
+
+My prediction was: this code creates an apple on x = 100 y=200 and and a carrot on x=300 y=200
+
+what is drawSprites(); was at the middle pf the code instead of the bottom
+
+var fruit = createSprite(100, 200);
+fruit.setAnimation("apple");
+var vegetable = createSprite(300, 200);
+vegetable.setAnimation("carrot");
+drawSprites();
+
+I learned that placing drawSprites() in the middle of the code only draws sprites created before it.
+
+Creating and Debugging Sprites
+I added a sprite variable and drew it on the canvas:
+
+var sprite1 = createSprite(200, 200);
+drawSprites();
+For debugging, I rearranged the code so all sprites appeared correctly:
+
+var leftSprite = createSprite(100, 200);
+var rightSprite = createSprite(300, 200);
+drawSprites();
+
+Animations
+I assigned animations to sprites:
+
+var fruit = createSprite(200, 100);
+fruit.setAnimation("strawberry");
+var vegetable = createSprite(200, 300);
+vegetable.setAnimation("broccoli");
+drawSprites();
+I also created a student sprite with an animation:
+
+var student = createSprite(200, 200);
+student.setAnimation("Hawa");
+drawSprites();
+
+
+My Own Sprite Scene
+I created a small scene with custom sprites:
+
+var forest = createSprite(200, 200);
+forest.setAnimation("forest");
+var lion = createSprite(298, 329);
+lion.setAnimation("lion");
+lion.scale = 0.3;
+var hunter = createSprite(70, 350);
+hunter.setAnimation("hunter");
+hunter.scale = 0.4;
+drawSprites();
+Uploaded Animation
+
+I uploaded and added a kite sprite:
+
+var kite = createSprite(350, 95);
+kite.setAnimation("kite.png_1");
+kite.scale = 0.2;
+
+background("skyblue");
+fill("green");
+noStroke();
+rect(0, 300, 400, 100);
+
+stroke("black");
+strokeWeight(5);
+line(150, 300, 300, 50);
+
+drawSprites();
+
+Lesson 9: Sprite properties
+
+Predicting Sprites
+I predicted where the bee sprite would appear from the code:
+
+var bee = createSprite(200,200);
+bee.setAnimation("bee");
+bee.x = 350;
+bee.y = 350;
+drawSprites();
+Answer: B, a bee sprite in the bottom-right corner. The bee.x and bee.y properties override the initial position.
+
+Moving Sprites
+I adjusted the paintbrush location to touch the palette:
+
+var palette = createSprite();
+palette.setAnimation("paint_palette");
+var brush = createSprite();
+brush.setAnimation("paint_brush");
+palette.x = 100;
+palette.y = 300;
+
+brush.x = 140;
+brush.y = 235;
+drawSprites();
+
+
+Customizing with Rotation and Scale
+I customized musical notes using the scale and rotation properties:
+
+var note1 = createSprite(50, 50);
+note1.setAnimation("eighth_note");
+note1.scale = 0.3;
+note1.rotation = 20;
+
+var note2 = createSprite(150, 50);
+note2.setAnimation("eighth_note");
+note2.scale = 0.7;
+note2.rotation = -30;
+
+var note3 = createSprite(250, 50);
+note3.setAnimation("eighth_note");
+note3.scale = 1.4;
+note3.rotation = 180;
+
+var note4 = createSprite(350, 50);
+note4.setAnimation("eighth_note");
+note4.scale = 0.45;
+note4.rotation = -90;
+
+drawSprites();
+
+
+Fixing Sprite Sizes
+I resized animal sprites to fit the image:
+
+var fly = createSprite(25, 25);
+fly.setAnimation("fly");
+fly.scale = 0.5;
+
+var fish = createSprite(75, 75);
+fish.setAnimation("fish");
+fish.scale = 0.5;
+
+var cow = createSprite(150, 150);
+cow.setAnimation("cow");
+cow.scale = 0.5;
+
+var elephant = createSprite(300, 300);
+elephant.setAnimation("elephant");
+elephant.scale = 0.7;
+
+drawSprites();
+
+
+Making Food Fit
+I scaled food sprites to fit on a plate:
+
+var fries = createSprite(250, 140);
+fries.setAnimation("fries");
+fries.scale = 0.7;
+
+var burger = createSprite(110, 200);
+burger.setAnimation("burger");
+burger.scale = 0.6;
+
+var dessert = createSprite(240, 270);
+dessert.setAnimation("watermelon");
+dessert.scale = 0.6;
+
+drawSprites();
+
+Tinting a Sprite
+I experimented with the tint property to overlay a color:
+
+var creature = createSprite(200, 200);
+creature.setAnimation("crowned_creature_1");
+creature.scale = 0.3;
+creature.tint = "green";
+
+drawSprites();
+
+## Lesson 10: Text and Debugging
+
+Predicting the Text Output
+I predicted what the following code would display:
+
+text("hello", 10, 200);  
+text("everyone!", 200, 300);
+Prediction:
+
+This prints "hello" and "everyone!" on the screen.
+"hello" appears in the middle of the left side.
+"everyone!" appears near the bottom center of the screen.
+
+Adding Text to the Screen
+I customized text blocks and added new ones:
+
+background("lightyellow");
+text("Hi I am the changes new texts", 50, 200);
+text("This is the second text", 200, 50);
+
+
+Adjusting Text Size
+I made the word "large" the biggest by using textSize:
+
+background("lightblue");
+textSize(20);
+text("small", 170, 100);
+textSize(40);
+text("medium", 130, 200);
+textSize(60);
+text("large", 120, 300);
+
+Debugging Sprite Order
+I reordered the blocks to fix the scene:
+
+background("lightpink");
+
+stroke("black");
+line(0, 0, 400, 400);
+line(100, 0, 400, 300);
+line(200, 0, 400, 200);
+line(300, 0, 400, 100);
+line(0, 100, 300, 400);
+line(0, 200, 200, 400);
+line(0, 300, 100, 400);
+
+noStroke();
+fill("white");
+ellipse(185, 140, 40, 40);
+ellipse(233, 168, 40, 40);
+fill("black");
+ellipse(185, 140, 15, 15);
+ellipse(233, 168, 15, 15);
+
+fill("yellow");
+textSize(35);
+text("It's berry nice to see you", 10, 100);
+
+var berry = createSprite(200, 180);
+berry.setAnimation("strawberry");
+berry.scale = 0.7;
+berry.rotation = 45;
+
+drawSprites();
+
+Adding Text to a Scene
+I added text with different sizes and colors:
+
+var grass = createSprite(200, 200);
+grass.setAnimation("floating_grass");
+var alien = createSprite(180, 100);
+alien.setAnimation("alien");
+alien.scale = 1.3;
+var robot = createSprite(300, 300);
+robot.setAnimation("robot");
+robot.scale = 0.2;
+drawSprites();
+
+fill("yellow");
+textSize(20);
+text("The alien from star wars", 40, 50);
+fill("blue");
+textSize(35);
+text("Wall-E", 110, 280);
+
+Playing with Text Colors
+I used fill to change text colors:
+
+var sky = createSprite(200, 200);
+sky.setAnimation("rainbow");
+drawSprites();
+
+textSize(50);
+fill("red");
+text("Rainbows", 30, 50);
+fill("orange");
+text("in the", 70, 100);
+fill("purple");
+text("sky...", 110, 150);
+fill("yellow");
+text("looks", 140, 200);
+fill("green");
+text("Amazing", 170, 250);
+
+## Lesson 11: Mini-Project - Sprite Scenes
+In this lesson, I created a fun underwater scene featuring a fish and an octopus.
+
+var background_1 = createSprite(200, 200);
+background_1.setAnimation("bg_underwater_02_1");
+
+var fish = createSprite(100, 210);
+fish.scale = 0.4;
+fish.setAnimation("fish_14_1");
+
+var octupus = createSprite(300, 300);
+octupus.setAnimation("creature_13_1");
+octupus.scale = 0.5;
+
+drawSprites();
+
+fill("white");
+ellipse(200, 100, 300, 100);
+
+fill("red");
+textSize(25);
+text("Ocean Creatures", 100, 88);
+
+fill("blue");
+text("Fish and Octupus", 100, 125);
+
+
+## Lesson 12: Draw Loop
+
+Draw Loop Prediction
+
+noStroke();
+fill("SeaGreen");
+
+function draw(){
+  ellipse(randomNumber(0,400), randomNumber(0,400));
+}
+
+Prediction:
+The program generates a random ellipse on the screen in the color SeaGreen. Since the draw() function runs repeatedly, the ellipses keep appearing in different locations.
+
+
+Adding Circles to the Draw Loop
+
+Next, I modified the program to add orange circles to the scene. I included a new fill("orange") line inside the draw loop so that two different colored circles (green and orange) are drawn on each iteration.
+
+noStroke();
+
+function draw(){
+  fill("green");
+  ellipse(randomNumber(0,400), randomNumber(0,400));
+  fill("orange");
+  ellipse(randomNumber(0,400), randomNumber(0,400));
+}
+
+Outcome:
+The screen now displays green and orange circles drawn at random positions, repeatedly.
+
+Prediction: Red Background with Yellow Circles
+
+In the next step, I explored a program that uses the background() function inside the draw loop. I predicted that it would print yellow circles over a red background that resets with every frame.
+
+World.frameRate = 5;
+
+noStroke();
+background("blue");
+fill("Yellow");
+
+function draw(){
+  background("Red");
+  ellipse(randomNumber(0,400), randomNumber(0,400));
+}
+
+Prediction:
+It will display yellow circles all over the screen, but the background will keep refreshing as red.
+
+Outcome:
+My prediction was correct. The yellow circles appear at random positions, and the red background keeps resetting, erasing previous circles.
+4. Animating Sprites in the Draw Loop
+
+I then worked on animating a sprite using its rotation property. I observed how changing the sprite’s properties inside the draw() loop allows for continuous animation.
+
+var sprite = createSprite(100,200);
+sprite.setAnimation("greenAlien");
+
+function draw() {
+  background("orange");
+  sprite.rotation = randomNumber(-90, 360);
+  drawSprites();
+}
+
+The sprite (green alien) rotates randomly between -90 and 360 degrees, while the background remains orange
+
+Updating Properties for Shaking Sprites
+
+I practiced updating the x property of sprites to make them appear as though they were shaking. Initially, only one sprite (pencil) shook, but I added code to make the second sprite (brush) shake as well.
+
+var pencil = createSprite(100,200);
+pencil.setAnimation("pencil");
+
+var brush = createSprite(300,200);
+brush.setAnimation("brush");
+
+function draw(){
+  background("white");
+  pencil.x = randomNumber(100,110);
+  brush.x = randomNumber(300, 310);
+  drawSprites();
+}
+
+
+Both the pencil and brush sprites shake horizontally by changing their x position within a small range.
+
+Animating Multiple Sprites
+
+Finally, I worked on animating multiple sprites with the rotation property. I added the draw loop and adjusted the sprite properties to make both aliens shake.
+
+World.frameRate = 10;
+
+var greenAlien = createSprite(100, 200);
+greenAlien.setAnimation("greenAlien");
+
+var pinkAlien = createSprite(300, 200);
+pinkAlien.setAnimation("pinkAlien");
+
+noStroke();
+fill("white");
+
+function draw() {
+  background("black");
+  ellipse(randomNumber(0,400),randomNumber(0,400),5,5);
+
+  greenAlien.rotation = randomNumber(-5,5);
+  pinkAlien.rotation = randomNumber(-5,5);
+
+  drawSprites();
+}
+
+Both the green alien and pink alien shake slightly by adjusting their rotation property, while small white ellipses appear in the background.
+
+Creating an Animated Scene
+
+For the final task, I recreated a scene with a background and three animated sprites (cow, elephant, and pig). I updated their y properties inside the draw loop to make them look like they were jumping.
+World.frameRate = 5;
+
+// Background
+var background = createSprite(200, 200);
+background.setAnimation("background1");
+
+// Sprites for cow, elephant, and pig
+var cow = createSprite(300, 200);
+var elephant = createSprite(100, 200);
+var pig = createSprite(208, 200);
+
+// Resize the animals
+cow.scale = 0.38;
+pig.scale = 0.3;
+elephant.scale = 0.48;
+
+// Set animations
+cow.setAnimation("cow");
+elephant.setAnimation("elephant");
+pig.setAnimation("pig");
+
+function draw() {
+  background("skyblue");
+  
+  // Make the animals jump
+  elephant.y = randomNumber(150, 235);
+  cow.y = randomNumber(150, 235);
+  pig.y = randomNumber(150, 235);
+
+  drawSprites();
+}
+
+The cow, elephant, and pig appear on the screen and jump up and down randomly, creating a lively animated scene.
