@@ -1886,3 +1886,119 @@ function draw() {
 
 
 
+## Lesson 15
+
+
+// boolean
+
+
+  var finishLine = createSprite(40, 200);
+finishLine.setAnimation("finish_line");
+
+var raceCar = createSprite(400, 200);
+raceCar.setAnimation("race_car");
+
+function draw() {
+  // Draw Background
+  background("white");
+  
+  // Counter pattern to make car move across the screen
+  raceCar.x = raceCar.x - 2;
+  
+  //Program text
+  fill("black");
+  strokeWeight(5);
+  textSize(25);
+  text("The race car has crossed the finish line:", 100, 20, 300, 60);
+  fill("blue");
+  //1 Add blocks to the text command to print the boolean to the screen
+ text(raceCar.x < finishLine.x, 100, 100);
+  drawSprites();
+}
+
+
+
+// changing fruit
+
+
+
+var fruit = createSprite(200, 200);
+fruit.setAnimation("apple");
+fruit.scale = 0.1;
+
+function draw() {
+  background("white");
+  fruit.scale = fruit.scale + 0.01;
+  if (fruit.scale>2) {
+    fruit.setAnimation("pear");
+  }
+
+  drawSprites();
+}
+
+
+
+
+
+// boolean expression
+
+
+var sprite1 = createSprite(190, 150);
+sprite1.setAnimation("apple");
+sprite1.rotation = 30;
+sprite1.scale = 1.5;
+
+var sprite2 = createSprite(199, 199);
+sprite2.setAnimation("carrot");
+sprite2.rotation = 39;
+sprite2.scale = 1.5;
+
+textSize(20);
+fill("blue");
+text("Comparison 1: " + (sprite2.x == sprite2.y), 0, 15);
+text("Comparison 2: " + (sprite2.rotation < 40), 0, 40);
+text("Comparison 3: " + (sprite1.scale == sprite2.scale), 0, 65);
+text("Comparison 4: " + (sprite1.x > 150), 0, 90);
+text("Comparison 5: " + (sprite2.y < 200), 0, 115);
+
+drawSprites();
+
+
+//dropped soap
+
+
+var soup =  createSprite(200,200);
+soup.setAnimation("stew");
+
+function draw() {
+  background("lightgreen");
+  soup.rotation = soup.rotation + 3;
+  if (soup.rotation==180) {
+    soup.setAnimation("bowl");
+  }
+  drawSprites();
+}
+
+
+// Alien celebration 
+
+
+var scene = createSprite(200, 200);
+scene.setAnimation("background");
+
+var spaceship = createSprite(200, 200);
+spaceship.setAnimation("spaceship");
+
+var alien = createSprite(300, 350);
+alien.setAnimation("alien_standing");
+
+function draw() {
+  spaceship.y = spaceship.y - 3;
+  
+  if (spaceship.y==20) {
+    alien.setAnimation("alien_dance");
+  }
+  
+  drawSprites();
+}
+
