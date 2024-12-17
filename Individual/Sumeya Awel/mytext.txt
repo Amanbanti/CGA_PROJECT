@@ -2002,3 +2002,146 @@ function draw() {
   drawSprites();
 }
 
+
+
+// magic dinosaur
+
+var backdrop = createSprite(200,200);
+backdrop.setAnimation("sci_fi");
+var dinosaur = createSprite(200, 350);
+dinosaur.scale = 0.2;
+dinosaur.setAnimation("tyrannosaurus");
+
+function draw() {
+  dinosaur.y = dinosaur.y - 5;
+  if (dinosaur.y==225) {
+    dinosaur.setAnimation("pterodactyl");
+  }
+
+
+  //draw everything
+  drawSprites();
+}
+
+
+
+
+// ballon visible
+
+
+
+var balloon = createSprite(200, 200);
+balloon.setAnimation("balloon");
+balloon.scale = 0.1;
+var pop = createSprite(200, 200);
+pop.setAnimation("pop");
+pop.visible = false;
+
+//1) Create a pop sprite which uses the "pop" visual in the animation tab.
+
+
+//2) Set the pop sprite to be hidden at the beginning.
+
+
+function draw() {
+  // Draw Background
+  background("white");
+
+  // Update Values
+  balloon.scale = balloon.scale + 0.01;
+  if (balloon.scale>0.6) {
+    balloon.visible = false;
+    pop.visible = true;
+  }
+
+
+
+  // Draw Animations
+  drawSprites();
+}
+
+
+
+// restart sprites
+
+
+
+var tree = createSprite(200, 220);
+tree.setAnimation("tree");
+tree.scale = 0.75;
+
+var ghost = createSprite(300, 320);
+ghost.setAnimation("ghost");
+
+var monster = createSprite(400, 320);
+monster.setAnimation("orange_monster");
+monster.scale = 0.35;
+
+
+
+function draw() {
+  // Draw Background
+  background("plum");
+  fill("palegreen");
+  rect(-5, 350, 405, 50);
+  ghost.x = ghost.x - 3;
+  monster.x = monster.x - 3;
+
+  if (ghost.x==0) {
+    ghost.x = 300;
+  }
+
+  if (monster.x==0) {
+    monster.x = 400;
+  }
+
+  drawSprites();
+  
+}
+
+
+
+//Never-Ending Fish Scene
+
+
+
+var orangeFish = createSprite(400, randomNumber(200, 400));
+orangeFish.setAnimation("orange_fish");
+orangeFish.scale = 0.25;
+orangeFish.rotation = 15;
+
+var blueFish = createSprite(0, randomNumber(0, 200));
+blueFish.setAnimation("blue_fish");
+blueFish.scale = 0.25;
+
+var greenFish = createSprite(400, randomNumber(100, 300));
+greenFish.setAnimation("green_fish");
+greenFish.scale = 0.25;
+
+var shark = createSprite(-150, randomNumber(290, 400));
+shark.setAnimation("shark");
+shark.scale = 0.75;
+
+var starfish = createSprite(randomNumber(10, 390), 0);
+starfish.setAnimation("starfish");
+starfish.scale = 0.10;
+
+//variable used with counter pattern for the ellispe y locations
+var bubbles=400;
+
+function draw() {
+  // Draw Background
+  background("navy");
+  
+  //Draw and animate bubbles
+  noFill();
+  stroke("white");
+  strokeWeight(3);
+  ellipse(65,bubbles,25);
+  ellipse(225,bubbles + 25,25);
+  ellipse(350,bubbles + 100,25);
+  bubbles = bubbles - 2;
+ 
+  drawSprites();
+}
+
