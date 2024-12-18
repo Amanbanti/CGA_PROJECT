@@ -2265,3 +2265,128 @@ lesson_21
             noLoop(); // Stop the game
          }
          }
+
+......................................................................................................
+
+lesson_22
+   #Velocity and the Counter Pattern
+      var car = createSprite(50, 200);
+      car.setAnimation("red_car");
+      car.velocityX = 0.2;
+
+      function draw() {
+      background("gray");
+      
+      //Add code to make the car speed up.
+      car.velocityX += 0.1
+
+      drawSprites();
+      }
+
+......................................................................................................
+   #Falling Rock
+
+      var rock = createSprite(200, 50);
+      rock.setAnimation("rock");
+      rock.velocityY = 0.5;
+
+      function draw() {
+      background("skyblue");
+      
+      //Add code to make the rock speed up as it falls.
+      rock.velocityY+=0.4
+      
+      if(rock.y > 370){
+         rock.y=50;
+         rock.velocityY = 0.5;//reset
+      }
+      
+      drawSprites();
+      }
+......................................................................................................
+
+   #Slowing Things Down
+      var car = createSprite(50, 200);
+      car.setAnimation("blue_car");
+      car.velocityX = 10;
+
+      function draw() {
+      background("burlywood");
+
+      fill("blue");
+      rect(350, 0, 100, 400);
+
+      if (car.velocityX > 0) {
+         car.velocityX = car.velocityX - 0.25; 
+      }
+
+      drawSprites();
+      }
+......................................................................................................
+   #Floating Balloon
+
+      var balloon = createSprite(200, 40);
+      balloon.setAnimation("balloon");
+      balloon.scale = 0.15;
+      //Take a look at the code that makes the balloon move.
+      balloon.velocityY =  8;
+
+      function draw() {
+      background("skyblue");
+      fill("green");
+      rect(0, 350, 400, 50);
+
+      balloon.y += 0.1;
+      //Add code to make the balloon slow down and float away
+      if(balloon.y>280){
+         balloon.velocityY = -2;
+      }
+
+
+      drawSprites();
+      }
+
+......................................................................................................
+   #Looks like Gravity
+      var rock = createSprite(200, 350);
+      rock.setAnimation("rock");
+      rock.velocityY = -10;
+      rock.rotationSpeed = 2;
+
+      function draw() {
+      background("skyblue");
+
+      // Simulate gravity to make the rock slow down and then fall
+      rock.velocityY += 0.16; 
+
+      if (rock.y > 350) {
+         rock.y = 350;
+         rock.velocityY = 0;
+         rock.rotationSpeed = 0;// Stop the rock when it hits the ground
+      }
+
+      drawSprites();
+      }
+
+......................................................................................................
+   #Curve
+      var plane = createSprite(50, 350);
+      plane.setAnimation("plane");
+      var rock = createSprite(150, 350);
+      rock.setAnimation("rock");
+      var rockdown = createSprite(350, 100);
+      rockdown.setAnimation("rock_down");
+
+      // You might want to change these 
+      plane.velocityY = -9;
+      plane.velocityX = 3;
+
+      function draw() {
+      background("lightblue");
+      
+      //Add code that moves the plane down.
+      plane.velocityY += 0.2;
+
+      
+      drawSprites();
+      }
