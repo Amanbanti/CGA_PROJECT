@@ -2269,6 +2269,7 @@ lesson_21
 ......................................................................................................
 
 lesson_22
+
    #Velocity and the Counter Pattern
       var car = createSprite(50, 200);
       car.setAnimation("red_car");
@@ -2390,3 +2391,294 @@ lesson_22
       
       drawSprites();
       }
+
+......................................................................................................
+lesson_23
+
+      #Program a Sprite Interaction
+         // Create giraffe sprite
+         var giraffe = createSprite(30,200);
+         giraffe.setAnimation("giraffe");
+         giraffe.velocityX = 1;
+         giraffe.scale = 0.3;
+
+         // Create monkey sprite
+         var monkey = createSprite(300,200);
+         monkey.setAnimation("monkey");
+         monkey.scale = 0.3;
+
+         function draw(){
+         // Draw background
+         background("white");
+         
+         //1Program the giraffe to push the monkey off the screen.
+         if(giraffe.isTouching(monkey)){
+            monkey.velocityX = 1;
+         }
+         
+         drawSprites();
+      }
+   
+......................................................................................................
+
+   #Write Your Own Sprite Interaction
+      // Create elephant sprite
+      var elephant = createSprite(200, 400);
+      elephant.setAnimation("elephant");
+      elephant.scale = 0.5;
+      elephant.velocityY = randomNumber(-3,-1);
+
+      // Create hippo sprite
+      var hippo = createSprite(200,100);
+      hippo.setAnimation("hippo");
+      hippo.scale = 0.5;
+
+      function draw(){
+      // Draw background
+      background("white");
+      
+      //Add code to make the elephant push the hippo off the screen.
+      if(elephant.isTouching(hippo)){
+         hippo.velocityY = randomNumber(-3,-1);
+      }
+
+      
+      drawSprites();
+      }
+
+......................................................................................................
+   #Displace
+      // Create elephant sprite
+      var elephant = createSprite(200, 350);
+      elephant.setAnimation("elephant");
+      elephant.scale = 0.5;
+      elephant.velocityY = randomNumber(-3,-1);
+
+      // Create hippo sprite
+      var hippo = createSprite(200,50);
+      hippo.setAnimation("hippo");
+      hippo.scale = 0.5;
+      hippo.velocityY = randomNumber(1,3);
+
+      function draw(){
+      // Draw background
+      background("white");
+      
+      //Fix the block so that the elephant is pushing the hippo.
+      elephant.displace(hippo);
+      
+      drawSprites();
+      }
+
+......................................................................................................
+
+   #More Collision Blocks
+      var parrot = createSprite(50,200);
+      parrot.setAnimation("parrot");
+      parrot.velocityX = 2;
+      parrot.scale = 0.3;
+
+      var penguin = createSprite(350,200);
+      penguin.setAnimation("penguin");
+      penguin.velocityX = -2;
+      penguin.scale = 0.3;
+
+      function draw() {
+      //Switch out the displace block for the new blocks, one at a time 
+      // to see what each one does.
+      parrot.bounceOff(penguin);
+
+      background("white");
+      drawSprites();
+      }
+......................................................................................................
+
+   #Collision Types
+      var basketball = createSprite(200, 0);
+      basketball.setAnimation("basketball");
+      basketball.setCollider("circle");
+
+      var wood = createSprite(200, 375);
+      wood.setAnimation("floor");
+
+      function draw() {
+      basketball.velocityY = basketball.velocityY + 0.3;
+      basketball.rotationSpeed = 2;
+      
+      //Choose the best block to model the basketball's interaction with the floor.
+      basketball.bounceOff(wood)
+      
+      background("skyblue");
+      drawSprites();
+      }
+......................................................................................................
+   #Collision Types
+      var arrow = createSprite(0, 200);
+      arrow.setAnimation("arrow");
+      arrow.rotation=45;
+      arrow.velocityX = 3;
+
+      var apple = createSprite(300, 200);
+      apple.setAnimation("apple");
+
+      function draw() {
+      //Choose the best block to make the arrow stop when it reaches the apple.
+      arrow.collide(apple)
+      
+      background("lightBlue");
+      drawSprites();
+      }
+......................................................................................................
+   #Collision Types
+      var grayCart = createSprite(0, 200);
+      grayCart.setAnimation("minecart");
+      grayCart.velocityX = 3;
+
+      var blueCart = createSprite(250, 200);
+      blueCart.setAnimation("minecart");
+      blueCart.tint="lightBlue";
+
+      function draw() {
+      //Choose the best block to make the gray minecart stop and push the second cart.
+      grayCart.bounce(blueCart)
+      background("tan");
+      stroke("gray");
+      line(0, 240, 400, 240);
+      drawSprites();
+      }
+......................................................................................................
+   #Collision Types
+      var scenery = createSprite(200, 200);
+      scenery.setAnimation("subway");
+
+      var kid = createSprite(350, 250);
+      kid.setAnimation("kid");
+      kid.velocityX = -2.5;
+      kid.scale = 0.6;
+
+      var suitcase = createSprite(150, 280);
+      suitcase.setAnimation("suitcase");
+      suitcase.scale = 0.8;
+
+      function draw() {
+      //Choose the best block to make the child push the suitcase.
+         kid.displace(suitcase)
+      drawSprites();
+      }
+......................................................................................................
+   #Sprite Interactions
+      // create sprites
+      var giraffe = createSprite(50, 50);
+      giraffe.setAnimation("giraffe");
+      giraffe.velocityX = 3;
+      var hippo = createSprite(50, 150);
+      hippo.setAnimation("hippo");
+      hippo.velocityX = 3;
+      var rabbit = createSprite(50, 250);
+      rabbit.setAnimation("rabbit");
+      rabbit.velocityX = 3;
+      var snake = createSprite(50, 350);
+      snake.setAnimation("snake");
+      snake.velocityX = 3;
+      var parrot = createSprite(350, 50);
+      parrot.setAnimation("parrot");
+      parrot.velocityX = -3;
+      var elephant = createSprite(350, 150);
+      elephant.setAnimation("elephant");
+      elephant.velocityX = -3;
+      var monkey = createSprite(350, 250);
+      monkey.setAnimation("monkey");
+      monkey.velocityX = -3;
+      var pig = createSprite(350, 350);
+      pig.setAnimation("pig");
+      pig.velocityX = -3;
+
+
+      function draw() {
+      background("lightblue");
+
+      //For each pair of animals, choose the sprite interaction 
+      // that matches the target image.
+      giraffe.bounce(parrot)
+      hippo.displace(elephant)
+      monkey.displace(rabbit)
+      snake.bounceOff(pig)
+
+      drawSprites();
+      }
+
+......................................................................................................
+   #Deflect The Sprites
+   
+      var bg = createSprite(200,200)
+      bg.setAnimation("sci_fi_1")
+
+      var player = createSprite(200,300)
+      player.setAnimation("gameplayfaces_04_1")
+      player.scale=0.18
+
+      var ball1 = createSprite(50,50)
+      ball1.setAnimation("soccer_bw_1")
+      ball1.scale=0.1
+      ball1.velocityY=2
+
+      var ball2 = createSprite(150,50)
+      ball2.setAnimation("soccer_bw_1")
+      ball2.scale=0.1
+      ball2.velocityY=4
+
+      var ball3 = createSprite(250,50)
+      ball3.setAnimation("soccer_bw_1")
+      ball3.scale=0.1
+      ball3.velocityY=5
+
+
+      var ball4 = createSprite(350,50)
+      ball4.setAnimation("soccer_bw_1")
+      ball4.scale=0.1
+      ball4.velocityY=1.5
+
+
+
+      function draw(){
+         
+         if(player.isTouching(ball1)){
+         ball1.bounceOff(player)
+         ball4.velocityY=
+         }
+         
+         if(player.isTouching(ball2)){
+         ball2.bounceOff(player)
+         
+         }
+         
+         if(player.isTouching(ball4)){
+         ball4.bounceOff(player)
+         
+         }
+         
+         if(player.isTouching(ball3)){
+         ball3.bounceOff(player)
+         
+         }
+         
+
+
+         if(keyDown("up")){
+         player.y -= 5
+         }
+         if(keyDown("down")){
+         player.y += 5
+         }
+         if(keyDown("right")){
+         player.x += 5
+         }
+         if(keyDown("left")){
+         player.x -= 5
+         }
+         
+         
+      
+      drawSprites()
+      }
+
