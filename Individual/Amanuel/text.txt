@@ -1780,3 +1780,44 @@ lesson_16
    drawSprites()
    }
 ......................................................................................................
+
+lesson_18
+   #Adding Sprites
+      // This section creates the background layers for the card and adds subtle animation.
+
+         function draw() {
+         // Base background color
+         background("skyblue"); // Lowest layer: Sky
+
+         // Sun
+         fill("yellow");
+         ellipse(80, 80, 100, 100); // Static sun
+
+         // Clouds (with subtle animation using randomNumber)
+         fill("white");
+         ellipse(150 + randomNumber(-1, 1), 100, 80, 50);
+         ellipse(300 + randomNumber(-1, 1), 150, 100, 60);
+
+         // Grass
+         fill("green");
+         rect(0, 300, 400, 100); // Grass covering the lower part of the card
+
+         // Tree
+         // Trunk
+         fill("saddlebrown");
+         rect(250, 200, 20, 100);
+         // Leaves
+         fill("green");
+         ellipse(260, 180, 100, 100);
+
+         // Optional subtle animations
+         // Stars that twinkle slightly
+         if (mouseIsPressed) {
+            fill("white");
+            ellipse(randomNumber(0, 400), randomNumber(0, 300), 5, 5); // Random star-like dots
+         }
+
+         // Add more shapes and layers as needed for your card's background
+         }
+......................................................................................................
+lesson_19
