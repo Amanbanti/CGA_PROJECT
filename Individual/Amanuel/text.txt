@@ -2043,3 +2043,146 @@ lesson_19
       alien.depth=7;
 
 ......................................................................................................
+lesson_20
+
+   #isTouching()
+      // Create the sprites and start them moving
+      var backdrop = createSprite(200,200);
+      backdrop.setAnimation("meadow");
+      var bunny = createSprite(50, 300);
+      bunny.setAnimation("bunny");
+      bunny.velocityX = 3;
+      var robot = createSprite(400, 320);
+      robot.setAnimation("robot");
+      robot.scale = 0.2;
+      robot.velocityX = -3;
+      var dinner = createSprite(370, 350);
+      dinner.setAnimation("stew");
+      dinner.velocityX = -3;
+
+      function draw() {
+      //Check if the bunny is touching the dinner.
+      if (bunny.isTouching(dinner)) {
+         // stop everything and change to empty bowl
+         bunny.velocityX = 0;
+         dinner.velocityX = 0;
+         robot.velocityX = 0;
+         dinner.setAnimation("bowl");
+      }
+      drawSprites();
+      }
+......................................................................................................
+   #Applesauce
+      // create the sprites
+      var apple = createSprite(200, -50);
+      apple.setAnimation("apple");
+      apple.velocityY = 5;
+      var blender = createSprite(200, 330);
+      blender.setAnimation("blender");
+
+      function draw() {
+      //Check if the apple is touching the blender.
+
+      //Make the blender shake only when the apple is touching it.
+      if(apple.isTouching(blender)){
+         blender.x = 200 + randomNumber(-5,5);
+      }
+      
+
+      //make the background
+      background("skyblue");
+      strokeWeight(0);
+      fill("sienna");
+      rect(0, 340, 400, 60);
+      
+      drawSprites();
+      }
+
+......................................................................................................
+   #Scared Mouse
+      var kitchen = createSprite(200, 200);
+      kitchen.setAnimation("kitchen");
+      var cat = createSprite(350, 125);
+      cat.setAnimation("cat");
+      cat.scale = 0.50;
+      var mouse = createSprite(0, 175);
+      mouse.setAnimation("mouse_right");
+      mouse.velocityX = 4;
+
+
+      function draw() {
+
+      if(mouse.isTouching(cat)){
+         mouse.setAnimation("mouse_left");
+         mouse.velocityX = -8;
+         cat.setAnimation("cat_meow")
+      }
+      if(mouse.x<2){
+         cat.setAnimation("cat");
+      }
+
+
+      drawSprites();
+      }
+......................................................................................................
+   #Rainbow Horse
+
+      // create the sprites
+      var horse = createSprite(200, 150);
+      horse.setAnimation("horse");
+      var rainbow = createSprite(400, 370);
+      rainbow.setAnimation("rainbow");
+      rainbow.velocityX = -5;
+      rainbow.velocityY = -5;
+      rainbow.rotateToDirection = true;
+
+      function draw() {
+      // draw the background
+      background("skyblue");
+
+      //Change the horse into a unicorn when the rainbow touches it.
+      if(rainbow.isTouching(horse)){
+         horse.setAnimation("unicorn");
+      }
+
+      
+      drawSprites();
+      }
+......................................................................................................
+   #IfTouching - Else Challenge
+      var emoji = createSprite(200, 200);
+      emoji.setAnimation("sad_face");
+      emoji.scale = 0.25;
+      var donut = createSprite(30, 50);
+      donut.setAnimation("donut");
+      donut.scale = 0.15;
+
+
+      function draw() {
+      background("lightblue");
+
+      //Program the emoji to smile if it's touching the donut, otherwise the emoji should be sad.
+      if(emoji.isTouching(donut)){
+         emoji.setAnimation("happy_face");
+      }else{
+         emoji.setAnimation("sad_face");
+      }
+
+
+      //Emoji sprite movement
+      if(keyDown("up")) {
+         emoji.y = emoji.y - 5;
+      }
+      if(keyDown("down")) {
+         emoji.y = emoji.y + 5;
+      }
+      if(keyDown("left")) {
+         emoji.x = emoji.x - 5;
+      }
+      if(keyDown("right")) {
+         emoji.x = emoji.x + 5;
+      }
+
+      //Draw sprites
+      drawSprites();
+      }
