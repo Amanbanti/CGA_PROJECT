@@ -1442,3 +1442,173 @@ lesson_14
       drawSprites();
       }
 
+......................................................................................................
+lesson_16
+
+   #Run the code and try pressing the "p" and "h" keys.
+      var sprite = createSprite(200, 200);
+      sprite.setAnimation("giraffe");
+
+      function draw() {
+      background("white");
+
+      //Look inside the first two conditional statements to see how the code works.
+      if(keyDown("h")) {
+         sprite.setAnimation("hippo");
+      }
+
+      if(keyDown("p")) {
+         sprite.setAnimation("pig");
+      }
+
+      if(keyDown("r")) {
+      sprite.setAnimation("rabbit")
+
+      }
+      drawSprites();
+      }
+......................................................................................................
+
+   #Moving Sprites
+   var bug = createSprite(200, 200);
+   bug.setAnimation("ladybug");
+
+   function draw() {
+   //Draw Background
+   background("white");
+   //Add a conditional statement to check if the right arrow key has been pressed down.
+   if(keyDown("right")){
+      bug.x += 5
+   }
+   //Draw Animations
+   drawSprites();
+   }
+
+......................................................................................................
+
+   #Gears with Conditionals
+      var blueGear = createSprite(100, 220);
+      blueGear.setAnimation("blue_gear");
+
+      var greenGear = createSprite(183, 298);
+      greenGear.setAnimation("green_gear");
+
+      var redGear = createSprite(185, 145);
+      redGear.setAnimation("red_gear");
+
+      function draw() {
+      background("white");
+
+      // Check if the space key is pressed
+      if (keyDown("space")) {
+         blueGear.rotation = blueGear.rotation - 1;
+         greenGear.rotation = greenGear.rotation + 1;
+         redGear.rotation = redGear.rotation + 1;
+      }
+
+      drawSprites();
+      }
+
+......................................................................................................
+   #Fish With Arrows
+      var orangeFish = createSprite(400, randomNumber(0, 100));
+      orangeFish.setAnimation("orange_fish");
+      var blueFish = createSprite(250, randomNumber(100, 200));
+      blueFish.setAnimation("blue_fish");
+      var greenFish = createSprite(300, randomNumber(200, 300));
+      greenFish.setAnimation("green_fish");
+
+      function draw() {
+      background("navy");
+      if(keyDown("left")){
+         orangeFish.x = orangeFish.x - 2;
+         blueFish.x = orangeFish.x - 150;
+         greenFish.x = orangeFish.x - 10;
+      }
+      
+      drawSprites();
+      }
+......................................................................................................
+
+   #Move in All Directions
+      var backdrop = createSprite(200,200);
+      backdrop.setAnimation("rainbow");
+      var flyer = createSprite(200,200);
+      flyer.setAnimation("wing_bot");
+
+      function draw() {
+
+         //Add code to move the sprite left when the left arrow is pressed
+         if(keyDown("left")){
+            flyer.x -= 5;
+         }
+
+         //Add code to move the sprite right when the right arrow is pressed
+            if(keyDown("right")){
+               flyer.x += 5;
+            }
+
+         //Add code to move the sprite up when the up arrow is pressed
+         if(keyDown("up")){
+            flyer.y -= 5;
+         }
+
+         //Add code to move the sprite down when the down arrow is pressed
+         if(keyDown("down")){
+            flyer.y += 5;
+         }
+
+      drawSprites();
+      }
+
+......................................................................................................
+   #Responding to a Single Click
+      var clicks = 0;
+
+      function draw() {
+      //Change the code to use the new block, so the program only gives you a point for new clicks.
+      if (keyWentDown("space")) {
+            clicks = clicks + 1;
+      }
+      background("white");
+      textSize(50);
+      text(clicks, 165, 175, 70, 50);
+      }
+......................................................................................................
+   #Changing Images as you Move
+   
+      //1 Duplicate your chosen bug image four times in the animation tab.
+      //2 Edit each of your images to point in one of the four directions.
+      var bug = createSprite(200, 200);
+      bug.setAnimation("fly");
+
+      function draw() {
+      //Draw Background
+      background("white");
+
+      //3 Add code to each of your conditionals 
+      //to change the animation of the sprite if different arrow keys are pressed.
+      if(keyDown("up")){
+         bug.y = bug.y - 5;
+         bug.rotation =90
+      }
+      if(keyDown("down")){
+         bug.y = bug.y + 5;
+         bug.rotation = 270
+         
+
+      }
+      if(keyDown("left")){
+         bug.x = bug.x - 5;
+         bug.rotation =0
+
+      }
+      if(keyDown("right")){
+         bug.x = bug.x + 5;
+         bug.rotation = 
+
+      }
+
+      //Draw Animations
+      drawSprites();
+      }
