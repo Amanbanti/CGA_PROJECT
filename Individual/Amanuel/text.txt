@@ -2186,3 +2186,79 @@ lesson_20
       //Draw sprites
       drawSprites();
       }
+
+......................................................................................................
+   #Draw Your Background
+      // GAME SETUP
+      // Create the sprites
+      var player = createSprite(50, 300, 20, 20); 
+      var obstacle = createSprite(400, 300, 20, 20);
+      var target = createSprite(400, 250, 20, 20);
+
+      // Set velocity for the obstacle and the target
+      obstacle.velocityX = -5;
+      target.velocityX = -3; 
+
+      // Create the variables
+      var score = 0;
+      var health = 100;
+
+      function draw() {
+      // BACKGROUND
+      background("lightblue"); // Background color
+      fill("green");
+      rect(0, 350, 400, 50); // Ground
+
+      // SPRITE INTERACTIONS
+      // If the player touches the obstacle
+      if (player.isTouching(obstacle)) {
+         health -= 1; // Reduce health
+         obstacle.x = 400; // Reset obstacle position
+      }
+
+      // If the player touches the target
+      if (player.isTouching(target)) {
+         score += 1; // Increase score
+         target.x = 400; // Reset target position
+      }
+
+      // JUMPING
+      if (player.y >= 330 && keyDown("up")) {
+         player.velocityY = -10; // Jump up
+      }
+
+      player.velocityY += 0.5; // Gravity
+      if (player.y > 330) {
+         player.y = 330; // Stay on the ground
+      }
+
+      // LOOPING
+      // If the obstacle has gone off the left-hand side of the screen
+      if (obstacle.x < 0) {
+         obstacle.x = 400; // Move obstacle to the right-hand side
+      }
+
+      // If the target has gone off the left-hand side of the screen
+      if (target.x < 0) {
+         target.x = 400; // Move target to the right-hand side
+      }
+
+      // DRAW SPRITES
+      drawSprites();
+
+      // SCOREBOARD
+      // Add scoreboard and health meter
+      fill("black");
+      textSize(20);
+      text("Health: " + health, 280, 30);
+      text("Score: " + score, 20, 30);
+
+      // GAME OVER
+      if (health <= 0) {
+         background("black");
+         fill("green");
+         textSize(50);
+         text("Game Over!", 80, 200);
+         noLoop(); // Stop the game
+      }
+      }
