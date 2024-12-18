@@ -1670,3 +1670,479 @@ function draw() {
     greenFish.x = orangeFish.x - 10;
   drawSprites();
 }
+
+
+// more fish
+
+var orangeFish = createSprite(400, randomNumber(0, 100));
+orangeFish.setAnimation("orange_fish");
+var blueFish = createSprite(250, randomNumber(100, 200));
+blueFish.setAnimation("blue_fish");
+var greenFish = createSprite(300, randomNumber(200, 300));
+greenFish.setAnimation("green_fish");
+
+function draw() {
+  background("navy");
+  orangeFish.x = orangeFish.x - 2;
+  orangeFish.rotation = randomNumber(355,360);
+  blueFish.x = orangeFish.x - 150;
+ blueFish.rotation = randomNumber(355,360);
+  greenFish.x = orangeFish.x - 2;
+ greenFish.rotation = randomNumber(355,360);
+  drawSprites();
+}
+
+
+// bubbles
+
+var orangeFish = createSprite(400, 50);
+orangeFish.setAnimation("orange_fish");
+var blueFish = createSprite(250, 200);
+blueFish.setAnimation("blue_fish");
+var greenFish = createSprite(300,300);
+greenFish.setAnimation("green_fish");
+var sprite1 = createSprite(350, 400);
+sprite1.setAnimation("bubble_1");
+sprite1.scale = 0.15;
+var sprite2 = createSprite(60, 400);
+sprite2.setAnimation("bubble_1");
+sprite2.scale = 0.15;
+var sprite3 = createSprite(200, 400);
+sprite3.setAnimation("bubble_1");
+sprite3.scale = 0.15;
+
+function draw() {
+  background("navy");
+  orangeFish.x = orangeFish.x - 2;
+  orangeFish.rotation = randomNumber(355,360);
+  blueFish.x = orangeFish.x - 150;
+ blueFish.rotation = randomNumber(355,360);
+  greenFish.x = orangeFish.x - 2;
+ greenFish.rotation = randomNumber(355,360);
+ sprite1.y=sprite1.y - 2;
+  sprite2.y=sprite2.y - 4;
+   sprite3.y=sprite3.y - 3;
+  drawSprites();
+}
+
+
+// shark
+
+
+var orangeFish = createSprite(400, 50);
+orangeFish.setAnimation("orange_fish");
+var blueFish = createSprite(250, 200);
+blueFish.setAnimation("blue_fish");
+var greenFish = createSprite(300,300);
+greenFish.setAnimation("green_fish");
+var sprite1 = createSprite(350, 400);
+sprite1.setAnimation("bubble_1");
+sprite1.scale = 0.15;
+var sprite2 = createSprite(60, 400);
+sprite2.setAnimation("bubble_1");
+sprite2.scale = 0.15;
+var sprite3 = createSprite(200, 400);
+sprite3.setAnimation("bubble_1");
+sprite3.scale = 0.15;
+var shark = createSprite(0, 350);
+shark.setAnimation("shark_1");
+shark.scale = 0.8;
+
+function draw() {
+  background("navy");
+  orangeFish.x = orangeFish.x - 2;
+  orangeFish.rotation = randomNumber(355,360);
+  blueFish.x = orangeFish.x - 150;
+ blueFish.rotation = randomNumber(355,360);
+  greenFish.x = orangeFish.x - 2;
+ greenFish.rotation = randomNumber(355,360);
+ sprite1.y=sprite1.y - 2;
+  sprite2.y=sprite2.y - 4;
+   sprite3.y=sprite3.y - 3;
+  shark.x = shark.x + 2;
+  drawSprites();
+}
+
+
+
+// star
+
+var orangeFish = createSprite(400, 50);
+orangeFish.setAnimation("orange_fish");
+var blueFish = createSprite(250, 200);
+blueFish.setAnimation("blue_fish");
+var greenFish = createSprite(300,300);
+greenFish.setAnimation("green_fish");
+var sprite1 = createSprite(350, 400);
+sprite1.setAnimation("bubble_1");
+sprite1.scale = 0.15;
+var sprite2 = createSprite(60, 400);
+sprite2.setAnimation("bubble_1");
+sprite2.scale = 0.15;
+var sprite3 = createSprite(200, 400);
+sprite3.setAnimation("bubble_1");
+sprite3.scale = 0.15;
+var shark = createSprite(-100, 350);
+shark.setAnimation("shark_1");
+shark.scale = 0.8;
+var star = createSprite(65, 0);
+star.setAnimation("creature_05_1");
+star.scale = 0.1;
+
+function draw() {
+  background("navy");
+  orangeFish.x = orangeFish.x - 2;
+  orangeFish.rotation = randomNumber(355,360);
+  blueFish.x = orangeFish.x - 150;
+ blueFish.rotation = randomNumber(355,360);
+  greenFish.x = orangeFish.x - 2;
+ greenFish.rotation = randomNumber(355,360);
+ sprite1.y=sprite1.y - 2;
+  sprite2.y=sprite2.y - 4;
+   sprite3.y=sprite3.y - 3;
+  shark.x = shark.x + 2;
+  star.y = star.y + 5;
+  star.rotation=star.rotation + 10;
+  drawSprites();
+}
+
+
+
+## Lesson 14
+
+
+
+// draw a baackground
+
+background("lightblue");
+fill("green");
+rect(0, 350, 400, 50);
+drawSprites();
+
+
+// adding sprites
+
+
+background("lightblue");
+fill("green");
+rect(0, 350, 400, 50);
+var sprite1 = createSprite(0, 316);
+sprite1.setAnimation("cobra_1");
+sprite1.scale = 0.2;
+var sprite2 = createSprite(260, 320);
+sprite2.setAnimation("kid_24_1");
+sprite2.scale = 0.5;
+var sprite3 = createSprite(234, 318);
+sprite3.setAnimation("sticker_44_1");
+sprite3.scale = 0.15;
+drawSprites();
+
+
+
+// adding text 
+
+background("lightblue");
+fill("green");
+rect(0, 350, 400, 50);
+var sprite1 = createSprite(0, 316);
+sprite1.setAnimation("cobra_1");
+sprite1.scale = 0.2;
+var sprite2 = createSprite(260, 320);
+sprite2.setAnimation("kid_24_1");
+sprite2.scale = 0.5;
+var sprite3 = createSprite(234, 318);
+sprite3.setAnimation("sticker_44_1");
+sprite3.scale = 0.15;
+drawSprites();
+textSize(25);
+text("oww snake mommy", 174, 226);
+
+
+
+// adding movment
+
+
+
+var sprite1 = createSprite(0, 316);
+sprite1.setAnimation("cobra_1");
+sprite1.scale = 0.2;
+var sprite2 = createSprite(260, 320);
+sprite2.setAnimation("kid_24_1");
+sprite2.scale = 0.5;
+var sprite3 = createSprite(234, 318);
+sprite3.setAnimation("sticker_44_1");
+sprite3.scale = 0.15;
+function draw() {
+  background("lightblue");
+  fill("black");
+  textSize(25);
+  text("oww snake mommy", 174, 226);
+  fill("green");
+  rect(0, 350, 400, 50);
+  sprite1.x =sprite1.x + 3;
+  sprite3.y = sprite3.y + 3;
+  drawSprites();
+}
+
+
+
+## Lesson 15
+
+
+// boolean
+
+
+  var finishLine = createSprite(40, 200);
+finishLine.setAnimation("finish_line");
+
+var raceCar = createSprite(400, 200);
+raceCar.setAnimation("race_car");
+
+function draw() {
+  // Draw Background
+  background("white");
+  
+  // Counter pattern to make car move across the screen
+  raceCar.x = raceCar.x - 2;
+  
+  //Program text
+  fill("black");
+  strokeWeight(5);
+  textSize(25);
+  text("The race car has crossed the finish line:", 100, 20, 300, 60);
+  fill("blue");
+  //1 Add blocks to the text command to print the boolean to the screen
+ text(raceCar.x < finishLine.x, 100, 100);
+  drawSprites();
+}
+
+
+
+// changing fruit
+
+
+
+var fruit = createSprite(200, 200);
+fruit.setAnimation("apple");
+fruit.scale = 0.1;
+
+function draw() {
+  background("white");
+  fruit.scale = fruit.scale + 0.01;
+  if (fruit.scale>2) {
+    fruit.setAnimation("pear");
+  }
+
+  drawSprites();
+}
+
+
+
+
+
+// boolean expression
+
+
+var sprite1 = createSprite(190, 150);
+sprite1.setAnimation("apple");
+sprite1.rotation = 30;
+sprite1.scale = 1.5;
+
+var sprite2 = createSprite(199, 199);
+sprite2.setAnimation("carrot");
+sprite2.rotation = 39;
+sprite2.scale = 1.5;
+
+textSize(20);
+fill("blue");
+text("Comparison 1: " + (sprite2.x == sprite2.y), 0, 15);
+text("Comparison 2: " + (sprite2.rotation < 40), 0, 40);
+text("Comparison 3: " + (sprite1.scale == sprite2.scale), 0, 65);
+text("Comparison 4: " + (sprite1.x > 150), 0, 90);
+text("Comparison 5: " + (sprite2.y < 200), 0, 115);
+
+drawSprites();
+
+
+//dropped soap
+
+
+var soup =  createSprite(200,200);
+soup.setAnimation("stew");
+
+function draw() {
+  background("lightgreen");
+  soup.rotation = soup.rotation + 3;
+  if (soup.rotation==180) {
+    soup.setAnimation("bowl");
+  }
+  drawSprites();
+}
+
+
+// Alien celebration 
+
+
+var scene = createSprite(200, 200);
+scene.setAnimation("background");
+
+var spaceship = createSprite(200, 200);
+spaceship.setAnimation("spaceship");
+
+var alien = createSprite(300, 350);
+alien.setAnimation("alien_standing");
+
+function draw() {
+  spaceship.y = spaceship.y - 3;
+  
+  if (spaceship.y==20) {
+    alien.setAnimation("alien_dance");
+  }
+  
+  drawSprites();
+}
+
+
+
+// magic dinosaur
+
+var backdrop = createSprite(200,200);
+backdrop.setAnimation("sci_fi");
+var dinosaur = createSprite(200, 350);
+dinosaur.scale = 0.2;
+dinosaur.setAnimation("tyrannosaurus");
+
+function draw() {
+  dinosaur.y = dinosaur.y - 5;
+  if (dinosaur.y==225) {
+    dinosaur.setAnimation("pterodactyl");
+  }
+
+
+  //draw everything
+  drawSprites();
+}
+
+
+
+
+// ballon visible
+
+
+
+var balloon = createSprite(200, 200);
+balloon.setAnimation("balloon");
+balloon.scale = 0.1;
+var pop = createSprite(200, 200);
+pop.setAnimation("pop");
+pop.visible = false;
+
+//1) Create a pop sprite which uses the "pop" visual in the animation tab.
+
+
+//2) Set the pop sprite to be hidden at the beginning.
+
+
+function draw() {
+  // Draw Background
+  background("white");
+
+  // Update Values
+  balloon.scale = balloon.scale + 0.01;
+  if (balloon.scale>0.6) {
+    balloon.visible = false;
+    pop.visible = true;
+  }
+
+
+
+  // Draw Animations
+  drawSprites();
+}
+
+
+
+// restart sprites
+
+
+
+var tree = createSprite(200, 220);
+tree.setAnimation("tree");
+tree.scale = 0.75;
+
+var ghost = createSprite(300, 320);
+ghost.setAnimation("ghost");
+
+var monster = createSprite(400, 320);
+monster.setAnimation("orange_monster");
+monster.scale = 0.35;
+
+
+
+function draw() {
+  // Draw Background
+  background("plum");
+  fill("palegreen");
+  rect(-5, 350, 405, 50);
+  ghost.x = ghost.x - 3;
+  monster.x = monster.x - 3;
+
+  if (ghost.x==0) {
+    ghost.x = 300;
+  }
+
+  if (monster.x==0) {
+    monster.x = 400;
+  }
+
+  drawSprites();
+  
+}
+
+
+
+//Never-Ending Fish Scene
+
+
+
+var orangeFish = createSprite(400, randomNumber(200, 400));
+orangeFish.setAnimation("orange_fish");
+orangeFish.scale = 0.25;
+orangeFish.rotation = 15;
+
+var blueFish = createSprite(0, randomNumber(0, 200));
+blueFish.setAnimation("blue_fish");
+blueFish.scale = 0.25;
+
+var greenFish = createSprite(400, randomNumber(100, 300));
+greenFish.setAnimation("green_fish");
+greenFish.scale = 0.25;
+
+var shark = createSprite(-150, randomNumber(290, 400));
+shark.setAnimation("shark");
+shark.scale = 0.75;
+
+var starfish = createSprite(randomNumber(10, 390), 0);
+starfish.setAnimation("starfish");
+starfish.scale = 0.10;
+
+//variable used with counter pattern for the ellispe y locations
+var bubbles=400;
+
+function draw() {
+  // Draw Background
+  background("navy");
+  
+  //Draw and animate bubbles
+  noFill();
+  stroke("white");
+  strokeWeight(3);
+  ellipse(65,bubbles,25);
+  ellipse(225,bubbles + 25,25);
+  ellipse(350,bubbles + 100,25);
+  bubbles = bubbles - 2;
+ 
+  drawSprites();
+}
+
+## LESSON 16
