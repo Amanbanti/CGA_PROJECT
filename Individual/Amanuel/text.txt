@@ -1612,3 +1612,171 @@ lesson_16
       //Draw Animations
       drawSprites();
       }
+
+
+......................................................................................................
+   #Reverse the Gears
+
+   var blueGear = createSprite(100, 220);
+   blueGear.setAnimation("blue_gear");
+
+   var greenGear = createSprite(183, 298);
+   greenGear.setAnimation("green_gear");
+
+   var redGear = createSprite(185, 145);
+   redGear.setAnimation("red_gear");
+
+   function draw() {
+   background("white");
+   
+   if (keyDown("space")) {
+      blueGear.rotation = blueGear.rotation - 1;
+      greenGear.rotation = greenGear.rotation + 1;
+      redGear.rotation = redGear.rotation + 1;
+   }
+   else{
+         blueGear.rotation = blueGear.rotation + 1;
+      greenGear.rotation = greenGear.rotation - 1;
+      redGear.rotation = redGear.rotation - 1;                                                                                
+   }
+   //Make the gears spin the opposite way when the space bar is **not** being pressed.
+   
+   drawSprites();
+   }
+
+......................................................................................................
+
+   #Control the Gears
+      var blueGear = createSprite(100, 220);
+      blueGear.setAnimation("blue_gear");
+
+      var greenGear = createSprite(183, 298);
+      greenGear.setAnimation("green_gear");
+
+      var redGear = createSprite(185, 145);
+      redGear.setAnimation("red_gear");
+
+      function draw() {
+      background("white");
+      
+      if (mouseDown("leftButton")) {
+         blueGear.rotation = blueGear.rotation - 1;
+         greenGear.rotation = greenGear.rotation + 1;
+         redGear.rotation = redGear.rotation + 1;
+      }else{
+         blueGear.rotation = blueGear.rotation + 1;
+         greenGear.rotation = greenGear.rotation - 1;
+         redGear.rotation = redGear.rotation - 1;
+      }
+      // Make the gears spin the opposite way when there is no user input.
+
+      
+      drawSprites();
+      }
+
+......................................................................................................
+   
+   #Mouse Clicks
+   var balloon = createSprite(200, 50);
+   balloon.setAnimation("balloon");
+   balloon.scale = 0.1;
+
+   function draw() {
+   background("white");
+   
+   //Add code that checks whether the mouse is being pressed.
+   if (mouseDown("leftButton")) {
+      balloon.y -= 5;
+   }
+   //Move the balloon up the screen if the mouse is being pressed.
+   //Otherwise, move the balloon down the screen.
+
+   balloon.y = balloon.y + 1;
+
+   drawSprites();
+
+   }
+
+
+......................................................................................................
+
+   #World.mouseX
+      var blender = createSprite(100, 300);
+      blender.setAnimation("blender");
+      var mixer = createSprite(300, 300);
+      mixer.setAnimation("mixer");
+
+      function draw() {
+      background("lightyellow");
+      fill("burlywood");
+      rect(0, 350, 400, 50);
+      if (World.mouseX < 200) {
+         blender.x = randomNumber(95, 105);
+         blender.y = randomNumber(295, 305);
+      }else{
+         mixer.y = randomNumber(95, 105);
+         mixer.x = randomNumber(295, 305);
+      }
+      //Add to the conditional so that when the mouse is on the other side of the screen, the mixer shakes instead.
+
+      drawSprites();
+      }
+......................................................................................................
+   #Ladybug Walk
+
+      var outside = createSprite(200,200);
+      outside.setAnimation("pine_trees");
+      var bug = createSprite(350, 350);
+      bug.setAnimation("ladybug");
+
+      function draw() {
+      
+      //Use an conditional to check the position of the mouse.
+      //Add code to make the bug move only if the mouse pointer is near the bottom of the screen.
+      if(World.mouseY > 320){
+         bug.x -= 1
+      }
+
+
+      drawSprites();
+      
+      }
+......................................................................................................
+   #Fix the Program
+      var backdrop = createSprite(200,200);
+      backdrop.setAnimation("sky");
+      var creature = createSprite(200,250);
+      creature.setAnimation("creature");
+      creature.scale = 0.2;
+      function draw() {
+      //Change the code so that the creature only shakes when the mouse is pressed.
+      if(mouseDown("leftButton")){
+            creature.rotation = randomNumber(-5,5);
+      }
+
+      drawSprites();
+
+      //Change the code so the directions ("Press the mouse to shake the creature.") **only show** 
+      //when the user is **NOT** pressing the mouse.
+      fill("black");
+      textSize(40);
+      text("Press the mouse to shake the creature.", 20, 50, 360, 100);
+      }
+......................................................................................................
+   #Changing Emoji
+   var emoji1 = createSprite(200,200)
+   emoji1.setAnimation("emoji_06_1")
+   emoji1.scale = 0.7
+
+
+   function  draw (){
+   background("white"); 
+   var mouseOnEmoji = mouseIsOver(emoji1);
+      if(mouseOnEmoji){
+         emoji1.setAnimation("emoji_26_1")
+      }else{
+         emoji1.setAnimation("emoji_06_1")
+      }
+   drawSprites()
+   }
+......................................................................................................
