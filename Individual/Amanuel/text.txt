@@ -2767,3 +2767,380 @@ lesson_23
       }
 
 ......................................................................................................
+lesson_25
+
+   #Calling Functions
+      drawSky();
+      //Call the drawBalloons function to reveal the full image. 
+      drawBalloons()
+
+      function drawSky(){
+      noStroke();
+      background(rgb(0,200,255));
+      fill("yellow");
+      ellipse(350,50,50,50);
+      }
+
+      function drawBalloons(){
+      stroke("black");
+      line(100,100,140,450);
+      noStroke();
+      fill("red");
+      ellipse(100,100,50,50);
+      
+      stroke("black");
+      line(120,120,140,450);
+      noStroke();
+      fill("orange");
+      ellipse(120,120,50,50);
+      
+      stroke("black");
+      line(140,80,140,450);
+      noStroke();
+      fill("yellow");
+      ellipse(140,80,50,50);
+      
+      stroke("black");
+      line(160,90,140,450);
+      noStroke();
+      fill("red");
+      ellipse(160,90,50,50);
+      }
+......................................................................................................
+   #Reordering Code
+      //Read the 4 functions to understand what each one does.
+      //Call the functions in an order that draws the scene in the way that looks best to you.
+      drawBackground()
+      drawClouds()
+      drawTrees()
+      drawFence()
+
+      function drawBackground(){
+      noStroke();
+      background(rgb(0,200,255));
+      fill("green");
+      rect(0,380,400,20);
+      }
+
+      function drawTrees(){
+      noStroke();
+      //Draw All Trunks
+      fill(rgb(150,100,0));
+      rect(210,330,30,50);
+      rect(290,330,30,50);
+      rect(360,330,30,50);
+      //Draw All Branches
+      fill("green");
+      regularPolygon(225,280,3,100);
+      regularPolygon(305,280,3,110);
+      regularPolygon(375,290,3,95);
+      }
+
+      function drawClouds(){
+      noStroke();
+      fill(rgb(255,255,255,100));
+      ellipse(300,200,200,50);
+      ellipse(320,200,200,70);
+      ellipse(340,200,200,50);
+      
+      ellipse(100,100,200,50);
+      ellipse(120,100,200,70);
+      ellipse(140,100,200,50);  
+      }
+
+      function drawFence(){
+      stroke("white");
+      strokeWeight(5);
+      line(0,360,400,360);
+      line(20,350,20,380);
+      line(50,350,50,380);
+      line(80,350,80,380);
+      line(110,350,110,380);
+      line(140,350,140,380);
+      line(170,350,170,380);
+      line(200,350,200,380);
+      line(230,350,230,380);
+      line(260,350,260,380);
+      line(290,350,290,380);
+      line(320,350,320,380);
+      line(350,350,350,380);
+      line(380,350,380,380);
+      }
+   
+......................................................................................................
+   #Calling Functions Multiple Times
+      var flyer = createSprite();
+      flyer.setAnimation("flyer");
+      setFlyer();
+
+      function draw() {
+      treesBackground();
+      
+      // Check if flyer goes off-screen to the left
+      if (flyer.x < -50) {
+         setFlyer(); // Reset flyer position
+      }
+      
+      drawSprites();
+      }
+
+      function setFlyer() {
+      flyer.x = 450; // Reset to the right side
+      flyer.y = randomNumber(100, 300); // Randomize the vertical position
+      flyer.velocityX = -1; // Move left
+      }
+
+      function treesBackground() {
+      noStroke();
+      background(rgb(0, 200, 255));
+      
+      fill("green");
+      rect(0, 380, 400, 20); // Ground
+      
+      fill("yellow");
+      ellipse(350, 50, 20, 20); // Sun
+      
+      strokeWeight(20);
+      stroke(rgb(150, 100, 0));
+      
+      // Draw tree trunks
+      line(20, 300, 20, 380);
+      line(80, 300, 80, 380);
+      line(120, 300, 120, 380);
+      line(160, 300, 160, 380);
+      line(200, 300, 200, 380);
+      line(250, 300, 250, 380);
+      
+      fill("green");
+      noStroke();
+      
+      // Draw tree canopies
+      ellipse(20, 300, 100, 100);
+      ellipse(80, 300, 110, 110);
+      ellipse(120, 300, 95, 95);
+      ellipse(160, 300, 110, 110);
+      ellipse(200, 300, 100, 100);
+      ellipse(250, 300, 100, 100);
+      }
+
+
+......................................................................................................
+   #Write Your Own Function
+      var coin = createSprite(200, 10);
+      coin.setAnimation("coin_gold_1");
+
+      var bunny = createSprite(200, 350);
+      bunny.setAnimation("bunny1_ready_1");
+
+      var score = 0;
+
+      function draw() {
+      background("white");
+      
+      if (keyDown("left")) {
+         bunny.x -= 8;
+      }
+      
+      if (keyDown("right")) {
+         bunny.x += 8;
+      }
+      
+      coin.y += 4;
+
+      if (coin.isTouching(bunny)) {
+         score += 1;
+         coin.y = 10;
+         coin.x = randomNumber(50, 350);
+      }
+      
+      if (coin.y > 400) {
+         coin.y = 10;
+         coin.x = randomNumber(50, 350);
+      }
+
+      textSize(20);
+      text("Score: " + score, 10, 30);
+      drawSprites();
+      }
+
+......................................................................................................
+
+   #Change the Background with the Score
+      var bg = createSprite(200,200)
+      bg.visible= false
+      var coin = createSprite(200, 10);
+      coin.setAnimation("coin_gold_1");
+
+      var bunny = createSprite(200, 350);
+      bunny.setAnimation("bunny1_ready_1");
+
+      var score = 0;
+
+      function draw() {
+      if(score >= 10){
+         bg.visible = true
+         bg.setAnimation("background_landscape02_1")
+      }else{
+         background("white");
+      }
+      
+      textSize(20);
+      text("Score: " + score, 10, 30);
+      
+      
+      if (keyDown("left")) {
+         bunny.x -= 8;
+      }
+      
+      if (keyDown("right")) {
+         bunny.x += 8;
+      }
+      
+      coin.y += 4;
+
+      if (coin.isTouching(bunny)) {
+         score += 1;
+         coin.y = 10;
+         coin.x = randomNumber(50, 350);
+      }
+      
+      if (coin.y > 400) {
+         coin.y = 10;
+         coin.x = randomNumber(50, 350);
+      }
+
+
+      drawSprites();
+      }
+
+......................................................................................................
+   #Creating Functions to Organize a Game
+      var ball = createSprite(200, 200);
+      ball.setAnimation("ball");
+      ball.scale = 0.10;
+      ball.velocityY = 5;
+      ball.velocityX = 10;
+      var paddle = createSprite(200, 380);
+      paddle.setAnimation("paddle");
+      paddle.width = 200;
+      var brick1 = createSprite(100, 150);
+      brick1.setAnimation("brick");
+      var brick2 = createSprite(300, 75);
+      brick2.setAnimation("brick");
+      var star = createSprite(54, 95);
+      star.setAnimation("redstar");
+      var star2 = createSprite(302, 25);
+      star2.setAnimation("redstar");
+
+      var edges = createEdgeSprites();
+      var gameStatus = "play"
+
+      var score = 0;
+      function draw() {
+
+      //Call Functions
+
+      bg ()
+      textSize(20)
+      text("Score:" + score , 50,40)
+      ballBounce()
+      brick()
+      movePaddle ()
+      collectStar()
+      gameOver()
+      replay()
+      drawSprites();
+      }
+
+      //Create the gameBackground Function
+      function bg (){
+      background("lightblue")
+      }
+
+
+      //Create the movePaddle Function
+      function movePaddle (){
+         
+         if(keyDown("right")){
+            paddle.x += 8
+         }
+         if(keyDown("left")){
+            paddle.x -= 8
+         }
+         if (ball.isTouching(paddle)) {
+         ball.bounceOff(paddle);
+      }
+      }
+
+
+      //Create the ballBounce Function
+      function ballBounce() {
+      
+      ball.bounceOff(edges[0]); // Top edge
+      ball.bounceOff(edges[1]); // Right edge
+      ball.bounceOff(edges[2]); // Bottom edge
+      
+         
+      }
+
+
+      //Create the collectStar Function
+      function collectStar() {
+      if (ball.isTouching(star)) {
+         score += 1;
+         star.x = randomNumber(50, 300); // Update star position
+         star.y = randomNumber(50, 300);
+      }
+
+      if (ball.isTouching(star2)) {
+         score += 1;
+         star2.x = randomNumber(50, 300); // Update star2 position
+         star2.y = randomNumber(50, 300);
+      }
+      }
+
+
+      //bricks
+      function brick(){
+         ball.bounceOff(brick1);
+         ball.bounceOff(brick2); 
+         
+      }
+      
+      
+      //Game over
+      function gameOver() {
+      if (ball.y > 400) {
+         background("lightblue");
+         textSize(50);
+         fill("red");
+         text("GAME OVER!", 50, 230);
+         textSize(20)
+         text("Click 'r' to Play Again! ", 110, 270);
+         score=0;
+         gameStatus = "over"
+         
+      }
+      }
+
+
+      //replay
+      function replay(){
+      if (keyDown('r') && gameStatus=="over"){
+         ball.x= 200;
+         ball.y= 200;
+         ball.velocityY = 5;
+         ball.velocityX = 10;
+         gameStatus = "play"
+      }
+      }
+
+
+
+......................................................................................................
+
+lesson_26
+
+
+
+
