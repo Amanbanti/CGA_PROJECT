@@ -2682,3 +2682,88 @@ lesson_23
       drawSprites()
       }
 
+......................................................................................................
+
+   #Create Your Sprites
+      // Create player, target, and obstacles
+      var player = createSprite(200, 100);
+      player.setAnimation("fly_bot");
+      player.scale = 0.8;
+
+      var Obstacl1 = createSprite(320, 20);
+      Obstacl1.setAnimation("rock");
+      Obstacl1.scale = 0.8;
+
+      var Obstacl2 = createSprite(10,200);
+      Obstacl2.setAnimation("rock");
+      Obstacl2.scale = 0.8;
+
+      var coin = createSprite(345, 345);
+      coin.setAnimation("coin");
+      coin.scale = 0.8;
+
+      var gravity = 0.5;
+      var score = 0;
+
+      function draw() {
+      background("lightblue");
+
+      player.velocityY += gravity;
+      textSize(20)
+      text("Score:"+score,20,30)
+      if (Obstacl1.y > 400) Obstacl1.y = 0;
+      if (Obstacl2.x > 400) Obstacl2.x = 0;
+      if (coin.y > 400) coin.y = randomNumber(50,350);
+
+      Obstacl1.y += 2;
+      Obstacl2.x += 3;
+
+
+      if (keyDown("up")) {
+         player.velocityY = -5;
+      }
+
+      if (keyDown("left")) {
+         player.velocityX -= 0.5;
+      }
+
+      if (keyDown("right")) {
+         player.velocityX += 0.5; 
+      }
+
+      // SPRITE INTERACTIONS
+      // Reset the coin when the player touches it
+      if (player.isTouching(coin)) {
+         coin.x = randomNumber(0, 400);
+         coin.y = randomNumber(0, 400);
+         score+=1
+      }
+
+      // Make the obstacles push the player
+      if (player.isTouching(Obstacl1) || player.isTouching(Obstacl2)) {
+         Obstacl1.displace(player);
+         Obstacl2.displace(player);
+         
+      }
+      if(keyDown('r')){
+         player.x = 200
+         player.y= 100
+      }
+
+      // DRAW SPRITES
+      drawSprites();
+
+      // GAME OVER
+      if (player.x < -50 || player.x > 450 || player.y < -50 || player.y > 450) {
+         background("black");
+         textSize(50);
+         fill("green");
+         player.velocityY =0;
+         player.velocityX = 0;
+         text("Game Over!", 50, 200);
+         textSize(20);
+         text("Enter R To Play Again!", 90, 250);
+      }
+      }
+
+......................................................................................................
