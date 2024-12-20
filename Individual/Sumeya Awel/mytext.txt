@@ -2403,3 +2403,214 @@ function draw() {
 
 
 
+## Lesson 17
+
+
+// reverse the gear
+
+
+var blueGear = createSprite(100, 220);
+blueGear.setAnimation("blue_gear");
+
+var greenGear = createSprite(183, 298);
+greenGear.setAnimation("green_gear");
+
+var redGear = createSprite(185, 145);
+redGear.setAnimation("red_gear");
+
+function draw() {
+  background("white");
+  
+  if (keyDown("space")) {
+    blueGear.rotation = blueGear.rotation - 1;
+    greenGear.rotation = greenGear.rotation + 1;
+    redGear.rotation = redGear.rotation + 1;
+  } else {
+    blueGear.rotation = blueGear.rotation+1;
+    greenGear.rotation = greenGear.rotation-1;
+    redGear.rotation = redGear.rotation-1;
+  }
+  drawSprites();
+}
+
+
+// control the gear
+
+var blueGear = createSprite(100, 220);
+blueGear.setAnimation("blue_gear");
+
+var greenGear = createSprite(183, 298);
+greenGear.setAnimation("green_gear");
+
+var redGear = createSprite(185, 145);
+redGear.setAnimation("red_gear");
+
+function draw() {
+  background("white");
+  
+  if (mouseDown("leftButton")) {
+    blueGear.rotation = blueGear.rotation - 1;
+    greenGear.rotation = greenGear.rotation + 1;
+    redGear.rotation = redGear.rotation + 1;
+  } else {
+    blueGear.rotation = blueGear.rotation+1;
+    greenGear.rotation = greenGear.rotation-1;
+    redGear.rotation = redGear.rotation-1;
+  }
+  
+  drawSprites();
+}
+
+// mose click
+
+
+var balloon = createSprite(200, 50);
+balloon.setAnimation("balloon");
+balloon.scale = 0.1;
+
+function draw() {
+  background("white");
+  if (mouseDown("leftButton")) {
+    balloon.y = balloon.y-1;
+  } else {
+    balloon.y = balloon.y + 1;
+
+   }
+ drawSprites();
+}
+
+
+
+//world.mousex
+
+var blender = createSprite(100, 300);
+blender.setAnimation("blender");
+var mixer = createSprite(300, 300);
+mixer.setAnimation("mixer");
+
+function draw() {
+  background("lightyellow");
+  fill("burlywood");
+  rect(0, 350, 400, 50);
+  if (World.mouseX < 200) {
+    blender.x = randomNumber(95, 105);
+    blender.y = randomNumber(295, 305);
+  } else {
+    mixer.x = randomNumber(300, 290);
+    mixer.y = randomNumber(300, 290);
+  }
+  drawSprites();
+}
+
+
+// ladybug walk
+
+
+var outside = createSprite(200,200);
+outside.setAnimation("pine_trees");
+var bug = createSprite(350, 350);
+bug.setAnimation("ladybug");
+
+function draw() {
+  
+  if (World.mouseY > 250) {
+    bug.x = bug.x-3;
+  }
+  drawSprites();
+  
+}
+
+
+
+// ghost moving with the mouse
+
+var outside = createSprite(200, 200);
+outside.setAnimation("meadow");
+
+var ghost = createSprite(200,300);
+ghost.setAnimation("ghost");
+
+function draw() {
+  if (World.mouseX < 200) {
+    ghost.x = ghost.x - 5;
+  } else {
+    ghost.x = ghost.x + 5;
+  }
+  drawSprites();
+}
+
+
+
+// emoji reaction
+
+
+var emoji = createSprite(200, 200);
+emoji.setAnimation("smileEmoji");
+
+function draw() {
+  background("white");
+ if (mouseDown("leftButton")) {
+    emoji.setAnimation("glassesEmoji");
+  } else {
+    emoji.setAnimation("smileEmoji");
+  }
+  drawSprites();
+}
+
+
+
+// fix the program 
+
+
+var backdrop = createSprite(200,200);
+backdrop.setAnimation("sky");
+var creature = createSprite(200,250);
+creature.setAnimation("creature");
+creature.scale = 0.2;
+function draw() {
+  drawSprites();
+  if (mouseDown("leftButton")) {
+    creature.rotation = randomNumber(-5,5);
+  } else {
+  fill("black");
+  textSize(40);
+  text("Press the mouse to shake the creature.", 20, 50, 360, 100);
+}
+}
+
+
+
+// twin spiral
+
+var spiral = createSprite(100,200);
+spiral.setAnimation("lollipop");
+var spiral2 = createSprite(300,200);
+spiral2.setAnimation("lollipop2");
+function draw() {
+  background("pink");
+    if (mouseDown("leftButton")) {
+    spiral.scale = spiral.scale  * 1.01;
+    spiral.rotation = spiral.rotation - 3;
+    spiral2.scale = spiral2.scale  / 1.01;
+    spiral2.rotation = spiral2.rotation + 3;
+  } else {
+  spiral.scale = spiral.scale  / 1.01;
+  spiral.rotation = spiral.rotation + 3;
+  spiral2.scale = spiral2.scale  * 1.01;
+  spiral2.rotation = spiral2.rotation - 3;
+}
+  drawSprites();
+}
+
+
+
+// mouse x and y1
+
+var bee = createSprite(200, 200);
+bee.setAnimation("bee");
+function draw(){
+background("lightblue");
+bee.x = World.mouseX;
+bee.y = World.mouseY;
+drawSprites();
+}
