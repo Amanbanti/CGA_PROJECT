@@ -829,3 +829,154 @@ text("Ocean Creatures", 100, 88);
 
 fill("blue");
 text("Fish and Octupus", 100, 125);
+
+
+## Lesson 12: Draw Loop
+
+Draw Loop Prediction
+
+noStroke();
+fill("SeaGreen");
+
+function draw(){
+  ellipse(randomNumber(0,400), randomNumber(0,400));
+}
+
+Prediction:
+The program generates a random ellipse on the screen in the color SeaGreen. Since the draw() function runs repeatedly, the ellipses keep appearing in different locations.
+
+
+Adding Circles to the Draw Loop
+
+Next, I modified the program to add orange circles to the scene. I included a new fill("orange") line inside the draw loop so that two different colored circles (green and orange) are drawn on each iteration.
+
+noStroke();
+
+function draw(){
+  fill("green");
+  ellipse(randomNumber(0,400), randomNumber(0,400));
+  fill("orange");
+  ellipse(randomNumber(0,400), randomNumber(0,400));
+}
+
+Outcome:
+The screen now displays green and orange circles drawn at random positions, repeatedly.
+
+Prediction: Red Background with Yellow Circles
+
+In the next step, I explored a program that uses the background() function inside the draw loop. I predicted that it would print yellow circles over a red background that resets with every frame.
+
+World.frameRate = 5;
+
+noStroke();
+background("blue");
+fill("Yellow");
+
+function draw(){
+  background("Red");
+  ellipse(randomNumber(0,400), randomNumber(0,400));
+}
+
+Prediction:
+It will display yellow circles all over the screen, but the background will keep refreshing as red.
+
+Outcome:
+My prediction was correct. The yellow circles appear at random positions, and the red background keeps resetting, erasing previous circles.
+4. Animating Sprites in the Draw Loop
+
+I then worked on animating a sprite using its rotation property. I observed how changing the sprite’s properties inside the draw() loop allows for continuous animation.
+
+var sprite = createSprite(100,200);
+sprite.setAnimation("greenAlien");
+
+function draw() {
+  background("orange");
+  sprite.rotation = randomNumber(-90, 360);
+  drawSprites();
+}
+
+The sprite (green alien) rotates randomly between -90 and 360 degrees, while the background remains orange
+
+Updating Properties for Shaking Sprites
+
+I practiced updating the x property of sprites to make them appear as though they were shaking. Initially, only one sprite (pencil) shook, but I added code to make the second sprite (brush) shake as well.
+
+var pencil = createSprite(100,200);
+pencil.setAnimation("pencil");
+
+var brush = createSprite(300,200);
+brush.setAnimation("brush");
+
+function draw(){
+  background("white");
+  pencil.x = randomNumber(100,110);
+  brush.x = randomNumber(300, 310);
+  drawSprites();
+}
+
+
+Both the pencil and brush sprites shake horizontally by changing their x position within a small range.
+
+Animating Multiple Sprites
+
+Finally, I worked on animating multiple sprites with the rotation property. I added the draw loop and adjusted the sprite properties to make both aliens shake.
+
+World.frameRate = 10;
+
+var greenAlien = createSprite(100, 200);
+greenAlien.setAnimation("greenAlien");
+
+var pinkAlien = createSprite(300, 200);
+pinkAlien.setAnimation("pinkAlien");
+
+noStroke();
+fill("white");
+
+function draw() {
+  background("black");
+  ellipse(randomNumber(0,400),randomNumber(0,400),5,5);
+
+  greenAlien.rotation = randomNumber(-5,5);
+  pinkAlien.rotation = randomNumber(-5,5);
+
+  drawSprites();
+}
+
+Both the green alien and pink alien shake slightly by adjusting their rotation property, while small white ellipses appear in the background.
+
+Creating an Animated Scene
+
+For the final task, I recreated a scene with a background and three animated sprites (cow, elephant, and pig). I updated their y properties inside the draw loop to make them look like they were jumping.
+World.frameRate = 5;
+
+// Background
+var background = createSprite(200, 200);
+background.setAnimation("background1");
+
+// Sprites for cow, elephant, and pig
+var cow = createSprite(300, 200);
+var elephant = createSprite(100, 200);
+var pig = createSprite(208, 200);
+
+// Resize the animals
+cow.scale = 0.38;
+pig.scale = 0.3;
+elephant.scale = 0.48;
+
+// Set animations
+cow.setAnimation("cow");
+elephant.setAnimation("elephant");
+pig.setAnimation("pig");
+
+function draw() {
+  background("skyblue");
+  
+  // Make the animals jump
+  elephant.y = randomNumber(150, 235);
+  cow.y = randomNumber(150, 235);
+  pig.y = randomNumber(150, 235);
+
+  drawSprites();
+}
+
+The cow, elephant, and pig appear on the screen and jump up and down randomly, creating a lively animated scene.
