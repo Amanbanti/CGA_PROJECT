@@ -2955,10 +2955,127 @@ function draw() {
 }
 
 
+// bunny and sun
+
+
+var sun = createSprite(200, 0);
+sun.setAnimation("sun");
+var bunny = createSprite(200, 300);
+bunny.setAnimation("bunny_sad");
+function draw() {
+  background("lightblue");
+  if (sun.isTouching(bunny)) {
+    bunny.setAnimation("bunny_happy");
+  }
+  sun.velocityY = 2;
+  drawSprites();
+}
 
 
 
 
 
+// circular collider
+
+
+var coin1 = createSprite(100, 100);
+coin1.setAnimation("bronze_coin");
+coin1.velocityX = 1;
+coin1.velocityY = 1;
+coin1.debug=true;
+coin1.setCollider("circle");
+var coin2 = createSprite(300, 300);
+coin2.setAnimation("bronze_coin");
+coin2.velocityX = -1;
+coin2.velocityY = -1;
+coin2.debug=true;
+coin2.setCollider("circle");
+function draw() {
+  background("teal");
+  if (coin1.isTouching(coin2)) {
+    coin1.velocityX = 0;
+    coin1.velocityY = 0;
+    coin2.velocityX = 0;
+    coin2.velocityY = 0;
+  }
+  drawSprites();
+}
+
+
+
+
+// Rainbow horse
+
+
+
+var horse = createSprite(200, 150);
+horse.setAnimation("horse");
+var rainbow = createSprite(400, 370);
+rainbow.setAnimation("rainbow");
+rainbow.velocityX = -5;
+rainbow.velocityY = -5;
+rainbow.rotateToDirection = true;
+
+function draw() {
+  // draw the background
+  background("skyblue");
+  if (rainbow.isTouching(horse)) {
+    horse.setAnimation("unicorn");
+  }
+
+
+  
+  drawSprites();
+}
+
+
+
+// collider at an angle
+
+var roller = createSprite(200, 200);
+roller.scale = 2;
+roller.setAnimation("roller_1");
+roller.debug = true;
+roller.setCollider("rectangle",0,0,35,180,30);
+drawSprites();
+
+
+
+// Debug: Add Points on Collision
+
+
+
+//1) Read and run the code to understand how it works, and what is going wrong.
+var points = 0;
+var coin = createSprite(200, 100);
+coin.setAnimation("coin");
+var ghost = createSprite(200, 300);
+ghost.setAnimation("ghost");
+
+function draw() {
+  //2) Identify the code that increases the score.
+  if (ghost.isTouching(coin)) {
+    points = points + 1;
+    //3) Add a line of code so that at least one sprite moves to a new location.
+    coin.x = randomNumber(212, 100);
+    coin.y = randomNumber(300, 200);
+
+  }
+  background("lightblue");
+  text("Points: " + points, 25, 25);
+  if(keyDown("up")) {
+    ghost.y = ghost.y - 5;
+  }
+  if(keyDown("down")) {
+    ghost.y = ghost.y + 5;
+  }
+  if(keyDown("left")) {
+    ghost.x = ghost.x - 5;
+  }
+  if(keyDown("right")) {
+    ghost.x = ghost.x + 5;
+  }
+  drawSprites();
+}
 
 
