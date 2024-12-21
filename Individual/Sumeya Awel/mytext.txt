@@ -2614,3 +2614,42 @@ bee.x = World.mouseX;
 bee.y = World.mouseY;
 drawSprites();
 }
+
+
+
+
+## lesson 18 
+
+
+// interactive card 
+
+
+var background = createSprite(200, 200);
+var kid = createSprite(60, 290);
+kid.setAnimation("kid_34_side_1");
+kid.visible = true;
+var gift = createSprite(150, 250);
+gift.setAnimation("vdayemoji_16_1");
+gift.scale = 0.2;
+var lolipop = createSprite(150, 210);
+lolipop.setAnimation("sticker_50_1");
+lolipop.visible = false;
+function draw() {
+  background.setAnimation("living_room_1");
+  kid.scale = 0.5;
+  lolipop.scale = 0.3;
+  if (mouseDown("leftButton")) {
+    gift.visible = false;
+    lolipop.visible = true;
+  }
+  if (lolipop.visible == true) {
+    kid.setAnimation("kid_34_excited_1");
+  }
+  drawSprites();
+  fill("black");
+  textSize(18);
+  textFont("arial");
+  text("click, to see what's in the gift so the kid can go", 6, 41);
+}  
+
+
