@@ -2834,6 +2834,34 @@ function draw() {
 
 
 
+// magical star
+
+
+var wizard = createSprite(50, 200);
+wizard.setAnimation("wizard");
+var star = createSprite(145, 175);
+star.setAnimation("magicstar");
+function draw() {
+  background("lightblue");
+  if (keyWentDown("right")) {
+star.velocityX = 2;
+  }
+ 
+  if (star.x > 380) {
+star.velocityX = -2;
+  star.setAnimation("magicstar_1");
+  }
+ 
+  if (star.x < 145) {
+star.velocityX = 2;
+  star.setAnimation("magicstar");
+  }
+  drawSprites();
+}
+
+
+
+
 
 // swimming right and left
 
