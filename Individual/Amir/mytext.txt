@@ -1187,3 +1187,101 @@ function draw() {
   fill("yellow");
   text("WELCOME", 175, 120);
 }
+
+
+## Lesson 15: Conditionals
+
+Boolean Expressions
+
+Boolean expressions evaluate to true or false. Example: Comparing properties of two sprites.
+
+    sprite1.y == sprite2.y: true (y-values are equal)
+    sprite1.x > sprite2.x: false (sprite1's x is less than sprite2's x)
+    sprite1.x < sprite2.y: true
+
+Conditional Logic Examples
+
+    Changing Fruit Animation
+    When the fruit's scale exceeds 2, its animation changes from an apple to a pear.
+
+    var fruit = createSprite(200, 200);
+    fruit.setAnimation("apple");
+    fruit.scale = 0.1;
+
+    function draw() {
+      background("white");
+      fruit.scale = fruit.scale + 0.01;
+
+      if (fruit.scale > 2) {
+          fruit.setAnimation("pear");
+      }
+
+      drawSprites();
+    }
+
+    Race Car Finish Line
+    The program checks if the race car has crossed the finish line (raceCar.x < finishLine.x) and displays the boolean result dynamically as the car moves.
+
+    var finishLine = createSprite(40, 200);
+    finishLine.setAnimation("finish_line");
+
+    var raceCar = createSprite(400, 200);
+    raceCar.setAnimation("race_car");
+
+    function draw() {
+      background("white");
+      raceCar.x = raceCar.x - 2;
+
+      fill("black");
+      textSize(25);
+      text("The race car has crossed the finish line:", 100, 20, 300, 60);
+      fill("blue");
+      text(raceCar.x < finishLine.x, 100, 100);
+
+      drawSprites();
+    }
+
+    Magic Dinosaur Transformation
+    The dinosaur turns into a pterodactyl when it reaches the sky (dinosaur.y < 200).
+
+    var backdrop = createSprite(200,200);
+    backdrop.setAnimation("sci_fi");
+    var dinosaur = createSprite(200, 350);
+    dinosaur.scale = 0.2;
+    dinosaur.setAnimation("tyrannosaurus");
+
+    function draw() {
+      dinosaur.y = dinosaur.y - 5;
+
+      if (dinosaur.y < 200) {
+          dinosaur.setAnimation("pterodactyl");
+          dinosaur.scale = 0.3;
+      }
+
+      drawSprites();
+    }
+
+    Balloon Popping Animation
+    The balloon "pops" when its scale exceeds 0.7, hiding the balloon and making the pop sprite visible.
+
+    var balloon = createSprite(200, 200);
+    balloon.setAnimation("balloon");
+    balloon.scale = 0.1;
+
+    var pop = createSprite(200, 200);
+    pop.setAnimation("pop");
+    pop.visible = false;
+
+    function draw() {
+      background("white");
+      balloon.scale = balloon.scale + 0.001;
+
+      if (balloon.scale > 0.7) {
+          balloon.visible = false;
+          pop.visible = true;
+      }
+
+      drawSprites();
+    }
+
+
