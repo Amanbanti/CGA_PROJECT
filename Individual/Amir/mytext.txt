@@ -1151,3 +1151,39 @@ function draw() {
 
 Outcome:
 The orange, blue, and green fish moved left at different speeds, with their rotations slightly wiggling to mimic natural swimming.
+
+## Lesson 14: Mini Project
+This project creates a visually dynamic and welcoming scene with animated sprites and colorful elements. It prints:
+
+    - A rainbow-themed background.
+    - Animated movement of a horse and peacock.
+    - A rotating man sprite.
+    - Text welcoming the viewer with "Sun Shine and Rainbow" and "WELCOME" on the screen.
+
+var bg = createSprite(200, 200);
+bg.setAnimation("rainbow_1");
+var horse = createSprite(60, 340);
+horse.setAnimation("horse_1");
+horse.scale = 0.3;
+var peacock = createSprite(150, 200);
+peacock.setAnimation("peacock_1");
+peacock.scale = 0.4;
+var man = createSprite(300, 250);
+man.setAnimation("rpgcharacter_21_1");
+man.scale = 0.4;
+function draw() {
+  horse.x = horse.x + 2;
+  peacock.x = peacock.x + 2;
+  peacock.y = peacock.y - 2;
+  man.rotation = randomNumber(-5, 5);
+  drawSprites();
+  fill("yellow");
+  stroke("white");
+  ellipse(300, 50, 50, 50);
+  ellipse(30, 30, 40, 40);
+  fill("red");
+  textSize(20);
+  text("Sun Shine and Rainbow", 70, 30);
+  fill("yellow");
+  text("WELCOME", 175, 120);
+}
