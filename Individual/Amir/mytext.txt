@@ -1627,3 +1627,52 @@ function draw() {
 
    drawSprites();
 }
+
+
+Lesson 18: Project - Interactive-card
+
+var space = createSprite(200, 200);
+space.setAnimation("space");
+
+var red = createSprite(50, 320);
+red.setAnimation("redalien_08_1");
+red.scale = 0.3;
+
+var blue = createSprite(200, 320);
+blue.setAnimation("alienBlue_walk_1");
+
+function draw() {
+  drawSprites();
+
+  // Move red sprite to the right
+  if (red.x < 350) {
+    red.x += 2;
+  }
+
+  // Random rotation for red sprite
+  red.rotation = randomNumber(-10, 10);
+
+  // Move blue sprite to the right when right arrow key is pressed
+  if (keyDown("right")) {
+    blue.x += 2;
+  }
+
+  // Display "You Escaped" message when blue sprite moves off screen
+  if (blue.x > 400) {
+    fill("red");
+    textSize(30);
+    text("You_Escaped", 50, 50, 50, 50);
+  }
+
+  // Draw a random yellow ellipse
+  fill("yellow");
+  ellipse(randomNumber(320, 350), 70, 50, 50);
+}
+
+Key Points:
+
+    The red alien moves to the right until it reaches the x-coordinate 350, while rotating randomly.
+    The blue alien moves right when the right arrow key is pressed and triggers the message "You_Escaped" when it moves past x=400.
+    A random yellow ellipse appears at a random position between 320 and 350 on the x-axis, and always at y=70.
+
+This project adds interactivity by allowing the user to move the blue alien and displays a message when it escapes.
