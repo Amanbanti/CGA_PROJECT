@@ -2695,13 +2695,15 @@ function draw() {
   }
   if (lolipop.visible == true) {
     kid.setAnimation("kid_34_excited_1");
+    kid.x=kid.x + 3;
+    lolipop.x=lolipop.x + 3;
   }
   drawSprites();
   fill("black");
   textSize(18);
   textFont("arial");
   text("click, to see what's in the gift so the kid can go", 6, 41);
-} 
+}
 
 
 
