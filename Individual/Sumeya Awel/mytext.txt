@@ -3160,3 +3160,110 @@ function draw() {
 }
 
 
+
+
+## Lesson 21
+
+
+// mini project
+
+//GAME SETUP
+var player = createSprite(80, 320);
+player.setAnimation("frog");
+var obstacle = createSprite(410, 350);
+obstacle.setAnimation("mushroom");
+var target = createSprite(450, 275);
+target.setAnimation("fly");
+// Create the sprites
+// set velocity for the obstacle and the target
+
+
+//create the variables
+var score = 0;
+var health = 100;
+target.velocityX = -3;
+obstacle.velocityX = -3;
+
+function draw() {
+  // BACKGROUND
+  background("lightblue");
+  fill("green");
+  noStroke();
+  rect(0, 350, 400, 50);
+  // draw the ground and other background
+
+
+  // SPRITE INTERACTIONS
+  // if the player touches the obstacle
+  // the health goes down, and the obstacle turns
+  if (player.isTouching(obstacle)) {
+    health = health-1;
+    obstacle.x = randomNumber(420, 500);
+    obstacle.y = 350;
+  }
+
+  // if the player touches the target
+  // the score goes up, the target resets
+  if (player.isTouching(target)) {
+    score = score+1;
+    target.x = randomNumber(450, 530);
+    target.y = randomNumber(100, 275);
+  }
+
+
+  // JUMPING
+  if (keyDown("up")) {
+    player.y = -1;
+    if (player.y<50) {
+      player.velocityY = 6;
+    }
+  }
+  if (player.y>320) {
+    player.velocityY = 0;
+  }
+  // if the player has reached the ground
+  // stop moving down
+
+  // if the player presses the up arrow
+  // start moving up
+
+  // if the player reaches the top of the jump
+  // start moving down
+
+
+  // LOOPING
+  if (obstacle.x<-10) {
+    obstacle.x = randomNumber(420, 500);
+    obstacle.y = randomNumber(150, 200);
+  }
+  // if the obstacle has gone off the left hand side of the screen, 
+  // move it to the right hand side of the screen
+
+  // if the target has gone off the left hand side of the screen,
+  // move it to the right hand side of the screen
+  if (target.x<-10) {
+    target.x = randomNumber(450, 530);
+    target.y = randomNumber(100, 275);
+  }
+
+  // DRAW SPRITES
+  drawSprites();
+  
+  // SCOREBOARD
+  // add scoreboard and health meter
+  fill("black");
+  textSize(20);
+  text("Health:", 280, 30);
+  text (health, 350, 30);
+  text("Score:", 50, 30);
+  text(score, 120, 30);
+  // GAME OVER
+  // if health runs out
+  // show Game over
+  if (health < 0) {
+    background("black");
+    fill("green");
+    textSize(50);
+    text("Game Over!" , 40, 200);
+  }
+}
