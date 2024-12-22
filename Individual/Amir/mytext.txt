@@ -1675,4 +1675,235 @@ Key Points:
     The blue alien moves right when the right arrow key is pressed and triggers the message "You_Escaped" when it moves past x=400.
     A random yellow ellipse appears at a random position between 320 and 350 on the x-axis, and always at y=70.
 
+
+
+Lesson 19: Velocity
+#velocityX
+
+var fish = createSprite(50, 150);
+fish.setAnimation("orange_fish");
+// Add the new movement block outside of the draw loop.
+
+// Assign the velocity a value of 12.
+fish.velocityX = 12;
+
+function draw() {
+    // Draw the background
+    background(rgb(0, 50, 250));
+    fill(rgb(250, 250, 250, 80));
+    noStroke();
+    ellipse(60, 20, 50, 50);
+    ellipse(150, 100, 50, 50);
+    ellipse(300, 130, 50, 50);
+    ellipse(250, 200, 50, 50);
+    ellipse(20, 250, 50, 50);
+    ellipse(370, 330, 50, 50);
+
+    fill(rgb(219, 208, 125));
+    noStroke();
+    ellipse(100, 400, 300, 100);
+    ellipse(300, 400, 300, 75);
+
+    drawSprites();
+}
+
+#Moving Down
+
+// Find the block that will make the feather sprite go down the screen
+
+var feather = createSprite(200, 50);
+feather.setAnimation("feather");
+// Use that block outside of the draw loop.
+feather.velocityY = 3;
+// Give the block a value to make the feather move down the screen.
+
+function draw() {
+    background("skyblue");
+    drawSprites();
+}
+
+#rotationSpeed
+
+var sun = createSprite(200, 200);
+sun.setAnimation("sun");
+// Make the sun rotate by 3 degrees each time it's drawn.
+
+function draw() {
+    background("blue");
+    sun.rotationSpeed = 30;
+    drawSprites();
+}
+
+#Controlling Speed
+
+var wheel = createSprite(200, 200);
+wheel.setAnimation("wheel");
+
+function draw() {
+    background("blue");
+
+    if (keyDown("space")) {
+        // Make the color wheel start spinning when the user presses the space bar.
+        wheel.rotationSpeed = 30;
+    } else if (keyDown("s")) {
+        wheel.rotationSpeed = 0;
+    }
+
+    drawSprites();
+}
+
+#Back and Forth
+
+var field = createSprite(200, 200);
+field.setAnimation("field");
+
+var ball = createSprite(200, 50);
+ball.setAnimation("ball");
+ball.scale = 0.2;
+ball.velocityY = 5;
+
+function draw() {
+    // Look at how conditionals and velocity are used to make the ball bounce at the bottom of the screen.
+    if (ball.y > 380) {
+        ball.velocityY = -5;
+    }
+    if (ball.y < 1) {
+        ball.velocityY = 5;
+    }
+
+    // Add code to make the ball bounce at the top of the screen.
+
+    drawSprites();
+}
+
+#Back and Forth (Additional Example)
+
+var flyBot = createSprite(200, 350);
+flyBot.setAnimation("flyBot");
+
+function draw() {
+    background("skyblue");
+    // Use a conditional statement to check when the space bar is pressed.
+    // Make the sprite move up if the user presses the space bar.
+    if (keyDown("space")) {
+        flyBot.velocityY = -5;
+    }
+    drawSprites();
+}
+
+#Swimming Right and Left
+
+var fish = createSprite(200, 200);
+fish.setAnimation("fishR");
+
+function draw() {
+    background("blue");
+    // Use the correct block inside each conditional statement to make the following movements:
+
+    // If the user presses the right arrow key, move the fish to the right.
+    if (keyWentDown("right")) {
+        fish.setAnimation("fishR");
+        fish.velocityX = 3;
+        fish.velocityY = 0;
+        fish.rotation = 0;
+    }
+    if (keyWentDown("left")) {
+        fish.setAnimation("fishL");
+        fish.rotation = -360;
+        fish.velocityX = -3;
+        fish.velocityY = 0;
+    }
+    if (keyWentDown("up")) {
+        fish.setAnimation("fishL");
+        fish.rotation = 90;
+        fish.velocityX = 0;
+        fish.velocityY = -3;
+    }
+    if (keyWentDown("down")) {
+        fish.setAnimation("fishL");
+        fish.rotation = 270;
+        fish.velocityX = 0;
+        fish.velocityY = 3;
+    }
+
+    if (fish.x > 400) {
+        fish.setAnimation("fishL");
+        fish.rotation = -360;
+        fish.velocityX = -3;
+        fish.velocityY = 0;
+    }
+    if (fish.x < 1) {
+        fish.setAnimation("fishR");
+        fish.velocityX = 3;
+        fish.velocityY = 0;
+        fish.rotation = 0;
+    }
+    if (fish.y < 1) {
+        fish.setAnimation("fishL");
+        fish.rotation = 270;
+        fish.velocityX = 0;
+        fish.velocityY = 3;
+    }
+    if (fish.y > 400) {
+        fish.setAnimation("fishL");
+        fish.rotation = 90;
+        fish.velocityX = 0;
+        fish.velocityY = -3;
+    }
+
+    // Draw the fish.
+    drawSprites();
+}
+
+#Changing Course
+
+var alien = createSprite(70, 200);
+alien.setAnimation("alien");
+alien.velocityX = 0;
+alien.velocityY = -8;
+
+function draw() {
+    // Add the appropriate velocity blocks to each conditional 
+    // to make the alien complete the full circuit.
+
+    if (alien.y < 50) {
+        alien.velocityY = 0;
+        alien.velocityX = 8;
+    }
+    if (alien.x > 350) {
+        alien.velocityY = 8;
+        alien.velocityX = 0;
+    }
+    if (alien.y > 350) {
+        alien.velocityY = 0;
+        alien.velocityX = -8;
+    }
+    if (alien.x < 70) {
+        alien.velocityY = -8;
+        alien.velocityX = 0;
+    }
+
+    drawSprites();
+}
+
+// Additional objects for the alien's environment
+var space = createSprite(200, 200);
+space.setAnimation("space");
+
+var flag1 = createSprite(50, 50);
+flag1.setAnimation("yellow_flag");
+
+var flag2 = createSprite(350, 50);
+flag2.setAnimation("yellow_flag");
+
+var flag3 = createSprite(350, 350);
+flag3.setAnimation("yellow_flag");
+
+var flag4 = createSprite(50, 350);
+flag4.setAnimation("yellow_flag");
+
+alien.depth = 7;
+
+
+
 This project adds interactivity by allowing the user to move the blue alien and displays a message when it escapes.
