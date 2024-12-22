@@ -1285,3 +1285,176 @@ Conditional Logic Examples
     }
 
 
+
+## Lesson 16: KeyboardInput
+
+1. Switching Animations with Key Presses
+
+This program changes the sprite’s animation based on the key pressed (h, p, or r).
+
+var sprite = createSprite(200, 200);
+sprite.setAnimation("giraffe");
+
+function draw() {
+   background("white");
+
+   if (keyDown("h")) {
+      sprite.setAnimation("hippo");
+   }
+
+   if (keyDown("p")) {
+      sprite.setAnimation("pig");
+   }
+
+   if (keyDown("r")) {
+      sprite.setAnimation("rabbit");
+   }
+
+   drawSprites();
+}
+
+2. Moving Sprites Horizontally
+
+The sprite moves to the right when the right arrow key is pressed.
+
+var bug = createSprite(200, 200);
+bug.setAnimation("ladybug");
+
+function draw() {
+   background("white");
+
+   if (keyDown("right")) {
+      bug.x += 5;
+   }
+
+   drawSprites();
+}
+
+3. Rotating Gears with a Key Press
+
+Pressing the space key rotates three gears in different directions.
+
+var blueGear = createSprite(100, 220);
+blueGear.setAnimation("blue_gear");
+
+var greenGear = createSprite(183, 298);
+greenGear.setAnimation("green_gear");
+
+var redGear = createSprite(185, 145);
+redGear.setAnimation("red_gear");
+
+function draw() {
+   background("white");
+
+   if (keyDown("space")) {
+      blueGear.rotation -= 1;
+      greenGear.rotation += 1;
+      redGear.rotation += 1;
+   }
+
+   drawSprites();
+}
+
+4. Fish Moving with Arrow Keys
+
+Pressing the left arrow key moves a group of fish together.
+
+var orangeFish = createSprite(400, randomNumber(0, 100));
+orangeFish.setAnimation("orange_fish");
+
+var blueFish = createSprite(250, randomNumber(100, 200));
+blueFish.setAnimation("blue_fish");
+
+var greenFish = createSprite(300, randomNumber(200, 300));
+greenFish.setAnimation("green_fish");
+
+function draw() {
+   background("navy");
+
+   if (keyDown("left")) {
+      orangeFish.x -= 2;
+      blueFish.x = orangeFish.x - 150;
+      greenFish.x = orangeFish.x - 10;
+   }
+
+   drawSprites();
+}
+
+5. Move Sprite in All Directions
+
+This program allows the sprite to move in all directions using arrow keys.
+
+var backdrop = createSprite(200, 200);
+backdrop.setAnimation("rainbow");
+
+var flyer = createSprite(200, 200);
+flyer.setAnimation("wing_bot");
+
+function draw() {
+   if (keyDown("left")) {
+      flyer.x -= 5;
+   }
+
+   if (keyDown("right")) {
+      flyer.x += 5;
+   }
+
+   if (keyDown("up")) {
+      flyer.y -= 5;
+   }
+
+   if (keyDown("down")) {
+      flyer.y += 5;
+   }
+
+   drawSprites();
+}
+
+6. Responding to a Single Click
+
+Each new press of the space key increases the score.
+
+var clicks = 0;
+
+function draw() {
+   if (keyWentDown("space")) {
+      clicks++;
+   }
+
+   background("white");
+   textSize(50);
+   text(clicks, 165, 175, 70, 50);
+}
+
+7. Changing Images with Movement
+
+The sprite changes its direction and animation based on arrow key presses.
+
+var bug = createSprite(200, 200);
+bug.setAnimation("fly");
+
+function draw() {
+   background("white");
+
+   if (keyDown("up")) {
+      bug.y -= 5;
+      bug.rotation = 90;
+   }
+
+   if (keyDown("down")) {
+      bug.y += 5;
+      bug.rotation = 270;
+   }
+
+   if (keyDown("left")) {
+      bug.x -= 5;
+      bug.rotation = 0;
+   }
+
+   if (keyDown("right")) {
+      bug.x += 5;
+      bug.rotation = 180;
+   }
+
+   drawSprites();
+}
