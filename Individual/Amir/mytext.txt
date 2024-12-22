@@ -980,3 +980,174 @@ function draw() {
 }
 
 The cow, elephant, and pig appear on the screen and jump up and down randomly, creating a lively animated scene.
+
+
+## Lesson 13: Sprite Movement & The Counter Pattern
+
+1. The Counter Pattern
+
+var counter = 0;
+
+function draw() {
+  background("white");
+  counter = counter + 1;
+  console.log(counter);
+}
+
+Prediction:
+The program will display the counter starting from 0 with a white background.
+
+Outcome:
+The counter increased by 1 on every frame and was printed in the console.
+
+2. Sprite Movement
+
+This program made a jet move up the screen and a plane move to the right. I used the counter pattern to update the y property of the jet and the x property of the plane.
+
+var jet = createSprite(350, 350);
+jet.setAnimation("jet");
+
+var plane = createSprite(50, 200);
+plane.setAnimation("plane");
+
+function draw() {
+  background("skyblue");
+
+  // Jet moves up
+  jet.y = jet.y - 3;
+
+  // Plane moves to the right
+  plane.x = plane.x + 3;
+
+  drawSprites();
+}
+
+Outcome:
+The jet moved upward, and the plane moved rightward, creating a smooth animation.
+
+3. Moving Left
+
+To make a sprite move left, I applied the counter pattern with subtraction. This program made a fly move across the screen to the left.
+
+var fly = createSprite(350, 200);
+fly.setAnimation("fly");
+
+function draw() {
+  background("skyblue");
+
+  // Fly moves left
+  fly.x = fly.x - 2;
+
+  drawSprites();
+}
+
+Outcome:
+The fly moved smoothly to the left.
+
+4. Diagonal Movement
+
+By updating both the x and y properties of a sprite, I made it move diagonally. This example showed how the counter pattern could be used for complex movements.
+
+var mouse = createSprite(50, 50);
+mouse.setAnimation("mouse");
+mouse.scale = 0.5;
+
+function draw() {
+  background("lightgreen");
+
+  // Move down
+  mouse.y = mouse.y + 2;
+
+  // Move right
+  mouse.x = mouse.x + 2;
+
+  drawSprites();
+}
+
+Outcome:
+The mouse moved diagonally downward and rightward.
+
+5. Multiple Sprite Movements
+
+This program demonstrated simultaneous movements of multiple sprites. Each car moved in a different direction (up, down, left, or right) based on the counter pattern.
+
+var red_car = createSprite(-50, 150);
+red_car.setAnimation("red_car");
+red_car.rotation = 90;
+
+var yellow_car = createSprite(250, -50);
+yellow_car.setAnimation("yellow_car");
+yellow_car.rotation = 180;
+
+var blue_car = createSprite(450, 250);
+blue_car.setAnimation("blue_car");
+blue_car.rotation = 270;
+
+var green_car = createSprite(150, 450);
+green_car.setAnimation("green_car");
+
+function draw() {
+  background("white");
+
+  // Movement
+  red_car.x = red_car.x + 4;  // Right
+  yellow_car.y = yellow_car.y + 4;  // Down
+  blue_car.x = blue_car.x - 4;  // Left
+  green_car.y = green_car.y - 4;  // Up
+
+  drawSprites();
+}
+
+Outcome:
+Each car moved in a unique direction, creating a lively scene.
+
+6. Rotation and Spinning
+
+The counter pattern was applied to a sprite's rotation property to create a spinning effect. Here’s an example with a spinning pan.
+
+var pan = createSprite(200, 200);
+pan.setAnimation("pan");
+
+function draw() {
+  background("palegreen");
+
+  // Pan spins
+  pan.rotation = pan.rotation + 2;
+
+  drawSprites();
+}
+
+Outcome:
+The pan spun continuously, creating a smooth animation.
+
+7. Fish Animation
+
+used the counter pattern to make three fish move left across the screen at different speeds. Additionally, I added random rotation to make their movement more lifelike.
+
+var orangeFish = createSprite(400, randomNumber(0, 100));
+orangeFish.setAnimation("orange_fish");
+
+var blueFish = createSprite(250, randomNumber(0, 200));
+blueFish.setAnimation("blue_fish");
+
+var greenFish = createSprite(300, randomNumber(200, 300));
+greenFish.setAnimation("green_fish");
+
+function draw() {
+  background("navy");
+
+  // Move fish and add random rotation
+  orangeFish.x = orangeFish.x - 2;
+  orangeFish.rotation = randomNumber(-5, 5);
+
+  blueFish.x = blueFish.x - 3;
+  blueFish.rotation = randomNumber(-5, 5);
+
+  greenFish.x = greenFish.x - 1;
+  greenFish.rotation = randomNumber(-5, 5);
+
+  drawSprites();
+}
+
+Outcome:
+The orange, blue, and green fish moved left at different speeds, with their rotations slightly wiggling to mimic natural swimming.
