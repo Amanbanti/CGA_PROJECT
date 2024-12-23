@@ -2819,7 +2819,7 @@ function gameOver() {
 
 
 
-Lesson 26: Game - Defend Your Cake
+## Lesson 26: Game - Defend Your Cake
 
 "Defend Your Cake" is a game where the player, control an alien character to protect a delicious cake from invading ladybugs. The objective is to stop the enemies from reaching the cake while earning points by pushing them off the playable area (into the "water").
 
@@ -2992,3 +2992,175 @@ function moveEnemies() {
     enemy2.velocityY = -2;
   }
 }
+
+
+## Lesson 27: Using Game Design Process
+
+This game involves controlling an alien character to collect stars and avoid falling off the screen. Platforms move continuously, and the player can jump onto them to prevent falling. Collecting stars increases the score, while falling off the screen reduces lives. The game ends when the player runs out of lives.
+
+var score = 0;
+var lives = 3; // Initialize lives
+var platform, platform2, item, item2, player;
+
+platform = createSprite(200, 400);
+platform.setAnimation("platform");
+platform.velocityY = 2;
+
+platform2 = createSprite(350, 200);
+platform2.setAnimation("platform");
+platform2.velocityY = 2;
+
+item = createSprite(randomNumber(50, 350), randomNumber(-30, -60));
+item.setAnimation("star");
+item.velocityY = 3;
+
+item2 = createSprite(randomNumber(50, 350), randomNumber(-30, -60));
+item2.setAnimation("star");
+item2.velocityY = 3;
+
+player = createSprite(200, 0);
+player.setAnimation("alien");
+player.velocityY = 0.2;
+
+function draw() {
+  if (lives <= 0) {
+    gameOver(); // End the game if lives are 0
+  } else {
+    if (score > 10) {
+      background2();
+    } else {
+      background1();
+    }
+
+    showScore();
+    showLives(); // Show lives on the screen
+    loopPlatforms();
+    loopItems();
+    playerFall();
+    controlPlayer();
+    playerLands();
+    collectItems();
+    checkFall(); // Check if the player falls off the screen
+
+    drawSprites();
+  }
+}
+
+function background1() {
+  background("darkBlue");
+  noStroke();
+  fill("yellow");
+  ellipse(randomNumber(0, 400), randomNumber(0, 400), 3, 3);
+  ellipse(randomNumber(0, 400), randomNumber(0, 400), 3, 3);
+  ellipse(340, 50, 60, 60);
+  fill("darkBlue");
+  ellipse(320, 30, 60, 60);
+}
+
+function background2() {
+  background("lightBlue");
+  fill("pink");
+  ellipse(200, 200, 60, 60);
+}
+
+function showScore() {
+  fill("white");
+  textSize(20);
+  text("Score: " + score, 10, 20);
+}
+
+function showLives() {
+  fill("white");
+  textSize(20);
+  text("Lives: " + lives, 10, 40); // Display lives
+}
+
+function loopPlatforms() {
+  if (platform.y > 400) {
+    platform.y = 0;
+    platform.x = randomNumber(50, 350);
+  }
+
+  if (platform2.y > 400) {
+    platform2.y = 0;
+    platform2.x = randomNumber(50, 350);
+  }
+}
+
+function loopItems() {
+  if (item.y > 400) {
+    item.y = randomNumber(-30, -60);
+    item.x = randomNumber(50, 350);
+  }
+
+  if (item2.y > 400) {
+    item2.y = randomNumber(-30, -60);
+    item2.x = randomNumber(50, 350);
+  }
+}
+
+function playerFall() {
+  player.velocityY += 0.5;
+}
+
+function controlPlayer() {
+  if (keyDown("left")) {
+    player.x -= 5;
+  }
+
+  if (keyDown("right")) {
+    player.x += 5;
+  }
+
+  if (keyDown("up") && player.velocityY === 0) {
+    player.velocityY = -10;
+  }
+}
+
+function playerLands() {
+  if (player.isTouching(platform) || player.isTouching(platform2)) {
+    player.velocityY = 0;
+
+    if (keyDown("up")) {
+      player.velocityY = -10;
+    }
+  }
+}
+
+function collectItems() {
+  if (player.isTouching(item)) {
+    item.y = randomNumber(-30, -60);
+    item.x = randomNumber(50, 350);
+    score += 1;
+  }
+
+  if (player.isTouching(item2)) {
+    item2.y = randomNumber(-30, -60);
+    item2.x = randomNumber(50, 350);
+    score += 1;
+  }
+}
+
+// Check if player falls off the screen
+function checkFall() {
+  if (player.y > 420) { // Player has fallen off the screen
+    lives -= 1; // Subtract one life
+    if (lives > 0) {
+      player.y = 0; // Reset the player position to the top
+      player.x = randomNumber(50, 350); // Randomize the x position
+      player.velocityY = 0.2; // Make the player fall slowly again
+    } else {
+      gameOver(); // End game when lives reach 0
+    }
+  }
+}
+
+function gameOver() {
+  background("red");
+  fill("white");
+  textSize(50);
+  text("Game Over", 100, 200);
+  noLoop(); // Stop the game loop
+}
+
+
