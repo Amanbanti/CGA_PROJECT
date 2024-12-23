@@ -2040,3 +2040,115 @@ roller.setCollider("rectangle", 0, 0, 35, 180, 30);
 roller.debug = true;
 drawSprites();
 
+
+
+Lesson 21: Mini-Project
+
+This is the code for the Mini-Project:
+
+// GAME SETUP
+// Create the sprites
+var frog = createSprite(150, 300);
+frog.setAnimation("frog");
+frog.scale = 0.8;
+
+var mushroom = createSprite(460, 310);
+mushroom.setAnimation("mushroom");
+mushroom.scale = 0.6;
+
+var fly = createSprite(460, 170);
+fly.setAnimation("fly");
+fly.scale = 0.6;
+
+// Variables for score and health
+var score = 0;
+var health = 100;
+
+// Function to reset the position of the sprite when it leaves the screen
+function resetPosition(sprite) {
+  if (sprite.x < -50) {
+    sprite.x = 460; // Reset to the right-hand side
+  }
+}
+
+// Function to reset the fly to a random X position and keep it in the air
+function resetFly() {
+  fly.x = randomNumber(200, 460); // Random X position within bounds
+  fly.y = randomNumber(50, 200); // Keep the fly in the air
+}
+
+// DRAW FUNCTION
+function draw() {
+  // BACKGROUND
+  background("skyblue");
+  fill("white");
+  ellipse(50, 60, 300, 80); // Cloud
+  fill("lightgreen");
+  rect(-5, 300, 405, 100); // Ground
+
+  // OBSTACLE AND TARGET MOVEMENT
+  mushroom.velocityX = -3;
+  fly.velocityX = -3;
+
+  // SPRITE INTERACTIONS
+  // If the frog touches the mushroom (obstacle), health decreases
+  if (frog.isTouching(mushroom)) {
+    health -= 10;
+    mushroom.x = 460; // Reset mushroom position
+  }
+
+  // If the frog touches the fly (target), score increases
+  if (frog.isTouching(fly)) {
+    score += 1;
+    resetFly(); // Reset the fly to a random position
+  }
+
+  // JUMPING MECHANICS
+  if (frog.y >= 300) {
+    frog.velocityY = 0; // Stop moving down when on the ground
+  }
+
+  if (keyDown("up") && frog.y >= 300) {
+    frog.velocityY = -5; // Jump up
+  }
+
+  if (frog.y < 100) {
+    frog.velocityY = 5; // Move down after reaching the top
+  }
+
+  // LOOPING SPRITES
+  resetPosition(mushroom);
+
+  if (fly.x < -50) {
+    resetFly(); // Reset the fly to a random position when it leaves the screen
+  }
+
+  // SCOREBOARD
+  fill("black");
+  textSize(20);
+  text("Health:", 280, 30);
+  text(health, 350, 30);
+  text("Score:", 20, 30);
+  text(score, 90, 30);
+
+  // GAME OVER
+  if (health <= 0) {
+    background("black");
+    fill("green");
+    textSize(50);
+    text("Game Over!", 40, 200);
+    noLoop(); // Stop the game loop
+  }
+
+  // DRAW SPRITES
+  drawSprites();
+}
+
+Key Features:
+
+- Sprites: Frog, mushroom, and fly with animations and scaling.
+- Score and Health: Score increases when the frog touches the fly, and health decreases when the frog touches the mushroom.
+- Jumping Mechanics: The frog jumps when the "up" key is pressed, with controlled upward and downward movement.
+- Sprite Looping: The mushroom and fly reset when they move off-screen.
+- Random Fly Position: Fly resets to a random position when off-screen or when touched.
+- Game Over: Displays a "Game Over" message and stops the game when health reaches zero.
