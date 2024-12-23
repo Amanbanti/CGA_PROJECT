@@ -2152,3 +2152,140 @@ Key Features:
 - Sprite Looping: The mushroom and fly reset when they move off-screen.
 - Random Fly Position: Fly resets to a random position when off-screen or when touched.
 - Game Over: Displays a "Game Over" message and stops the game when health reaches zero.
+
+
+## Lesson 22: Complex Sprite movement
+
+Counter Pattern with velocityX
+
+Prediction: The sprite starts at (50, 200) and moves to the right, accelerating continuously as velocityX increases by 0.1 every frame. It speeds up and eventually moves off the screen.
+
+var sprite1 = createSprite(50, 200);
+
+function draw() {
+  sprite1.velocityX = sprite1.velocityX + 0.1;
+
+  background("white");
+  drawSprites();
+}
+
+Car Speeds Up
+
+Using the counter pattern with velocityX, the car accelerates.
+
+var car = createSprite(50, 200);
+car.setAnimation("red_car");
+car.velocityX = 0.2;
+
+function draw() {
+  background("gray");
+  
+  // Add code to make the car speed up
+  car.velocityX = car.velocityX + 1;
+
+  drawSprites();
+}
+
+Falling Rock Speeds Up
+
+Using the counter pattern with velocityY, the rock speeds up as it falls.
+
+var rock = createSprite(200, 50);
+rock.setAnimation("rock");
+rock.velocityY = 0.5;
+
+function draw() {
+  background("skyblue");
+  
+  // Add code to make the rock speed up as it falls
+  rock.velocityY = rock.velocityY + 2;
+
+  drawSprites();
+}
+
+Slowing Things Down
+
+Using the counter pattern with velocityX, the car slows down before reaching the water.
+
+var car = createSprite(50, 200);
+car.setAnimation("blue_car");
+car.velocityX = 10;
+
+noStroke();
+
+function draw() {
+  background("burlywood");
+  fill("blue");
+  rect(350, 0, 100, 400);
+  
+  // Add code to slow the car down before it goes into the water
+  car.velocityX = car.velocityX - 0.25;
+
+  drawSprites();
+}
+
+Slow Down and Reverse
+
+Using the counter pattern with velocityX, the mouse slows down, stops, and then reverses direction.
+
+var scenery = createSprite(200, 200);
+scenery.setAnimation("park_view");
+var cat = createSprite(50, 250);
+cat.setAnimation("brown_cat");
+cat.scale = 0.5;
+
+var mouse = createSprite(375, 325);
+mouse.setAnimation("mouse");
+// Mouse initially moves left
+mouse.velocityX = -20;
+
+function draw() {
+  // Add code to make the mouse change directions when it reaches the cat
+  mouse.velocityX = mouse.velocityX + 1;
+
+  drawSprites();
+}
+
+Looks Like Gravity
+
+Using the counter pattern with velocityY, the rock slows down as it moves upward and then falls back down.
+
+var rock = createSprite(200, 350);
+rock.setAnimation("rock");
+rock.velocityY = -10;
+rock.rotationSpeed = 2;
+
+function draw() {
+  background("skyblue");
+  
+  // Add code to make the rock slow down and then fall
+  rock.velocityY = rock.velocityY + 0.2;
+
+  drawSprites();
+}
+
+Plane Curve
+
+Using the counter pattern with velocityY, gravity pulls the plane downward to avoid the second spike.
+
+var plane = createSprite(50, 350);
+plane.setAnimation("plane");
+var rock = createSprite(150, 350);
+rock.setAnimation("rock");
+var rockdown = createSprite(350, 100);
+rockdown.setAnimation("rock_down");
+
+// Initial velocity for the plane
+plane.velocityY = -9; // Going up
+plane.velocityX = 3; // Moving forward
+
+function draw() {
+  background("lightblue");
+  
+  // Add gravity to move the plane down
+  plane.velocityY = plane.velocityY + 0.2;
+
+  drawSprites();
+}
+
+
