@@ -2817,3 +2817,178 @@ function gameOver() {
   }
 }
 
+
+
+Lesson 26: Game - Defend Your Cake
+
+"Defend Your Cake" is a game where the player, control an alien character to protect a delicious cake from invading ladybugs. The objective is to stop the enemies from reaching the cake while earning points by pushing them off the playable area (into the "water").
+
+Key Features:
+
+- Navigate the alien character using arrow keys.
+- Push the enemies away to earn points.
+- Protect the cake at all costs to avoid losing points.
+- Dynamic background changes based on your score.
+
+var score = 0;
+var cake = createSprite(350, 200);
+cake.setAnimation("cake");
+
+var player = createSprite(200, 200);
+player.setAnimation("alienWalkRight");
+
+var enemy1 = createSprite();
+enemy1.setAnimation("ladybug");
+
+var enemy2 = createSprite();
+enemy2.setAnimation("ladybug");
+
+function draw() {
+  gameBackground();
+  enemiesTouchCake();
+  movePlayer();
+  displaceEnemies();
+  enemiesTouchWater();
+  showScore();
+  drawSprites();
+}
+
+function gameBackground() {
+  noStroke();
+  if (score > 10) {
+    background(rgb(255, 182, 193)); // Pink background when score is over 10
+  } else {
+    background(rgb(0, 100, 255)); // Default background color
+  }
+  fill(rgb(100, 100, 100));
+  rect(0, 150, 400, 100);
+  fill(rgb(80, 80, 80));
+  rect(0, 140, 400, 10);
+  rect(0, 250, 400, 10);
+}
+
+function enemiesTouchCake() {
+  if (enemy1.isTouching(cake)) {
+    setEnemy1();
+    score -= 2;
+  }
+  if (enemy2.isTouching(cake)) {
+    setEnemy2();
+    score -= 2;
+  }
+}
+
+function movePlayer() {
+  if (keyDown("left")) {
+    player.x -= 3;
+    player.rotation = 0;
+    player.setAnimation("alienWalkLeft");
+  }
+  if (keyDown("right")) {
+    player.x += 3;
+    player.rotation = 0;
+    player.setAnimation("alienWalkRight");
+  }
+  if (keyDown("up")) {
+    player.y -= 3;
+  }
+  if (keyDown("down")) {
+    player.y += 3;
+  }
+}
+
+function setEnemy1() {
+  enemy1.x = 0;
+  enemy1.y = randomNumber(150, 250);
+  enemy1.velocityX = 2;
+  enemy1.velocityY = 0;
+}
+
+function setEnemy2() {
+  enemy2.x = 0;
+  enemy2.y = randomNumber(150, 250);
+  enemy2.velocityX = 2;
+  enemy2.velocityY = 0;
+}
+
+function displaceEnemies() {
+  if (player.isTouching(enemy1)) {
+    if (keyDown("left")) {
+      enemy1.velocityX = -2;
+    } else if (keyDown("right")) {
+      enemy1.velocityX = 2;
+    } else {
+      enemy1.velocityX = 0;
+    }
+
+    if (keyDown("up")) {
+      enemy1.velocityY = -2;
+    } else if (keyDown("down")) {
+      enemy1.velocityY = 2;
+    } else {
+      enemy1.velocityY = 0;
+    }
+  }
+
+  if (player.isTouching(enemy2)) {
+    if (keyDown("left")) {
+      enemy2.velocityX = -2;
+    } else if (keyDown("right")) {
+      enemy2.velocityX = 2;
+    } else {
+      enemy2.velocityX = 0;
+    }
+
+    if (keyDown("up")) {
+      enemy2.velocityY = -2;
+    } else if (keyDown("down")) {
+      enemy2.velocityY = 2;
+    } else {
+      enemy2.velocityY = 0;
+    }
+  }
+}
+
+function enemiesTouchWater() {
+  if (enemy1.y < 140 || enemy1.y > 250) {
+    setEnemy1();
+    score += 1;
+  }
+  if (enemy2.y < 140 || enemy2.y > 250) {
+    setEnemy2();
+    score += 1;
+  }
+}
+
+function showScore() {
+  fill("white");
+  textSize(20);
+  text("Score", 20, 20, 200, 100);
+  text(score, 20, 40, 200, 100);
+}
+
+function moveEnemies() {
+  if (enemy1.x < cake.x) {
+    enemy1.velocityX = 2;
+  } else {
+    enemy1.velocityX = -2;
+  }
+
+  if (enemy2.x < cake.x) {
+    enemy2.velocityX = 2;
+  } else {
+    enemy2.velocityX = -2;
+  }
+
+  if (enemy1.y < cake.y) {
+    enemy1.velocityY = 2;
+  } else if (enemy1.y > cake.y) {
+    enemy1.velocityY = -2;
+  }
+
+  if (enemy2.y < cake.y) {
+    enemy2.velocityY = 2;
+  } else if (enemy2.y > cake.y) {
+    enemy2.velocityY = -2;
+  }
+}
