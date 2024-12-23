@@ -1907,3 +1907,136 @@ alien.depth = 7;
 
 
 This project adds interactivity by allowing the user to move the blue alien and displays a message when it escapes.
+
+
+
+## Lesson 20: Collison Detection
+
+Collision Detection with isTouching()
+
+var backdrop = createSprite(200,200);
+backdrop.setAnimation("meadow");
+var bunny = createSprite(50, 300);
+bunny.setAnimation("bunny");
+bunny.velocityX = 3;
+var robot = createSprite(400, 320);
+robot.setAnimation("robot");
+robot.scale = 0.2;
+robot.velocityX = -3;
+var dinner = createSprite(370, 350);
+dinner.setAnimation("stew");
+dinner.velocityX = -3;
+
+function draw() {
+  if (bunny.isTouching(dinner)) {
+    bunny.velocityX = 0;
+    dinner.velocityX = 0;
+    robot.velocityX = 0;
+    dinner.setAnimation("bowl");
+  }
+  drawSprites();
+}
+The prediction is:
+This code creates a simulation where a bunny, robot, and dinner move across the screen, and once the bunny touches the dinner, the bunny and dinner stop moving,
+
+Apple and Blender Collision
+
+I added an isTouching() condition so that the blender only "shakes" when the apple touches it.
+
+var apple = createSprite(200, -50);
+apple.setAnimation("apple");
+apple.velocityY = 5;
+var blender = createSprite(200, 330);
+blender.setAnimation("blender");
+
+function draw() {
+  if (apple.isTouching(blender)) {
+    blender.x = 200 + randomNumber(-5, 5);
+  }
+  background("skyblue");
+  strokeWeight(0);
+  fill("sienna");
+  rect(0, 340, 400, 60);
+  drawSprites();
+}
+
+Balloon and Tack Debugging
+
+In this task, I debugged an issue where a balloon was popping before the tack actually touched it. I turned on the debug property for both the balloon and tack to visualize their colliders and noticed the balloon's collider was too large. I fixed it by cropping the balloon's animation in the animation tab.
+
+var balloon = createSprite(200,200);
+balloon.setAnimation("balloon");
+balloon.debug = true;
+
+var tack = createSprite(350, 50);
+tack.setAnimation("tack");
+
+function draw() {
+  background("gray");
+  if (balloon.isTouching(tack)) {
+    balloon.setAnimation("popped");
+  }
+  if (keyDown("up")) {
+    tack.y = tack.y - 1;
+  }
+  if (keyDown("down")) {
+    tack.y = tack.y + 1;
+  }
+  if (keyDown("left")) {
+    tack.x = tack.x - 1;
+  }
+  if (keyDown("right")) {
+    tack.x = tack.x + 1;
+  }
+  drawSprites();
+}
+
+Bunny and Sun Collision
+
+I fixed a bug where a bunny sprite wasn’t changing to a happy animation when it collided with the sun sprite. 
+
+var sun = createSprite(200, 0);
+sun.setAnimation("sun");
+var bunny = createSprite(200, 300);
+bunny.setAnimation("bunny_sad");
+
+function draw() {
+  background("lightblue");
+  sun.velocityY = 2;
+  if (sun.isTouching(bunny)) {
+    bunny.setAnimation("bunny_happy");
+  }
+  drawSprites();
+}
+
+Horse and Rainbow Collision
+
+I created a program where a horse transforms into a unicorn when it touches a rainbow. used isTouching() to detect the collision and change the horse’s animation.
+
+var horse = createSprite(200, 150);
+horse.setAnimation("horse");
+var rainbow = createSprite(400, 370);
+rainbow.setAnimation("rainbow");
+rainbow.velocityX = -5;
+rainbow.velocityY = -5;
+rainbow.rotateToDirection = true;
+
+function draw() {
+  background("skyblue");
+  if (horse.isTouching(rainbow)) {
+    horse.setAnimation("unicorn");
+  }
+  drawSprites();
+}
+
+Collider Adjustment
+
+For a rolling pin sprite, I adjusted the collider to fit its shape and angle using the setCollider() method with six parameters. This allowed the collider to align perfectly with the sprite.
+
+var roller = createSprite(200, 200);
+roller.scale = 2;
+roller.setAnimation("roller_1");
+roller.setCollider("rectangle", 0, 0, 35, 180, 30);
+roller.debug = true;
+drawSprites();
+
