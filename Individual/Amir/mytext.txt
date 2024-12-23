@@ -3,7 +3,7 @@
 ## Lesson 1: Programming for a Purpose  
 - Explored the **Activity Guide** to understand user needs.  
 - Recommended templates to clients based on the target audience, purpose, and platform:  
-  - **Educational Games for Children:** Maria - Template E (Interactive and simple for reading practice).  
+  - **Educational Games for Children:** Maria - Template E (Interactive and simple for reading practice). 
   - **Environmental Animation:** Richard - Template D (Clean skies and nature-focused).  
   - **Text-Based Block:** Layla - Template B (Pre-structured for easy adaptation).  
   - **Interactive Animation:** Emma - Template C (Replace chickens with sharks for thematic relevance).  
@@ -2586,3 +2586,234 @@ Key Features
 - Gravity Simulation: Adds a realistic touch to the player's movement.
 - Score Tracking: Players earn points for collecting coins.
 - Game Over Screen: Displays when the player moves out of bounds with an option to reset.
+
+
+
+## Lesson 25: Functions
+Explanation
+
+In this lesson, we use custom functions to draw elements like stars, planets, and backgrounds in a simulation.
+
+drawBackground();
+drawPlanet();
+drawPlanet();
+
+function drawBackground() {
+  noStroke();
+  background("black");
+  drawStar();
+  drawStar();
+  drawStar();
+  drawStar();
+  drawStar();
+}
+
+function drawStar() {
+  fill("yellow");
+  ellipse(random(0,400), random(0,400), 5, 5);
+}
+
+function drawPlanet() {
+  noStroke();
+  fill(rgb(random(100,255), random(100,255), random(100,255)));
+  ellipse(random(10, 350), random(10, 350), 50, 50);
+}
+
+Calling Functions
+
+This lesson focuses on calling functions to reveal a complete scene by combining different functions.
+
+drawSky();
+drawBalloons();
+
+function drawSky() {
+  noStroke();
+  background(rgb(0, 200, 255));
+  fill("yellow");
+  ellipse(350, 50, 50, 50);
+}
+
+function drawBalloons() {
+  stroke("black");
+  line(100, 100, 140, 450);
+  noStroke();
+  fill("red");
+  ellipse(100, 100, 50, 50);
+  
+  stroke("black");
+  line(120, 120, 140, 450);
+  noStroke();
+  fill("orange");
+  ellipse(120, 120, 50, 50);
+  
+  stroke("black");
+  line(140, 80, 140, 450);
+  noStroke();
+  fill("yellow");
+  ellipse(140, 80, 50, 50);
+  
+  stroke("black");
+  line(160, 90, 140, 450);
+  noStroke();
+  fill("red");
+  ellipse(160, 90, 50, 50);
+}
+
+Reordering Functions
+
+Reordering the sequence in which functions are called changes the appearance of the scene. 
+
+drawBackground();
+drawClouds();
+drawTrees();
+drawFence();
+
+function drawBackground() {
+  noStroke();
+  background(rgb(0, 200, 255));
+  fill("green");
+  rect(0, 380, 400, 20);
+}
+
+function drawTrees() {
+  noStroke();
+  fill(rgb(150, 100, 0));
+  rect(210, 330, 30, 50);
+  rect(290, 330, 30, 50);
+  rect(360, 330, 30, 50);
+
+  fill("green");
+  regularPolygon(225, 280, 3, 100);
+  regularPolygon(305, 280, 3, 110);
+  regularPolygon(375, 290, 3, 95);
+}
+
+function drawClouds() {
+  noStroke();
+  fill(rgb(255, 255, 255, 100));
+  ellipse(300, 200, 200, 50);
+  ellipse(320, 200, 200, 70);
+  ellipse(340, 200, 200, 50);
+
+  ellipse(100, 100, 200, 50);
+  ellipse(120, 100, 200, 70);
+  ellipse(140, 100, 200, 50);
+}
+
+function drawFence() {
+  stroke("white");
+  strokeWeight(5);
+  line(0, 360, 400, 360);
+  for (let i = 20; i < 400; i += 30) {
+    line(i, 350, i, 380);
+  }
+}
+
+Working with Game Logic
+
+Functions are used to handle sprite creation, scoring, and resetting game elements in a seamless and organized way.
+
+Coin Catching Game
+
+var coin = createSprite(200, 10);
+coin.setAnimation("coin_gold_1");
+
+var bunny = createSprite(200, 350);
+bunny.setAnimation("bunny1_ready_1");
+
+var score = 0;
+
+function draw() {
+  background("white");
+  
+  if (keyDown("left")) {
+    bunny.x -= 8;
+  }
+  if (keyDown("right")) {
+    bunny.x += 8;
+  }
+  
+  coin.y += 4;
+
+  if (coin.isTouching(bunny)) {
+    score += 1;
+    resetCoin();
+  }
+  
+  if (coin.y > 400) {
+    resetCoin();
+  }
+
+  if (score > 10) {
+    background("red");
+  }
+
+  textSize(20);
+  text("Score: " + score, 10, 30);
+  drawSprites();
+}
+
+function resetCoin() {
+  coin.y = 10;
+  coin.x = randomNumber(50, 350);
+}
+
+Creating a Paddle Game
+
+This game utilizes modular functions for each game component
+
+var ball = createSprite(200, 200);
+ball.setAnimation("ball");
+ball.scale = 0.10;
+ball.velocityY = 5;
+ball.velocityX = 10;
+
+var paddle = createSprite(200, 380);
+paddle.setAnimation("paddle");
+paddle.width = 200;
+
+var score = 0;
+var gameStatus = "play";
+
+function draw() {
+  bg();
+  textSize(20);
+  text("Score:" + score, 50, 40);
+  ballBounce();
+  movePaddle();
+  gameOver();
+  drawSprites();
+}
+
+function bg() {
+  background("lightblue");
+}
+
+function movePaddle() {
+  if (keyDown("right")) {
+    paddle.x += 8;
+  }
+  if (keyDown("left")) {
+    paddle.x -= 8;
+  }
+  if (ball.isTouching(paddle)) {
+    ball.bounceOff(paddle);
+  }
+}
+
+function ballBounce() {
+  var edges = createEdgeSprites();
+  ball.bounceOff(edges[0]);
+  ball.bounceOff(edges[1]);
+  ball.bounceOff(edges[2]);
+}
+function gameOver() {
+  if (ball.y > 400) {
+    background("lightblue");
+    textSize(50);
+    fill("red");
+    text("GAME OVER!", 50, 230);
+    gameStatus = "over";
+  }
+}
+
