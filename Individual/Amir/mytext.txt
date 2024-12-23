@@ -2289,3 +2289,197 @@ function draw() {
 }
 
 
+## Lesson 23: Collisions Report
+
+The lesson includes programming sprite interactions using collision blocks like displace(), collide(), bounce(), bounceOff(), and adjusting bounciness for realistic behavior.
+
+Scenario: Giraffe Pushes the Monkey
+
+The giraffe pushes the monkey off the screen when they touch. Here's the program:
+
+// Create giraffe sprite
+var giraffe = createSprite(30, 200);
+giraffe.setAnimation("giraffe");
+giraffe.velocityX = 1;
+giraffe.scale = 0.3;
+
+// Create monkey sprite
+var monkey = createSprite(300, 200);
+monkey.setAnimation("monkey");
+monkey.scale = 0.3;
+
+function draw() {
+  // Draw background
+  background("white");
+  
+  // Check if the giraffe is touching the monkey
+  if (giraffe.isTouching(monkey)) {
+    // Push the monkey off the screen
+    monkey.velocityX = 1;
+  }
+  
+  drawSprites();
+}
+
+
+Write Your Own Sprite Interaction
+
+Elephant Pushes the Hippo
+
+The elephant pushes the hippo off the screen. The elephant moves at a random vertical velocity every time the program runs. Here's the implementation:
+
+// Create elephant sprite
+var elephant = createSprite(200, 400);
+elephant.setAnimation("elephant");
+elephant.scale = 0.5;
+elephant.velocityY = randomNumber(-3, -1);
+
+// Create hippo sprite
+var hippo = createSprite(200, 100);
+hippo.setAnimation("hippo");
+hippo.scale = 0.5;
+
+function draw() {
+  // Draw background
+  background("white");
+  
+  // Check if the elephant is touching the hippo
+  if (elephant.isTouching(hippo)) {
+    // Make the hippo's velocityY match the elephant's
+    hippo.velocityY = elephant.velocityY;
+  }
+  
+  drawSprites();
+}
+
+Displace Block
+Scenario: Fix the Displace Block
+
+Using displace() allows the elephant to push the hippo. The block needed minor adjustments to ensure correct behavior. Here's the code:
+
+// Create elephant sprite
+var elephant = createSprite(200, 350);
+elephant.setAnimation("elephant");
+elephant.scale = 0.5;
+elephant.velocityY = randomNumber(-3, -1);
+
+// Create hippo sprite
+var hippo = createSprite(200, 50);
+hippo.setAnimation("hippo");
+hippo.scale = 0.5;
+hippo.velocityY = randomNumber(1, 3);
+
+function draw() {
+  // Draw background
+  background("white");
+  
+  // Fix the block so the elephant pushes the hippo
+  elephant.displace(hippo);
+  
+  drawSprites();
+}
+
+More Collision Blocks
+Explore Different Collision Blocks
+
+The program explores displace(), collide(), bounce(), and bounceOff() to see their effects.
+
+var parrot = createSprite(50, 200);
+parrot.setAnimation("parrot");
+parrot.velocityX = 2;
+parrot.scale = 0.3;
+
+var penguin = createSprite(350, 200);
+penguin.setAnimation("penguin");
+penguin.velocityX = -2;
+penguin.scale = 0.3;
+
+function draw() {
+  // Use different collision blocks one at a time
+  parrot.bounceOff(penguin); // Replace this with displace(), collide(), or bounce() to test
+  
+  background("white");
+  drawSprites();
+}
+
+Collision Types
+Choose Appropriate Collision Blocks
+
+The following example demonstrates appropriate collision blocks to simulate interactions between animals:
+
+// Create sprites
+var giraffe = createSprite(50, 50);
+giraffe.setAnimation("giraffe");
+giraffe.velocityX = 3;
+var hippo = createSprite(50, 150);
+hippo.setAnimation("hippo");
+hippo.velocityX = 3;
+var rabbit = createSprite(50, 250);
+rabbit.setAnimation("rabbit");
+rabbit.velocityX = 3;
+var snake = createSprite(50, 350);
+snake.setAnimation("snake");
+snake.velocityX = 3;
+var parrot = createSprite(350, 50);
+parrot.setAnimation("parrot");
+parrot.velocityX = -3;
+var elephant = createSprite(350, 150);
+elephant.setAnimation("elephant");
+elephant.velocityX = -3;
+var monkey = createSprite(350, 250);
+monkey.setAnimation("monkey");
+monkey.velocityX = -3;
+var pig = createSprite(350, 350);
+pig.setAnimation("pig");
+pig.velocityX = -3;
+
+function draw() {
+  background("lightblue");
+
+  // Assign correct collision blocks
+  giraffe.bounce(parrot);
+  hippo.displace(elephant);
+  monkey.displace(rabbit);
+  snake.bounceOff(pig);
+
+  drawSprites();
+}
+
+Bounciness
+Adjust Bounciness
+
+The program demonstrates the use of bounciness to adjust how much a sprite slows down or speeds up when bouncing.
+
+// Create basketball sprite
+var basketball = createSprite(100, 0);
+basketball.setAnimation("basketball");
+basketball.bounciness = 0.8;
+
+// Create pool ball sprite
+var poolball = createSprite(325, 0);
+poolball.setAnimation("poolball");
+poolball.bounciness = 0.4;
+
+// Create soccer ball sprite
+var soccerball = createSprite(225, 0);
+soccerball.setAnimation("soccerball");
+soccerball.bounciness = 0.9;
+
+// Create floor sprite
+var wood = createSprite(200, 375);
+wood.setAnimation("floor");
+
+function draw() {
+  background("skyblue");
+  
+  // Apply bounceOff and simulate gravity
+  basketball.bounceOff(wood);
+  soccerball.bounceOff(wood);
+  poolball.bounceOff(wood);
+  
+  basketball.velocityY = basketball.velocityY + 0.2;
+  soccerball.velocityY = soccerball.velocityY + 0.2;
+  poolball.velocityY = poolball.velocityY + 0.2;
+  
+  drawSprites();
+}
