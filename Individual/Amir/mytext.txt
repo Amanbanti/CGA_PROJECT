@@ -2289,6 +2289,7 @@ function draw() {
 }
 
 
+
 ## Lesson 23: Collisions Report
 
 The lesson includes programming sprite interactions using collision blocks like displace(), collide(), bounce(), bounceOff(), and adjusting bounciness for realistic behavior.
@@ -2483,3 +2484,105 @@ function draw() {
   
   drawSprites();
 }
+
+
+
+Lesson 24: Mini Project- Flyer Game
+
+This mini-project is a simple interactive game where the player controls a robot (player) to collect coins and avoid obstacles. The game involves gravity, score tracking, and sprite interactions, creating a fun and challenging gameplay experience.
+
+
+// Create player, target, and obstacles
+var player = createSprite(200, 100);
+player.setAnimation("fly_bot");
+player.scale = 0.8;
+
+var Obstacl1 = createSprite(320, 20);
+Obstacl1.setAnimation("rock");
+Obstacl1.scale = 0.8;
+
+var Obstacl2 = createSprite(10, 200);
+Obstacl2.setAnimation("rock");
+Obstacl2.scale = 0.8;
+
+var coin = createSprite(345, 345);
+coin.setAnimation("coin");
+coin.scale = 0.8;
+
+var gravity = 0.5;
+var score = 0;
+
+function draw() {
+  background("lightblue");
+
+  // Apply gravity to the player
+  player.velocityY += gravity;
+
+  // Display score
+  textSize(20);
+  text("Score: " + score, 20, 30);
+
+  // Reset obstacle positions when they move off-screen
+  if (Obstacl1.y > 400) Obstacl1.y = 0;
+  if (Obstacl2.x > 400) Obstacl2.x = 0;
+  if (coin.y > 400) coin.y = randomNumber(50, 350);
+
+  // Move obstacles
+  Obstacl1.y += 2;
+  Obstacl2.x += 3;
+
+  // Player controls
+  if (keyDown("up")) {
+    player.velocityY = -5;
+  }
+  if (keyDown("left")) {
+    player.velocityX -= 0.5;
+  }
+  if (keyDown("right")) {
+    player.velocityX += 0.5;
+  }
+
+  // Sprite interactions
+  // Collect coin and update score
+  if (player.isTouching(coin)) {
+    coin.x = randomNumber(0, 400);
+    coin.y = randomNumber(0, 400);
+    score += 1;
+  }
+
+  // Obstacles push the player
+  if (player.isTouching(Obstacl1) || player.isTouching(Obstacl2)) {
+    Obstacl1.displace(player);
+    Obstacl2.displace(player);
+  }
+
+  // Reset player position on pressing "R"
+  if (keyDown("r")) {
+    player.x = 200;
+    player.y = 100;
+  }
+
+  // Draw sprites
+  drawSprites();
+
+  // Game Over
+  if (player.x < -50 || player.x > 450 || player.y < -50 || player.y > 450) {
+    background("black");
+    textSize(50);
+    fill("green");
+    player.velocityY = 0;
+    player.velocityX = 0;
+    text("Game Over!", 50, 200);
+    textSize(20);
+    text("Enter R To Play Again!", 90, 250);
+  }
+}
+
+
+Key Features
+
+- Interactive Gameplay: Players must collect coins while avoiding obstacles.
+- Dynamic Obstacles: The obstacles move across the screen, creating a challenging environment.
+- Gravity Simulation: Adds a realistic touch to the player's movement.
+- Score Tracking: Players earn points for collecting coins.
+- Game Over Screen: Displays when the player moves out of bounds with an option to reset.
