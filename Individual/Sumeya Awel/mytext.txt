@@ -3284,7 +3284,7 @@ function draw(){
 }
 
 
-//2
+// red car 
 
 var car = createSprite(50, 200);
 car.setAnimation("red_car");
@@ -3303,27 +3303,22 @@ function draw() {
 
 
 
-//3 
+// gravity in rock
 
 
-var car = createSprite(50, 200);
-car.setAnimation("red_car");
-car.velocityX = 0.2;
+var rock = createSprite(200, 50);
+rock.setAnimation("rock");
+rock.velocityY = 0.5;
 
 function draw() {
-  background("gray");
-  
-  //1) Add code to make the car speed up.
-  car.velocityX = car.velocityX+0.1;
-
-
+  background("skyblue");
+  rock.velocityY = rock.velocityY+0.1;
   
   drawSprites();
 }
 
 
-
-// 4
+// displacement
 
 
 var car = createSprite(50, 200);
@@ -3336,10 +3331,6 @@ function draw() {
   background("burlywood");
   fill("blue");
   rect(350,0,100,400);
-  
-  //1) Add code to slow the car down before it goes into the water.
-  car.velocityX = car.velocityX-0.25;
-
 
   drawSprites();
 }
@@ -3348,9 +3339,7 @@ function draw() {
 
 
 
-// 5 
-
-
+// rising bubble
 
 
 var bubble = createSprite(200, 350);
@@ -3369,7 +3358,7 @@ function draw() {
 
 
 
-// B
+// slow down and reverse
 
 
 var scenery = createSprite(200, 200);
@@ -3395,7 +3384,7 @@ function draw() {
 
 
 
-// 6
+// gravity 
 
 
 var rock = createSprite(200, 350);
@@ -3416,7 +3405,7 @@ function draw() {
 
 
 
-// 7 
+// curve
 
 
 
@@ -3444,7 +3433,7 @@ function draw() {
 
 
 
-// B
+// deceleration
 
 
 var car = createSprite(200, 350);
@@ -3456,21 +3445,13 @@ function draw() {
   background("forestgreen");
   fill("gray");
   rect(150, 0, 100, 400);
-  
-  //1) Add code to make the car slow down in the draw loop.
-  car.velocityY = car.velocityY+0.5;
-
-  
-  //2) Use a conditional to detect when the car's velocity is 0.
-  //3) Add code to the conditional to make the car stop.
-  if (car.velocityY>0) {
+  if (car.velocityY>300) {
     car.velocityY = 0;
   }
-
-  
-  
-  drawSprites();
+   drawSprites();
 }
+
+
 
 
 
