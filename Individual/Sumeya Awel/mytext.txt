@@ -3267,3 +3267,220 @@ function draw() {
     text("Game Over!" , 40, 200);
   }
 }
+
+
+
+## Lesson 22
+
+//1 
+
+var sprite1 = createSprite(50,200);
+
+function draw(){
+  sprite1.velocityX = sprite1.velocityX + 0.1;
+  
+  background("white");
+  drawSprites();
+}
+
+
+//2
+
+var car = createSprite(50, 200);
+car.setAnimation("red_car");
+car.velocityX = 0.2;
+
+function draw() {
+  background("gray");
+  
+  //1) Add code to make the car speed up.
+  car.velocityX = car.velocityX+0.1;
+
+
+  
+  drawSprites();
+}
+
+
+
+//3 
+
+
+var car = createSprite(50, 200);
+car.setAnimation("red_car");
+car.velocityX = 0.2;
+
+function draw() {
+  background("gray");
+  
+  //1) Add code to make the car speed up.
+  car.velocityX = car.velocityX+0.1;
+
+
+  
+  drawSprites();
+}
+
+
+
+// 4
+
+
+var car = createSprite(50, 200);
+car.setAnimation("blue_car");
+car.velocityX =  10;
+
+noStroke();
+
+function draw() {
+  background("burlywood");
+  fill("blue");
+  rect(350,0,100,400);
+  
+  //1) Add code to slow the car down before it goes into the water.
+  car.velocityX = car.velocityX-0.25;
+
+
+  drawSprites();
+}
+
+
+
+
+
+// 5 
+
+
+
+
+var bubble = createSprite(200, 350);
+bubble.setAnimation("bubble");
+bubble.velocityY = -0.5;
+
+function draw() {
+  background("blue");
+  
+  //1) Add code to make the bubble speed up as it rises.
+  bubble.velocityY = bubble.velocityY-0.1;
+
+
+  drawSprites();
+}
+
+
+
+// B
+
+
+var scenery = createSprite(200, 200);
+scenery.setAnimation("park_view");
+var cat = createSprite(50, 250);
+cat.setAnimation("brown_cat");
+cat.scale = 0.5;
+
+var mouse = createSprite(375, 325);
+mouse.setAnimation("mouse");
+//1) Take a look at the code that makes the mouse move.
+mouse.velocityX = -20;
+
+function draw() {
+  //2) Add code to make the mouse change directions when it reaches the cat.
+  mouse.velocityX = mouse.velocityX+1;
+
+
+  drawSprites();
+}
+
+
+
+
+
+// 6
+
+
+var rock = createSprite(200, 350);
+rock.setAnimation("rock");
+rock.velocityY =  -18;
+rock.rotationSpeed = 2;
+
+function draw() {
+  background("skyblue");
+  
+  //1) Add code to make the rock slow down and then fall.
+  rock.velocityY = rock.velocityY+0.5;
+
+  
+  drawSprites();
+}
+
+
+
+
+// 7 
+
+
+
+var plane = createSprite(50, 350);
+plane.setAnimation("plane");
+var rock = createSprite(150, 350);
+rock.setAnimation("rock");
+var rockdown = createSprite(350, 100);
+rockdown.setAnimation("rock_down");
+
+// You might want to change these 
+plane.velocityY = -18;
+plane.velocityX = 3;
+
+function draw() {
+  background("lightblue");
+  
+  //1) Add code that moves the plane down.
+  plane.velocityY = plane.velocityY+0.5;
+
+  
+  drawSprites();
+}
+
+
+
+
+// B
+
+
+var car = createSprite(200, 350);
+car.setAnimation("car");
+
+car.velocityY = -15;
+
+function draw() {
+  background("forestgreen");
+  fill("gray");
+  rect(150, 0, 100, 400);
+  
+  //1) Add code to make the car slow down in the draw loop.
+  car.velocityY = car.velocityY+0.5;
+
+  
+  //2) Use a conditional to detect when the car's velocity is 0.
+  //3) Add code to the conditional to make the car stop.
+  if (car.velocityY>0) {
+    car.velocityY = 0;
+  }
+
+  
+  
+  drawSprites();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
