@@ -3867,3 +3867,363 @@ function draw() {
 
 
 
+
+## Lesson 25 
+
+
+// balloon
+
+
+
+drawSky();
+drawBalloons();
+
+function drawSky(){
+ noStroke();
+ background(rgb(0,200,255));
+ fill("yellow");
+ ellipse(350,50,50,50);
+}
+
+function drawBalloons(){
+ stroke("black");
+ line(100,100,140,450);
+ noStroke();
+ fill("red");
+ ellipse(100,100,50,50);
+ 
+ stroke("black");
+ line(120,120,140,450);
+ noStroke();
+ fill("orange");
+ ellipse(120,120,50,50);
+ 
+ stroke("black");
+ line(140,80,140,450);
+ noStroke();
+ fill("yellow");
+ ellipse(140,80,50,50);
+ 
+ stroke("black");
+ line(160,90,140,450);
+ noStroke();
+ fill("red");
+ ellipse(160,90,50,50);
+}
+
+
+
+// tree 
+
+
+
+drawBackground();
+drawTrees();
+
+function drawBackground(){
+  noStroke();
+  background(rgb(0,200,255));
+  fill("green");
+  rect(0,380,400,20);
+}
+
+function drawTrees(){
+  noStroke();
+  //Draw All Trunks
+  fill(rgb(150,100,0));
+  rect(210,330,30,50);
+  rect(290,330,30,50);
+  rect(360,330,30,50);
+  //Draw All Branches
+  fill("green");
+  regularPolygon(225,280,3,100);
+  regularPolygon(305,280,3,110);
+  regularPolygon(375,290,3,95);
+}
+
+function drawClouds(){
+  noStroke();
+  fill(rgb(255,255,255,100));
+  ellipse(300,200,200,50);
+  ellipse(320,200,200,70);
+  ellipse(340,200,200,50);
+  
+  ellipse(100,100,200,50);
+  ellipse(120,100,200,70);
+  ellipse(140,100,200,50);  
+}
+
+function drawFence(){
+  stroke("white");
+  strokeWeight(5);
+  line(0,360,400,360);
+  line(20,350,20,380);
+  line(50,350,50,380);
+  line(80,350,80,380);
+  line(110,350,110,380);
+  line(140,350,140,380);
+  line(170,350,170,380);
+  line(200,350,200,380);
+  line(230,350,230,380);
+  line(260,350,260,380);
+  line(290,350,290,380);
+  line(320,350,320,380);
+  line(350,350,350,380);
+  line(380,350,380,380);
+}
+
+
+
+// callingfunctions in draw loop 
+
+
+var flyman = createSprite(200,200);
+flyman.setAnimation("flyMan_fly");
+function draw(){
+treesBackground();
+drawSprites();
+}
+
+function treesBackground(){
+ noStroke();
+ background(rgb(0,200,255));
+ 
+ fill("green");
+ rect(0,380,400,20);
+ 
+ fill("yellow");
+ ellipse(350,50,20,20);
+ 
+ strokeWeight(20);
+ stroke(rgb(150,100,0));
+ line(20,300,20,380);
+ line(80,300,80,380);
+ line(120,300,120,380);
+ line(160,300,160,380);
+ line(200,300,200,380);
+ line(250,300,250,380);
+ fill("green");
+ noStroke();
+ ellipse(20,300,100,100);
+ ellipse(80,300,110,110);
+ ellipse(120,300,95,95);
+ ellipse(160,300,110,110);
+ ellipse(200,300,100,100);
+ ellipse(250,300,100,100);
+}
+
+
+
+
+// calling function multiple times
+
+
+
+var flyer = createSprite();
+flyer.setAnimation("flyer");
+setFlyer();
+
+function draw(){
+  treesBackground();
+  if(flyer.x < -50){
+  setFlyer();
+  }
+  drawSprites();
+}
+
+function setFlyer(){
+  flyer.x = 450;
+  flyer.y = 200;
+  flyer.velocityX = -5;
+}
+
+function treesBackground(){
+ noStroke();
+ background(rgb(0,200,255));
+ 
+ fill("green");
+ rect(0,380,400,20);
+ 
+ fill("yellow");
+ ellipse(350,50,20,20);
+ 
+ strokeWeight(20);
+ stroke(rgb(150,100,0));
+ line(20,300,20,380);
+ line(80,300,80,380);
+ line(120,300,120,380);
+ line(160,300,160,380);
+ line(200,300,200,380);
+ line(250,300,250,380);
+ fill("green");
+ noStroke();
+ ellipse(20,300,100,100);
+ ellipse(80,300,110,110);
+ ellipse(120,300,95,95);
+ ellipse(160,300,110,110);
+ ellipse(200,300,100,100);
+ ellipse(250,300,100,100);
+}
+
+
+
+// making to changes function 
+
+
+var flyer = createSprite();
+flyer.setAnimation("flyer");
+setFlyer();
+
+function draw(){
+  treesBackground();
+  if(flyer.x < -50){
+  setFlyer();
+  }
+  drawSprites();
+}
+
+function setFlyer(){
+  flyer.x = 450;
+  flyer.y = randomNumber(100,350);
+  flyer.velocityX = -5;
+}
+
+function treesBackground(){
+ noStroke();
+ background(rgb(0,200,255));
+ 
+ fill("green");
+ rect(0,380,400,20);
+ 
+ fill("yellow");
+ ellipse(350,50,20,20);
+ 
+ strokeWeight(20);
+ stroke(rgb(150,100,0));
+ line(20,300,20,380);
+ line(80,300,80,380);
+ line(120,300,120,380);
+ line(160,300,160,380);
+ line(200,300,200,380);
+ line(250,300,250,380);
+ fill("green");
+ noStroke();
+ ellipse(20,300,100,100);
+ ellipse(80,300,110,110);
+ ellipse(120,300,95,95);
+ ellipse(160,300,110,110);
+ ellipse(200,300,100,100);
+ ellipse(250,300,100,100);
+}
+
+
+
+
+// bunny
+
+
+var coin = createSprite(200,10);
+coin.setAnimation("coin_gold_1");
+setCoin();
+
+var bunny = createSprite(200,350);
+bunny.setAnimation("bunny1_ready_1");
+
+var score = 0;
+
+function draw() {
+  
+  if(keyDown("left")){
+    bunny.x = bunny.x - 2;
+  }
+  
+  if(keyDown("right")){
+    bunny.x = bunny.x + 2;
+  }
+  
+  if(coin.y > 400){
+    setCoin();
+  }
+  if (bunny.isTouching(coin)) {
+    setCoin();
+    score = score + 1;
+  }
+  if (score <  10) {
+    startBG();
+  } else {
+    plus10BG();
+  }
+  
+  textSize(20);
+  text("Score: " + score, 10, 10, 100, 100);
+  drawSprites();
+}
+
+function setCoin(){
+coin.velocityY = 3;
+coin.x = randomNumber(25, 375);
+coin.y = 0;
+}
+function startBG() {
+  background("lightpink");
+  fill("white");
+  textSize(25);
+  text("try catching more than ten", 50, 50, 250, 250);
+}
+function plus10BG() {
+  background("lightblue");
+  fill("white");
+  textSize(25);
+  text("time to celebrate!",130, 43);
+}
+
+
+
+
+// sun
+
+
+function draw() {
+  if(World.mouseY > 200){
+    drawScene1();
+  } else {
+    drawScene2();
+  }
+}
+var movesun = 0;
+
+//1) Create the two functions needed for this program.
+//2) Fill them in with code to draw two different scenes.
+function drawScene1() {
+  background("lightblue");
+  noStroke();
+  fill("green");
+  ellipse(200, 600, 700, 700);
+  fill("yellow");
+  movesun = movesun + 2;
+  ellipse(movesun, 75, 75, 75);
+}
+function drawScene2() {
+  background("black");
+  movesun = movesun + 2;
+  noStroke();
+  fill("yellow");
+  ellipse(randomNumber(0, 400), randomNumber(0, 400), 1, 1);
+  ellipse(randomNumber(0, 400), randomNumber(0, 400), 1, 1);
+  ellipse(randomNumber(0, 400), randomNumber(0, 400), 1, 1);
+  ellipse(randomNumber(0, 400), randomNumber(0, 400), 1, 1);
+  ellipse(randomNumber(0, 400), randomNumber(0, 400), 1, 1);
+  ellipse(randomNumber(0, 400), randomNumber(0, 400), 1, 1);
+  ellipse(randomNumber(0, 400), randomNumber(0, 400), 1, 1);
+  ellipse(randomNumber(0, 400), randomNumber(0, 400), 1, 1);
+  ellipse(randomNumber(0, 400), randomNumber(0, 400), 1, 1);
+  ellipse(randomNumber(0, 400), randomNumber(0, 400), 1, 1);
+  fill("grey");
+  ellipse(200, 75, 150, 150);
+  fill("green");
+  ellipse(movesun, 300, 75, 75);
+}
+
+
+
+
