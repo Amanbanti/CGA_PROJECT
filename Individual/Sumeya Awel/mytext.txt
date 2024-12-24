@@ -4226,4 +4226,266 @@ function drawScene2() {
 
 
 
+## Lesson 26
+
+
+// Variables
+var score = 0;
+// Create Sprites
+var cake = createSprite(350,200);
+cake.setAnimation("cake");
+
+var player = createSprite(200,200);
+player.setAnimation("alienWalkRight");
+
+var enemy1 = createSprite();
+enemy1.setAnimation("ladybug");
+setEnemy1();
+
+
+var enemy2 = createSprite();
+enemy2.setAnimation("ladybug");
+setEnemy2();
+
+
+function draw() {
+  // draw the background
+  gameBackground();
+  // update the sprites
+  enemiesTouchCake();
+  movePlayer();
+  displaceEnemies();
+  enemiesTouchWater();
+  showScore();
+  drawSprites();
+}
+
+// Functions
+function gameBackground() {
+  
+  if (score > 10) {
+    background("pink");noStroke();
+    fill(rgb(100,100,100));
+    rect(0,150,400,100);
+    fill(rgb(80,80,80));
+    rect(0,140,400,10);
+    rect(0,250,400,10);
+    
+  } else {
+  noStroke();
+  background(rgb(0,100,255));
+  fill(rgb(100,100,100));
+  rect(0,150,400,100);
+  fill(rgb(80,80,80));
+  rect(0,140,400,10);
+  rect(0,250,400,10);
+    
+  }
+}
+
+function enemiesTouchCake(){
+  if (enemy1.isTouching(cake)) {
+    setEnemy1();
+    score = score - 2;
+  }
+  if (enemy2.isTouching(cake)) {
+    setEnemy2();
+    score = score - 2;
+  }
+}
+
+function movePlayer(){
+  if (keyDown("right")) {
+    player.x = player.x + 3;
+    player.setAnimation("alienWalkRight");
+  }
+  if (keyDown("left")) {
+    player.x = player.x - 3;
+    player.setAnimation("alienWalkRight");
+  }
+  if (keyDown("up")) {
+    player.y = player.y - 3;
+  }
+  if (keyDown("down")) {
+    player.y = player.y + 3;
+  }
+}
+
+function displaceEnemies(){
+player.displace(enemy1);
+player.displace(enemy2);
+}
+
+function enemiesTouchWater(){
+  if (enemy1.y < 140) {
+    setEnemy1();
+    score = score + 1;
+  }
+  if (enemy1.y > 260) {
+    setEnemy1();
+    score = score + 1;
+  }
+  if (enemy2.y < 140) {
+    setEnemy2();
+    score = score + 1;
+  }
+  if (enemy2.y > 260) {
+    setEnemy2();
+    score = score + 1;
+  }
+}
+
+function showScore() {
+  fill("white");
+  textSize(20);
+  text("Score",20,20,200,100);
+  text(score,20,40,200,100);
+}
+function setEnemy1() {
+   enemy1.x = 0;
+   enemy1.y = randomNumber(150, 250);
+   enemy1.velocityX = 2;
+  
+}
+function setEnemy2() {
+  enemy2.x = 0;
+  enemy2.y = randomNumber(150, 250);
+  enemy2.velocityX = 2;
+  
+}
+
+
+
+// alen with carrot
+
+
+// Variables
+var score = 0;
+// Create Sprites
+var cake = createSprite(350,200);
+cake.setAnimation("carrot_1");
+cake.scale = 1.5;
+var player = createSprite(200,200);
+player.setAnimation("alienWalkRight");
+
+var enemy1 = createSprite();
+enemy1.setAnimation("ladybug");
+setEnemy1();
+
+
+var enemy2 = createSprite();
+enemy2.setAnimation("ladybug");
+setEnemy2();
+
+
+function draw() {
+  // draw the background
+  gameBackground();
+  // update the sprites
+  enemiesTouchCake();
+  movePlayer();
+  displaceEnemies();
+  enemiesTouchWater();
+  showScore();
+  drawSprites();
+}
+
+// Functions
+function gameBackground() {
+  
+  if (score > 10) {
+    background("pink");noStroke();
+    fill(rgb(100,100,100));
+    rect(0,150,400,100);
+    fill(rgb(80,80,80));
+    rect(0,140,400,10);
+    rect(0,250,400,10);
+    
+  } else {
+  noStroke();
+  background(rgb(0,100,255));
+  fill(rgb(100,100,100));
+  rect(0,150,400,100);
+  fill(rgb(80,80,80));
+  rect(0,140,400,10);
+  rect(0,250,400,10);
+    
+  }
+}
+
+function enemiesTouchCake(){
+  if (enemy1.isTouching(cake)) {
+    setEnemy1();
+    score = score - 2;
+  }
+  if (enemy2.isTouching(cake)) {
+    setEnemy2();
+    score = score - 2;
+  }
+}
+
+function movePlayer(){
+  if (keyDown("right")) {
+    player.x = player.x + 3;
+    player.setAnimation("alienWalkRight");
+  }
+  if (keyDown("left")) {
+    player.x = player.x - 3;
+    player.setAnimation("alienWalkRight");
+  }
+  if (keyDown("up")) {
+    player.y = player.y - 3;
+  }
+  if (keyDown("down")) {
+    player.y = player.y + 3;
+  }
+}
+
+function displaceEnemies(){
+player.displace(enemy1);
+player.displace(enemy2);
+}
+
+function enemiesTouchWater(){
+  if (enemy1.y < 140) {
+    setEnemy1();
+    score = score + 1;
+  }
+  if (enemy1.y > 260) {
+    setEnemy1();
+    score = score + 1;
+  }
+  if (enemy2.y < 140) {
+    setEnemy2();
+    score = score + 1;
+  }
+  if (enemy2.y > 260) {
+    setEnemy2();
+    score = score + 1;
+  }
+}
+
+function showScore() {
+  fill("white");
+  textSize(20);
+  text("Score",20,20,200,100);
+  text(score,20,40,200,100);
+}
+function setEnemy1() {
+   enemy1.x = 0;
+   enemy1.y = randomNumber(150, 250);
+   enemy1.velocityX = 2;
+  
+}
+function setEnemy2() {
+  enemy2.x = 0;
+  enemy2.y = randomNumber(150, 250);
+  enemy2.velocityX = 2;
+  
+}
+
+
+
+
+
 
