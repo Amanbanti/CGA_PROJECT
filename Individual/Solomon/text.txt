@@ -94,6 +94,408 @@ background("lightblue");
 ellipse(randomNumber(0, 400), 50); // Sun
 regularPolygon(randomNumber(0, 400), 300, 3, 250); // Mountains
 
+LESSON 9: SPRITE PROPERTIES
+Description: Learned to modify sprites' appearance and position using their properties and dot notation.
+var palette = createSprite();
+palette.setAnimation("paint_palette");
+var brush = createSprite();
+brush.setAnimation("paint_brush");
+palette.x = 100; palette.y = 300;
+brush.x = 103; brush.y = 276; // Adjusted position
+drawSprites();
+
+LESSON 11: CREATE YOUR SCENE
+Description: Used sprites and animations to design custom scenes with interactive elements.
+var sprite = createSprite(200, 200);
+sprite.setAnimation("bg.jpg_1");
+var sprite1 = createSprite(264, 286);
+sprite1.setAnimation("animalhead_arcticfox_1");
+sprite1.scale = 0.1;
+drawSprites();
+text("Mario", 200, 100);
+
+LESSON 12: FUNCTIONS
+Description: Learned about the draw() function for continuous updates and creating dynamic animations.
+function draw(){
+  fill("green");
+  ellipse(randomNumber(0,400), randomNumber(0,400));
+}
+Clearing the Screen:
+World.frameRate = 5;
+background("blue");
+function draw(){
+  background("red");
+  ellipse(randomNumber(0,400), randomNumber(0,400));
+}
+
+
+LESSON 13: SPRITE MOVEMENT
+Description: Used the counter pattern to create movement for sprites and interactive animations.
+Counter Pattern for Movement:
+
+var counter = 0;
+function draw(){
+  counter += 1; // Increment counter
+  console.log(counter);
+}
+Counter-Based Movement:
+function draw() {
+  background("white");
+  textSize(counter);
+  text(counter, 0, 400);
+  counter = counter + 1;
+}
+
+Sprite Movement Across the Screen:
+
+var jet = createSprite(350, 350);
+jet.setAnimation("jet");
+var plane = createSprite(50, 200);
+plane.setAnimation("plane");
+
+function draw() {
+  background("skyblue");
+  jet.y = jet.y - 3;  // Jet moves upward
+  plane.x = plane.x + 3;  // Plane moves to the right
+  drawSprites();
+}
+
+Moving to the Left:
+var fly = createSprite(350, 200);
+fly.setAnimation("fly");
+
+function draw() {
+  background("skyblue");
+  fly.x = fly.x - 3;  // Fly moves left
+  drawSprites();
+}
+
+LESSON 14: FISH ANIMATIONS
+Description: Animated fish sprites with dynamic movements using the counter pattern.
+Fish Movement:
+var orangeFish = createSprite(400, randomNumber(0, 100));
+orangeFish.setAnimation("orange_fish");
+var blueFish = createSprite(250, randomNumber(0, 200));
+blueFish.setAnimation("blue_fish");
+var greenFish = createSprite(300, randomNumber(200, 300));
+greenFish.setAnimation("green_fish");
+
+function draw() {
+  background("navy");
+  orangeFish.x = orangeFish.x - 2;  // Slower
+  blueFish.x = blueFish.x - 4;  // Faster
+  greenFish.x = greenFish.x - 3;  // Moderate
+  drawSprites();
+}
+
+Fish Rotation:
+var orangeFish = createSprite(400, randomNumber(0, 100));
+orangeFish.setAnimation("orange_fish");
+var blueFish = createSprite(250, randomNumber(0, 200));
+blueFish.setAnimation("blue_fish");
+var greenFish = createSprite(300, randomNumber(200, 300));
+greenFish.setAnimation("green_fish");
+
+function draw() {
+  background("navy");
+  orangeFish.x -= 2; blueFish.x -= 4; greenFish.x -= 3;
+  
+  orangeFish.rotation += randomNumber(1, 10) - randomNumber(1, 10);
+  blueFish.rotation += randomNumber(1, 10) - randomNumber(1, 10);
+  greenFish.rotation += randomNumber(1, 10) - randomNumber(1, 10);
+
+  drawSprites();
+}
+
+LESSON 15: CREATE YOUR SCENE
+Designed custom scenes with sprites and backgrounds.
+background("white");
+var sprite = createSprite(10, 200);
+sprite.setAnimation("bowl_1");
+var sprite2 = createSprite(200, 10);
+sprite2.setAnimation("bandage_1");
+function draw() {
+  drawSprites();
+}
+
+Adding Multiple Sprites:
+background("white");
+var sprite1 = createSprite(10, 200);
+sprite1.setAnimation("bowl_1");
+var sprite2 = createSprite(200, 10);
+sprite2.setAnimation("bandage_1");
+var sprite4 = createSprite(100, 390);
+sprite4.setAnimation("arrow_1");
+var sprite5 = createSprite(200, 390);
+sprite5.setAnimation("axe_gold_1");
+
+function draw() {
+  drawSprites();
+}
+
+Adding Text:
+background("white");
+var sprite1 = createSprite(10, 200);
+sprite1.setAnimation("bowl_1");
+var sprite2 = createSprite(200, 10);
+sprite2.setAnimation("bandage_1");
+text("Your Text Here", 50, 50);  // Add custom text
+
+ADDING SPRITES
+Learn how to add multiple sprites with different animations and scales to the screen.
+var sprite = createSprite(200, 75);
+sprite.setAnimation("eightball_1");
+sprite.scale = 0.3;
+var sprite2 = createSprite(200, 200);
+sprite2.setAnimation("soccer_bw_1");
+sprite2.scale = 0.3;
+var sprite3 = createSprite(200, 320);
+sprite3.setAnimation("baseball_1");
+sprite3.scale = 0.3;
+
+function draw() {
+  drawSprites();
+}
+
+USER INPUT
+This lesson shows how to hide a sprite when a key is pressed and move a sprite in response to user input.
+var sprite = createSprite(200, 75);
+sprite.setAnimation("eightball_1");
+sprite.scale = 0.3;
+var sprite2 = createSprite(200, 200);
+sprite2.setAnimation("soccer_bw_1");
+sprite2.scale = 0.3;
+var sprite3 = createSprite(200, 320);
+sprite3.setAnimation("baseball_1");
+sprite3.scale = 0.3;
+
+function draw() {
+  if (keyDown("space")) {
+    sprite.visible = false;
+  } else {
+    sprite.x = sprite.x + 1;
+  }
+}
+
+FINISHING TOUCHES
+This section adds finishing touches like text to the scene and further manipulations based on key inputs.
+
+var sprite = createSprite(200, 75);
+sprite.setAnimation("eightball_1");
+sprite.scale = 0.3;
+var sprite2 = createSprite(200, 200);
+sprite2.setAnimation("soccer_bw_1");
+sprite2.scale = 0.3;
+var sprite3 = createSprite(200, 320);
+sprite3.setAnimation("baseball_1");
+sprite3.scale = 0.3;
+
+text("Balls Game", 10, 10);
+
+function draw() {
+  if (keyDown("space")) {
+    sprite.visible = false;
+  } else {
+    sprite.x = sprite.x + 1;
+  }
+  if (keyDown("right")) {
+    sprite.x = sprite.x - 1;
+  }
+}
+LESSON 19: VELOCITY
+This lesson introduces sprite velocity properties to make sprites move at a constant rate.
+var feather = createSprite(200, 50);
+feather.setAnimation("feather");
+feather.velocityY = 2;
+
+function draw() {
+  background("skyblue");
+  drawSprites();
+}
+
+
+ROTATION SPEED
+This section demonstrates how to add a rotation effect to a sprite.
+var sun = createSprite(200, 200);
+sun.setAnimation("sun");
+sun.rotationSpeed = 5;
+
+function draw() {
+  background("blue");
+  drawSprites();
+}
+
+BALL BOUNCING WITH VELOCITY
+This example makes a ball bounce at the top and bottom of the screen using velocity.
+var field = createSprite(200, 200);
+field.setAnimation("field");
+var ball = createSprite(200, 50);
+ball.setAnimation("ball");
+ball.scale = 0.2;
+ball.velocityY = 5;
+
+function draw() {
+  if (ball.y > 380) {
+    ball.velocityY = -5;
+  }
+  if (ball.y < 0) {
+    ball.velocityY = 5;
+  }
+  drawSprites();
+}
+
+LESSON 20
+In this lesson, we make multiple sprites (bunny, robot, dinner) interact based on their movements, such as stopping when they touch.
+
+var backdrop = createSprite(200, 200);
+backdrop.setAnimation("meadow");
+var bunny = createSprite(50, 300);
+bunny.setAnimation("bunny");
+bunny.velocityX = 3;
+var robot = createSprite(400, 320);
+robot.setAnimation("robot");
+robot.scale = 0.2;
+robot.velocityX = -3;
+var dinner = createSprite(370, 350);
+dinner.setAnimation("stew");
+dinner.velocityX = -3;
+
+function draw() {
+  if ((((bunny.x > dinner.x) && ((bunny.x - dinner.x) < (bunny.width / 2 + dinner.width / 2))) ||
+    ((bunny.x < dinner.x) && ((bunny.x - dinner.x) > - (bunny.width / 2 + dinner.width / 2))))) {
+    bunny.velocityX = 0;
+    dinner.velocityX = 0;
+    robot.velocityX = 0;
+    dinner.setAnimation("bowl");
+  }
+  drawSprites();
+}
+
+SCARED MOUSE
+This lesson demonstrates how the mouse sprite changes its direction when it touches the cat sprite, causing the cat to react.
+var kitchen = createSprite(200, 200);
+kitchen.setAnimation("kitchen");
+var cat = createSprite(350, 125);
+cat.setAnimation("cat");
+cat.scale = 0.50;
+var mouse = createSprite(0, 175);
+mouse.setAnimation("mouse_right");
+mouse.velocityX = 4;
+
+function draw() {
+  if (mouse.isTouching(cat)) {
+    cat.setAnimation("cat_meow");
+    mouse.setAnimation("mouse_left");
+    mouse.velocityX = -5;
+  }
+
+  drawSprites();
+}
+
+
+DEBUG ADD POINT ON COLLISION
+This lesson checks for collisions between sprites (ghost and coin) and increases the score when they collide. It also moves the coin to a random position.
+var points = 0;
+var coin = createSprite(200, 100);
+coin.setAnimation("coin");
+var ghost = createSprite(200, 300);
+ghost.setAnimation("ghost");
+
+function draw() {
+  if (ghost.isTouching(coin)) {
+    points = points + 1;
+    coin.x = randomNumber(10, 300);
+    coin.y = randomNumber(10, 300);
+  }
+
+  background("lightblue");
+  text("Points: " + points, 25, 25);
+
+  if (keyDown("up")) {
+    ghost.y = ghost.y - 5;
+  }
+  if (keyDown("down")) {
+    ghost.y = ghost.y + 5;
+  }
+  if (keyDown("left")) {
+    ghost.x = ghost.x - 5;
+  }
+  if (keyDown("right")) {
+    ghost.x = ghost.x + 5;
+  }
+
+  drawSprites();
+}
+
+LESSON 21: SIDE SCROLLER
+This lesson sets up a side-scrolling game where obstacles (mushrooms) move and the player (frog) jumps to avoid them. The score increases when the frog touches the fly, and the health decreases when it touches a mushroom.
+
+var frog = createSprite(220, 360);
+frog.setAnimation("frog");
+
+var fly = createSprite(380, 250);
+fly.setAnimation("fly");
+fly.velocityX = -5;
+
+var mushroom = createSprite(380, 360);
+mushroom.setAnimation("mushroom");
+mushroom.velocityX = -5;
+
+var score = 0;
+var health = 100;
+
+function draw() {
+  background("white");
+
+  if (mushroom.x < 0) {
+    mushroom.x = 400;
+    mushroom.rotation = 0;
+  }
+
+  if (keyDown("up")) {
+    frog.velocityY = -8;
+  }
+
+  if (frog.y == 200) {
+    frog.y = 360;
+    frog.velocityY = 0;
+  }
+
+  if (fly.x < 0) {
+    fly.x = 400;
+    fly.y = randomNumber(250, 350);
+  }
+
+  if (mushroom.isTouching(frog)) {
+    mushroom.rotation = 20;
+    health = health - 10;
+    mushroom.x = 400;
+  }
+
+  if (frog.isTouching(fly)) {
+    score = score + 10;
+    fly.x = 400;
+  }
+
+  drawSprites();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
