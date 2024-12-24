@@ -56,3 +56,44 @@ rect(200, 200);
 #Drawing a car by using the shapes we learned in the lessong before 
 #Debugging the code in order to get the intended shape. 
 rearrenge the code.
+
+#LESSON 4
+This topic explores how parameters control the appearance of shapes by customizing their size, position, and other attributes. Key concepts include:
+
+Shapes: Use commands like ellipse(x, y, w, h) and rect(x, y, w, h) to create and adjust shapes by specifying width, height, and position.
+Customization: Add colors using fill(color) and set the background with background(color).
+Practice: Experiment with shape parameters to debug and create designs like clouds, polygons, and arcs.
+
+LESSON 5: VARIABLES
+Description: Learned to use variables to store and manage information, making programs more dynamic and reusable.
+var size = 100;
+fill("green");
+ellipse(200, 100, size, size);
+
+var eyeSize = 27;
+ellipse(160, 170, eyeSize, eyeSize);
+Random Numbers with randomNumber():
+ellipse(randomNumber(0, 400), 200, 50, 50);
+
+LESSON 7: ROBOT FACE
+Description: Created a robot face using polygons, ellipses, and rectangles to practice designing with geometric shapes.
+
+regularPolygon(200, 175, 6, 90); // Head
+fill("white");
+ellipse(165, 150, 20, 20); // Eyes
+rect(170, 200, 56, 10); // Mouth
+
+LESSON 8: SPRITES
+Description: Explored sprites to create interactive animations and manage objects on the canvas.
+var sprite = createSprite(200, 200);
+sprite.setAnimation("textGetReady");
+drawSprites();
+
+Dynamic Background and Objects:
+background("lightblue");
+ellipse(randomNumber(0, 400), 50); // Sun
+regularPolygon(randomNumber(0, 400), 300, 3, 250); // Mountains
+
+
+
+
