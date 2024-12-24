@@ -4359,9 +4359,7 @@ function setEnemy2() {
 // alen with carrot
 
 
-// Variables
 var score = 0;
-// Create Sprites
 var cake = createSprite(350,200);
 cake.setAnimation("carrot_1");
 cake.scale = 1.5;
