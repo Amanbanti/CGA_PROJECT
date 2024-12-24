@@ -909,3 +909,2697 @@ text("dracula", 100, 350);
 ##LEVEL5
 I'm fond of the characters I chose
 
+##
+##
+##LESSON 12
+##
+##LEVEL2
+//1 Add code to this program so that your drawing has orange circles being drawn, too.
+noStroke();
+
+function draw(){
+  fill("green");
+  ellipse(randomNumber(0,400), randomNumber(0,400));
+  fill("orange");
+  ellipse(randomNumber(0, 400), randomNumber(0, 400));
+}
+
+##
+##LEVEL4
+//1 Run the code to see how it works.
+//2 Discuss with your partner why some code is inside the draw loop and some code is outside.
+var sprite = createSprite(100,200);
+sprite.setAnimation("greenAlien");
+function draw() {
+  background("orange");
+  //3 Try changing the numbers in the random number block and running the program again.
+  sprite.rotation = randomNumber(-180, 180);
+  drawSprites();
+}
+//the first two lines are outside the draw function because we only want to draw one animation
+
+##
+##LEVEL5
+//1 Run the program to see how it works.
+var pencil = createSprite(100,200);
+pencil.setAnimation("pencil");
+
+var brush = createSprite(300,200);
+brush.setAnimation("brush");
+
+function draw(){
+  background("white");
+  pencil.x = randomNumber(100,110);
+  //2 Edit the code in this program to make the second sprite shake like the first one.
+  brush.x = randomNumber(300,310);
+  drawSprites();
+}
+
+##
+##LEVEL6
+///A //
+//1 Run the program to see how it works.
+
+// Setting Frame Rate
+World.frameRate = 10;
+
+// Creating Alien Sprites
+var greenAlien = createSprite(100, 200);
+greenAlien.setAnimation("greenAlien");
+
+var pinkAlien = createSprite(300, 200);
+pinkAlien.setAnimation("pinkAlien");
+
+// Setting Up Drawing
+noStroke();
+fill("white");
+
+function draw() {
+  background("black");
+  ellipse(randomNumber(0,400),randomNumber(0,400),5,5);
+  
+  greenAlien.rotation = randomNumber(-5,5);
+  
+  //2 Add code to this program to make the other alien shake just like the first.
+  
+  pinkAlien.rotation = randomNumber(-5, 5);
+
+  drawSprites();
+}
+
+##
+##LEVEL7
+//1 Add the draw loop block to the bottom of this program.
+//2 Move any blocks that need to be inside the draw loop.
+
+var salt = createSprite(200,200);
+salt.setAnimation("salt");
+
+function draw() {
+  background("skyblue");
+  salt.y = randomNumber(200, 220)
+  
+  
+  drawSprites();
+}
+
+##
+##LEVEL8
+///A //
+// Setting Frame Rate
+World.frameRate = 5;
+
+//1 Create your sprite for the background
+var background = createSprite(200, 200);
+
+//2 Create your sprites for the cow, elephant, and pig and set the x and y location for each.
+var elephant = createSprite(75, 250);
+var cow = createSprite(200, 250);
+var pig = createSprite(325, 250);
+
+//3 Set the animation for each sprite.
+elephant.setAnimation("elephant");
+cow.setAnimation("cow");
+pig.setAnimation("pig");
+
+//4 Resize your animals.
+elephant.scale = 0.3;
+cow.scale = 0.2;
+pig.scale = 0.3;
+
+//5 Update the appropriate sprite property in the draw loop to 
+//make the animals appear like they are jumping on the couch like the image
+function draw() {
+  background.setAnimation("background");
+  elephant.y = randomNumber(220, 250);
+  cow.y = randomNumber(220, 250);
+  pig.y = randomNumber(220, 250);
+  drawSprites();
+}
+
+##
+##
+##LESSON 13
+##
+##LEVEL2
+var jet = createSprite(350, 350);
+jet.setAnimation("jet");
+var plane = createSprite(50, 200);
+plane.setAnimation("plane");
+
+function draw() {
+  background("skyblue");
+  
+  //1 Read the code that makes the jet go up the screen
+  jet.y = jet.y - 3;
+  
+  //2 Add code that makes the plane move to the right
+  plane.x = plane.x + 3;
+
+  drawSprites();
+}
+
+##
+##LEVEL3
+var fly = createSprite(350, 200);
+fly.setAnimation("fly");
+
+function draw() {
+  background("skyblue");
+  //1 Use the counter pattern to make the sprite move to the left.
+  
+  fly.x = fly.x - 6
+
+  drawSprites();
+}
+
+##
+##LEVEL4
+//1 Read the code that makes the mouse go down.
+//2 Run the program and look at the watchers to see what is happening 
+
+var mouse = createSprite(50, 50);
+mouse.setAnimation("mouse");
+mouse.scale = 0.5;
+
+function draw() {
+  background("lightgreen");
+  mouse.y = mouse.y + 2;
+  //3 Add one more line of code to make the mouse move diagonally.
+  mouse.x = mouse.x + 2;
+  
+  drawSprites();
+}
+
+//4 Run your code again and look at the watchers.
+
+##
+##LEVEL6
+//A //
+var pan = createSprite(200, 200);
+pan.setAnimation("pan");
+
+function draw() {
+  background("palegreen");
+  //1 Make the pan spin like in the image
+  pan.rotation = pan.rotation + 2;
+  
+  drawSprites();
+}
+
+##
+##LEVEL7
+var orangeFish = createSprite(400, randomNumber(0, 100));
+orangeFish.setAnimation("orange_fish");
+var blueFish = createSprite(250, randomNumber(0, 200));
+blueFish.setAnimation("blue_fish");
+var greenFish = createSprite(300, randomNumber(200, 300));
+greenFish.setAnimation("green_fish");
+
+function draw() {
+  // Draw Background
+  background("navy");
+  
+  // Update Values
+  orangeFish.x = orangeFish.x - 2;
+  
+  //1 Use the counter pattern to make the blue fish move across the screen faster than the other fish
+  blueFish.x = blueFish.x - 4;
+
+  //2 Use the counter pattern to make the green fish move across the screen slower than the other fish.
+  greenFish.x = greenFish.x - 1;
+  
+  // Draw Animations
+  drawSprites();
+}
+
+##
+##LEVEL8
+//A //
+var orangeFish = createSprite(400, randomNumber(0, 100));
+orangeFish.setAnimation("orange_fish");
+var blueFish = createSprite(250, randomNumber(0, 200));
+blueFish.setAnimation("blue_fish");
+var greenFish = createSprite(300, randomNumber(200, 300));
+greenFish.setAnimation("green_fish");
+
+function draw() {
+  // Draw Background
+  background("navy");
+  
+  // Update Values
+  orangeFish.x = orangeFish.x - 2;
+  blueFish.x = blueFish.x - 4;
+  greenFish.x = greenFish.x - 1;
+  
+  orangeFish.rotation = randomNumber(-5, 5);
+  blueFish.rotation = randomNumber(-5, 5);
+  greenFish.rotation = randomNumber(-5, 5);
+  
+  // Draw Animations
+  drawSprites();
+}
+
+##
+##
+##LESSON 14
+##
+##LEVEL2
+background("skyblue");
+fill("yellow");
+ellipse(200, 200, 400, 400);
+
+fill("skyblue");
+rect(100, 100, 200, 200);
+
+
+##
+##LEVEL3
+fill("yellow");
+ellipse(200, 200, 400, 400);
+
+fill("skyblue");
+rect(100, 100, 200, 200);
+
+var snoop = createSprite(100, 200);
+var samurai = createSprite(300, 200);
+
+snoop.setAnimation("snoop");
+samurai.setAnimation("samurai");
+function draw() {
+  background("skyblue");
+  snoop.scale = 0.5;
+  samurai.scale = 0.4;
+  snoop.rotation = snoop.rotation + 2;
+  samurai.tint = 1;
+  snoop.y = snoop.y - 2;
+  drawSprites();
+}
+
+
+##
+##LEVEL4
+fill("yellow");
+ellipse(200, 200, 400, 400);
+
+fill("skyblue");
+rect(100, 100, 200, 200);
+counter = 12;
+
+var snoop = createSprite(100, 200);
+var samurai = createSprite(300, 200);
+
+snoop.setAnimation("snoop");
+samurai.setAnimation("samurai");
+function draw() {
+  background("skyblue");
+  snoop.scale = 0.5;
+  samurai.scale = 0.4;
+  snoop.rotation = snoop.rotation + 2;
+  samurai.tint = 1;
+  snoop.y = snoop.y - 2;
+  
+  
+  drawSprites();
+  fill("yellow");
+  text("samurai", 300, 250);
+  textSize(counter);
+  
+  fill("red");
+  text("snoop", 100, 250);
+  textSize(counter);
+  
+}
+
+
+##
+##LEVEL5
+fill("yellow");
+ellipse(200, 200, 400, 400);
+
+fill("skyblue");
+rect(100, 100, 200, 200);
+counter = 12;
+
+var snoop = createSprite(100, 200);
+var samurai = createSprite(300, 200);
+
+snoop.setAnimation("snoop");
+samurai.setAnimation("samurai");
+function draw() {
+  background("skyblue");
+  fill("yellow");
+  ellipse(200, 200, 400, 400);
+  
+  fill("skyblue");
+  rect(randomNumber(0, 400), 100, 200, 200);
+  counter = 12;
+  snoop.scale = 0.5;
+  samurai.scale = 0.4;
+  snoop.rotation = snoop.rotation + 2;
+  samurai.tint = 1;
+  snoop.y = snoop.y - 2;
+  
+  
+  drawSprites();
+  fill("black");
+  text("samurai", 300, 250);
+  textSize(counter);
+  
+  fill("red");
+  text("snoop", 100, 250);
+  textSize(counter);
+  
+}
+
+
+##
+##LEVEL6
+the way snoop dogg floats away ;)
+
+##
+##
+##LESSON 15
+##
+##LEVEL3
+var finishLine = createSprite(40, 200);
+finishLine.setAnimation("finish_line");
+
+var raceCar = createSprite(400, 200);
+raceCar.setAnimation("race_car");
+
+function draw() {
+  // Draw Background
+  background("white");
+  
+  // Counter pattern to make car move across the screen
+  raceCar.x = raceCar.x - 2;
+  
+  //Program text
+  fill("black");
+  strokeWeight(5);
+  textSize(25);
+  fill("blue");
+  //1 Add blocks to the text command to print the boolean to the screen
+  if (raceCar.x < finishLine.x) {
+    text("The race car has crossed the finish line:", 100, 20, 300, 60);
+  }
+  
+  
+  // Draw Animations
+  drawSprites();
+}
+
+##
+##LEVEL5
+var fruit = createSprite(200, 200);
+fruit.setAnimation("apple");
+fruit.scale = 0.1;
+
+function draw() {
+  // Draw Background
+  background("white");
+  
+  // Update Values
+  fruit.scale = fruit.scale + 0.01;
+  
+  //1 Add a conditional to the draw loop.
+  //2 Add code to the conditional statement that asks if the scale of the fruit greater than 2.
+  //3 Add code inside the conditional to change the fruit to a pear.
+  if (fruit.scale > 2) {
+    fruit.setAnimation("pear");
+  }
+
+
+
+
+  // Draw Animations
+  drawSprites();
+}
+
+
+##
+##LEVEL6
+//A //
+// Modify these sprite properties so that all of the
+// boolean commands print true on the screen
+var sprite1 = createSprite(200, 200);
+sprite1.setAnimation("apple");
+sprite1.rotation = 30;
+sprite1.scale = 1.5;
+
+var sprite2 = createSprite(100, 100);
+sprite2.setAnimation("carrot");
+sprite2.rotation = 35;
+sprite2.scale = 1.5;
+
+// Do NOT edit the following (I'm serious!!!)
+drawSprites();
+textSize(20);
+fill("blue");
+text("Comparison 1: " + (sprite2.x == sprite2.y), 0, 15);
+text("Comparison 2: " + (sprite2.rotation < 40), 0, 40);
+text("Comparison 3: " + (sprite1.scale == sprite2.scale), 0, 65);
+text("Comparison 4: " + (sprite1.x > 150), 0, 90);
+text("Comparison 5: " + (sprite2.y < 200), 0, 115);
+
+##
+##LEVEL7
+var backdrop = createSprite(200,200);
+backdrop.setAnimation("sci_fi");
+var dinosaur = createSprite(200, 350);
+dinosaur.scale = 0.2;
+dinosaur.setAnimation("tyrannosaurus");
+
+function draw() {
+  //move the dinosaur up
+  dinosaur.y = dinosaur.y - 5;
+
+  //2 Add a conditional that detects when the dinosaur is in the sky.
+  //3 Set the sprite's animation to a pterodactyl when it reaches the sky.
+  if (dinosaur.y < 250) {
+    dinosaur.setAnimation("pterodactyl");
+  }
+
+
+  //draw everything
+  drawSprites();
+}
+
+
+##
+##LEVEL8
+//A //
+var balloon = createSprite(200, 200);
+balloon.setAnimation("balloon");
+balloon.scale = 0.1;
+
+//1 Create a pop sprite which uses the "pop" visual in the animation tab.
+
+
+//2 Set the pop sprite to be hidden at the beginning.
+
+
+function draw() {
+  // Draw Background
+  background("white");
+
+  // Update Values
+  balloon.scale = balloon.scale + 0.001;
+
+  //3 Add a conditional that checks the size of the balloon to see when it touches the edge of the screen.
+  //4 Inside your conditional, set the balloon sprite to be hidden *and* set the pop sprite to appear.
+  if (balloon.scale > 0.6) {
+    balloon.setAnimation("pop");
+  }
+
+
+
+  // Draw Animations
+  drawSprites();
+}
+
+##
+##
+##LESSON 16
+##
+##LEVEL2
+//1 Run the code and try pressing the "p" and "h" keys.
+var sprite = createSprite(200, 200);
+sprite.setAnimation("giraffe");
+
+function draw() {
+  background("white");
+
+  //2 Look inside the first two conditional statements to see how the code works.
+  if(keyDown("h")) {
+     sprite.setAnimation("hippo");
+  }
+
+  if(keyDown("p")) {
+     sprite.setAnimation("pig");
+  }
+
+  if(keyDown("r")) {
+      //3 Add code to change the sprite to a different animal when the "r" key is pressed.
+  sprite.setAnimation("hippo");
+
+  }
+
+  drawSprites();
+}
+
+
+##
+##LEVEL3
+var bug = createSprite(200, 200);
+bug.setAnimation("ladybug");
+
+function draw() {
+  //Draw Background
+  background("white");
+  //1) Add a conditional statement to check if the right arrow key has been pressed down.
+
+  //2) Add code to move the sprite right if the right arrow is down.
+  if (keyDown("RIGHT_ARROW")) {
+    bug.x = bug.x + 3
+    
+  }
+
+
+  //Draw Animations
+  drawSprites();
+}
+
+
+##
+##LEVEL4
+var blueGear = createSprite(100, 220);
+blueGear.setAnimation("blue_gear");
+
+var greenGear = createSprite(183, 298);
+greenGear.setAnimation("green_gear");
+
+var redGear = createSprite(185, 145);
+redGear.setAnimation("red_gear");
+
+function draw() {
+  background("white");
+
+  //1) Add code that will check if the space key is being pressed down.
+  //2) Adjust the program so that the gears only rotate when the space key is pressed down.
+  if (keyDown("space")) {
+    blueGear.rotation = blueGear.rotation - 1;
+    greenGear.rotation = greenGear.rotation + 1;
+    redGear.rotation = redGear.rotation + 1;
+  }
+
+  drawSprites();
+}
+
+
+##
+##LEVEL5
+//A //
+var orangeFish = createSprite(400, randomNumber(0, 100));
+orangeFish.setAnimation("orange_fish");
+var blueFish = createSprite(250, randomNumber(0, 200));
+blueFish.setAnimation("blue_fish");
+var greenFish = createSprite(300, randomNumber(200, 300));
+greenFish.setAnimation("green_fish");
+
+function draw() {
+  // Draw Background
+  background("navy");
+  
+  // Update Values
+  if (keyDown("LEFT_ARROW")) {
+    orangeFish.x = orangeFish.x - 2;
+    blueFish.x = blueFish.x - 4;
+    greenFish.x = greenFish.x - 1;
+    
+    orangeFish.rotation = randomNumber(-5, 5);
+    blueFish.rotation = randomNumber(-5, 5);
+    greenFish.rotation = randomNumber(-5, 5);
+  }
+
+  
+  // Draw Animations
+  drawSprites();
+}
+
+##
+##LEVEL6
+var backdrop = createSprite(200,200);
+backdrop.setAnimation("rainbow");
+var flyer = createSprite(200,200);
+flyer.setAnimation("wing_bot");
+
+function draw() {
+
+  //1) Add code to move the sprite left when the left arrow is pressed
+  if (keyDown("LEFT_ARROW")) {
+    flyer.x = flyer.x - 3
+  }
+
+  //2) Add code to move the sprite right when the right arrow is pressed
+  if (keyDown("RIGHT_ARROW")) {
+    flyer.x = flyer.x + 3
+  }
+
+  //3) Add code to move the sprite up when the up arrow is pressed
+  if (keyDown("UP_ARROW")) {
+    flyer.y = flyer.y - 3
+  }
+
+  //4) Add code to move the sprite down when the down arrow is pressed
+  if (keyDown("DOWN_ARROW")) {
+    flyer.y = flyer.y + 3
+  }
+
+drawSprites();
+}
+
+##
+##LEVEL7
+//A //
+var clicks = 0;
+
+function draw() {
+  // 2) Change the code to use the new block, so the program only gives you a point for new clicks.
+  if (keyWentUp("space")) {
+      clicks = clicks + 1;
+  }
+  background("white");
+  textSize(50);
+  text(clicks, 165, 175, 70, 50);
+}
+
+##
+##
+##LESSON 17
+##
+##LEVEL2
+var blueGear = createSprite(100, 220);
+blueGear.setAnimation("blue_gear");
+
+var greenGear = createSprite(183, 298);
+greenGear.setAnimation("green_gear");
+
+var redGear = createSprite(185, 145);
+redGear.setAnimation("red_gear");
+
+function draw() {
+  background("white");
+  
+  if (keyDown("space")) {
+    blueGear.rotation = blueGear.rotation - 1;
+    greenGear.rotation = greenGear.rotation + 1;
+    redGear.rotation = redGear.rotation + 1;
+  } else {
+    blueGear.rotation = blueGear.rotation + 1;
+    greenGear.rotation = greenGear.rotation - 1;
+    redGear.rotation = redGear.rotation - 1;
+  }
+  //1) Make the gears spin the opposite way when the space bar is **not** being pressed.
+  
+  drawSprites();
+}
+
+##
+##LEVEL3
+var blueGear = createSprite(100, 220);
+blueGear.setAnimation("blue_gear");
+
+var greenGear = createSprite(183, 298);
+greenGear.setAnimation("green_gear");
+
+var redGear = createSprite(185, 145);
+redGear.setAnimation("red_gear");
+
+function draw() {
+  background("white");
+  
+  if (mouseDown("leftButton")) {
+    blueGear.rotation = blueGear.rotation - 1;
+    greenGear.rotation = greenGear.rotation + 1;
+    redGear.rotation = redGear.rotation + 1;
+  } else {
+    blueGear.rotation = blueGear.rotation + 1;
+    greenGear.rotation = greenGear.rotation - 1;
+    redGear.rotation = redGear.rotation - 1;
+    
+  }
+  //3) Make the gears spin the opposite way when there is no user input.
+
+  
+  drawSprites();
+}
+
+
+##
+##LEVEL4
+var balloon = createSprite(200, 50);
+balloon.setAnimation("balloon");
+balloon.scale = 0.1;
+
+function draw() {
+  background("white");
+  
+  //1) Add code that checks whether the mouse is being pressed.
+  //2) Move the balloon up the screen if the mouse is being pressed.
+  //3) Otherwise, move the balloon down the screen.
+  if (mouseDown("leftButton")) {
+    balloon.y = balloon.y - 3
+  } else {
+    balloon.y = balloon.y + 3
+  }
+
+  balloon.y = balloon.y + 1;
+
+  drawSprites();
+}
+
+##
+##LEVEL5
+var blender = createSprite(100, 300);
+blender.setAnimation("blender");
+var mixer = createSprite(300, 300);
+mixer.setAnimation("mixer");
+
+function draw() {
+  background("lightyellow");
+  fill("burlywood");
+  rect(0, 350, 400, 50);
+  if (World.mouseX < 200) {
+    blender.x = randomNumber(95, 105);
+    blender.y = randomNumber(295, 305);
+  } else {
+    mixer.x = randomNumber(295, 305);
+    mixer.y = randomNumber(295, 305);
+  }
+  //2) Add to the conditional so that when the mouse is on the other side of the screen, the mixer shakes instead.
+
+  drawSprites();
+}
+
+
+##
+##LEVEL6
+//A //
+var outside = createSprite(200,200);
+outside.setAnimation("pine_trees");
+var bug = createSprite(350, 350);
+bug.setAnimation("ladybug");
+
+function draw() {
+  
+  //1) Use an conditional to check the position of the mouse.
+  //2) Add code to make the bug move only if the mouse pointer is near the bottom of the screen.
+  if (World.mouseY > 300) {
+    bug.x = bug.x - 3
+  }
+
+
+  drawSprites();
+  
+}
+
+##
+##LEVEL7
+var backdrop = createSprite(200,200);
+backdrop.setAnimation("sky");
+var creature = createSprite(200,250);
+creature.setAnimation("creature");
+creature.scale = 0.2;
+
+function draw() {
+  background("white");
+
+  //1) Change the code so that the creature only shakes when the mouse is pressed.
+  if (mouseDown("leftButton")) {
+    creature.rotation = randomNumber(-5,5);
+  }
+
+  drawSprites(); // Draw all sprites first
+
+  //2) Change the code so the directions ("Press the mouse to shake the creature.") **only show** 
+  //when the user is **NOT** pressing the mouse.
+  if (!mouseDown("leftButton")) { 
+    fill("black");
+    textSize(40);
+    text("Press the mouse to shake the creature.", 20, 50, 360, 100);
+  }
+}
+
+
+##
+##LEVEL8
+//A //
+//1) Run the code to see what is making the spirals shrink, grow, and turn.
+var spiral = createSprite(100,200);
+spiral.setAnimation("lollipop");
+var spiral2 = createSprite(300,200);
+spiral2.setAnimation("lollipop2");
+function draw() {
+  background("pink");
+  
+  
+  if (mouseDown("leftButton")) {
+    spiral.scale = spiral.scale  * 1.01;
+    spiral.rotation = spiral.rotation - 3;
+    spiral2.scale = spiral2.scale  / 1.01;
+    spiral2.rotation = spiral2.rotation + 3;
+  } else {
+    spiral.scale = spiral.scale  / 1.01;
+    spiral.rotation = spiral.rotation + 3;
+    spiral2.scale = spiral2.scale  * 1.01;
+    spiral2.rotation = spiral2.rotation - 3;
+  }
+  
+  //2) Add code so that the spirals switch what they are doing when the mouse is pressed down.
+
+  drawSprites();
+}
+
+##
+##
+##LESSON 18
+##
+##LEVEL3
+//my character dracule, a vampire emoji shows up on the
+var dracula = createSprite(200, 200);
+function draw() {
+  background("skyblue");
+  dracula.setAnimation("dracula");
+  drawSprites();
+}
+
+
+##
+##LEVEL4
+//already covered in level three
+
+##
+##LEVEL5
+//my character dracule, a vampire emoji shows up on the
+//the sky turns dark when dracula flies
+var dracula = createSprite(200, 400);
+dracula.scale = 0.3;
+function draw() {
+  dracula.y = dracula.y - 3
+  if (dracula.y < 300) {
+    background("purple");
+  } else {
+    background("skyblue");
+  }
+  dracula.setAnimation("dracula");
+  drawSprites();
+}
+
+
+##
+##LEVEL6
+//my character dracule, a vampire emoji shows up on the
+//the sky turns dark when dracula flies
+var dracula = createSprite(200, 400);
+dracula.scale = 0.3;
+function draw() {
+  // dracula.y = dracula.y - 3
+  if (dracula.y < 300) {
+    background("purple");
+  } else {
+    background("skyblue");
+  }
+  
+  if (mouseDown("leftButton")) {
+    dracula.y = dracula.y - 3
+  } else {
+    dracula.y = dracula.y + 3
+  }
+  dracula.setAnimation("dracula");
+  drawSprites();
+}
+
+
+##
+##LEVEL7
+//now there is a mansion in the background and it is tinted black when the sky turns purple
+//my character dracule, a vampire emoji shows up on the
+//the sky turns dark when dracula flies
+var dracula = createSprite(200, 400);
+var mansion = createSprite(200, 200);
+dracula.scale = 0.3;
+
+function draw() {
+  
+  
+  if (dracula.y < 300) {
+    background("purple");
+    mansion.setAnimation("mansion");
+    mansion.tint = "black"
+    fill("yellow");
+  } else {
+    background("skyblue");
+    mansion.setAnimation("mansion");
+    fill("black");
+  }
+  
+  text("the legend of count Dracula", 200, 15);
+  textSize(30);
+
+  if (mouseDown("leftButton")) {
+    dracula.y = dracula.y - 3;
+  } else {
+    dracula.y = dracula.y + 3;
+  }
+
+  dracula.setAnimation("dracula");
+  dracula.depth = mansion.depth + 1; 
+
+  drawSprites();
+}
+
+##
+##
+## LESSON 19
+##
+##LEVEL2
+var fish = createSprite(50, 150);
+fish.setAnimation("orange_fish");
+//1 Add the new movement block outside of the draw loop.
+fish.velocityX = 1;
+
+//2 Assign the velocity a value of 1.
+
+function draw() {
+  // draw the background
+  background(rgb(0,50,250));
+  fill(rgb(250,250,250, 80));
+  noStroke();
+  ellipse(60, 20, 50, 50);
+  ellipse(150, 100, 50, 50);
+  ellipse(300, 130, 50, 50);
+  ellipse(250, 200, 50, 50);
+  ellipse(20, 250, 50, 50);
+  ellipse(370, 330, 50, 50);
+  fill(rgb(219, 208, 125));
+  noStroke();
+  ellipse(100, 400, 300, 100);
+  ellipse(300, 400, 300, 75);
+  
+  drawSprites();
+}
+
+
+##
+##LEVEL3
+//1 Find the block that will make the feather sprite go down the screen
+
+var feather = createSprite(200, 50);
+feather.setAnimation("feather");
+feather.velocityY = 2
+//2 Use that block outside of the draw loop.
+
+//3 Give the block a value to make the feather move down the screen.
+
+function draw() {
+  background("skyblue");
+  drawSprites();
+}
+
+
+##
+##LEVEL4
+var sun = createSprite(200, 200);
+sun.setAnimation("sun");
+//1 Make the sun rotate by 3 degrees each time it's drawn.
+sun.rotationSpeed = 3;
+
+
+function draw() {
+  background("blue");
+  
+  drawSprites();
+}
+
+
+##
+##LEVEL5
+var wheel = createSprite(200, 200);
+wheel.setAnimation("wheel");
+
+function draw() {
+  background("blue");
+
+
+  if (keyWentDown("space")) {
+    //2 Make the color wheel start spinning when the user presses the space bar.
+    wheel.rotationSpeed = 3;
+
+  }
+
+  drawSprites();
+}
+
+
+##
+##LEVEL8
+//B //
+var palatte = createSprite(180, 350);
+palatte.setAnimation("paint_pallette");
+var brush = createSprite(220, 50);
+brush.setAnimation("paint_brush");
+
+
+function draw() {
+  background("skyblue");
+  
+  //1) Use a conditional to send the paint brush down if the down arrow is pressed.
+  if (keyWentDown("down")) {
+    brush.velocityY = 3;
+  }
+
+
+  //2) Use a different conditional to send the paint brush up if it reaches the palette.
+  if (brush.y > 330) {
+    brush.velocityY = -3;
+  }
+
+
+  drawSprites();
+}
+
+##
+##LEVEL9
+var fish = createSprite(200, 200);
+fish.setAnimation("fishR");
+
+function draw() {
+  background("blue");
+
+  // If the user presses the right arrow key, move the fish to the right.
+  if (keyWentDown("right")) {
+    fish.velocityX = 2;
+    fish.setAnimation("fishR");
+  }
+  
+
+  // If the fish gets to the right-hand side of the screen, move the fish to the left.
+  if (fish.x > 400) {
+    fish.velocityX = -2;
+    fish.setAnimation("fishL");
+  }
+  
+
+  // If the fish gets to the left-hand side of the screen, move the fish to the right.
+  if (fish.x < 0) {
+    fish.velocityX = 2;
+    fish.setAnimation("fishR");
+  }
+  
+
+  // Draw the fish.
+  drawSprites();
+}
+
+
+##
+##LEVEL10
+//A //
+var alien = createSprite(50,200);
+alien.setAnimation("alien");
+alien.velocityX = 0;
+alien.velocityY = -3;
+
+function draw() {
+  //2) Add the appropriate velocity blocks to each conditional 
+  //to make the alien complete the full circuit.
+
+  if (alien.y < 50) {
+    alien.velocityX = 3;
+    alien.velocityY = 0;
+  }
+  if (alien.x > 350) {
+    alien.velocityY = 3;
+    alien.velocityX = 0;
+  }
+  if (alien.y > 350) {
+    alien.velocityX = -3;
+    alien.velocityY = 0;
+  }
+  if (alien.x < 50) {
+    alien.velocityY = -3;
+    alien.velocityX = 0;
+  }
+  
+  drawSprites();
+}
+
+var space = createSprite(200, 200);
+space.setAnimation("space");
+var flag1 = createSprite(50, 50);
+flag1.setAnimation("yellow_flag");
+var flag2 = createSprite(350, 50);
+flag2.setAnimation("yellow_flag");
+var flag3 = createSprite(350, 350);
+flag3.setAnimation("yellow_flag");
+var flag4 = createSprite(50, 350);
+flag4.setAnimation("yellow_flag");
+alien.depth=7;
+
+##
+##
+##LESSON 20
+##
+##LEVEL4
+// Create the sprites and start them moving
+var backdrop = createSprite(200,200);
+backdrop.setAnimation("meadow");
+var bunny = createSprite(50, 300);
+bunny.setAnimation("bunny");
+bunny.velocityX = 3;
+var robot = createSprite(400, 320);
+robot.setAnimation("robot");
+robot.scale = 0.2;
+robot.velocityX = -3;
+var dinner = createSprite(370, 350);
+dinner.setAnimation("stew");
+dinner.velocityX = -3;
+
+function draw() {
+  //1) Check if the bunny is touching the dinner.
+  if (bunny.isTouching(dinner)) {
+    // stop everything and change to empty bowl
+    bunny.velocityX = 0;
+    dinner.velocityX = 0;
+    robot.velocityX = 0;
+    dinner.setAnimation("bowl");
+  }
+  drawSprites();
+}
+
+
+##
+##LEVEL5
+// create the sprites
+var apple = createSprite(200, -50);
+apple.setAnimation("apple");
+apple.velocityY = 5;
+var blender = createSprite(200, 330);
+blender.setAnimation("blender");
+
+function draw() {
+  //1) Check if the apple is touching the blender.
+  if (apple.isTouching(blender)) {
+    apple.visible = false
+    
+  }
+
+  //2) Make the blender shake only when the apple is touching it.
+  blender.x = 200 + randomNumber(-5,5);
+
+  //make the background
+  background("skyblue");
+  strokeWeight(0);
+  fill("sienna");
+  rect(0, 340, 400, 60);
+  
+  drawSprites();
+}
+
+
+##
+##LEVEL5
+var balloon = createSprite(200,200);
+balloon.setAnimation("balloon");
+//2) Change the code on line 4 from false to true.
+balloon.debug = true;
+//3) Debug the tack sprite.
+
+
+var tack = createSprite(350, 50);
+tack.setAnimation("tack");
+tack.debug = true;
+
+function draw() {
+  background("gray");
+  
+  // check if tack is touching balloon
+  if (balloon.isTouching(tack)) {
+    // replace balloon image
+    balloon.setAnimation("popped");
+  }
+  // make tack move with arrow keys
+  if (keyDown("up")) {
+    tack.y = tack.y - 1;
+  }
+  if (keyDown("down")) {
+    tack.y = tack.y + 1;
+  }
+  if (keyDown("left")) {
+    tack.x = tack.x - 1;
+  }
+  if (keyDown("right")) {
+    tack.x = tack.x + 1;
+  }
+  
+  drawSprites();
+}
+
+
+##
+##LEVEL6
+//A //
+var sun = createSprite(200, 0);
+sun.setAnimation("sun");
+var bunny = createSprite(200, 300);
+bunny.setAnimation("bunny_sad");
+
+function draw() {
+  if (sun.isTouching(bunny)) {
+  bunny.setAnimation("bunny_happy");
+  }
+  background("lightblue");
+  sun.velocityY = 2;
+  drawSprites();
+}
+
+
+##
+##LEVEL7
+// create the sprites
+var horse = createSprite(200, 150);
+horse.setAnimation("horse");
+var rainbow = createSprite(400, 370);
+rainbow.setAnimation("rainbow");
+rainbow.velocityX = -5;
+rainbow.velocityY = -5;
+rainbow.rotateToDirection = true;
+
+function draw() {
+  // draw the background
+  background("skyblue");
+
+  //1) Change the horse into a unicorn when the rainbow touches it.
+  if (rainbow.isTouching(horse)) {
+    horse.setAnimation("unicorn");
+  }
+  
+
+  
+  drawSprites();
+}
+
+
+
+##
+##LEVEL8
+//A //
+var roller = createSprite(200, 200);
+roller.scale = 2;
+roller.setAnimation("roller_1");
+//1) Use .setCollider() with all 6 parameters.
+roller.setCollider("rectangle", 0, 0, 100, 30, 45);
+roller.debug = true;
+drawSprites();
+
+
+##
+##
+##LESSON 21
+##
+##LEVEL2
+//GAME SETUP
+// Create the sprites
+// set velocity for the obstacle and the target
+
+
+//create the variables
+var score = 0;
+var health = 100;
+
+function draw() {
+  // BACKGROUND
+  background("skyblue");
+  // draw the ground and other background
+
+
+  // SPRITE INTERACTIONS
+  // if the player touches the obstacle
+  // the health goes down, and the obstacle turns
+
+  // if the player touches the target
+  // the score goes up, the target resets
+
+
+  // JUMPING
+  // if the player has reached the ground
+  // stop moving down
+
+  // if the player presses the up arrow
+  // start moving up
+
+  // if the player reaches the top of the jump
+  // start moving down
+
+
+  // LOOPING
+  // if the obstacle has gone off the left hand side of the screen, 
+  // move it to the right hand side of the screen
+
+  // if the target has gone off the left hand side of the screen,
+  // move it to the right hand side of the screen
+
+  // DRAW SPRITES
+  drawSprites();
+  
+  // SCOREBOARD
+  // add scoreboard and health meter
+  fill("black");
+  textSize(20);
+  text("Health:", 280, 30);
+  text (health, 350, 30);
+  // GAME OVER
+  // if health runs out
+  // show Game over
+  if (health < 0) {
+    background("black");
+    fill("green");
+    textSize(50);
+    text("Game Over!" , 40, 200);
+  }
+}
+
+
+##
+##LEVEL3
+//GAME SETUP
+// Create the sprites
+// set velocity for the obstacle and the target
+var player = createSprite(50, 300);
+player.setAnimation("frog");
+player.scale = 0.5;
+
+var target = createSprite(400, 250);
+target.setAnimation("fly");
+target.scale = 0.3;
+target.velocityX = -3;
+
+var obstacle = createSprite(400, 350);
+obstacle.setAnimation("mushroom");
+obstacle.scale = 0.4;
+obstacle.velocityX = -3;
+
+//create the variables
+var score = 0;
+var health = 100;
+
+function draw() {
+  // BACKGROUND
+  background("skyblue");
+  // draw the ground and other background
+
+
+  // SPRITE INTERACTIONS
+  // if the player touches the obstacle
+  // the health goes down, and the obstacle turns
+
+  // if the player touches the target
+  // the score goes up, the target resets
+
+
+  // JUMPING
+  // if the player has reached the ground
+  // stop moving down
+
+  // if the player presses the up arrow
+  // start moving up
+
+  // if the player reaches the top of the jump
+  // start moving down
+
+
+  // LOOPING
+  // if the obstacle has gone off the left hand side of the screen, 
+  // move it to the right hand side of the screen
+
+  // if the target has gone off the left hand side of the screen,
+  // move it to the right hand side of the screen
+
+  // DRAW SPRITES
+  drawSprites();
+  
+  // SCOREBOARD
+  // add scoreboard and health meter
+  fill("black");
+  textSize(20);
+  text("Health:", 280, 30);
+  text (health, 350, 30);
+  // GAME OVER
+  // if health runs out
+  // show Game over
+  if (health < 0) {
+    background("black");
+    fill("green");
+    textSize(50);
+    text("Game Over!" , 40, 200);
+  }
+}
+
+
+##
+##LEVEL4
+//GAME SETUP
+// Create the sprites
+// set velocity for the obstacle and the target
+var player = createSprite(50, 300);
+player.setAnimation("frog");
+player.scale = 0.5;
+
+var target = createSprite(400, 250);
+target.setAnimation("fly");
+target.scale = 0.3;
+target.velocityX = -3;
+
+var obstacle = createSprite(400, 350);
+obstacle.setAnimation("mushroom");
+obstacle.scale = 0.4;
+obstacle.velocityX = -3;
+
+//create the variables
+var score = 0;
+var health = 100;
+
+function draw() {
+  // BACKGROUND
+  background("skyblue");
+  // draw the ground and other background
+
+
+  // SPRITE INTERACTIONS
+  // if the player touches the obstacle
+  // the health goes down, and the obstacle turns
+
+  // if the player touches the target
+  // the score goes up, the target resets
+
+
+    // JUMPING
+  // if the player presses the up arrow
+  if (keyDown("up") && player.y >= 280) {
+    player.velocityY = -10; // start moving up
+  }
+
+  // if the player reaches the top of the jump
+  if (player.y < 200) {
+    player.velocityY = 5; // start moving down
+  }
+
+  // if the player has reached the ground
+  if (player.y >= 300) {
+    player.velocityY = 0; // stop moving down
+    player.y = 300;
+  }
+
+
+
+  // LOOPING
+  // if the obstacle has gone off the left hand side of the screen, 
+  // move it to the right hand side of the screen
+
+  // if the target has gone off the left hand side of the screen,
+  // move it to the right hand side of the screen
+
+  // DRAW SPRITES
+  drawSprites();
+  
+  // SCOREBOARD
+  // add scoreboard and health meter
+  fill("black");
+  textSize(20);
+  text("Health:", 280, 30);
+  text (health, 350, 30);
+  // GAME OVER
+  // if health runs out
+  // show Game over
+  if (health < 0) {
+    background("black");
+    fill("green");
+    textSize(50);
+    text("Game Over!" , 40, 200);
+  }
+}
+
+
+##
+##LEVEL5
+//GAME SETUP
+// Create the sprites
+// set velocity for the obstacle and the target
+var player = createSprite(50, 300);
+player.setAnimation("frog");
+player.scale = 0.5;
+
+var target = createSprite(400, 250);
+target.setAnimation("fly");
+target.scale = 0.3;
+target.velocityX = -3;
+
+var obstacle = createSprite(400, 350);
+obstacle.setAnimation("mushroom");
+obstacle.scale = 0.4;
+obstacle.velocityX = -3;
+
+//create the variables
+var score = 0;
+var health = 100;
+
+function draw() {
+  // BACKGROUND
+  background("skyblue");
+  // draw the ground and other background
+
+
+  // SPRITE INTERACTIONS
+  // if the player touches the obstacle
+  // the health goes down, and the obstacle turns
+
+  // if the player touches the target
+  // the score goes up, the target resets
+
+
+    // JUMPING
+  // if the player presses the up arrow
+  if (keyDown("up") && player.y >= 280) {
+    player.velocityY = -10; // start moving up
+  }
+
+  // if the player reaches the top of the jump
+  if (player.y < 200) {
+    player.velocityY = 5; // start moving down
+  }
+
+  // if the player has reached the ground
+  if (player.y >= 300) {
+    player.velocityY = 0; // stop moving down
+    player.y = 300;
+  }
+
+
+
+    // LOOPING
+  // if the obstacle has gone off the left-hand side of the screen
+  if (obstacle.x < 0) {
+    obstacle.x = 400; // move it back to the right-hand side
+  }
+
+  // if the target has gone off the left-hand side of the screen
+  if (target.x < 0) {
+    target.x = 400; // move it back to the right-hand side
+  }
+
+
+  // DRAW SPRITES
+  drawSprites();
+  
+  // SCOREBOARD
+  // add scoreboard and health meter
+  fill("black");
+  textSize(20);
+  text("Health:", 280, 30);
+  text (health, 350, 30);
+  // GAME OVER
+  // if health runs out
+  // show Game over
+  if (health < 0) {
+    background("black");
+    fill("green");
+    textSize(50);
+    text("Game Over!" , 40, 200);
+  }
+}
+
+
+
+##
+##LEVEL6
+//GAME SETUP
+// Create the sprites
+// set velocity for the obstacle and the target
+var player = createSprite(50, 300);
+player.setAnimation("frog");
+player.scale = 0.5;
+
+var target = createSprite(400, 250);
+target.setAnimation("fly");
+target.scale = 0.3;
+target.velocityX = -3;
+
+var obstacle = createSprite(400, 350);
+obstacle.setAnimation("mushroom");
+obstacle.scale = 0.4;
+obstacle.velocityX = -3;
+
+//create the variables
+var score = 0;
+var health = 100;
+
+function draw() {
+  // BACKGROUND
+  background("skyblue");
+  // draw the ground and other background
+
+
+  // SPRITE INTERACTIONS
+  // if the player touches the obstacle
+  // the health goes down, and the obstacle turns
+    if (player.isTouching(obstacle)) {
+    health -= 10;
+    obstacle.rotation += 45;
+    obstacle.x = 400;
+  }
+  // if the player touches the target
+  // the score goes up, the target resets
+  if (player.isTouching(target)) {
+    score += 1;
+    target.x = 400;
+  }
+
+
+
+    // JUMPING
+  // if the player presses the up arrow
+  if (keyDown("up") && player.y >= 280) {
+    player.velocityY = -10; // start moving up
+  }
+
+  // if the player reaches the top of the jump
+  if (player.y < 200) {
+    player.velocityY = 5; // start moving down
+  }
+
+  // if the player has reached the ground
+  if (player.y >= 300) {
+    player.velocityY = 0; // stop moving down
+    player.y = 300;
+  }
+
+
+
+    // LOOPING
+  // if the obstacle has gone off the left-hand side of the screen
+  if (obstacle.x < 0) {
+    obstacle.x = 400; // move it back to the right-hand side
+  }
+
+  // if the target has gone off the left-hand side of the screen
+  if (target.x < 0) {
+    target.x = 400; // move it back to the right-hand side
+  }
+
+
+  // DRAW SPRITES
+  drawSprites();
+  
+  // SCOREBOARD
+  // add scoreboard and health meter
+  fill("black");
+  textSize(20);
+  text("Health:", 280, 30);
+  text (health, 350, 30);
+  // GAME OVER
+  // if health runs out
+  // show Game over
+  if (health < 0) {
+    background("black");
+    fill("green");
+    textSize(50);
+    text("Game Over!" , 40, 200);
+  }
+}
+
+
+##
+##LEVEL7
+//GAME SETUP
+// Create the sprites
+// set velocity for the obstacle and the target
+var player = createSprite(50, 300);
+player.setAnimation("frog");
+player.scale = 0.5;
+
+var target = createSprite(400, 250);
+target.setAnimation("fly");
+target.scale = 0.3;
+target.velocityX = -3;
+
+var obstacle = createSprite(400, 350);
+obstacle.setAnimation("mushroom");
+obstacle.scale = 0.4;
+obstacle.velocityX = -3;
+
+//create the variables
+var score = 0;
+var health = 100;
+
+function draw() {
+  // BACKGROUND
+  background("skyblue");
+  // draw the ground and other background
+
+
+  // SPRITE INTERACTIONS
+  // if the player touches the obstacle
+  // the health goes down, and the obstacle turns
+    if (player.isTouching(obstacle)) {
+    health -= 10;
+    obstacle.rotation += 45;
+    obstacle.x = 400;
+  }
+  // if the player touches the target
+  // the score goes up, the target resets
+  if (player.isTouching(target)) {
+    score += 1;
+    target.x = 400;
+  }
+
+
+
+    // JUMPING
+  // if the player presses the up arrow
+  if (keyDown("up") && player.y >= 280) {
+    player.velocityY = -10; // start moving up
+  }
+
+  // if the player reaches the top of the jump
+  if (player.y < 200) {
+    player.velocityY = 5; // start moving down
+  }
+
+  // if the player has reached the ground
+  if (player.y >= 300) {
+    player.velocityY = 0; // stop moving down
+    player.y = 300;
+  }
+
+
+
+    // LOOPING
+  // if the obstacle has gone off the left-hand side of the screen
+  if (obstacle.x < 0) {
+    obstacle.x = 400; // move it back to the right-hand side
+  }
+
+  // if the target has gone off the left-hand side of the screen
+  if (target.x < 0) {
+    target.x = 400; // move it back to the right-hand side
+  }
+
+
+  // DRAW SPRITES
+  drawSprites();
+  
+  // SCOREBOARD
+  // add scoreboard and health meter
+    text("Score:", 10, 30);
+    text(score, 70, 30);
+
+  fill("black");
+  textSize(20);
+  text("Health:", 280, 30);
+  text (health, 350, 30);
+  // GAME OVER
+  // if health runs out
+  // show Game over
+  if (health < 0) {
+    background("black");
+    fill("green");
+    textSize(50);
+    text("Game Over!" , 40, 200);
+  }
+}
+
+
+##
+##LEVEL8
+
+##
+##
+##LESSON 22
+##LEVEL2
+var car = createSprite(50, 200);
+car.setAnimation("red_car");
+car.velocityX = 0.2;
+
+function draw() {
+  background("gray");
+  
+  //1) Add code to make the car speed up.
+   car.velocityX = car.velocityX + 0.01
+   
+
+  
+  drawSprites();
+}
+
+
+##
+##LEVEL3
+var rock = createSprite(200, 50);
+rock.setAnimation("rock");
+rock.velocityY = 0.5;
+
+function draw() {
+  background("skyblue");
+  
+  //1) Add code to make the rock speed up as it falls.
+  rock.velocityY = rock.velocityY + 0.5;
+  
+  drawSprites();
+}
+
+
+##
+##LEVEL4
+var car = createSprite(50, 200);
+car.setAnimation("blue_car");
+car.velocityX =  10;
+
+noStroke();
+
+function draw() {
+  background("burlywood");
+  fill("blue");
+  rect(350,0,100,400);
+  
+  //1) Add code to slow the car down before it goes into the water.
+  if (car.x > 200) {
+    car.velocityX = car.velocityX - 0.25;
+  }
+  
+
+
+  drawSprites();
+}
+
+##
+##LEVEL5
+//A //
+var bubble = createSprite(200, 350);
+bubble.setAnimation("bubble");
+bubble.velocityY = -0.5;
+
+function draw() {
+  background("blue");
+  
+  //1) Add code to make the bubble speed up as it rises.
+  bubble.velocityY = bubble.velocityY -0.25;
+
+
+  drawSprites();
+}
+
+
+##
+##LEVEL6
+var rock = createSprite(200, 350);
+rock.setAnimation("rock");
+rock.velocityY =  -10;
+rock.rotationSpeed = 2;
+
+function draw() {
+  background("skyblue");
+  
+  //1) Add code to make the rock slow down and then fall.
+  if (rock.y < 200) {
+    rock.velocityY = rock.velocityY + 0.25;
+    
+  }
+  
+
+  
+  drawSprites();
+}
+
+
+##
+##LEVEL7
+var plane = createSprite(50, 350);
+plane.setAnimation("plane");
+var rock = createSprite(150, 350);
+rock.setAnimation("rock");
+var rockdown = createSprite(350, 100);
+rockdown.setAnimation("rock_down");
+
+// You might want to change these 
+plane.velocityY = -9;
+plane.velocityX = 3;
+
+function draw() {
+  background("lightblue");
+  
+  //1) Add code that moves the plane down.
+  if (plane.y < 200) {
+    plane.velocityY = plane.velocityY + 0.5;
+  }
+
+  
+  drawSprites();
+}
+
+
+##
+##
+##LESSON 23
+##LEVEL2
+// Create giraffe sprite
+var giraffe = createSprite(30,200);
+giraffe.setAnimation("giraffe");
+giraffe.velocityX = 1;
+giraffe.scale = 0.3;
+
+// Create monkey sprite
+var monkey = createSprite(300,200);
+monkey.setAnimation("monkey");
+monkey.scale = 0.3;
+
+function draw(){
+  // Draw background
+  background("white");
+  
+  //1) Program the giraffe to push the monkey off the screen.
+  if (giraffe.isTouching(monkey)) {
+    monkey.velocityX = 1;
+  }
+
+  
+  drawSprites();
+}
+
+##
+##LEVEL3
+// Create elephant sprite
+var elephant = createSprite(200, 400);
+elephant.setAnimation("elephant");
+elephant.scale = 0.5;
+elephant.velocityY = randomNumber(-3, -1);
+
+// Create hippo sprite
+var hippo = createSprite(200, 100);
+hippo.setAnimation("hippo");
+hippo.scale = 0.5;
+
+function draw() {
+  // Draw background
+  background("white");
+  
+  // Add code to make the elephant push the hippo off the screen
+  if (elephant.isTouching(hippo)) {
+    hippo.velocityY = elephant.velocityY;
+  }
+  
+  drawSprites();
+}
+
+##
+##LEVEL4
+// Create elephant sprite
+      var elephant = createSprite(200, 350);
+      elephant.setAnimation("elephant");
+      elephant.scale = 0.5;
+      elephant.velocityY = randomNumber(-3,-1);
+
+      // Create hippo sprite
+      var hippo = createSprite(200,50);
+      hippo.setAnimation("hippo");
+      hippo.scale = 0.5;
+      hippo.velocityY = randomNumber(1,3);
+
+      function draw(){
+      // Draw background
+      background("white");
+      
+      //Fix the block so that the elephant is pushing the hippo.
+      elephant.displace(hippo);
+      
+      drawSprites();
+      }
+
+##
+##LEVEL5
+var parrot = createSprite(50,200);
+      parrot.setAnimation("parrot");
+      parrot.velocityX = 2;
+      parrot.scale = 0.3;
+
+      var penguin = createSprite(350,200);
+      penguin.setAnimation("penguin");
+      penguin.velocityX = -2;
+      penguin.scale = 0.3;
+
+      function draw() {
+      //Switch out the displace block for the new blocks, one at a time 
+      // to see what each one does.
+      parrot.bounceOff(penguin);
+
+      background("white");
+      drawSprites();
+      }
+
+##
+##LEVEL6
+// create sprites
+      var giraffe = createSprite(50, 50);
+      giraffe.setAnimation("giraffe");
+      giraffe.velocityX = 3;
+      var hippo = createSprite(50, 150);
+      hippo.setAnimation("hippo");
+      hippo.velocityX = 3;
+      var rabbit = createSprite(50, 250);
+      rabbit.setAnimation("rabbit");
+      rabbit.velocityX = 3;
+      var snake = createSprite(50, 350);
+      snake.setAnimation("snake");
+      snake.velocityX = 3;
+      var parrot = createSprite(350, 50);
+      parrot.setAnimation("parrot");
+      parrot.velocityX = -3;
+      var elephant = createSprite(350, 150);
+      elephant.setAnimation("elephant");
+      elephant.velocityX = -3;
+      var monkey = createSprite(350, 250);
+      monkey.setAnimation("monkey");
+      monkey.velocityX = -3;
+      var pig = createSprite(350, 350);
+      pig.setAnimation("pig");
+      pig.velocityX = -3;
+
+
+      function draw() {
+      background("lightblue");
+
+      //For each pair of animals, choose the sprite interaction 
+      // that matches the target image.
+      giraffe.bounce(parrot)
+      hippo.displace(elephant)
+      monkey.displace(rabbit)
+      snake.bounceOff(pig)
+
+      drawSprites();
+      }
+
+
+##
+##LEVEL7
+var bg = createSprite(200,200)
+      bg.setAnimation("sci_fi_1")
+
+      var player = createSprite(200,300)
+      player.setAnimation("gameplayfaces_04_1")
+      player.scale=0.18
+
+      var ball1 = createSprite(50,50)
+      ball1.setAnimation("soccer_bw_1")
+      ball1.scale=0.1
+      ball1.velocityY=2
+
+      var ball2 = createSprite(150,50)
+      ball2.setAnimation("soccer_bw_1")
+      ball2.scale=0.1
+      ball2.velocityY=4
+
+      var ball3 = createSprite(250,50)
+      ball3.setAnimation("soccer_bw_1")
+      ball3.scale=0.1
+      ball3.velocityY=5
+
+
+      var ball4 = createSprite(350,50)
+      ball4.setAnimation("soccer_bw_1")
+      ball4.scale=0.1
+      ball4.velocityY=1.5
+
+
+
+      function draw(){
+         
+         if(player.isTouching(ball1)){
+         ball1.bounceOff(player)
+         ball4.velocityY=
+         }
+         
+         if(player.isTouching(ball2)){
+         ball2.bounceOff(player)
+         
+         }
+         
+         if(player.isTouching(ball4)){
+         ball4.bounceOff(player)
+         
+         }
+         
+         if(player.isTouching(ball3)){
+         ball3.bounceOff(player)
+         
+         }
+         
+
+
+         if(keyDown("up")){
+         player.y -= 5
+         }
+         if(keyDown("down")){
+         player.y += 5
+         }
+         if(keyDown("right")){
+         player.x += 5
+         }
+         if(keyDown("left")){
+         player.x -= 5
+         }
+         
+         
+      
+      drawSprites()
+      }
+
+##
+##
+##LESSON 24
+##
+ // Create player, target, and obstacles
+      var player = createSprite(200, 100);
+      player.setAnimation("fly_bot");
+      player.scale = 0.8;
+
+      var Obstacl1 = createSprite(320, 20);
+      Obstacl1.setAnimation("rock");
+      Obstacl1.scale = 0.8;
+
+      var Obstacl2 = createSprite(10,200);
+      Obstacl2.setAnimation("rock");
+      Obstacl2.scale = 0.8;
+
+      var coin = createSprite(345, 345);
+      coin.setAnimation("coin");
+      coin.scale = 0.8;
+
+      var gravity = 0.5;
+      var score = 0;
+
+      function draw() {
+      background("lightblue");
+
+      player.velocityY += gravity;
+      textSize(20)
+      text("Score:"+score,20,30)
+      if (Obstacl1.y > 400) Obstacl1.y = 0;
+      if (Obstacl2.x > 400) Obstacl2.x = 0;
+      if (coin.y > 400) coin.y = randomNumber(50,350);
+
+      Obstacl1.y += 2;
+      Obstacl2.x += 3;
+
+
+      if (keyDown("up")) {
+         player.velocityY = -5;
+      }
+
+      if (keyDown("left")) {
+         player.velocityX -= 0.5;
+      }
+
+      if (keyDown("right")) {
+         player.velocityX += 0.5; 
+      }
+
+      // SPRITE INTERACTIONS
+      // Reset the coin when the player touches it
+      if (player.isTouching(coin)) {
+         coin.x = randomNumber(0, 400);
+         coin.y = randomNumber(0, 400);
+         score+=1
+      }
+
+      // Make the obstacles push the player
+      if (player.isTouching(Obstacl1) || player.isTouching(Obstacl2)) {
+         Obstacl1.displace(player);
+         Obstacl2.displace(player);
+         
+      }
+      if(keyDown('r')){
+         player.x = 200
+         player.y= 100
+      }
+
+      // DRAW SPRITES
+      drawSprites();
+
+      // GAME OVER
+      if (player.x < -50 || player.x > 450 || player.y < -50 || player.y > 450) {
+         background("black");
+         textSize(50);
+         fill("green");
+         player.velocityY =0;
+         player.velocityX = 0;
+         text("Game Over!", 50, 200);
+         textSize(20);
+         text("Enter R To Play Again!", 90, 250);
+      }
+      }
+
+##
+##
+##LESSON 25
+##LEVEL2
+drawSky();
+      //Call the drawBalloons function to reveal the full image. 
+      drawBalloons()
+
+      function drawSky(){
+      noStroke();
+      background(rgb(0,200,255));
+      fill("yellow");
+      ellipse(350,50,50,50);
+      }
+
+      function drawBalloons(){
+      stroke("black");
+      line(100,100,140,450);
+      noStroke();
+      fill("red");
+      ellipse(100,100,50,50);
+      
+      stroke("black");
+      line(120,120,140,450);
+      noStroke();
+      fill("orange");
+      ellipse(120,120,50,50);
+      
+      stroke("black");
+      line(140,80,140,450);
+      noStroke();
+      fill("yellow");
+      ellipse(140,80,50,50);
+      
+      stroke("black");
+      line(160,90,140,450);
+      noStroke();
+      fill("red");
+      ellipse(160,90,50,50);
+      }
+
+##
+##LEVEL3
+//Read the 4 functions to understand what each one does.
+      //Call the functions in an order that draws the scene in the way that looks best to you.
+      drawBackground()
+      drawClouds()
+      drawTrees()
+      drawFence()
+
+      function drawBackground(){
+      noStroke();
+      background(rgb(0,200,255));
+      fill("green");
+      rect(0,380,400,20);
+      }
+
+      function drawTrees(){
+      noStroke();
+      //Draw All Trunks
+      fill(rgb(150,100,0));
+      rect(210,330,30,50);
+      rect(290,330,30,50);
+      rect(360,330,30,50);
+      //Draw All Branches
+      fill("green");
+      regularPolygon(225,280,3,100);
+      regularPolygon(305,280,3,110);
+      regularPolygon(375,290,3,95);
+      }
+
+      function drawClouds(){
+      noStroke();
+      fill(rgb(255,255,255,100));
+      ellipse(300,200,200,50);
+      ellipse(320,200,200,70);
+      ellipse(340,200,200,50);
+      
+      ellipse(100,100,200,50);
+      ellipse(120,100,200,70);
+      ellipse(140,100,200,50);  
+      }
+
+      function drawFence(){
+      stroke("white");
+      strokeWeight(5);
+      line(0,360,400,360);
+      line(20,350,20,380);
+      line(50,350,50,380);
+      line(80,350,80,380);
+      line(110,350,110,380);
+      line(140,350,140,380);
+      line(170,350,170,380);
+      line(200,350,200,380);
+      line(230,350,230,380);
+      line(260,350,260,380);
+      line(290,350,290,380);
+      line(320,350,320,380);
+      line(350,350,350,380);
+      line(380,350,380,380);
+      }
+
+##
+##LEVEL4
+var flyer = createSprite();
+      flyer.setAnimation("flyer");
+      setFlyer();
+
+      function draw() {
+      treesBackground();
+      
+      // Check if flyer goes off-screen to the left
+      if (flyer.x < -50) {
+         setFlyer(); // Reset flyer position
+      }
+      
+      drawSprites();
+      }
+
+      function setFlyer() {
+      flyer.x = 450; // Reset to the right side
+      flyer.y = randomNumber(100, 300); // Randomize the vertical position
+      flyer.velocityX = -1; // Move left
+      }
+
+      function treesBackground() {
+      noStroke();
+      background(rgb(0, 200, 255));
+      
+      fill("green");
+      rect(0, 380, 400, 20); // Ground
+      
+      fill("yellow");
+      ellipse(350, 50, 20, 20); // Sun
+      
+      strokeWeight(20);
+      stroke(rgb(150, 100, 0));
+      
+      // Draw tree trunks
+      line(20, 300, 20, 380);
+      line(80, 300, 80, 380);
+      line(120, 300, 120, 380);
+      line(160, 300, 160, 380);
+      line(200, 300, 200, 380);
+      line(250, 300, 250, 380);
+      
+      fill("green");
+      noStroke();
+      
+      // Draw tree canopies
+      ellipse(20, 300, 100, 100);
+      ellipse(80, 300, 110, 110);
+      ellipse(120, 300, 95, 95);
+      ellipse(160, 300, 110, 110);
+      ellipse(200, 300, 100, 100);
+      ellipse(250, 300, 100, 100);
+      }
+
+##
+##LEVEL5
+var coin = createSprite(200, 10);
+      coin.setAnimation("coin_gold_1");
+
+      var bunny = createSprite(200, 350);
+      bunny.setAnimation("bunny1_ready_1");
+
+      var score = 0;
+
+      function draw() {
+      background("white");
+      
+      if (keyDown("left")) {
+         bunny.x -= 8;
+      }
+      
+      if (keyDown("right")) {
+         bunny.x += 8;
+      }
+      
+      coin.y += 4;
+
+      if (coin.isTouching(bunny)) {
+         score += 1;
+         coin.y = 10;
+         coin.x = randomNumber(50, 350);
+      }
+      
+      if (coin.y > 400) {
+         coin.y = 10;
+         coin.x = randomNumber(50, 350);
+      }
+
+      textSize(20);
+      text("Score: " + score, 10, 30);
+      drawSprites();
+      }
+
+##
+##LEVEL6
+var bg = createSprite(200,200)
+      bg.visible= false
+      var coin = createSprite(200, 10);
+      coin.setAnimation("coin_gold_1");
+
+      var bunny = createSprite(200, 350);
+      bunny.setAnimation("bunny1_ready_1");
+
+      var score = 0;
+
+      function draw() {
+      if(score >= 10){
+         bg.visible = true
+         bg.setAnimation("background_landscape02_1")
+      }else{
+         background("white");
+      }
+      
+      textSize(20);
+      text("Score: " + score, 10, 30);
+      
+      
+      if (keyDown("left")) {
+         bunny.x -= 8;
+      }
+      
+      if (keyDown("right")) {
+         bunny.x += 8;
+      }
+      
+      coin.y += 4;
+
+      if (coin.isTouching(bunny)) {
+         score += 1;
+         coin.y = 10;
+         coin.x = randomNumber(50, 350);
+      }
+      
+      if (coin.y > 400) {
+         coin.y = 10;
+         coin.x = randomNumber(50, 350);
+      }
+
+
+      drawSprites();
+      }
+
+##
+##LEVEL7
+      var ball = createSprite(200, 200);
+      ball.setAnimation("ball");
+      ball.scale = 0.10;
+      ball.velocityY = 5;
+      ball.velocityX = 10;
+      var paddle = createSprite(200, 380);
+      paddle.setAnimation("paddle");
+      paddle.width = 200;
+      var brick1 = createSprite(100, 150);
+      brick1.setAnimation("brick");
+      var brick2 = createSprite(300, 75);
+      brick2.setAnimation("brick");
+      var star = createSprite(54, 95);
+      star.setAnimation("redstar");
+      var star2 = createSprite(302, 25);
+      star2.setAnimation("redstar");
+
+      var edges = createEdgeSprites();
+      var gameStatus = "play"
+
+      var score = 0;
+      function draw() {
+
+      //Call Functions
+
+      bg ()
+      textSize(20)
+      text("Score:" + score , 50,40)
+      ballBounce()
+      brick()
+      movePaddle ()
+      collectStar()
+      gameOver()
+      replay()
+      drawSprites();
+      }
+
+      //Create the gameBackground Function
+      function bg (){
+      background("lightblue")
+      }
+
+
+      //Create the movePaddle Function
+      function movePaddle (){
+         
+         if(keyDown("right")){
+            paddle.x += 8
+         }
+         if(keyDown("left")){
+            paddle.x -= 8
+         }
+         if (ball.isTouching(paddle)) {
+         ball.bounceOff(paddle);
+      }
+      }
+
+
+      //Create the ballBounce Function
+      function ballBounce() {
+      
+      ball.bounceOff(edges[0]); // Top edge
+      ball.bounceOff(edges[1]); // Right edge
+      ball.bounceOff(edges[2]); // Bottom edge
+      
+         
+      }
+
+
+      //Create the collectStar Function
+      function collectStar() {
+      if (ball.isTouching(star)) {
+         score += 1;
+         star.x = randomNumber(50, 300); // Update star position
+         star.y = randomNumber(50, 300);
+      }
+
+      if (ball.isTouching(star2)) {
+         score += 1;
+         star2.x = randomNumber(50, 300); // Update star2 position
+         star2.y = randomNumber(50, 300);
+      }
+      }
+
+
+      //bricks
+      function brick(){
+         ball.bounceOff(brick1);
+         ball.bounceOff(brick2); 
+         
+      }
+      
+      
+      //Game over
+      function gameOver() {
+      if (ball.y > 400) {
+         background("lightblue");
+         textSize(50);
+         fill("red");
+         text("GAME OVER!", 50, 230);
+         textSize(20)
+         text("Click 'r' to Play Again! ", 110, 270);
+         score=0;
+         gameStatus = "over"
+         
+      }
+      }
+
+
+      //replay
+      function replay(){
+      if (keyDown('r') && gameStatus=="over"){
+         ball.x= 200;
+         ball.y= 200;
+         ball.velocityY = 5;
+         ball.velocityX = 10;
+         gameStatus = "play"
+      }
+      }
+
+##
+##
+##LESSON 26
+// Variables
+      var score = 0;
+      var cake = createSprite(350, 200);
+      cake.setAnimation("cake");
+
+      var player = createSprite(200, 200);
+      player.setAnimation("ladybug");
+
+      var enemy1 = createSprite();
+      enemy1.setAnimation("alienWalkRight");
+
+      var enemy2 = createSprite();
+      enemy2.setAnimation("alienWalkRight");
+
+      function draw() {
+     
+      gameBackground();
+      
+      // update the sprites
+      enemiesTouchCake();  // Check if enemy touches the cake
+      movePlayer();
+      displaceEnemies();
+      enemiesTouchWater();  // You can implement this later
+      showScore();
+      
+      drawSprites();
+      }
+
+      // Functions
+      function gameBackground() {
+      noStroke();
+      background(rgb(0, 100, 255));
+      fill(rgb(100, 100, 100));
+      rect(0, 150, 400, 100);
+      fill(rgb(80, 80, 80));
+      rect(0, 140, 400, 10);
+      rect(0, 250, 400, 10);
+      }
+
+      function enemiesTouchCake(){
+      // Check if enemy1 touches the cake
+      if(enemy1.isTouching(cake)){
+         // Reset the enemy's position
+         enemy1.x = 0;  
+         enemy1.y = randomNumber(150, 250); 
+         score -= 2;  
+      }
+      }
+
+      function movePlayer(){
+      if(keyDown("left")){
+         player.x -= 3;
+         player.rotation = 180;
+      }
+      if(keyDown("right")){
+         player.x += 3;
+         player.rotation = -360;
+      }
+      if(keyDown("up")){
+         player.y -= 3;
+      }
+      if(keyDown("down")){
+         player.y += 3;
+      }
+      }
+
+      function displaceEnemies(){
+      enemy1.x = 0; 
+      enemy1.y = randomNumber(150, 250);
+      enemy1.velocityX = 2;
+
+      enemy2.x = 0;
+      enemy2.y = randomNumber(150, 250); 
+      enemy2.velocityX = 2;
+      }
+
+
+      function showScore() {
+      fill("white");
+      textSize(20);
+      text("Score", 20, 20, 200, 100);
+      text(score, 20, 40, 200, 100);
+      }
