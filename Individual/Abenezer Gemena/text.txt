@@ -1445,95 +1445,97 @@ function showScore() {
 }
 ##############################################################################
 
-###############################Moving Left and Right###########################
-var score = 0;
+###############################  Moving Left and Right  ##########################################################
+                      var score = 0;
 
-var cake = createSprite(350, 200);
-cake.setAnimation("face_birthdaycake_1");
+                      var cake = createSprite(350, 200);
+                      cake.setAnimation("face_birthdaycake_1");
 
-var player = createSprite(200, 200);
-player.setAnimation("rpgcharacter_02_1");
+                      var player = createSprite(200, 200);
+                      player.setAnimation("rpgcharacter_02_1");
 
-var enemy1 = createSprite(100, 100);
-enemy1.setAnimation("enemyBlack1_1");
+                      var enemy1 = createSprite(100, 100);
+                      enemy1.setAnimation("enemyBlack1_1");
 
-var enemy2 = createSprite(300, 100);
-enemy2.setAnimation("enemyBlack1_1");
+                      var enemy2 = createSprite(300, 100);
+                      enemy2.setAnimation("enemyBlack1_1");
 
-function draw() {
-  gameBackground();
-  enemiesTouchCake();
-  movePlayer();
-  displaceEnemies();
-  enemiesTouchWater();
-  showScore();
-  drawSprites();
-}
+                      function draw() {
+                        gameBackground();
+                        enemiesTouchCake();
+                        movePlayer();
+                        displaceEnemies();
+                        enemiesTouchWater();
+                        showScore();
+                        drawSprites();
+                      }
 
-function gameBackground() {
-  noStroke();
-  background(rgb(0, 100, 255));
-  fill(rgb(100, 100, 100));
-  rect(0, 150, 400, 100);
-  fill(rgb(80, 80, 80));
-  rect(0, 140, 400, 10);
-  rect(0, 250, 400, 10);
-}
+                      function gameBackground() {
+                        noStroke();
+                        background(rgb(0, 100, 255));
+                        fill(rgb(100, 100, 100));
+                        rect(0, 150, 400, 100);
+                        fill(rgb(80, 80, 80));
+                        rect(0, 140, 400, 10);
+                        rect(0, 250, 400, 10);
+                      }
 
-function enemiesTouchCake() {
-  if (player.isTouching(cake)) {
-    score += 1;
-    cake.x = random(50, 350); 
-    cake.y = random(50, 150); 
-  }
-}
+                      function enemiesTouchCake() {
+                        if (player.isTouching(cake)) {
+                          score += 1;
+                          cake.x = random(50, 350); 
+                          cake.y = random(50, 150); 
+                        }
+                      }
 
-function movePlayer() {
-  if (keyDown("left")) {
-    player.x = player.x - 3;  // Move player left
-    player.setAnimation("rpgcharacter_left");  // Set animation to left
-  }
+                      function movePlayer() {
+                        if (keyDown("left")) {
+                          player.x = player.x - 3;  // Move player left
+                          player.setAnimation("rpgcharacter_left");  // Set animation to left
+                        }
 
-  if (keyDown("right")) {
-    player.x = player.x + 3;  // Move player right
-    player.setAnimation("rpgcharacter_right");  // Set animation to right
-  }
+                        if (keyDown("right")) {
+                          player.x = player.x + 3;  // Move player right
+                          player.setAnimation("rpgcharacter_right");  // Set animation to right
+                        }
 
-  if (keyDown("up")) {
-    player.y = player.y - 3;
-  }
+                        if (keyDown("up")) {
+                          player.y = player.y - 3;
+                        }
 
-  if (keyDown("down")) {
-    player.y = player.y + 3;
-  }
-}
+                        if (keyDown("down")) {
+                          player.y = player.y + 3;
+                        }
+                      }
 
-function displaceEnemies() {
-  if (player.isTouching(enemy1)) {
-    enemy1.x = random(50, 350);
-    enemy1.y = random(50, 150);
-  }
-  
-  if (player.isTouching(enemy2)) {
-    enemy2.x = random(50, 350);
-    enemy2.y = random(50, 150);
-  }
-}
+                      function displaceEnemies() {
+                        if (player.isTouching(enemy1)) {
+                          enemy1.x = random(50, 350);
+                          enemy1.y = random(50, 150);
+                        }
+                        
+                        if (player.isTouching(enemy2)) {
+                          enemy2.x = random(50, 350);
+                          enemy2.y = random(50, 150);
+                        }
+                      }
 
-function enemiesTouchWater() {
-  if (enemy1.isTouching(cake) || enemy2.isTouching(cake)) {
-    score -= 1;
-    enemy1.x = random(50, 350);
-    enemy1.y = random(50, 150);
-    enemy2.x = random(50, 350);
-    enemy2.y = random(50, 150);
-  }
-}
+                      function enemiesTouchWater() {
+                        if (enemy1.isTouching(cake) || enemy2.isTouching(cake)) {
+                          score -= 1;
+                          enemy1.x = random(50, 350);
+                          enemy1.y = random(50, 150);
+                          enemy2.x = random(50, 350);
+                          enemy2.y = random(50, 150);
+                        }
+                      }
 
-function showScore() {
-  fill("white");
-  textSize(20);
-  text("Score", 20, 20, 200, 100);
-  text(score, 20, 40, 200, 100);
-}
-#####################################################################
+                      function showScore() {
+                        fill("white");
+                        textSize(20);
+                        text("Score", 20, 20, 200, 100);
+                        text(score, 20, 40, 200, 100);
+                      }
+###########################################################################################################
+
+
