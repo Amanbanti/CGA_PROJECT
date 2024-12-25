@@ -480,10 +480,76 @@ function draw() {
   drawSprites();
 }
 
+LESSON 22
+Description: Make a car sprite speed up gradually as it moves forward.
+
+var car = createSprite(50, 200);  
+car.setAnimation("red_car");  
+car.velocityX = 0.2;  
+
+function draw() {  
+  background("gray");  
+  car.velocityX = car.velocityX + 0.01;  
+  drawSprites();  
+}
+
+Increase the falling speed of a rock sprite as it moves downward.
+var rock = createSprite(200, 50);  
+rock.setAnimation("rock");  
+rock.velocityY = 0.5;  
+
+function draw() {  
+  background("skyblue");  
+  rock.velocityY = rock.velocityY + 0.5;  
+  drawSprites();  
+}
+
+Slow down a car sprite before it reaches a water area.
 
 
+var car = createSprite(50, 200);  
+car.setAnimation("blue_car");  
+car.velocityX = 10;  
 
+function draw() {  
+  background("burlywood");  
+  fill("blue");  
+  rect(350, 0, 100, 400);  
 
+  if (car.x > 200) {  
+    car.velocityX = car.velocityX - 0.25;  
+  }  
+
+  drawSprites();  
+}
+
+Accelerate a bubble sprite as it rises upward.
+
+var bubble = createSprite(200, 350);  
+bubble.setAnimation("bubble");  
+bubble.velocityY = -0.5;  
+
+function draw() {  
+  background("blue");  
+  bubble.velocityY = bubble.velocityY - 0.25;  
+  drawSprites();  
+}
+Slow down a rock sprite as it rises, then reverse its direction to make it fall.
+
+var rock = createSprite(200, 350);  
+rock.setAnimation("rock");  
+rock.velocityY = -10;  
+rock.rotationSpeed = 2;  
+
+function draw() {  
+  background("skyblue");  
+
+  if (rock.y < 200) {  
+    rock.velocityY = rock.velocityY + 0.25;  
+  }  
+
+  drawSprites();  
+}
 
 
 
