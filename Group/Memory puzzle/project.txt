@@ -7,15 +7,15 @@ var score = 0;
 var lives = 5;
 var gameStarted = false;
 var gameOver = false;
-var level = 1; // Start at level 1
-var rows = 2; // Initial number of rows
-var cols = 4; // Initial number of columns
+var level = 1; 
+var rows = 2; 
+var cols = 4; 
 
-// Create the card array with pairs
+
 function setup() {
-    cards = []; // Reset the cards array
-    var numCards = (rows * cols) / 2; // Number of unique cards
-    var selectedValues = cardValues.slice(0, numCards); // Select values for the current level
+    cards = []; 
+    var numCards = (rows * cols) / 2; 
+    var selectedValues = cardValues.slice(0, numCards); 
 
     for (var i = 0; i < selectedValues.length; i++) {
         cards.push({ value: selectedValues[i], flipped: false, matched: false });
@@ -26,7 +26,6 @@ function setup() {
     showAllCards();
 }
 
-// Shuffle the cards
 function shuffle(array) {
     for (var i = array.length - 1; i > 0; i--) {
         var j = Math.floor(Math.random() * (i + 1));
@@ -47,16 +46,16 @@ function showAllCards() {
             cards[i].flipped = false;
         }
         drawBoard();
-        gameStarted = true; // Start the game after showing cards
+        gameStarted = true; 
     }, 5000);
 }
 
 // Draw the board
 function drawBoard() {
-    background(220); // Clear the background
+    background(220); 
     for (var i = 0; i < cards.length; i++) {
-        var x = (i % cols) * 100 + 50; // Adjust x based on cols
-        var y = Math.floor(i / cols) * 100 + 50; // Adjust y based on rows
+        var x = (i % cols) * 100 + 50; 
+        var y = Math.floor(i / cols) * 100 + 50; 
         if (cards[i].flipped  cards[i].matched) {
             fill("green");
             textSize(32);
@@ -73,7 +72,6 @@ function drawBoard() {
     }
 }
 
-// Display the score and lives
 function displayScore() {
     fill(0);
     textSize(16);
@@ -82,7 +80,6 @@ function displayScore() {
     text("Lives: " + lives, 10, 40);
 }
 
-// Display game over message
 function displayGameOver() {
     background("black");
     fill("red");
@@ -122,11 +119,11 @@ function checkForMatch() {
     if (cards[firstCard].value === cards[secondCard].value) {
         cards[firstCard].matched = true;
         cards[secondCard].matched = true;
-        score++; // Increase score for a match
+        score++; 
         resetBoard();
         checkGameOver();
     } else {
-        lives--; // Decrease lives for a mismatch
+        lives--; 
         setTimeout(function() {
             cards[firstCard].flipped = false;
             cards[secondCard].flipped = false;
@@ -143,3 +140,40 @@ function resetBoard() {
     secondCard = null;
     lockBoard = false;
 }
+// Check for game over and level up
+function checkGameOver() {
+    if (lives <= 0) {
+        background("black");
+        gameOver = true;
+        fill("red");
+        textSize(30);
+        text("Game over ", 100, 100);
+        fill("yellow");
+        text("Press space ", 50,200);
+        text("to restart the game ", 30,250);
+    } else if (cards.every(function(card) { return card.matched; })) {
+        level++; 
+        rows++; 
+        cols++; 
+        setup(); 
+    }
+}
+
+// Reset the game
+function resetGame() {
+    score = 0;
+    lives = 5;
+    gameOver = false;
+    level = 1; 
+    rows = 2; 
+    cols = 4; 
+    setup(); 
+}
+
+// Key press event
+function keyPressed() {
+    if (gameOver && key === ' ') {
+        resetGame(); 
+    }
+}
+setup();
