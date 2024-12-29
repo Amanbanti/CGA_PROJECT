@@ -3164,3 +3164,120 @@ function gameOver() {
 }
 
 
+## Lesson 28: Project- Game Design
+
+Fruit and Rock Catcher Game
+
+This program implements a simple interactive game where the player controls a basket to catch falling fruits while avoiding rocks. The objective is to collect as many fruits as possible while maintaining health.
+
+Game Features
+
+    Player Controls:
+        The basket moves horizontally using the left and right arrow keys.
+        The basket is confined within the game screen.
+
+    Objects:
+        Fruits: Spawn at random positions and fall at varying speeds. Catching fruits increases the score.
+        Rocks: Occasionally spawn at random positions and fall at varying speeds. Colliding with rocks decreases health.
+
+    Health System:
+        The player starts with 3 health points.
+        Missing a fruit or colliding with a rock decreases the health.
+
+    Scoring:
+        Each fruit caught increases the player's score by 1.
+
+    Game Over Condition:
+        The game ends when the player's health drops to 0. The background turns black, and "Game Over!" is displayed.
+
+    Randomness:
+        Fruits and rocks spawn at random horizontal positions and fall at random speeds, ensuring replayability.
+
+// Create the basket
+var basket = createSprite(200, 350);
+basket.setAnimation("basket");
+basket.scale = 0.8;
+
+var score = 0;
+var health = 3;
+
+var fruits = [];
+var rocks = [];
+
+// Game loop
+function draw() {
+  background("skyblue");
+  
+  // Draw ground
+  fill("green");
+  rect(0, 380, 400, 20);
+  
+  // Basket controls
+  if (keyDown("left") && basket.x > 30) {
+    basket.x -= 5;
+  }
+  if (keyDown("right") && basket.x < 370) {
+    basket.x += 5;
+  }
+  
+  // Spawn fruits and rocks randomly
+  if (frameCount % 60 === 0) {
+    var fruit = createSprite(randomNumber(20, 380), 0);
+    fruit.setAnimation("fruit");
+    fruit.scale = 0.5;
+    fruit.velocityY = randomNumber(3, 6);
+    fruits.push(fruit);
+    
+    if (randomNumber(1, 3) === 1) { // Add rocks occasionally
+      var rock = createSprite(randomNumber(20, 380), 0);
+      rock.setAnimation("rock_1");
+      rock.scale = 0.4;
+      rock.velocityY = randomNumber(3, 6);
+      rocks.push(rock);
+    }
+  }
+  
+  // Check if basket catches fruits
+  for (var i = fruits.length - 1; i >= 0; i--) {
+    if (basket.isTouching(fruits[i])) {
+      score++;
+      fruits[i].destroy();
+      fruits.splice(i, 1);
+    } else if (fruits[i].y > 400) { // If fruit falls off screen
+      health--; // Decrease health if the fruit is not caught
+      fruits[i].destroy();
+      fruits.splice(i, 1);
+    }
+  }
+  
+  // Check if basket catches rocks
+  for (var j = rocks.length - 1; j >= 0; j--) {
+    if (basket.isTouching(rocks[j])) {
+      health--;
+      rocks[j].destroy();
+      rocks.splice(j, 1);
+    } else if (rocks[j].y > 400) { // If rock falls off screen
+      rocks[j].destroy();
+      rocks.splice(j, 1);
+    }
+  }
+  
+  // Display score and health
+  textSize(20);
+  fill("white");
+  text("Score: " + score, 20, 20);
+  text("Health: " + health, 300, 20);
+  
+  // Game over logic
+  if (health <= 0) {
+    background("black");
+    fill("red");
+    textSize(40);
+    text("Game Over!", 100, 200);
+    noLoop(); // Stop the game
+  }
+  
+  drawSprites();
+}
+
+
