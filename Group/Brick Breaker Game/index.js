@@ -21,7 +21,7 @@ var gameStatus = "play"
 var score = 0;
 function draw() {
 
-//Call Functions
+//Call Function
 
 bg ()
 textSize(20)
