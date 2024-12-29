@@ -4484,6 +4484,85 @@ function setEnemy2() {
 
 
 
+## lesson 27
+
+
+// Jumper game 
+
+
+var score = 0;
+var lives = 3; // Initialize lives
+var platform, platform2, item, item2, player;
+
+platform = createSprite(200, 400);
+platform.setAnimation("platform");
+platform.velocityY = 2;
+
+platform2 = createSprite(350, 200);
+platform2.setAnimation("platform");
+platform2.velocityY = 2;
+
+item = createSprite(randomNumber(50, 350), randomNumber(-30, -60));
+item.setAnimation("star");
+item.velocityY = 3;
+
+item2 = createSprite(randomNumber(50, 350), randomNumber(-30, -60));
+item2.setAnimation("star");
+item2.velocityY = 3;
+
+player = createSprite(200, 0);
+player.setAnimation("alien");
+player.velocityY = 0.2;
+
+function draw() {
+  if (lives <= 0) {
+    gameOver(); // End the game if lives are 0
+  } else {
+    if (score > 10) {
+      background2();
+    } else {
+      background1();
+    }
+
+    showScore();
+    showLives(); // Show lives on the screen
+    loopPlatforms();
+    loopItems();
+    playerFall();
+    controlPlayer();
+    playerLands();
+    collectItems();
+    checkFall(); // Check if the player falls off the screen
+
+    drawSprites();
+  }
+}
+
+function background1() {
+  background("darkBlue");
+  noStroke();
+  fill("yellow");
+  ellipse(randomNumber(0, 400), randomNumber(0, 400), 3, 3);
+  ellipse(randomNumber(0, 400), randomNumber(0, 400), 3, 3);
+  ellipse(340, 50, 60, 60);
+  fill("darkBlue");
+  ellipse(320, 30, 60, 60);
+}
+
+function background2() {
+  background("lightBlue");
+  fill("pink");
+  ellipse(200, 200, 60, 60);
+}
+
+function showScore() {
+  fill("white");
+  textSize(20);
+  text("Score: " + score, 10, 20);
+}
+
+
+
 
 
 
