@@ -1,0 +1,96 @@
+var cards = [];
+var cardValues = ['🍎', '🥭', '🍒', '🍔', '🍓', '🍇', '🌭', '🌽', '🍩', '🍰', '🥑', '🍑'];
+var firstCard = null;
+var secondCard = null;
+var lockBoard = false;
+var score = 0;
+var lives = 5;
+var gameStarted = false;
+var gameOver = false;
+var level = 1; // Start at level 1
+var rows = 2; // Initial number of rows
+var cols = 4; // Initial number of columns
+
+// Create the card array with pairs
+function setup() {
+    cards = []; // Reset the cards array
+    var numCards = (rows * cols) / 2; // Number of unique cards
+    var selectedValues = cardValues.slice(0, numCards); // Select values for the current level
+
+    for (var i = 0; i < selectedValues.length; i++) {
+        cards.push({ value: selectedValues[i], flipped: false, matched: false });
+        cards.push({ value: selectedValues[i], flipped: false, matched: false });
+    }
+    shuffle(cards);
+    drawBoard();
+    showAllCards();
+}
+
+// Shuffle the cards
+function shuffle(array) {
+    for (var i = array.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+}
+
+// Show all cards for 5 seconds
+function showAllCards() {
+    for (var i = 0; i < cards.length; i++) {
+        cards[i].flipped = true;
+    }
+    drawBoard();
+    setTimeout(function() {
+        for (var i = 0; i < cards.length; i++) {
+            cards[i].flipped = false;
+        }
+        drawBoard();
+        gameStarted = true; // Start the game after showing cards
+    }, 5000);
+}
+
+// Draw the board
+function drawBoard() {
+    background(220); // Clear the background
+    for (var i = 0; i < cards.length; i++) {
+        var x = (i % cols) * 100 + 50; // Adjust x based on cols
+        var y = Math.floor(i / cols) * 100 + 50; // Adjust y based on rows
+        if (cards[i].flipped  cards[i].matched) {
+            fill("green");
+            textSize(32);
+            textAlign(CENTER, CENTER);
+            text(cards[i].value, x, y);
+        } else {
+            fill("white");
+            rect(x - 25, y - 25, 50, 50);
+        }
+    }
+    displayScore();
+    if (gameOver) {
+        displayGameOver();
+    }
+}
+
+// Display the score and lives
+function displayScore() {
+    fill(0);
+    textSize(16);
+    textAlign(LEFT);
+    text("Score: " + score, 10, 20);
+    text("Lives: " + lives, 10, 40);
+}
+
+// Display game over message
+function displayGameOver() {
+    background("black");
+    fill("red");
+    textSize(30);
+    textAlign(CENTER, CENTER);
+    text("Game over", width / 2, height / 2 - 20);
+    fill("blue");
+    text("Press space", width / 2, height / 2 + 20);
+    text("to restart the game", width / 2, height / 2 + 60);
+}
+
