@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dino Run Game</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+    }
+
+    #gameCanvas {
+      display: block;
+      margin: 0 auto;
+      background-color: white;
+      border: 2px solid #ccc;
+    }
+
+    .info {
+      text-align: center;
+      margin: 10px 0;
+    }
+
+    .info span {
+      font-size: 18px;
+      margin: 0 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="info">
+    <span>Score: <span id="score">0</span></span>
+  </div>
+  <canvas id="gameCanvas" width="800" height="300"></canvas>
+
+  <script>
+    const canvas = document.getElementById("gameCanvas");
+    const ctx = canvas.getContext("2d");
+
+    const gravity = 0.5;
+    const dino = {
+      x: 50,
+      y: 250,
+      width: 50,
+      height: 50,
+      color: "#000",
+      velocityY: 0,
+      isJumping: false,
+    };
+
+    const obstacles = [];
+    let score = 0;
+    let gameSpeed = 3;
+
+    // Function to create obstacles
+    function createObstacle() {
+      const height = Math.random() * 50 + 20; // Random obstacle height
+      obstacles.push({
+        x: canvas.width,
+        y: canvas.height - height,
+        width: 20,
+        height: height,
+        color: "#ff0000",
+      });
+    }
+
+    // Game state variables
+    let gameOver = false;
+    let spawnTimer = 0;
+
+    // Main game loop
+    function gameLoop() {
+      if (gameOver) {
+        showGameOver();
+        return;
+      }
+
+      requestAnimationFrame(gameLoop);
+
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // Draw Dino
+      ctx.fillStyle = dino.color;
+      ctx.fillRect(dino.x, dino.y, dino.width, dino.height);
+
+      // Apply gravity and jump physics
+      dino.velocityY += gravity;
+      dino.y += dino.velocityY;
+
+      if (dino.y >= canvas.height - dino.height) {
+        dino.y = canvas.height - dino.height;
+        dino.isJumping = false;
+      }
+
+      // Spawn obstacles
+      spawnTimer++;
+      if (spawnTimer > 100) {
+        createObstacle();
+        spawnTimer = 0;
+      }
+
+      // Draw obstacles
+      for (let i = obstacles.length - 1; i >= 0; i--) {
+        const obs = obstacles[i];
+        obs.x -= gameSpeed;
+
+        // Remove off-screen obstacles
+        if (obs.x + obs.width < 0) {
+          obstacles.splice(i, 1);
+          score++;
+          document.getElementById("score").textContent = score;
+        }
+
+        // Draw the obstacle
+        ctx.fillStyle = obs.color;
+        ctx.fillRect(obs.x, obs.y, obs.width, obs.height);
+
+        // Check collision
+        if (
+          dino.x < obs.x + obs.width &&
+          dino.x + dino.width > obs.x &&
+          dino.y < obs.y + obs.height &&
+          dino.y + dino.height > obs.y
+        ) {
+          gameOver = true;
+        }
+      }
+    }
+
+    // Display game over screen
+    function showGameOver() {
+      ctx.fillStyle = "rgba(0, 0, 0, 0.7)";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      ctx.fillStyle = "#fff";
+      ctx.font = "30px Arial";
+      ctx.textAlign = "center";
+      ctx.fillText("Game Over!", canvas.width / 2, canvas.height / 2 - 20);
+      ctx.fillText("Press R to Restart", canvas.width / 2, canvas.height / 2 + 20);
+    }
+
+    // Restart game
+    function restartGame() {
+      dino.y = 250;
+      dino.velocityY = 0;
+      dino.isJumping = false;
+      obstacles.length = 0;
+      score = 0;
+      gameOver = false;
+      gameSpeed = 3;
+      document.getElementById("score").textContent = score;
+      gameLoop();
+    }
+
+    // Handle jump
+    window.addEventListener("keydown", (e) => {
+      if (e.key === " " || e.key === "ArrowUp") {
+        if (!dino.isJumping) {
+          dino.velocityY = -12;
+          dino.isJumping = true;
+        }
+      }
+      if (e.key.toLowerCase() === "r" && gameOver) {
+        restartGame();
+      }
+    });
+
+    gameLoop();
+  </script>
+</body>
+</html>
