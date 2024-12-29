@@ -35,7 +35,7 @@ function shuffle(array) {
     }
 }
 
-// Show all cards for 5 seconds
+
 function showAllCards() {
     for (var i = 0; i < cards.length; i++) {
         cards[i].flipped = true;
@@ -50,7 +50,7 @@ function showAllCards() {
     }, 5000);
 }
 
-// Draw the board
+
 function drawBoard() {
     background(220); 
     for (var i = 0; i < cards.length; i++) {
@@ -91,7 +91,7 @@ function displayGameOver() {
     text("to restart the game", width / 2, height / 2 + 60);
 }
 
-// Check for mouse click
+
 function mousePressed() {
     if (lockBoard  !gameStarted || gameOver) return;
 
@@ -101,7 +101,7 @@ function mousePressed() {
     }
 }
 
-// Flip the card
+
 function flipCard(index) {
     cards[index].flipped = true;
     if (firstCard === null) {
@@ -114,7 +114,7 @@ function flipCard(index) {
     drawBoard();
 }
 
-// Check for a match
+
 function checkForMatch() {
     if (cards[firstCard].value === cards[secondCard].value) {
         cards[firstCard].matched = true;
@@ -134,13 +134,13 @@ function checkForMatch() {
     }
 }
 
-// Reset the board
+
 function resetBoard() {
     firstCard = null;
     secondCard = null;
     lockBoard = false;
 }
-// Check for game over and level up
+
 function checkGameOver() {
     if (lives <= 0) {
         background("black");
@@ -159,7 +159,7 @@ function checkGameOver() {
     }
 }
 
-// Reset the game
+
 function resetGame() {
     score = 0;
     lives = 5;
@@ -170,10 +170,14 @@ function resetGame() {
     setup(); 
 }
 
-// Key press event
+
 function keyPressed() {
     if (gameOver && key === ' ') {
         resetGame(); 
     }
 }
 setup();
+
+
+
+       ## ENDED ##
