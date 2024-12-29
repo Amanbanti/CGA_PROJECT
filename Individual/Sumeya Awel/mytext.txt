@@ -4561,6 +4561,100 @@ function showScore() {
   text("Score: " + score, 10, 20);
 }
 
+function showLives() {
+  fill("white");
+  textSize(20);
+  text("Lives: " + lives, 10, 40); // Display lives
+}
+
+function loopPlatforms() {
+  if (platform.y > 400) {
+    platform.y = 0;
+    platform.x = randomNumber(50, 350);
+  }
+
+  if (platform2.y > 400) {
+    platform2.y = 0;
+    platform2.x = randomNumber(50, 350);
+  }
+}
+
+function loopItems() {
+  if (item.y > 400) {
+    item.y = randomNumber(-30, -60);
+    item.x = randomNumber(50, 350);
+  }
+
+  if (item2.y > 400) {
+    item2.y = randomNumber(-30, -60);
+    item2.x = randomNumber(50, 350);
+  }
+}
+
+function playerFall() {
+  player.velocityY += 0.5;
+}
+
+function controlPlayer() {
+  if (keyDown("left")) {
+    player.x -= 5;
+  }
+
+  if (keyDown("right")) {
+    player.x += 5;
+  }
+
+  if (keyDown("up") && player.velocityY === 0) {
+    player.velocityY = -10;
+  }
+}
+
+function playerLands() {
+  if (player.isTouching(platform) || player.isTouching(platform2)) {
+    player.velocityY = 0;
+
+    if (keyDown("up")) {
+      player.velocityY = -10;
+    }
+  }
+}
+
+function collectItems() {
+  if (player.isTouching(item)) {
+    item.y = randomNumber(-30, -60);
+    item.x = randomNumber(50, 350);
+    score += 1;
+  }
+
+  if (player.isTouching(item2)) {
+    item2.y = randomNumber(-30, -60);
+    item2.x = randomNumber(50, 350);
+    score += 1;
+  }
+}
+
+// Check if player falls off the screen
+function checkFall() {
+  if (player.y > 420) { // Player has fallen off the screen
+    lives -= 1; // Subtract one life
+    if (lives > 0) {
+      player.y = 0; // Reset the player position to the top
+      player.x = randomNumber(50, 350); // Randomize the x position
+      player.velocityY = 0.2; // Make the player fall slowly again
+    } else {
+      gameOver(); // End game when lives reach 0
+    }
+  }
+}
+
+function gameOver() {
+  background("red");
+  fill("white");
+  textSize(50);
+  text("Game Over", 100, 200);
+  noLoop(); // Stop the game loop
+}
+
 
 
 
