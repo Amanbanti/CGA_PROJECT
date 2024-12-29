@@ -94,3 +94,52 @@ function displayGameOver() {
     text("to restart the game", width / 2, height / 2 + 60);
 }
 
+// Check for mouse click
+function mousePressed() {
+    if (lockBoard  !gameStarted || gameOver) return;
+
+    var index = Math.floor(mouseY / 100) * cols + Math.floor(mouseX / 100);
+    if (index < cards.length && !cards[index].flipped && !cards[index].matched) {
+        flipCard(index);
+    }
+}
+
+// Flip the card
+function flipCard(index) {
+    cards[index].flipped = true;
+    if (firstCard === null) {
+        firstCard = index;
+    } else {
+        secondCard = index;
+        lockBoard = true;
+        checkForMatch();
+    }
+    drawBoard();
+}
+
+// Check for a match
+function checkForMatch() {
+    if (cards[firstCard].value === cards[secondCard].value) {
+        cards[firstCard].matched = true;
+        cards[secondCard].matched = true;
+        score++; // Increase score for a match
+        resetBoard();
+        checkGameOver();
+    } else {
+        lives--; // Decrease lives for a mismatch
+        setTimeout(function() {
+            cards[firstCard].flipped = false;
+            cards[secondCard].flipped = false;
+            resetBoard();
+            drawBoard();
+            checkGameOver();
+        }, 1000);
+    }
+}
+
+// Reset the board
+function resetBoard() {
+    firstCard = null;
+    secondCard = null;
+    lockBoard = false;
+}
